@@ -1,0 +1,12 @@
+service: sportnumerics
+provider:
+  name: aws
+  runtime: nodejs4.3
+  stage: dev
+  region: ap-southeast-2
+
+functions:
+  teamsCollect:
+    handler: teams.collect
+    events:
+    - schedule: rate(2 hours)
