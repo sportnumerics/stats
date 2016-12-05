@@ -1,4 +1,4 @@
 npm install -g serverless
 
-cd stats
+rm -rf node_modules
 npm install --production
