@@ -1,0 +1,661 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>NCAA Statistics</title>
+    <link href="/assets/application-e326a9875b1d2e1ab0f0618409137d3f.css" media="all" rel="stylesheet" type="text/css" />
+    <script src="/assets/application-d0887e464aaf0449ca637e472b5f42ce.js" type="text/javascript"></script>
+    <meta content="authenticity_token" name="csrf-param" />
+<meta content="BaKZQUQLHIEHxkTZW2uzmVIxg1AgE4v5/VxN1zBzv10=" name="csrf-token" />
+  </head>
+  <script>
+
+    function set_process_styles(fld, start_color, end_color){
+       $('#'+fld).effect('highlight', {color: '#99CC99'}, 6000);
+    }
+
+    var downImage = "/images/down12.gif";
+    var rightImage = "/images/right12.gif";
+
+    function highlight(div_id){
+      $(div_id).effect('highlight', {color: '#99CC99'}, 6000);
+    }
+
+    function show_hide_rows(attr_val, link_id){
+      $('#'+attr_val).toggle();
+      if ($('#'+attr_val).is(':visible')) {
+        $('#'+link_id).attr('src', downImage);
+      }else{
+        $('#'+link_id).attr('src', rightImage);
+      }
+    }
+
+    function mask(label){
+      $('body').mask(label);
+    }
+    function unmask(){
+      $('body').unmask();
+    }
+
+    var winHeight = "auto";
+    var winWidth = "auto";
+    var maxHeight = 700;
+    var maxWidth = 1400;
+    var minHeight = 100;
+    var minWidth = 200;
+
+    var modalOptions = {"width": winWidth,
+                        "height": winHeight,
+                        "maxHeight": maxHeight,
+                        "maxWidth": maxWidth,
+                        "minHeight": minHeight,
+                        "minWidth": minWidth};
+
+    function dialog(url, title){
+
+      $("#stats_app_dialog").dialog({modal:true, minWidth:minWidth, minHeight:minHeight, maxWidth:maxWidth, maxHeight:maxHeight, width:winWidth, height:winHeight, title:title, closeOnEscape: false});
+
+      modalOptions.title = title;
+
+      $("#stats_app_dialog").dialog("option", modalOptions);
+
+      $("#stats_app_dialog").html("Loading...");
+      $("#stats_app_dialog").load(url).dialog('open');
+    }
+
+
+  </script>
+  <body id="body" onload="if (top != self) { top.location=self.location; }">
+    <div id="header"><img alt="Titlebar_logo" height="81" src="/assets/titlebar_logo-d1d40bd2268e265b6a42cacb7bb117e9.jpg" style="float: left" width="104" />
+      <h1>
+        <span id="title1">NCAA</span><br/>
+        <span id="title2">Statistics</span>
+      </h1>
+
+
+      <div id="nav">
+  <ul>
+     <li id="notactive">
+       <a href="/rankings?academic_year=2016&amp;division=1&amp;sport_code=MLA"><span>National Rankings</span></a>
+    </li>
+     <li id="notactive">
+       <a href="/active_career_leaders/show_summary_from_rankings?academic_year=2016&amp;division=1&amp;sport_code=MLA"><span>Active Career Leaders</span></a>
+    </li>
+    <li id="active">
+      <a href="/team/schedule_list?academic_year=2016&amp;division=1&amp;id=12380&amp;sport_code=MLA"><span>Scoreboard</span></a>
+    </li>
+    <li id="team_search">
+      <script>
+  $(function() {
+    $( "#org_name" ).autocomplete({
+      source: '/team/search',
+      select: function( event, ui ) {
+        $("#org_id").val(ui.item.vid);
+        $("#id").val(ui.item.vid);
+        $('#sport_btn').click();
+      }
+    });
+  });
+</script>
+
+<span style="display:inline; float:right;">
+  <form accept-charset="UTF-8" action="/team/index" id="change_team_form" method="post" onsubmit="mask(&#x27;Loading&#x27;);" style="display:inline;"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="BaKZQUQLHIEHxkTZW2uzmVIxg1AgE4v5/VxN1zBzv10=" /></div>
+  <div style="display:none;">
+  <input id="sport_btn" name="commit" type="submit" value="Submit" />
+  </div>
+    <div id="team_autocomplete" class="ui-widget">
+      <span style="color: #ccc;">Team Search:</span>
+      <input id="org_name" name="org_name" style="width:200px" type="text" />
+      <input id="org_id" name="org_id" type="hidden" />
+    </div>
+</form></span>
+    </li>
+  <li>
+  <a href="http://twitter.com/ncaastats" target="TWITTER"><img alt="Twitter" height="17" src="/assets/twitter-6586be4273539dff7a95e70ebdf1a846.png" width="46" /></a>
+  </li>
+  </ul>
+</div>
+
+</div>
+
+    <div id="contentarea">
+       <div id="stats_app_dialog" style="display:none;">
+        </div>
+      <div id="message_box" class="team"  style="display: none" >
+        <span class="message_box_success"></span>
+        <span class="message_box_error"></span>
+      </div>
+
+<script language="javascript">
+      function changeDivisions(val){
+	     $('#params_form_division').val(val);
+	     document.params_form.submit();
+      }
+
+      function changeYears(val){
+         if ( $('#params_form_academic_year').val() != val ){
+	        $('#params_form_schedule_date').val('');
+         }
+	     $('#params_form_academic_year').val(val);
+	     document.params_form.submit();
+      }
+
+      function changeSports(val){
+	     $('#params_form_sport_code').val(val);
+	     document.params_form.submit();
+      }
+      function changeConference(val){
+	     $('#params_form_conf_id').val(val);
+	     document.params_form.submit();
+      }
+      function changeDate(val){
+	     $('#params_form_schedule_date').val(val);
+	     document.params_form.submit();
+      }
+</script>
+<form name="params_form" action="/team/schedule_list" method="post">
+  <input id="params_form_sport_code" type="hidden" name="sport_code" value="MLA">
+  <input id="params_form_academic_year" type="hidden" name="academic_year" value="2016">
+  <input id="params_form_division" type="hidden" name="division" value="1">
+  <input id="params_form_conf_id" type="hidden" name="conf_id" value="-1">
+  <input id="params_form_schedule_date" type="hidden" name="schedule_date" value="">
+</form>
+
+<div class="grey_header_menu">
+
+<div id="nav_bar">
+  <div id="primary_nav_wrap">
+		<ul class="level1" id="root">
+		  <li>
+		    <a href="#" class="skipMask">Men&#x27;s Lacrosse</a>
+		    <ul class="level2">
+		 		    <li><a href="javascript:changeSports('MBA');">Baseball</a></li>
+		 		    <li><a href="javascript:changeSports('MBB');">Men&#x27;s Basketball</a></li>
+		 		    <li><a href="javascript:changeSports('MFB');">Football</a></li>
+		 		    <li><a href="javascript:changeSports('MIH');">Men&#x27;s Ice Hockey</a></li>
+		 		    <li><a href="javascript:changeSports('MLA');">Men&#x27;s Lacrosse</a></li>
+		 		    <li><a href="javascript:changeSports('MSO');">Men&#x27;s Soccer</a></li>
+		 		    <li><a href="javascript:changeSports('MTE');">Men&#x27;s Tennis</a></li>
+		 		    <li><a href="javascript:changeSports('MVB');">Men&#x27;s Volleyball</a></li>
+		 		    <li><a href="javascript:changeSports('WBB');">Women&#x27;s Basketball</a></li>
+		 		    <li><a href="javascript:changeSports('WFH');">Field Hockey</a></li>
+		 		    <li><a href="javascript:changeSports('WIH');">Women&#x27;s Ice Hockey</a></li>
+		 		    <li><a href="javascript:changeSports('WLA');">Women&#x27;s Lacrosse</a></li>
+		 		    <li><a href="javascript:changeSports('WSB');">Women&#x27;s Softball</a></li>
+		 		    <li><a href="javascript:changeSports('WSO');">Women&#x27;s Soccer</a></li>
+		 		    <li><a href="javascript:changeSports('WSV');">Women&#x27;s Beach Volleyball</a></li>
+		 		    <li><a href="javascript:changeSports('WTE');">Women&#x27;s Tennis</a></li>
+		 		    <li><a href="javascript:changeSports('WVB');">Women&#x27;s Volleyball</a></li>
+		    </ul>
+		  </li>
+		  <li class="sep">|</li>
+ 		  <li>
+			<a href="#" class="skipMask">2015-16</a>
+			<ul class="level2">
+				<li><a href="javascript:changeYears(2016);">2015-16</a></li>
+				<li><a href="javascript:changeYears(2015);">2014-15</a></li>
+				<li><a href="javascript:changeYears(2014);">2013-14</a></li>
+				<li><a href="javascript:changeYears(2013);">2012-13</a></li>
+				<li><a href="javascript:changeYears(2012);">2011-12</a></li>
+				<li><a href="javascript:changeYears(2011);">2010-11</a></li>
+				<li><a href="javascript:changeYears(2010);">2009-10</a></li>
+			</ul>
+		  </li>
+  	      <li class="sep">|</li>
+ 		  <li>
+			<a href="#" class="skipMask">I</a>
+			<ul class="level2">
+				<li><a href="javascript:changeDivisions(1);">I</a></li>
+				<li><a href="javascript:changeDivisions(2);">II</a></li>
+				<li><a href="javascript:changeDivisions(3);">III</a></li>
+			</ul>
+		  </li>
+		  </li>
+  	      <li class="sep">|</li>
+ 		  <li>
+			<a href="#" class="skipMask">ALL TEAMS</a>
+			<ul class="level2">
+			   <li><a href="javascript:changeConference(-1);">ALL TEAMS</a></li>
+				<li><a href="javascript:changeConference(845.0);">America East</a></li>
+				<li><a href="javascript:changeConference(821.0);">Atlantic Coast</a></li>
+				<li><a href="javascript:changeConference(30184.0);">Big East</a></li>
+				<li><a href="javascript:changeConference(827.0);">Big Ten</a></li>
+				<li><a href="javascript:changeConference(837.0);">Colonial</a></li>
+				<li><a href="javascript:changeConference(0.0);">Independent</a></li>
+				<li><a href="javascript:changeConference(865.0);">Ivy League</a></li>
+				<li><a href="javascript:changeConference(871.0);">Metro Atlantic</a></li>
+				<li><a href="javascript:changeConference(846.0);">Northeast</a></li>
+				<li><a href="javascript:changeConference(838.0);">Patriot</a></li>
+				<li><a href="javascript:changeConference(912.0);">Southern</a></li>
+			</ul>
+		  </li>
+		  </li>
+  	 </ul>
+  </div>
+</div>
+</div>
+
+
+<br/>
+<br/>
+<!-- tabs -->
+<ul class="css-tabs">
+  <li><a href="/team/inst_team_list?academic_year=2016&amp;conf_id=-1&amp;division=1&amp;sport_code=MLA" id="available_teams_tab">Available Teams</a></li>
+  <li><a href="/team/schedule_list?academic_year=2016&amp;conf_id=-1&amp;division=1&amp;sport_code=MLA" id="scoreboard_tab">Scoreboard</a></li>
+</ul>
+
+
+
+
+<!-- single pane. it is always visible -->
+<div class="css-panes">
+  <div style="display:block">
+<table width="95%" align="center">
+	<tr>
+       <td valign="top">
+	      <table width="100%">
+             <tr>
+	            <td>
+                <a href="/team/721/12380">Air Force</a>
+                </td>
+             </tr>
+             <tr>
+	            <td>
+                <a href="/team/14/12380">Albany (NY)</a>
+                </td>
+             </tr>
+             <tr>
+	            <td>
+                <a href="/team/725/12380">Army West Point</a>
+                </td>
+             </tr>
+             <tr>
+	            <td>
+                <a href="/team/52/12380">Bellarmine</a>
+                </td>
+             </tr>
+             <tr>
+	            <td>
+                <a href="/team/62/12380">Binghamton</a>
+                </td>
+             </tr>
+             <tr>
+	            <td>
+                <a href="/team/68/12380">Boston U.</a>
+                </td>
+             </tr>
+             <tr>
+	            <td>
+                <a href="/team/80/12380">Brown</a>
+                </td>
+             </tr>
+             <tr>
+	            <td>
+                <a href="/team/81/12380">Bryant</a>
+                </td>
+             </tr>
+             <tr>
+	            <td>
+                <a href="/team/83/12380">Bucknell</a>
+                </td>
+             </tr>
+             <tr>
+	            <td>
+                <a href="/team/116/12380">Canisius</a>
+                </td>
+             </tr>
+             <tr>
+	            <td>
+                <a href="/team/153/12380">Colgate</a>
+                </td>
+             </tr>
+             <tr>
+	            <td>
+                <a href="/team/167/12380">Cornell</a>
+                </td>
+             </tr>
+             <tr>
+	            <td>
+                <a href="/team/172/12380">Dartmouth</a>
+                </td>
+             </tr>
+             <tr>
+	            <td>
+                <a href="/team/180/12380">Delaware</a>
+                </td>
+             </tr>
+             <tr>
+	            <td>
+                <a href="/team/183/12380">Denver</a>
+                </td>
+             </tr>
+             <tr>
+	            <td>
+                <a href="/team/184/12380">Detroit</a>
+                </td>
+             </tr>
+             <tr>
+	            <td>
+                <a href="/team/191/12380">Drexel</a>
+                </td>
+             </tr>
+             <tr>
+	            <td>
+                <a href="/team/193/12380">Duke</a>
+                </td>
+             </tr>
+             <tr>
+	            <td>
+                <a href="/team/220/12380">Fairfield</a>
+                </td>
+             </tr>
+             <tr>
+	            <td>
+                <a href="/team/244/12380">Furman</a>
+                </td>
+             </tr>
+             <tr>
+	            <td>
+                <a href="/team/251/12380">Georgetown</a>
+                </td>
+             </tr>
+             <tr>
+	            <td>
+                <a href="/team/272/12380">Hartford</a>
+                </td>
+             </tr>
+             <tr>
+	            <td>
+                <a href="/team/275/12380">Harvard</a>
+                </td>
+             </tr>
+             <tr>
+	            <td>
+                <a href="/team/19651/12380">High Point</a>
+                </td>
+             </tr>
+             <tr>
+	            <td>
+                <a href="/team/282/12380">Hobart and William Colleges</a>
+                </td>
+             </tr>
+             <tr>
+	            <td>
+                <a href="/team/283/12380">Hofstra</a>
+                </td>
+             </tr>
+             <tr>
+	            <td>
+                <a href="/team/285/12380">Holy Cross</a>
+                </td>
+             </tr>
+             <tr>
+	            <td>
+                <a href="/team/316/12380">Jacksonville</a>
+                </td>
+             </tr>
+             <tr>
+	            <td>
+                <a href="/team/322/12380">Johns Hopkins</a>
+                </td>
+             </tr>
+             <tr>
+	            <td>
+                <a href="/team/342/12380">Lafayette</a>
+                </td>
+             </tr>
+             <tr>
+	            <td>
+                <a href="/team/352/12380">Lehigh</a>
+                </td>
+             </tr>
+             <tr>
+	            <td>
+                <a href="/team/369/12380">Loyola Maryland</a>
+                </td>
+             </tr>
+             <tr>
+	            <td>
+                <a href="/team/381/12380">Manhattan</a>
+                </td>
+             </tr>
+             <tr>
+	            <td>
+                <a href="/team/386/12380">Marist</a>
+                </td>
+             </tr>
+             <tr>
+	            <td>
+                <a href="/team/387/12380">Marquette</a>
+                </td>
+             </tr>
+             <tr>
+	            <td>
+                <a href="/team/392/12380">Maryland</a>
+                </td>
+             </tr>
+             <tr>
+	            <td>
+                <a href="/team/400/12380">Massachusetts</a>
+                </td>
+             </tr>
+             <tr>
+	            <td>
+                <a href="/team/406/12380">Mercer</a>
+                </td>
+             </tr>
+             <tr>
+	            <td>
+                <a href="/team/418/12380">Michigan</a>
+                </td>
+             </tr>
+             <tr>
+	            <td>
+                <a href="/team/439/12380">Monmouth</a>
+                </td>
+             </tr>
+             <tr>
+	            <td>
+                <a href="/team/450/12380">Mt. St. Mary&#x27;s</a>
+                </td>
+             </tr>
+             <tr>
+	            <td>
+                <a href="/team/471/12380">NJIT</a>
+                </td>
+             </tr>
+             <tr>
+	            <td>
+                <a href="/team/726/12380">Navy</a>
+                </td>
+             </tr>
+             <tr>
+	            <td>
+                <a href="/team/457/12380">North Carolina</a>
+                </td>
+             </tr>
+             <tr>
+	            <td>
+                <a href="/team/513/12380">Notre Dame</a>
+                </td>
+             </tr>
+             <tr>
+	            <td>
+                <a href="/team/518/12380">Ohio St.</a>
+                </td>
+             </tr>
+             <tr>
+	            <td>
+                <a href="/team/540/12380">Penn</a>
+                </td>
+             </tr>
+             <tr>
+	            <td>
+                <a href="/team/539/12380">Penn St.</a>
+                </td>
+             </tr>
+             <tr>
+	            <td>
+                <a href="/team/554/12380">Princeton</a>
+                </td>
+             </tr>
+         </table>
+     </td>
+       <td valign="top">
+	      <table width="100%">
+             <tr>
+	            <td>
+                <a href="/team/556/12380">Providence</a>
+                </td>
+             </tr>
+             <tr>
+	            <td>
+                <a href="/team/562/12380">Quinnipiac</a>
+                </td>
+             </tr>
+             <tr>
+	            <td>
+                <a href="/team/575/12380">Richmond</a>
+                </td>
+             </tr>
+             <tr>
+	            <td>
+                <a href="/team/579/12380">Robert Morris</a>
+                </td>
+             </tr>
+             <tr>
+	            <td>
+                <a href="/team/587/12380">Rutgers</a>
+                </td>
+             </tr>
+             <tr>
+	            <td>
+                <a href="/team/590/12380">Sacred Heart</a>
+                </td>
+             </tr>
+             <tr>
+	            <td>
+                <a href="/team/606/12380">Saint Joseph&#x27;s</a>
+                </td>
+             </tr>
+             <tr>
+	            <td>
+                <a href="/team/639/12380">Siena</a>
+                </td>
+             </tr>
+             <tr>
+	            <td>
+                <a href="/team/603/12380">St. John&#x27;s (NY)</a>
+                </td>
+             </tr>
+             <tr>
+	            <td>
+                <a href="/team/683/12380">Stony Brook</a>
+                </td>
+             </tr>
+             <tr>
+	            <td>
+                <a href="/team/688/12380">Syracuse</a>
+                </td>
+             </tr>
+             <tr>
+	            <td>
+                <a href="/team/711/12380">Towson</a>
+                </td>
+             </tr>
+             <tr>
+	            <td>
+                <a href="/team/391/12380">UMBC</a>
+                </td>
+             </tr>
+             <tr>
+	            <td>
+                <a href="/team/368/12380">UMass Lowell</a>
+                </td>
+             </tr>
+             <tr>
+	            <td>
+                <a href="/team/741/12380">VMI</a>
+                </td>
+             </tr>
+             <tr>
+	            <td>
+                <a href="/team/738/12380">Vermont</a>
+                </td>
+             </tr>
+             <tr>
+	            <td>
+                <a href="/team/739/12380">Villanova</a>
+                </td>
+             </tr>
+             <tr>
+	            <td>
+                <a href="/team/746/12380">Virginia</a>
+                </td>
+             </tr>
+             <tr>
+	            <td>
+                <a href="/team/748/12380">Wagner</a>
+                </td>
+             </tr>
+             <tr>
+	            <td>
+                <a href="/team/813/12380">Yale</a>
+                </td>
+             </tr>
+      </table>
+     </td>
+   </tr>
+</table>
+  </div>
+</div>
+
+<script>
+
+
+$("#available_teams_tab").addClass("current");
+
+$(function() {
+
+	$("ul.css-tabs").tabs("div.css-panes > div", {effect: 'ajax'});
+
+});
+</script>
+
+<br/>
+
+    </div>
+
+    <div class="footer"></div>
+
+  </body>
+  <script>
+      //ui-datepicker = calendar month prev/next buttons,
+      //ui-corner-all = autocomplete dropdown results
+      //paginate_button = datatables
+    function skipMask(obj){
+      if (obj.hasClass('skipMask') || obj.hasClass('ui-datepicker-prev') || obj.hasClass('ui-datepicker-next') || obj.hasClass('ui-corner-all') || obj.hasClass('paginate_button') ){
+        return true;
+      }else{
+        return false;
+      }
+    }
+
+    $(document).ajaxComplete(function(){
+      unmask();
+    });
+    $(document).on('click', 'a', function(){
+      if (skipMask($(this))){
+        return;
+      }else{
+        mask('Loading');
+      }
+    });
+    $(document).on('click', 'input.green', function(){
+      if (skipMask($(this))){
+        return;
+      }else{
+        mask('Loading');
+      }
+    });
+  </script>
+</html>
