@@ -1,4 +1,4 @@
 npm prune --production
 
 source config/env.sh
-serverless deploy --verbose
+node_modules/.bin/serverless deploy --verbose
