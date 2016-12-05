@@ -4,6 +4,9 @@ provider:
   runtime: nodejs4.3
   stage: dev
   region: ap-southeast-2
+package:
+  exclude:
+  - config/env.sh
 
 functions:
   teamsCollect:

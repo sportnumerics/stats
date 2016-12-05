@@ -1,7 +1,6 @@
 npm install -g serverless
 
-rm -rf node_modules
-npm install --production
+npm prune --production
 
 source config/env.sh
-serverless --verbose deploy
+serverless deploy --verbose
