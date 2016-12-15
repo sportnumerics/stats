@@ -12,4 +12,4 @@ functions:
   teamsCollect:
     handler: teams.collect
     events:
-    - schedule: rate(2 hours)
+    - schedule: rate(24 hours)
