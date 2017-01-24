@@ -1,12 +1,9 @@
 'use strict';
 
-function collect(event, context, callback) {
-  const message = {
-    message: 'Hi',
-    event
-  };
+const teams = require('./lib/controller/teams');
 
-  callback(null, message);
+function collect(event, context, callback) {
+  teams.collect('2016', '1').asCallback(callback);
 }
 
 module.exports = {
