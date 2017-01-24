@@ -8,8 +8,9 @@ let fs = require('fs'),
 
 chai.use(chaiDateTime);
 chai.use(chaiAsPromised);
+global.expect = chai.expect;
 
 module.exports = {
-  expect: chai.expect,
   teamList: fs.readFileSync(path.resolve(__dirname, './fixtures/team-list.html')),
+  expectedTeamsJson: require('./fixtures/expected-div1-teams')
 };

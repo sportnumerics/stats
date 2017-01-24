@@ -3,8 +3,6 @@
 let fixtures = require('../fixtures.js'),
   teamsHtmlToJson = require('../../lib/adapter/teams-html-to-json');
 
-let expect = fixtures.expect;
-
 describe('teams html to json', () => {
   var data;
   beforeEach(() => {
