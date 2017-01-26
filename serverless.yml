@@ -4,6 +4,15 @@ provider:
   runtime: nodejs4.3
   stage: dev
   region: ap-southeast-2
+  iamRoleStatements:
+  - Effect: "Allow"
+    Action:
+      - "s3:ListBucket"
+    Resource: "arn:aws:s3:::sportnumerics-stats-${opt:stage}"
+  - Effect: "Allow"
+    Action:
+      - "s3:PutObject"
+    Resource: "arn:aws:s3:::sportnumerics-stats-${opt:stage}/*"
 package:
   exclude:
   - config/env.sh

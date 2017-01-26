@@ -12,5 +12,8 @@ global.expect = chai.expect;
 
 module.exports = {
   teamList: fs.readFileSync(path.resolve(__dirname, './fixtures/team-list.html')),
-  expectedTeamsJson: require('./fixtures/expected-div1-teams')
+  schedule: fs.readFileSync(path.resolve(__dirname, './fixtures/schedule.html')),
+  expectedTeamsJson: require('./fixtures/expected-div1-teams'),
+  expectedScheduleJson: require('./fixtures/expected-721-schedule'),
+  stringifyEquivalentTo: require('./fixtures/stringifyEquivalentTo')
 };

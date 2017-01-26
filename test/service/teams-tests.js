@@ -2,8 +2,7 @@
 
 let nock = require('nock'),
   fixtures = require('../fixtures'),
-  teamsService = require('../../lib/service/teams'),
-  getScheduleHTMLFromNcaa = require('../../lib/service/get-schedule-html-from-ncaa');
+  teamsService = require('../../lib/service/teams');
 
 describe('teams-service', () => {
   describe('getHtmlFromNcaa', () => {
@@ -13,18 +12,6 @@ describe('teams-service', () => {
 
     it('should return an html document', () => {
       let htmlPromise = teamsService.getHtmlFromNcaa();
-
-      return expect(htmlPromise).to.eventually.be.a('string');
-    });
-  });
-
-  describe('getScheduleHTMLFromNcaa', () => {
-    beforeEach(() => {
-      nock('http://stats.ncaa.org').get(/\/team\/\d+\/\d+/).reply(200, fixtures.schedule);
-    });
-
-    it('should return an html document', () => {
-      let htmlPromise = getScheduleHTMLFromNcaa(721);
 
       return expect(htmlPromise).to.eventually.be.a('string');
     });

@@ -1,0 +1,152 @@
+{
+    "schedule": [{
+        "location": {
+            "type": "away"
+        },
+        "opponent": {
+            "name": "Navy",
+            "id": 726
+        },
+        "date": "2016-02-05T13:00:00.000Z",
+        "result": {
+            "pointsFor": 6,
+            "pointsAgainst": 10
+        }
+    }, {
+        "location": {
+            "type": "home"
+        },
+        "opponent": {
+            "name": "Denver",
+            "id": 183
+        },
+        "date": "2016-02-12T13:00:00.000Z",
+        "result": {
+            "pointsFor": 9,
+            "pointsAgainst": 10
+        }
+    }, {
+        "location": {
+            "type": "away"
+        },
+        "opponent": {
+            "name": "Marist",
+            "id": 386
+        },
+        "date": "2016-02-19T13:00:00.000Z",
+        "result": {
+            "pointsFor": 7,
+            "pointsAgainst": 6
+        }
+    }, {
+        "location": {
+            "type": "neutral",
+            "name": "Denver, CO"
+        },
+        "opponent": {
+            "name": "Dartmouth",
+            "id": null
+        },
+        "date": "2016-02-26T13:00:00.000Z"
+    }, {
+        "location": {
+            "type": "neutral",
+            "name": "Denver, CO"
+        },
+        "opponent": {
+            "name": "Sacred Heart",
+            "id": null
+        },
+        "date": "2016-02-27T13:00:00.000Z"
+    }, {
+        "location": {
+            "type": "away"
+        },
+        "opponent": {
+            "name": "Robert Morris",
+            "id": null
+        },
+        "date": "2016-03-04T13:00:00.000Z"
+    }, {
+        "location": {
+            "type": "home"
+        },
+        "opponent": {
+            "name": "Furman",
+            "id": null
+        },
+        "date": "2016-03-11T13:00:00.000Z"
+    }, {
+        "location": {
+            "type": "home"
+        },
+        "opponent": {
+            "name": "High Point",
+            "id": null
+        },
+        "date": "2016-03-18T13:00:00.000Z"
+    }, {
+        "location": {
+            "type": "away"
+        },
+        "opponent": {
+            "name": "Duke",
+            "id": null
+        },
+        "date": "2016-03-21T13:00:00.000Z"
+    }, {
+        "location": {
+            "type": "away"
+        },
+        "opponent": {
+            "name": "Detroit",
+            "id": null
+        },
+        "date": "2016-03-25T13:00:00.000Z"
+    }, {
+        "location": {
+            "type": "away"
+        },
+        "opponent": {
+            "name": "Bellarmine",
+            "id": null
+        },
+        "date": "2016-04-01T13:00:00.000Z"
+    }, {
+        "location": {
+            "type": "home"
+        },
+        "opponent": {
+            "name": "Mercer",
+            "id": null
+        },
+        "date": "2016-04-08T14:00:00.000Z"
+    }, {
+        "location": {
+            "type": "home"
+        },
+        "opponent": {
+            "name": "VMI",
+            "id": null
+        },
+        "date": "2016-04-15T14:00:00.000Z"
+    }, {
+        "location": {
+            "type": "away"
+        },
+        "opponent": {
+            "name": "Richmond",
+            "id": null
+        },
+        "date": "2016-04-22T14:00:00.000Z"
+    }, {
+        "location": {
+            "type": "away"
+        },
+        "opponent": {
+            "name": "Jacksonville",
+            "id": null
+        },
+        "date": "2016-04-29T14:00:00.000Z"
+    }]
+}

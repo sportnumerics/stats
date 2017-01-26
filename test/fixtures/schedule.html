@@ -1,0 +1,585 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>NCAA Statistics</title>
+    <link href="/assets/application-e326a9875b1d2e1ab0f0618409137d3f.css" media="all" rel="stylesheet" type="text/css" />
+    <script src="/assets/application-d0887e464aaf0449ca637e472b5f42ce.js" type="text/javascript"></script>
+    <meta content="authenticity_token" name="csrf-param" />
+<meta content="BaKZQUQLHIEHxkTZW2uzmVIxg1AgE4v5/VxN1zBzv10=" name="csrf-token" />
+  </head>
+  <script>
+
+    function set_process_styles(fld, start_color, end_color){
+       $('#'+fld).effect('highlight', {color: '#99CC99'}, 6000);
+    }
+
+    var downImage = "/images/down12.gif";
+    var rightImage = "/images/right12.gif";
+
+    function highlight(div_id){
+      $(div_id).effect('highlight', {color: '#99CC99'}, 6000);
+    }
+
+    function show_hide_rows(attr_val, link_id){
+      $('#'+attr_val).toggle();
+      if ($('#'+attr_val).is(':visible')) {
+        $('#'+link_id).attr('src', downImage);
+      }else{
+        $('#'+link_id).attr('src', rightImage);
+      }
+    }
+
+    function mask(label){
+      $('body').mask(label);
+    }
+    function unmask(){
+      $('body').unmask();
+    }
+
+    var winHeight = "auto";
+    var winWidth = "auto";
+    var maxHeight = 700;
+    var maxWidth = 1400;
+    var minHeight = 100;
+    var minWidth = 200;
+
+    var modalOptions = {"width": winWidth,
+                        "height": winHeight,
+                        "maxHeight": maxHeight,
+                        "maxWidth": maxWidth,
+                        "minHeight": minHeight,
+                        "minWidth": minWidth};
+
+    function dialog(url, title){
+
+      $("#stats_app_dialog").dialog({modal:true, minWidth:minWidth, minHeight:minHeight, maxWidth:maxWidth, maxHeight:maxHeight, width:winWidth, height:winHeight, title:title, closeOnEscape: false});
+
+      modalOptions.title = title;
+
+      $("#stats_app_dialog").dialog("option", modalOptions);
+
+      $("#stats_app_dialog").html("Loading...");
+      $("#stats_app_dialog").load(url).dialog('open');
+    }
+
+
+  </script>
+  <body id="body" onload="if (top != self) { top.location=self.location; }">
+    <div id="header"><img alt="Titlebar_logo" height="81" src="/assets/titlebar_logo-d1d40bd2268e265b6a42cacb7bb117e9.jpg" style="float: left" width="104" />
+      <h1>
+        <span id="title1">NCAA</span><br/>
+        <span id="title2">Statistics</span>
+      </h1>
+
+
+      <div id="nav">
+  <ul>
+     <li id="notactive">
+       <a href="/rankings?academic_year=2016&amp;division=1.0&amp;sport_code=MLA"><span>National Rankings</span></a>
+    </li>
+     <li id="notactive">
+       <a href="/active_career_leaders/show_summary_from_rankings?academic_year=2016&amp;division=1.0&amp;sport_code=MLA"><span>Active Career Leaders</span></a>
+    </li>
+    <li id="notactive">
+      <a href="/team/schedule_list?academic_year=2016&amp;division=1.0&amp;id=12380&amp;sport_code=MLA"><span>Scoreboard</span></a>
+    </li>
+    <li id="team_search">
+      <script>
+  $(function() {
+    $( "#org_name" ).autocomplete({
+      source: '/team/search',
+      select: function( event, ui ) {
+        $("#org_id").val(ui.item.vid);
+        $("#id").val(ui.item.vid);
+        $('#sport_btn').click();
+      }
+    });
+  });
+</script>
+
+<span style="display:inline; float:right;">
+  <form accept-charset="UTF-8" action="/team/index" id="change_team_form" method="post" onsubmit="mask(&#x27;Loading&#x27;);" style="display:inline;"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="BaKZQUQLHIEHxkTZW2uzmVIxg1AgE4v5/VxN1zBzv10=" /></div>
+  <div style="display:none;">
+  <input id="sport_btn" name="commit" type="submit" value="Submit" />
+  </div>
+    <div id="team_autocomplete" class="ui-widget">
+      <span style="color: #ccc;">Team Search:</span>
+      <input id="org_name" name="org_name" style="width:200px" type="text" />
+      <input id="org_id" name="org_id" type="hidden" />
+    </div>
+</form></span>
+    </li>
+  <li>
+  <a href="http://twitter.com/ncaastats" target="TWITTER"><img alt="Twitter" height="17" src="/assets/twitter-6586be4273539dff7a95e70ebdf1a846.png" width="46" /></a>
+  </li>
+  </ul>
+</div>
+
+</div>
+
+    <div id="contentarea">
+       <div id="stats_app_dialog" style="display:none;">
+        </div>
+      <div id="message_box" class="team"  style="display: none" >
+        <span class="message_box_success"></span>
+        <span class="message_box_error"></span>
+      </div>
+      <script>
+  function submit_form(val){
+    curr_action = '/team/721/';
+    $('#change_sport_form').attr("action", curr_action + val);
+    $('#team_sport_btn').click();
+  }
+  $(function() {
+    $( "#org_sport_name" ).autocomplete({
+      source: '/team/12380/sport_sponsored_search',
+      select: function( event, ui ) {
+        $("#sport_search_org_id").val(ui.item.vid);
+        curr_action = '/team/721/'.replace("721", ui.item.vid);
+        $('#change_sport_form').attr("action", curr_action + $('#sport_list').val());
+        $('#team_sport_btn').click();
+      }
+    });
+  });
+</script>
+
+<div>
+  <form accept-charset="UTF-8" action="/team/721" id="change_sport_form" method="post" onsubmit="mask(&#x27;Loading&#x27;);"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="BaKZQUQLHIEHxkTZW2uzmVIxg1AgE4v5/VxN1zBzv10=" /></div>
+    <span class="org_heading">Air Force Falcons (1-2)</span>
+    <select id="sport_list" name="id" onchange="submit_form(this.value);"><option value="12240">Football</option>
+<option value="12241">Men&#x27;s Soccer</option>
+<option value="12242">Women&#x27;s Soccer</option>
+<option value="12221">Women&#x27;s Volleyball</option>
+<option value="12260">Men&#x27;s Basketball</option>
+<option value="12300">Men&#x27;s Ice Hockey</option>
+<option value="12280">Women&#x27;s Basketball</option>
+<option value="12360">Baseball</option>
+<option value="12380" selected="selected">Men&#x27;s Lacrosse</option></select>
+
+  <div style="display:none;">
+  <input id="team_sport_btn" name="commit" type="submit" value="Submit" />
+  </div>
+  <span id="tst" style="float:right;">
+    <div id="team_sport_autocomplete" class="ui-widget">
+      Teams Sponsoring Men&#x27;s Lacrosse:
+      <input id="org_sport_name" name="org_sport_name" style="width:200px" type="text" />
+      <input id="sport_search_org_id" name="org_id" type="hidden" />
+    </div>
+  </span>
+</form></div>
+<br/>
+
+
+Schedule/Results |
+<a href="/team/721/roster/12380">Roster</a> |
+<a href="/team/721/stats/12380">Team Statistics</a> |
+<a href="/player/game_by_game?game_sport_year_ctl_id=12380&amp;org_id=721&amp;stats_player_seq=-100">Game By Game</a> |
+<!--
+<a href="/team/team_game_highs?org_id=721&amp;sport_year_ctl_id=12380">Game Highs</a> |
+<a href="/team/conf_game_highs?org_id=721&amp;sport_year_ctl_id=12380">Conf Game Highs</a> |
+-->
+<a href="/player/player_rank_history?game_sport_year_ctl_id=12380&amp;index_start=0&amp;org_id=721&amp;stat_seq_to_chart=0&amp;stats_player_seq=-100">Ranking Trends</a> |
+<a href="/player/team_player_rank_yearly_history?game_sport_year_ctl_id=12380&amp;index_start=0&amp;org_id=721&amp;stat_seq_to_chart=0&amp;stats_player_seq=-100">Team Final Trends</a> |
+<!--
+<a href="/team/inst_team_list/12380?conf_id=912&amp;division=1">Conf Team List</a> |
+<a href="/team/schedule_list?academic_year=2016&amp;division=1.0&amp;sport_code=MLA" class="skipMask" target="NCAA_SCHEDS">Scoreboard</a>
+<a href="/rankings/change_sport_year_div?academic_year=2016&amp;division=1&amp;sport_code=MLA">National Rankings</a>
+-->
+  | <a href="/rankings/ranking_summary?academic_year=2016&amp;division=1&amp;org_id=721&amp;ranking_period=9&amp;sport_code=MLA">Ranking Summary</a>
+<!--
+<a href="http://web1.ncaa.org/stats/StatsSrv/rankings?sportCode=MLA&academicYear=2016">National Rankings</a>
+-->
+
+<table width="90%">
+  <tr>
+    <td colspan="2">
+            <br/>
+               <div>
+                     <span style="color: #000000;">2015-16</span>
+                   <span> | </span>
+                     <span><a href="/team/721/12121?game_sport_year_ctl_id=12121">2014-15</a></span>
+                     <!--
+                       <span><a href="/team/721/stats/12121" data-remote="true">2014-15</a></span>
+                     -->
+                   <span> | </span>
+                     <span><a href="/team/721/11580?game_sport_year_ctl_id=11580">2013-14</a></span>
+                     <!--
+                       <span><a href="/team/721/stats/11580" data-remote="true">2013-14</a></span>
+                     -->
+                   <span> | </span>
+                     <span><a href="/team/721/11380?game_sport_year_ctl_id=11380">2012-13</a></span>
+                     <!--
+                       <span><a href="/team/721/stats/11380" data-remote="true">2012-13</a></span>
+                     -->
+                   <span> | </span>
+                     <span><a href="/team/721/10860?game_sport_year_ctl_id=10860">2011-12</a></span>
+                     <!--
+                       <span><a href="/team/721/stats/10860" data-remote="true">2011-12</a></span>
+                     -->
+                   <span> | </span>
+                     <span><a href="/team/721/10500?game_sport_year_ctl_id=10500">2010-11</a></span>
+                     <!--
+                       <span><a href="/team/721/stats/10500" data-remote="true">2010-11</a></span>
+                     -->
+                   <span> | </span>
+                     <span><a href="/team/721/10301?game_sport_year_ctl_id=10301">2009-10</a></span>
+                     <!--
+                       <span><a href="/team/721/stats/10301" data-remote="true">2009-10</a></span>
+                     -->
+                   <span></span>
+              </div>
+
+    </td>
+  </tr>
+  <tr>
+   <td width="50%" valign="top">
+           <table class="mytable" width="100%" align="center">
+	     <tr class="heading">
+           <td colspan="3">Schedule/Results
+           </td>
+		 </tr>
+	     <tr class="grey_heading">
+		    <th width="8%">Date</th>
+		    <th width="20%" align="center">Opponent</th>
+		    <th width="6%" align="center">Result</th>
+		 </tr>
+          <tr >
+           <td class="smtext">02/06/2016</td>
+           <td class="smtext">
+
+                     <a href="/team/726/12380">@ Navy </a>
+           </td>
+           <td class="smtext" nowrap>
+                <a href="/game/index/4004130?org_id=726" class="skipMask" target="TEAM_WIN">L 6 - 10 </a>
+           </td>
+
+
+	     </tr>
+
+          <tr >
+           <td class="smtext">02/13/2016</td>
+           <td class="smtext">
+
+                     <a href="/team/183/12380"> Denver </a>
+           </td>
+           <td class="smtext" nowrap>
+                <a href="/game/index/4011345?org_id=721" class="skipMask" target="TEAM_WIN">L 9 - 10 </a>
+           </td>
+
+
+	     </tr>
+
+          <tr >
+           <td class="smtext">02/20/2016</td>
+           <td class="smtext">
+
+                     <a href="/team/386/12380">@ Marist </a>
+           </td>
+           <td class="smtext" nowrap>
+                <a href="/game/index/4021878?org_id=386" class="skipMask" target="TEAM_WIN">W 7 - 6 (4OT)</a>
+           </td>
+
+
+	     </tr>
+
+          <tr >
+           <td class="smtext">02/27/2016</td>
+           <td class="smtext">
+
+                 Dartmouth<br/>@Denver, CO
+           </td>
+           <td class="smtext" nowrap>
+               -
+           </td>
+
+
+	     </tr>
+
+          <tr >
+           <td class="smtext">02/28/2016</td>
+           <td class="smtext">
+
+                 Sacred Heart<br/>@Denver, CO
+           </td>
+           <td class="smtext" nowrap>
+               -
+           </td>
+
+
+	     </tr>
+
+          <tr >
+           <td class="smtext">03/05/2016</td>
+           <td class="smtext">
+
+                 @ Robert Morris
+           </td>
+           <td class="smtext" nowrap>
+               -
+           </td>
+
+
+	     </tr>
+
+          <tr >
+           <td class="smtext">03/12/2016</td>
+           <td class="smtext">
+
+                 Furman
+           </td>
+           <td class="smtext" nowrap>
+               -
+           </td>
+
+
+	     </tr>
+
+          <tr >
+           <td class="smtext">03/19/2016</td>
+           <td class="smtext">
+
+                 High Point
+           </td>
+           <td class="smtext" nowrap>
+               -
+           </td>
+
+
+	     </tr>
+
+          <tr >
+           <td class="smtext">03/22/2016</td>
+           <td class="smtext">
+
+                 @ Duke
+           </td>
+           <td class="smtext" nowrap>
+               -
+           </td>
+
+
+	     </tr>
+
+          <tr >
+           <td class="smtext">03/26/2016</td>
+           <td class="smtext">
+
+                 @ Detroit
+           </td>
+           <td class="smtext" nowrap>
+               -
+           </td>
+
+
+	     </tr>
+
+          <tr >
+           <td class="smtext">04/02/2016</td>
+           <td class="smtext">
+
+                 @ Bellarmine
+           </td>
+           <td class="smtext" nowrap>
+               -
+           </td>
+
+
+	     </tr>
+
+          <tr >
+           <td class="smtext">04/09/2016</td>
+           <td class="smtext">
+
+                 Mercer
+           </td>
+           <td class="smtext" nowrap>
+               -
+           </td>
+
+
+	     </tr>
+
+          <tr >
+           <td class="smtext">04/16/2016</td>
+           <td class="smtext">
+
+                 VMI
+           </td>
+           <td class="smtext" nowrap>
+               -
+           </td>
+
+
+	     </tr>
+
+          <tr >
+           <td class="smtext">04/23/2016</td>
+           <td class="smtext">
+
+                 @ Richmond
+           </td>
+           <td class="smtext" nowrap>
+               -
+           </td>
+
+
+	     </tr>
+
+          <tr >
+           <td class="smtext">04/30/2016</td>
+           <td class="smtext">
+
+                 @ Jacksonville
+           </td>
+           <td class="smtext" nowrap>
+               -
+           </td>
+
+
+	     </tr>
+
+	  </table>
+   </td>
+
+   <td width="50%" valign="top">
+     <table class="mytable" width="100%">
+  <tr class="heading">
+    <td colspan="3">Team Stats - Through games 02/21/2016</td>
+  </tr>
+  <tr class="grey_heading">
+    <td>Stat</td>
+    <td>Rank</td>
+    <td>Value</td>
+  </tr>
+  <tr>
+    <td><a href="/rankings?academic_year=2016.0&amp;division=1.0&amp;ranking_period=9&amp;sport_code=MLA&amp;stat_seq=233.0" class="skipMask" target="Rankings">Winning Percentage</a></td>
+    <td align="right">T-43</td>
+    <td align="right">
+      0.333
+    </td>
+  </tr>
+  <tr>
+    <td><a href="/rankings?academic_year=2016.0&amp;division=1.0&amp;ranking_period=9&amp;sport_code=MLA&amp;stat_seq=228.0" class="skipMask" target="Rankings">Scoring Offense</a></td>
+    <td align="right">51</td>
+    <td align="right">
+      7.33
+    </td>
+  </tr>
+  <tr>
+    <td><a href="/rankings?academic_year=2016.0&amp;division=1.0&amp;ranking_period=9&amp;sport_code=MLA&amp;stat_seq=229.0" class="skipMask" target="Rankings">Scoring Defense</a></td>
+    <td align="right">23</td>
+    <td align="right">
+      8.67
+    </td>
+  </tr>
+  <tr>
+    <td><a href="/rankings?academic_year=2016.0&amp;division=1.0&amp;ranking_period=9&amp;sport_code=MLA&amp;stat_seq=238.0" class="skipMask" target="Rankings">Scoring Margin</a></td>
+    <td align="right">T-46</td>
+    <td align="right">
+      -1.33
+    </td>
+  </tr>
+  <tr>
+    <td><a href="/rankings?academic_year=2016.0&amp;division=1.0&amp;ranking_period=9&amp;sport_code=MLA&amp;stat_seq=231.0" class="skipMask" target="Rankings">Man-Up Offense</a></td>
+    <td align="right">1</td>
+    <td align="right">
+      1.000
+    </td>
+  </tr>
+  <tr>
+    <td><a href="/rankings?academic_year=2016.0&amp;division=1.0&amp;ranking_period=9&amp;sport_code=MLA&amp;stat_seq=232.0" class="skipMask" target="Rankings">Man-Down Defense</a></td>
+    <td align="right">T-1</td>
+    <td align="right">
+      1.000
+    </td>
+  </tr>
+  <tr>
+    <td><a href="/rankings?academic_year=2016.0&amp;division=1.0&amp;ranking_period=9&amp;sport_code=MLA&amp;stat_seq=230.0" class="skipMask" target="Rankings">Face-Off Winning Percentage</a></td>
+    <td align="right">39</td>
+    <td align="right">
+      0.476
+    </td>
+  </tr>
+  <tr>
+    <td><a href="/rankings?academic_year=2016.0&amp;division=1.0&amp;ranking_period=9&amp;sport_code=MLA&amp;stat_seq=563.0" class="skipMask" target="Rankings">Shot Percentage</a></td>
+    <td align="right">55</td>
+    <td align="right">
+      0.212
+    </td>
+  </tr>
+  <tr>
+    <td><a href="/rankings?academic_year=2016.0&amp;division=1.0&amp;ranking_period=9&amp;sport_code=MLA&amp;stat_seq=538.0" class="skipMask" target="Rankings">Ground Balls Per Game</a></td>
+    <td align="right">42</td>
+    <td align="right">
+      26.67
+    </td>
+  </tr>
+  <tr>
+    <td><a href="/rankings?academic_year=2016.0&amp;division=1.0&amp;ranking_period=9&amp;sport_code=MLA&amp;stat_seq=838.0" class="skipMask" target="Rankings">Clearing Percentage</a></td>
+    <td align="right">44</td>
+    <td align="right">
+      0.808
+    </td>
+  </tr>
+  <tr>
+    <td><a href="/rankings?academic_year=2016.0&amp;division=1.0&amp;ranking_period=9&amp;sport_code=MLA&amp;stat_seq=537.0" class="skipMask" target="Rankings">Points Per Game</a></td>
+    <td align="right">50</td>
+    <td align="right">
+      11.67
+    </td>
+  </tr>
+  <tr>
+    <td><a href="/rankings?academic_year=2016.0&amp;division=1.0&amp;ranking_period=9&amp;sport_code=MLA&amp;stat_seq=535.0" class="skipMask" target="Rankings">Assists Per Game</a></td>
+    <td align="right">43</td>
+    <td align="right">
+      4.33
+    </td>
+  </tr>
+  <tr class="grey_heading">
+    <td colspan="3"><a href="/rankings/ranking_summary?academic_year=2016.0&amp;division=1.0&amp;game_high=N&amp;org_id=721&amp;ranking_period=9&amp;sport_code=MLA&amp;team_individual=T" class="skipMask" target="RANKINGS_WIN">View Complete Ranking Summary</a></td>
+  </tr>
+</table>
+<br/>
+
+
+   </td>
+  </tr>
+</table>
+
+
+    </div>
+
+    <div class="footer"></div>
+
+  </body>
+  <script>
+      //ui-datepicker = calendar month prev/next buttons,
+      //ui-corner-all = autocomplete dropdown results
+      //paginate_button = datatables
+    function skipMask(obj){
+      if (obj.hasClass('skipMask') || obj.hasClass('ui-datepicker-prev') || obj.hasClass('ui-datepicker-next') || obj.hasClass('ui-corner-all') || obj.hasClass('paginate_button') ){
+        return true;
+      }else{
+        return false;
+      }
+    }
+
+    $(document).ajaxComplete(function(){
+      unmask();
+    });
+    $(document).on('click', 'a', function(){
+      if (skipMask($(this))){
+        return;
+      }else{
+        mask('Loading');
+      }
+    });
+    $(document).on('click', 'input.green', function(){
+      if (skipMask($(this))){
+        return;
+      }else{
+        mask('Loading');
+      }
+    });
+  </script>
+</html>
