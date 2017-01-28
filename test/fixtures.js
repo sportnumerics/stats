@@ -15,5 +15,8 @@ module.exports = {
   schedule: fs.readFileSync(path.resolve(__dirname, './fixtures/schedule.html')),
   expectedTeamsJson: require('./fixtures/expected-div1-teams'),
   expectedScheduleJson: require('./fixtures/expected-721-schedule'),
-  stringifyEquivalentTo: require('./fixtures/stringifyEquivalentTo')
+  stringifyEquivalentTo: require('./fixtures/stringifyEquivalentTo'),
+  snsSample: require('./fixtures/sns-sample'),
+  snsPayload: require('./fixtures/sns-payload'),
+  expectedSnsParams: require('./fixtures/expected-sns-params')
 };

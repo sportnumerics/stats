@@ -3,9 +3,11 @@
 const teams = require('./lib/controller/teams');
 
 function collect(event, context, callback) {
-  teams.collect('2016', '1').asCallback(callback);
+  const year = '2016';
+  const div = '1';
+  teams.collect(year, div).asCallback(callback);
 }
 
 module.exports = {
   collect
-}
+};
