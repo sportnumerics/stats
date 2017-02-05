@@ -29,6 +29,6 @@
     "sinon": "^1.17.3"
   },
   "lambci": {
-    "cmd": "npm install && npm test && npm run deploy"
+    "cmd": "npm install && npm test && ./deploy.sh"
   }
 }
