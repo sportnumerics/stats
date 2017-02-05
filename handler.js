@@ -7,8 +7,12 @@ const AWS = require('aws');
 
 const lambda = AWS.Lambda();
 
+function timeRemaining(context) {
+  return 0.75 * context.getRemainingTimeInMillis();
+}
+
 function initiate(event, context, callback) {
-  messaging.publishCollectTeams('2016', '1').asCallback(callback);
+  orchestration.collectAll('2016').asCallback(callback);
 }
 
 function collect(event, context, callback) {
@@ -16,7 +20,7 @@ function collect(event, context, callback) {
   let route = payload.route;
   switch (route) {
     case "teams":
-      orchestration.collectTeamsAndSchedules(payload.year, payload.div)
+      orchestration.collectTeamsAndSchedules(payload.year, payload.div, timeRemaining(context))
         .asCallback(callback);
       break;
     case "schedule":

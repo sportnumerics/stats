@@ -15,7 +15,7 @@ describe('schedule html to json', () => {
   });
 
   it('should extract each game date', () => {
-    expect(data[0].date).to.be.sameMoment(moment.utc('02/06/2016'));
+    expect(data[0].date).to.be.sameMoment(moment.utc('02/06/2016', 'MM/DD/YYYY'));
   });
 
   it('should extract each opponent', () => {
