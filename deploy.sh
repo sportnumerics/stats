@@ -2,7 +2,7 @@ npm prune --production
 
 ./decrypt.sh
 source config/env.sh
-pip install awscli
+./install_aws_cli.sh
 aws cloudformation list-stacks --region ap-southeast-2
 
 AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID \
