@@ -19,7 +19,6 @@ provider:
     Resource: ${self:custom.snsTopicArn}
   environment:
     SNS_TOPIC: ${self:custom.snsTopicArn}
-    PREDICT_LAMBDA: PredictLambdaFunction
 package:
   exclude:
   - config/env.sh

@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "description": "Collection of stats from NCAA stats feed",
   "scripts": {
-    "test": "mocha $(find test -name '*.js')",
-    "deploy": "sls deploy --stage=dev --verbose"
+    "test": "mocha $(find test -name '*.js')"
   },
   "author": "Will James",
   "license": "ISC",
