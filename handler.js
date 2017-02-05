@@ -3,9 +3,6 @@
 const messaging = require('./lib/service/messaging');
 const orchestration = require('./lib/controller/orchestration');
 const schedule = require('./lib/controller/schedule');
-const AWS = require('aws-sdk');
-
-const lambda = AWS.Lambda();
 
 function timeRemaining(context) {
   return 0.75 * context.getRemainingTimeInMillis();
