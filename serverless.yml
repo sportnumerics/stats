@@ -37,7 +37,9 @@ functions:
   initiate:
     handler: handler.initiate
     events:
-    - schedule: rate(24 hours)
+    - schedule:
+      rate: rate(24 hours)
+      enabled: false
   collect:
     handler: handler.collect
     timeout: 200
@@ -45,6 +47,3 @@ functions:
     - sns:
         topicName: ${self:custom.snsTopicName}
         displayName: "Stats Collection Routing"
-  predict:
-    handler: predict.predict
-    timeout: 300

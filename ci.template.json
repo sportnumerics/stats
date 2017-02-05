@@ -240,16 +240,6 @@
                 },
                 "Policies": [
                   {
-                    "PolicyName": "ServerlessAdminAccess",
-                    "PolicyDocument": {
-                      "Statement": {
-                        "Effect": "Allow",
-                        "Action": "*",
-                        "Resource": "*"
-                      }
-                    }
-                  },
-                  {
                     "PolicyName": "WriteLogs",
                     "PolicyDocument": {
                         "Statement": {
