@@ -4,10 +4,12 @@ let fs = require('fs'),
   path = require('path'),
   chai = require('chai'),
   chaiDateTime = require('chai-datetime'),
-  chaiAsPromised = require('chai-as-promised')
+  chaiAsPromised = require('chai-as-promised'),
+  chaiMoment = require('chai-moment');
 
 chai.use(chaiDateTime);
 chai.use(chaiAsPromised);
+chai.use(chaiMoment);
 global.expect = chai.expect;
 
 module.exports = {

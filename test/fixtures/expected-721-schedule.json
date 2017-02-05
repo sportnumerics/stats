@@ -7,7 +7,7 @@
             "name": "Navy",
             "id": 726
         },
-        "date": "2016-02-05T13:00:00.000Z",
+        "date": "2016-02-06T00:00:00.000Z",
         "result": {
             "pointsFor": 6,
             "pointsAgainst": 10
@@ -20,7 +20,7 @@
             "name": "Denver",
             "id": 183
         },
-        "date": "2016-02-12T13:00:00.000Z",
+        "date": "2016-02-13T00:00:00.000Z",
         "result": {
             "pointsFor": 9,
             "pointsAgainst": 10
@@ -33,7 +33,7 @@
             "name": "Marist",
             "id": 386
         },
-        "date": "2016-02-19T13:00:00.000Z",
+        "date": "2016-02-20T00:00:00.000Z",
         "result": {
             "pointsFor": 7,
             "pointsAgainst": 6
@@ -47,7 +47,7 @@
             "name": "Dartmouth",
             "id": null
         },
-        "date": "2016-02-26T13:00:00.000Z"
+        "date": "2016-02-27T00:00:00.000Z"
     }, {
         "location": {
             "type": "neutral",
@@ -57,7 +57,7 @@
             "name": "Sacred Heart",
             "id": null
         },
-        "date": "2016-02-27T13:00:00.000Z"
+        "date": "2016-02-28T00:00:00.000Z"
     }, {
         "location": {
             "type": "away"
@@ -66,7 +66,7 @@
             "name": "Robert Morris",
             "id": null
         },
-        "date": "2016-03-04T13:00:00.000Z"
+        "date": "2016-03-05T00:00:00.000Z"
     }, {
         "location": {
             "type": "home"
@@ -75,7 +75,7 @@
             "name": "Furman",
             "id": null
         },
-        "date": "2016-03-11T13:00:00.000Z"
+        "date": "2016-03-12T00:00:00.000Z"
     }, {
         "location": {
             "type": "home"
@@ -84,7 +84,7 @@
             "name": "High Point",
             "id": null
         },
-        "date": "2016-03-18T13:00:00.000Z"
+        "date": "2016-03-19T00:00:00.000Z"
     }, {
         "location": {
             "type": "away"
@@ -93,7 +93,7 @@
             "name": "Duke",
             "id": null
         },
-        "date": "2016-03-21T13:00:00.000Z"
+        "date": "2016-03-22T00:00:00.000Z"
     }, {
         "location": {
             "type": "away"
@@ -102,7 +102,7 @@
             "name": "Detroit",
             "id": null
         },
-        "date": "2016-03-25T13:00:00.000Z"
+        "date": "2016-03-26T00:00:00.000Z"
     }, {
         "location": {
             "type": "away"
@@ -111,7 +111,7 @@
             "name": "Bellarmine",
             "id": null
         },
-        "date": "2016-04-01T13:00:00.000Z"
+        "date": "2016-04-02T00:00:00.000Z"
     }, {
         "location": {
             "type": "home"
@@ -120,7 +120,7 @@
             "name": "Mercer",
             "id": null
         },
-        "date": "2016-04-08T14:00:00.000Z"
+        "date": "2016-04-09T00:00:00.000Z"
     }, {
         "location": {
             "type": "home"
@@ -129,7 +129,7 @@
             "name": "VMI",
             "id": null
         },
-        "date": "2016-04-15T14:00:00.000Z"
+        "date": "2016-04-16T00:00:00.000Z"
     }, {
         "location": {
             "type": "away"
@@ -138,7 +138,7 @@
             "name": "Richmond",
             "id": null
         },
-        "date": "2016-04-22T14:00:00.000Z"
+        "date": "2016-04-23T00:00:00.000Z"
     }, {
         "location": {
             "type": "away"
@@ -147,6 +147,6 @@
             "name": "Jacksonville",
             "id": null
         },
-        "date": "2016-04-29T14:00:00.000Z"
+        "date": "2016-04-30T00:00:00.000Z"
     }]
 }

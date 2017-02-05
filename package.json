@@ -14,6 +14,7 @@
     "config": "^1.19.0",
     "es6-promise": "^3.1.2",
     "isomorphic-fetch": "^2.2.1",
+    "moment": "^2.17.1",
     "request": "^2.67.0",
     "serverless": "serverless/serverless"
   },
@@ -21,6 +22,7 @@
     "chai": "^3.5.0",
     "chai-as-promised": "^5.2.0",
     "chai-datetime": "^1.4.1",
+    "chai-moment": "^0.1.0",
     "mocha": "^2.4.5",
     "nock": "^7.2.2",
     "sinon": "^1.17.3"

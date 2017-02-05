@@ -1,7 +1,8 @@
 'use strict';
 
 let fixtures = require('../fixtures.js'),
-  scheduleHtmlToJson = require('../../lib/adapter/schedule-html-to-json');
+  scheduleHtmlToJson = require('../../lib/adapter/schedule-html-to-json'),
+  moment = require('moment');
 
 describe('schedule html to json', () => {
   var data;
@@ -14,7 +15,7 @@ describe('schedule html to json', () => {
   });
 
   it('should extract each game date', () => {
-    expect(data[0].date).to.equalDate(new Date('02/06/2016'));
+    expect(data[0].date).to.be.sameMoment(moment.utc('02/06/2016'));
   });
 
   it('should extract each opponent', () => {
