@@ -13,12 +13,38 @@ provider:
     Action:
       - "s3:PutObject"
     Resource: "arn:aws:s3:::sportnumerics-stats-${opt:stage}/*"
+  - Effect: "Allow"
+    Action:
+      - "SNS:Publish"
+    Resource: ${self:custom.snsTopicArn}
+  environment:
+    SNS_TOPIC: ${self:custom.snsTopicArn}
+    PREDICT_LAMBDA: PredictLambdaFunction
 package:
   exclude:
   - config/env.sh
+custom:
+  snsTopicName: sportnumerics-stats-${opt:stage}
+  snsTopicArn:
+    Fn::Join:
+      - ':'
+      - - 'arn:aws:sns'
+        - Ref: AWS::Region
+        - Ref: AWS::AccountId
+        - ${self:custom.snsTopicName}
 
 functions:
-  teamsCollect:
-    handler: teams.collect
+  initiate:
+    handler: handler.initiate
     events:
     - schedule: rate(24 hours)
+  collect:
+    handler: handler.collect
+    timeout: 200
+    events:
+    - sns:
+        topicName: ${self:custom.snsTopicName}
+        displayName: "Stats Collection Routing"
+  predict:
+    handler: predict.predict
+    timeout: 300

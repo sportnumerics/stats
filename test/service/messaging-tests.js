@@ -1,11 +1,11 @@
 'use strict';
 
 let fixtures = require('../fixtures.js'),
-  messaging = require('../../lib/adapter/messaging');
+  messaging = require('../../lib/service/messaging');
 
 describe('sns payload to json payload', () => {
   it('should convert the message to a json object', () => {
-    let payload = messaging.snsToJson(fixtures.snsSample);
+    let payload = messaging.snsEventToJson(fixtures.snsSample);
 
     expect(payload).to.deep.equal(fixtures.snsPayload);
   });
@@ -16,5 +16,11 @@ describe('json payload to sns message', () => {
     let snsParams = messaging.jsonToSnsParams(fixtures.snsPayload);
 
     expect(snsParams).to.deep.equal(fixtures.expectedSnsParams);
+  });
+});
+
+describe.skip('dispatching a message to sns', () => {
+  it('should dispatch to the specified topic', () => {
+
   });
 });
