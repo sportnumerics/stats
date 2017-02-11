@@ -1,4 +1,4 @@
-service: sportnumerics
+service: sportnumerics-stats
 provider:
   name: aws
   runtime: nodejs4.3
