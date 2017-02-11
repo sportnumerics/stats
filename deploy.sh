@@ -1,3 +1,5 @@
+set -e
+
 npm prune --production
 
 ./decrypt.sh
