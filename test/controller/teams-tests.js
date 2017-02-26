@@ -16,7 +16,7 @@ describe('teams-controller', () => {
 
       sinon.mock(persistence)
         .expects('write')
-        .withArgs('divs/1/teams', fixtures.expectedTeamsJson)
+        .withArgs('years/2016/divs/1/teams', fixtures.expectedTeamsJson)
         .returns(Promise.resolve());
     });
 

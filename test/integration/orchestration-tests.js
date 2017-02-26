@@ -16,12 +16,12 @@ describe('orchestration-integration', () => {
 
       sinon.mock(persistence)
         .expects('write')
-        .withArgs('divs/1/teams', fixtures.stringifyEquivalentTo(fixtures.expectedTeamsJson))
+        .withArgs('years/2016/divs/1/teams', fixtures.stringifyEquivalentTo(fixtures.expectedTeamsJson))
         .returns(Promise.resolve());
 
       publishMock = sinon.mock(messaging)
         .expects('publishCollectSchedule')
-        .withArgs(sinon.match.number)
+        .withArgs('2016', sinon.match.number)
         .exactly(69)
         .returns(Promise.resolve());
     });

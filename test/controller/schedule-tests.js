@@ -11,12 +11,12 @@ describe('schedule-controller', () => {
     beforeEach(() => {
       sinon.mock(service)
         .expects('getHtmlFromNcaa')
-        .withArgs('721')
+        .withArgs('2016', '721')
         .returns(Promise.resolve(fixtures.schedule));
 
       sinon.mock(persistence)
         .expects('write')
-        .withArgs('teams/721/schedule', fixtures.stringifyEquivalentTo(fixtures.expectedScheduleJson))
+        .withArgs('years/2016/teams/721/schedule', fixtures.stringifyEquivalentTo(fixtures.expectedScheduleJson))
         .returns(Promise.resolve());
     });
 
@@ -26,7 +26,7 @@ describe('schedule-controller', () => {
     });
 
     it('should get team schedule from service and write to persistent store', (done) => {
-      controller.collect('721').then((result) => {
+      controller.collect('2016', '721').then((result) => {
         expect(JSON.stringify(result)).to.deep.equal(JSON.stringify(fixtures.expectedScheduleJson.schedule));
         done();
       })

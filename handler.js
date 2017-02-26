@@ -21,7 +21,7 @@ function collect(event, context, callback) {
         .asCallback(callback);
       break;
     case "schedule":
-      schedule.collect(payload.id)
+      schedule.collect(payload.year, payload.id)
         .asCallback(callback);
       break;
     default:

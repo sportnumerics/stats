@@ -12,7 +12,7 @@ describe('schedule-service', () => {
     });
 
     it('should return an html document', () => {
-      let htmlPromise = scheduleService.getHtmlFromNcaa(721);
+      let htmlPromise = scheduleService.getHtmlFromNcaa('2016', 721);
 
       return expect(htmlPromise).to.eventually.be.a('string');
     });
