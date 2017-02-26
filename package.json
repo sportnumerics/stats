@@ -16,7 +16,7 @@
     "isomorphic-fetch": "^2.2.1",
     "moment": "^2.17.1",
     "request": "^2.67.0",
-    "serverless": "^1.6.1"
+    "serverless": "~1.6.1"
   },
   "devDependencies": {
     "chai": "^3.5.0",
