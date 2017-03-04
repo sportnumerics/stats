@@ -36,4 +36,31 @@ describe('orchestration-integration', () => {
       return expect(orchestration.collectTeamsAndSchedules('2016', '1')).to.be.fulfilled;
     });
   });
+
+  describe('collectAll', () => {
+    var publishMock;
+
+    beforeEach(() => {
+      sinon.mock(persistence)
+        .expects('write')
+        .withArgs('years/2016/divs', fixtures.stringifyEquivalentTo(fixtures.expectedDivisionsJson))
+        .returns(Promise.resolve());
+
+      publishMock = sinon.mock(messaging)
+        .expects('publishCollectTeams')
+        .withArgs('2016', sinon.match.string)
+        .exactly(3)
+        .returns(Promise.resolve());
+    });
+
+    afterEach(() => {
+      publishMock.verify();
+      persistence.write.restore();
+      messaging.publishCollectTeams.restore();
+    });
+
+    it('should return divisions', () => {
+      return expect(orchestration.collectAll('2016')).to.be.fulfilled;
+    });
+  });
 });
