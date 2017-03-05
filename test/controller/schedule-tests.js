@@ -26,13 +26,14 @@ describe('schedule-controller', () => {
     });
 
     it('should get team schedule from service and write to persistent store', (done) => {
-      controller.collect('2016', '721').then((result) => {
-        expect(JSON.stringify(result)).to.deep.equal(JSON.stringify(fixtures.expectedScheduleJson.schedule));
-        done();
-      })
-      .catch((error) => {
-        done(error);
-      });
+      controller.collect('2016', '721', fixtures.expectedTeamsJson.teams)
+        .then((result) => {
+          expect(JSON.stringify(result)).to.deep.equal(JSON.stringify(fixtures.expectedScheduleJson.schedule));
+          done();
+        })
+        .catch((error) => {
+          done(error);
+        });
 
       return
     });
