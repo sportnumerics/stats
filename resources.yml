@@ -4,6 +4,8 @@ Resources:
     Properties:
       BucketName: ${file(serverless.yml):custom.resultsBucketName}
       AccessControl: "PublicRead"
+      WebsiteConfiguration:
+        IndexDocument: "does-not-exist.html"
   StatsBucketPolicy:
     Type: AWS::S3::BucketPolicy
     Properties:
