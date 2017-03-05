@@ -16,7 +16,7 @@ provider:
   - Effect: "Allow"
     Action:
       - "lambda:InvokeFunction"
-    Resource: ${self.predictLambdaArn}
+    Resource: ${self:custom.predictLambdaArn}
   environment:
     PREDICT_LAMBDA_ARN: ${self:custom.predictLambdaArn}
 package:
