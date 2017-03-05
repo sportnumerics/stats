@@ -4,3 +4,21 @@ Resources:
     Properties:
       BucketName: ${file(serverless.yml):custom.resultsBucketName}
       AccessControl: "PublicRead"
+      WebsiteConfiguration:
+        IndexDocument: "2016/divs"
+  StatsBucketPolicy:
+    Type: AWS::S3::BucketPolicy
+    Properties:
+      Bucket:
+        Ref: S3BucketStats
+      PolicyDocument:
+        Statement:
+          - Effect: Allow
+            Action: "s3:GetObject"
+            Principal: "*"
+            Resource:
+              Fn::Join:
+                - ""
+                - - "arn:aws:s3:::"
+                  - Ref: S3BucketStats
+                  - "/*"
