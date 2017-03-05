@@ -1,5 +1,5 @@
 Resources:
-  S3BucketPredict:
+  S3BucketStats:
     Type: AWS::S3::Bucket
     Properties:
       BucketName: ${file(serverless.yml):custom.resultsBucketName}
