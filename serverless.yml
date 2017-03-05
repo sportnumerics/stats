@@ -13,6 +13,10 @@ provider:
     Action:
       - "s3:PutObject"
     Resource: "${self:custom.resultsBucketArn}/*"
+  - Effect: "Allow"
+    Action:
+      - "lambda:InvokeFunction"
+    Resource: ${self.predictLambdaArn}
   environment:
     PREDICT_LAMBDA_ARN: ${self:custom.predictLambdaArn}
 package:
