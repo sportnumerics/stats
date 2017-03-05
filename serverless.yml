@@ -8,41 +8,34 @@ provider:
   - Effect: "Allow"
     Action:
       - "s3:ListBucket"
-    Resource: "arn:aws:s3:::sportnumerics-stats-${opt:stage}"
+    Resource: ${self:custom.resultsBucketArn}
   - Effect: "Allow"
     Action:
       - "s3:PutObject"
-    Resource: "arn:aws:s3:::sportnumerics-stats-${opt:stage}/*"
-  - Effect: "Allow"
-    Action:
-      - "SNS:Publish"
-    Resource: ${self:custom.snsTopicArn}
+    Resource: "${self:custom.resultsBucketArn}/*"
   environment:
-    SNS_TOPIC: ${self:custom.snsTopicArn}
+    PREDICT_LAMBDA_ARN: ${self:custom.predictLambdaArn}
 package:
   exclude:
   - config/env.sh
 custom:
-  snsTopicName: sportnumerics-stats-${opt:stage}
-  snsTopicArn:
+  resultsBucketName: sportnumerics-stats-${opt:stage}
+  resultsBucketArn: "arn:aws:s3:::${self:custom.resultsBucketName}"
+  predictLambdaArn:
     Fn::Join:
-      - ':'
-      - - 'arn:aws:sns'
-        - Ref: AWS::Region
-        - Ref: AWS::AccountId
-        - ${self:custom.snsTopicName}
+    - ":"
+    - - "arn:aws:lambda"
+      - Ref: AWS::Region
+      - Ref: AWS::AccoundId
+      - "sportnumerics-predict-${opt:stage}"
+
+resources: ${file(resources.yml)}
 
 functions:
-  initiate:
-    handler: handler.initiate
+  collectAll:
+    handler: handler.collectAll
+    timeout: 200
     events:
     - schedule:
       rate: rate(24 hours)
       enabled: false
-  collect:
-    handler: handler.collect
-    timeout: 200
-    events:
-    - sns:
-        topicName: ${self:custom.snsTopicName}
-        displayName: "Stats Collection Routing"

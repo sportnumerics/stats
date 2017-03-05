@@ -18,9 +18,3 @@ describe('json payload to sns message', () => {
     expect(snsParams).to.deep.equal(fixtures.expectedSnsParams);
   });
 });
-
-describe.skip('dispatching a message to sns', () => {
-  it('should dispatch to the specified topic', () => {
-
-  });
-});

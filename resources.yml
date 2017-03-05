@@ -1,0 +1,6 @@
+Resources:
+  S3BucketPredict:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: ${file(serverless.yml):custom.resultsBucketName}
+      AccessControl: "PublicRead"
