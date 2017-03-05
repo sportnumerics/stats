@@ -31,7 +31,8 @@ custom:
     - - "arn:aws:lambda"
       - Ref: AWS::Region
       - Ref: AWS::AccountId
-      - "sportnumerics-predict-${opt:stage}"
+      - "function"
+      - "sportnumerics-predict-${opt:stage}-predict"
 
 resources: ${file(resources.yml)}
 
