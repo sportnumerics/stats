@@ -11,7 +11,7 @@ describe('schedule html to json', () => {
   });
 
   it('should extract all the games', () => {
-    expect(data.length).to.equal(15);
+    expect(data.length).to.equal(16);
   });
 
   it('should extract each game date', () => {

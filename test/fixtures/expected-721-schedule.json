@@ -148,5 +148,14 @@
             "name": "Jacksonville"
         },
         "date": "2016-04-30T00:00:00.000Z"
+    }, {
+        "location": {
+            "type": "home"
+        },
+        "opponent": {
+            "name": "Colorado College",
+            "id": null
+        },
+        "date": "2016-05-01T00:00:00.000Z"
     }]
 }
