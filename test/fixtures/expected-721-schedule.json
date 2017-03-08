@@ -154,7 +154,8 @@
         },
         "opponent": {
             "name": "Colorado College",
-            "id": "3533274552671344160"
+            "id": "3533274552671344160",
+            "nonDivisional": true
         },
         "date": "2016-05-01T00:00:00.000Z"
     }]
