@@ -43,4 +43,4 @@ functions:
     events:
     - schedule:
       rate: rate(24 hours)
-      enabled: false
+      enabled: true
