@@ -19,6 +19,7 @@ module.exports = {
   expectedDivisionsJson: require('./fixtures/expected-divisions'),
   expectedTeamsJson: require('./fixtures/expected-div1-teams'),
   expectedScheduleJson: require('./fixtures/expected-721-schedule'),
+  expectedGameByGameJson: require('./fixtures/expected-392-game-by-game'),
   stringifyEquivalentTo: require('./fixtures/stringifyEquivalentTo'),
   snsSample: require('./fixtures/sns-sample'),
   snsPayload: require('./fixtures/sns-payload'),
