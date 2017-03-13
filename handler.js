@@ -4,7 +4,7 @@ const orchestration = require('./lib/controller/orchestration');
 const moment = require('moment');
 
 function timeRemaining(context) {
-  return 0.75 * context.getRemainingTimeInMillis();
+  return 0.5 * context.getRemainingTimeInMillis();
 }
 
 function collectAll(event, context, callback) {

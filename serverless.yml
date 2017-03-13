@@ -39,6 +39,6 @@ resources: ${file(resources.yml)}
 functions:
   collectAll:
     handler: handler.collectAll
-    timeout: 200
+    timeout: 300
     events:
     - schedule: rate(12 hours)
