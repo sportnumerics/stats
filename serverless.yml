@@ -41,4 +41,4 @@ functions:
     handler: handler.collectAll
     timeout: 300
     events:
-    - schedule: rate(12 hours)
+    - schedule: rate(24 hours)
