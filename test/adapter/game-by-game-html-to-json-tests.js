@@ -7,7 +7,7 @@ let fixtures = require('../fixtures.js'),
 describe('schedule html to json', () => {
   var data;
   beforeEach(() => {
-    data = gameByGameHtmlToJson(fixtures.gameByGame);
+    data = gameByGameHtmlToJson(fixtures.gameByGame, fixtures.expectedTeamsJson.teams);
   });
 
   it('should extract all the games', () => {
