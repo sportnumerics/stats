@@ -6,7 +6,7 @@ npm prune --production
 source ./config/env.sh
 unset AWS_SESSION_TOKEN
 
-if [ "$LAMDBCI_BRANCH" = "master" ]; then
+if [ "$LAMBCI_BRANCH" = "master" ]; then
   STAGE=prod
 else
   STAGE=dev
