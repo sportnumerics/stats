@@ -1,0 +1,7 @@
+{
+  "cmd": ". ~/init/gcc && npm install && npm test && ./deploy.sh",
+  "branches": {
+    "master": true,
+    "dev": true
+  }
+}
