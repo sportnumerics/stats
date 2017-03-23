@@ -19,6 +19,7 @@ provider:
     Resource: ${self:custom.predictLambdaArn}
   environment:
     PREDICT_LAMBDA_ARN: ${self:custom.predictLambdaArn}
+    RESULTS_BUCKET: ${self:custom.resultsBucketName}
 package:
   exclude:
   - config/env.sh
