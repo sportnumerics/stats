@@ -35,9 +35,21 @@ custom:
   resultsBucketName: sportnumerics-stats-${opt:stage}
   resultsBucketArn: "arn:aws:s3:::${self:custom.resultsBucketName}"
   teamsTableName: sportnumerics-stats-teams-${opt:stage}
-  teamsTableArn: "arn:aws:dynamodb:::table/${self:custom.teamsTableName}"
+  teamsTableArn:
+    Fn::Join:
+    - ":"
+    - - "arn:aws:dynamodb"
+      - Ref: AWS::Region
+      - Ref: AWS::AccountId
+      - table/${self:custom.teamsTableName}
   divisionsTableName: sportnumerics-stats-divs-${opt:stage}
-  divisionsTableArn: "arn:aws:dynamodb:::table/${self:custom.divisionsTableName}"
+  divisionsTableArn:
+    Fn::Join:
+    - ":"
+    - - "arn:aws:dynamodb"
+      - Ref: AWS::Region
+      - Ref: AWS::AccountId
+      - table/${self:custom.divisionsTableName}
   predictLambdaArn:
     Fn::Join:
     - ":"
