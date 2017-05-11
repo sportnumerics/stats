@@ -1,7 +1,7 @@
 service: sportnumerics-stats
 provider:
   name: aws
-  runtime: nodejs6.10
+  runtime: nodejs4.3
   stage: dev
   region: ap-southeast-2
   iamRoleStatements:
