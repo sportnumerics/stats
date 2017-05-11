@@ -17,6 +17,12 @@ provider:
     Action:
       - "lambda:InvokeFunction"
     Resource: ${self:custom.predictLambdaArn}
+  - Effect: "Allow"
+    Action:
+      - "dynamodb:UpdateItem"
+    Resource:
+      - ${self:custom.divisionsTableArn}
+      - ${self:custom.teamsTableArn}
   environment:
     PREDICT_LAMBDA_ARN: ${self:custom.predictLambdaArn}
     RESULTS_BUCKET: ${self:custom.resultsBucketName}
@@ -29,7 +35,9 @@ custom:
   resultsBucketName: sportnumerics-stats-${opt:stage}
   resultsBucketArn: "arn:aws:s3:::${self:custom.resultsBucketName}"
   teamsTableName: sportnumerics-stats-teams-${opt:stage}
+  teamsTableArn: "arn:aws:dynamodb:::table/${self:custom.teamsTableName}"
   divisionsTableName: sportnumerics-stats-divs-${opt:stage}
+  divisionsTableArn: "arn:aws:dynamodb:::table/${self:custom.divisionsTableName}"
   predictLambdaArn:
     Fn::Join:
     - ":"

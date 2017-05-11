@@ -8,7 +8,7 @@ function timeRemaining(context) {
 }
 
 function collectAll(event, context, callback) {
-  const year = event.year || new String(moment().year());
+  const year = event.year || `${moment().year()}`;
   orchestration.collectAll(year, timeRemaining(context)).asCallback(callback);
 }
 
