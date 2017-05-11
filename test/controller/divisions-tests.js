@@ -9,19 +9,20 @@ describe('divisions-controller', () => {
   describe('collect', () => {
     beforeEach(() => {
       sinon.mock(persistence)
-        .expects('write')
-        .withArgs('years/2016/divs', fixtures.expectedDivisionsJson)
+        .expects('set')
+        .withArgs('MockDivisionsTable', {year:'2016'}, fixtures.expectedDivisionsJson)
         .returns(Promise.resolve());
     });
 
     afterEach(() => {
-      persistence.write.restore();
+      persistence.set.restore();
     });
 
     it('should write divisions to persistent store', () => {
-      let result = controller.collect('2016');
-
-      return expect(result).to.eventually.deep.equal(fixtures.expectedDivisionsJson.divisions);
+      return controller.collect('2016')
+        .then(result => {
+          expect(result).to.deep.equal(fixtures.expectedDivisionsJson.divisions);
+        });
     });
   });
 });

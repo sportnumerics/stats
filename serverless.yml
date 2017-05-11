@@ -1,7 +1,7 @@
 service: sportnumerics-stats
 provider:
   name: aws
-  runtime: nodejs4.3
+  runtime: nodejs6.10
   stage: dev
   region: ap-southeast-2
   iamRoleStatements:
@@ -20,12 +20,16 @@ provider:
   environment:
     PREDICT_LAMBDA_ARN: ${self:custom.predictLambdaArn}
     RESULTS_BUCKET: ${self:custom.resultsBucketName}
+    RESULTS_TABLE: ${self:custom.teamsTableName}
+    DIVISIONS_TABLE: ${self:custom.divisionsTableName}
 package:
   exclude:
   - config/env.sh
 custom:
   resultsBucketName: sportnumerics-stats-${opt:stage}
   resultsBucketArn: "arn:aws:s3:::${self:custom.resultsBucketName}"
+  teamsTableName: sportnumerics-stats-teams-${opt:stage}
+  divisionsTableName: sportnumerics-stats-divs-${opt:stage}
   predictLambdaArn:
     Fn::Join:
     - ":"

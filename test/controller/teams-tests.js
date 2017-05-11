@@ -14,15 +14,15 @@ describe('teams-controller', () => {
         .withArgs('2016', '1')
         .returns(Promise.resolve(fixtures.teamList));
 
-      sinon.mock(persistence)
-        .expects('write')
-        .withArgs('years/2016/divs/1/teams', fixtures.expectedTeamsJson)
-        .returns(Promise.resolve());
+      // sinon.mock(persistence)
+      //   .expects('write')
+      //   .withArgs('years/2016/divs/1/teams', fixtures.expectedTeamsJson)
+      //   .returns(Promise.resolve());
     });
 
     afterEach(() => {
       service.getHtmlFromNcaa.restore();
-      persistence.write.restore();
+      // persistence.write.restore();
     });
 
     it('should get teams from service and write to persistent store', () => {
