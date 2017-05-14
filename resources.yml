@@ -1,27 +1,4 @@
 Resources:
-  S3BucketStats:
-    Type: AWS::S3::Bucket
-    Properties:
-      BucketName: ${file(serverless.yml):custom.resultsBucketName}
-      AccessControl: "PublicRead"
-      WebsiteConfiguration:
-        IndexDocument: "does-not-exist.html"
-  StatsBucketPolicy:
-    Type: AWS::S3::BucketPolicy
-    Properties:
-      Bucket:
-        Ref: S3BucketStats
-      PolicyDocument:
-        Statement:
-          - Effect: Allow
-            Action: "s3:GetObject"
-            Principal: "*"
-            Resource:
-              Fn::Join:
-                - ""
-                - - "arn:aws:s3:::"
-                  - Ref: S3BucketStats
-                  - "/*"
   TeamsTable:
     Type: AWS::DynamoDB::Table
     Properties:
