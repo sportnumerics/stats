@@ -16,7 +16,7 @@ describe('schedule-controller', () => {
 
       sinon.mock(persistence)
         .expects('set')
-        .withArgs('MockResultsTable', { id: '2016/721' }, fixtures.stringifyEquivalentTo(fixtures.expectedGameByGameJson))
+        .withArgs('MockResultsTable', { id: '721', year: '2016' }, fixtures.stringifyEquivalentTo(fixtures.expectedGameByGameJson))
         .returns(Promise.resolve())
     });
 
