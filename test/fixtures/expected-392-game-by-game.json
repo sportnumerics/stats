@@ -1,4 +1,8 @@
 {
+    "team": {
+        "id": 721,
+        "name": "Air Force"
+    },
     "schedule": [{
         "location": {
             "type": "away"
