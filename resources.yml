@@ -12,10 +12,18 @@ Resources:
       KeySchema:
         - AttributeName: id
           KeyType: HASH
-        - AttributeName: year
-          KeyType: RANGE
-        - AttributeName: div
-          KeyType: RANGE
+      LocalSecondaryIndexes:
+        IndexName: schedule
+        KeySchema:
+          - AttributeName: year
+            KeyType: HASH
+          - AttributeName: div
+            KeyType: RANGE
+        Projection:
+          NonKeyAttributes:
+            - team
+            - schedule
+          ProjectionType: INCLUDE
       ProvisionedThroughput:
         ReadCapacityUnits: 5
         WriteCapacityUnits: 10
