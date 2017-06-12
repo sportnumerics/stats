@@ -12,6 +12,8 @@ Resources:
       KeySchema:
         - AttributeName: id
           KeyType: HASH
+        - AttributeName: year
+          KeyType: RANGE
       LocalSecondaryIndexes:
         - IndexName: schedule
           KeySchema:
