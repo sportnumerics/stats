@@ -7,10 +7,14 @@ Resources:
           AttributeType: S
         - AttributeName: year
           AttributeType: S
+        - AttributeName: div
+          AttributeType: S
       KeySchema:
         - AttributeName: id
           KeyType: HASH
         - AttributeName: year
+          KeyType: RANGE
+        - AttributeName: div
           KeyType: RANGE
       ProvisionedThroughput:
         ReadCapacityUnits: 5
