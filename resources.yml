@@ -14,7 +14,7 @@ Resources:
           KeyType: RANGE
       ProvisionedThroughput:
         ReadCapacityUnits: 5
-        WriteCapacityUnits: 5
+        WriteCapacityUnits: 10
       TableName: ${file(serverless.yml):custom.teamsTableName}
   DivisionsTable:
     Type: AWS::DynamoDB::Table
