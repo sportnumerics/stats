@@ -16,7 +16,7 @@ describe('schedule-controller', () => {
 
       sinon.mock(persistence)
         .expects('set')
-        .withArgs('MockResultsTable', { id: '721', year: '2016' }, fixtures.stringifyEquivalentTo(fixtures.expectedGameByGameJson))
+        .withArgs('MockResultsTable', { id: '721', year: '2016', div: '1' }, fixtures.stringifyEquivalentTo(fixtures.expectedGameByGameJson))
         .returns(Promise.resolve())
     });
 
@@ -26,7 +26,7 @@ describe('schedule-controller', () => {
     });
 
     it('should get team schedule from service and write to persistent store', () => {
-      return controller.collect('2016', 721, fixtures.expectedTeamsJson.teams);
+      return controller.collect('2016', '1', 721, fixtures.expectedTeamsJson.teams);
     });
   });
 });
