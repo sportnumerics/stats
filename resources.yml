@@ -47,3 +47,10 @@ Resources:
         ReadCapacityUnits: 5
         WriteCapacityUnits: 5
       TableName: ${file(serverless.yml):custom.divisionsTableName}
+Outputs:
+  DivsTableName:
+    Description: Divs table name in DynamoDB
+    Value: DivisionsTable
+  TeamsTableName:
+    Description: Teams table name in DynamoDB
+    Value: TeamsTable
