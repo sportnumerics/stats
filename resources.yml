@@ -25,6 +25,7 @@ Resources:
             NonKeyAttributes:
               - team
               - schedule
+              - ratings
             ProjectionType: INCLUDE
           ProvisionedThroughput:
             ReadCapacityUnits: 5
