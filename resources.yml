@@ -12,6 +12,8 @@ Resources:
       KeySchema:
         - AttributeName: id
           KeyType: HASH
+        - AttributeName: season
+          KeyType: RANGE
       GlobalSecondaryIndexes:
         - IndexName: schedule
           KeySchema:

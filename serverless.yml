@@ -32,7 +32,7 @@ package:
   exclude:
   - config/env.sh
 custom:
-  tableVersion: '1'
+  tableVersion: 2
   resultsBucketName: sportnumerics-stats-${opt:stage}
   resultsBucketArn: "arn:aws:s3:::${self:custom.resultsBucketName}"
   teamsTableName: sportnumerics-stats-teams-${opt:stage}-v${self:custom.tableVersion}
