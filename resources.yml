@@ -12,21 +12,6 @@ Resources:
       KeySchema:
         - AttributeName: id
           KeyType: HASH
-      GlobalSecondaryIndexes:
-        - IndexName: schedule_v1
-          KeySchema:
-            - AttributeName: season
-              KeyType: HASH
-            - AttributeName: div
-              KeyType: RANGE
-          Projection:
-            NonKeyAttributes:
-              - team
-              - schedule
-            ProjectionType: INCLUDE
-          ProvisionedThroughput:
-            ReadCapacityUnits: 5
-            WriteCapacityUnits: 5
       ProvisionedThroughput:
         ReadCapacityUnits: 5
         WriteCapacityUnits: 10
