@@ -7,14 +7,6 @@ provider:
   iamRoleStatements:
   - Effect: "Allow"
     Action:
-      - "s3:ListBucket"
-    Resource: ${self:custom.resultsBucketArn}
-  - Effect: "Allow"
-    Action:
-      - "s3:PutObject"
-    Resource: "${self:custom.resultsBucketArn}/*"
-  - Effect: "Allow"
-    Action:
       - "lambda:InvokeFunction"
     Resource: ${self:custom.predictLambdaArn}
   - Effect: "Allow"
@@ -25,7 +17,6 @@ provider:
       - ${self:custom.teamsTableArn}
   environment:
     PREDICT_LAMBDA_ARN: ${self:custom.predictLambdaArn}
-    RESULTS_BUCKET: ${self:custom.resultsBucketName}
     RESULTS_TABLE: ${self:custom.teamsTableName}
     DIVISIONS_TABLE: ${self:custom.divisionsTableName}
 package:
