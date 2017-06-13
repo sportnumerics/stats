@@ -5,7 +5,7 @@ Resources:
       AttributeDefinitions:
         - AttributeName: id
           AttributeType: S
-        - AttributeName: season
+        - AttributeName: year
           AttributeType: S
         - AttributeName: div
           AttributeType: S
