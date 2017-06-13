@@ -11,7 +11,7 @@ describe('schedule-controller', () => {
     beforeEach(() => {
       sinon.mock(service)
         .expects('getHtmlFromNcaa')
-        .withArgs('2016', 721)
+        .withArgs('2016', '721')
         .returns(Promise.resolve(fixtures.gameByGame))
 
       sinon.mock(persistence)
@@ -26,7 +26,7 @@ describe('schedule-controller', () => {
     });
 
     it('should get team schedule from service and write to persistent store', () => {
-      return controller.collect('2016', '1', 721, fixtures.expectedTeamsJson.teams);
+      return controller.collect('2016', '1', '721', fixtures.expectedTeamsJson.teams);
     });
   });
 });

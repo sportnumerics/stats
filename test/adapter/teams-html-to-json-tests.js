@@ -19,6 +19,6 @@ describe('teams html to json', () => {
   });
 
   it('should extract each team slug', () => {
-    expect(data[0].id).to.equal(721);
+    expect(data[0].id).to.equal('721');
   });
 });

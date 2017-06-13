@@ -5,7 +5,7 @@
         },
         "opponent": {
             "name": "Navy",
-            "id": 726
+            "id": "726"
         },
         "date": "2016-02-06T00:00:00.000Z",
         "result": {
@@ -18,7 +18,7 @@
         },
         "opponent": {
             "name": "Denver",
-            "id": 183
+            "id": "183"
         },
         "date": "2016-02-13T00:00:00.000Z",
         "result": {
@@ -31,7 +31,7 @@
         },
         "opponent": {
             "name": "Marist",
-            "id": 386
+            "id": "386"
         },
         "date": "2016-02-20T00:00:00.000Z",
         "result": {
@@ -44,7 +44,7 @@
             "name": "Denver, CO"
         },
         "opponent": {
-            "id": 172,
+            "id": "172",
             "name": "Dartmouth"
         },
         "date": "2016-02-27T00:00:00.000Z"
@@ -54,7 +54,7 @@
             "name": "Denver, CO"
         },
         "opponent": {
-            "id": 590,
+            "id": "590",
             "name": "Sacred Heart"
         },
         "date": "2016-02-28T00:00:00.000Z"
@@ -63,7 +63,7 @@
             "type": "away"
         },
         "opponent": {
-            "id": 579,
+            "id": "579",
             "name": "Robert Morris"
         },
         "date": "2016-03-05T00:00:00.000Z"
@@ -72,7 +72,7 @@
             "type": "home"
         },
         "opponent": {
-            "id": 244,
+            "id": "244",
             "name": "Furman"
         },
         "date": "2016-03-12T00:00:00.000Z"
@@ -81,7 +81,7 @@
             "type": "home"
         },
         "opponent": {
-            "id": 19651,
+            "id": "19651",
             "name": "High Point"
         },
         "date": "2016-03-19T00:00:00.000Z"
@@ -90,7 +90,7 @@
             "type": "away"
         },
         "opponent": {
-            "id": 193,
+            "id": "193",
             "name": "Duke"
         },
         "date": "2016-03-22T00:00:00.000Z"
@@ -99,7 +99,7 @@
             "type": "away"
         },
         "opponent": {
-            "id": 184,
+            "id": "184",
             "name": "Detroit"
         },
         "date": "2016-03-26T00:00:00.000Z"
@@ -108,7 +108,7 @@
             "type": "away"
         },
         "opponent": {
-            "id": 52,
+            "id": "52",
             "name": "Bellarmine"
         },
         "date": "2016-04-02T00:00:00.000Z"
@@ -117,7 +117,7 @@
             "type": "home"
         },
         "opponent": {
-            "id": 406,
+            "id": "406",
             "name": "Mercer"
         },
         "date": "2016-04-09T00:00:00.000Z"
@@ -126,7 +126,7 @@
             "type": "home"
         },
         "opponent": {
-            "id": 741,
+            "id": "741",
             "name": "VMI"
         },
         "date": "2016-04-16T00:00:00.000Z"
@@ -135,7 +135,7 @@
             "type": "away"
         },
         "opponent": {
-            "id": 575,
+            "id": "575",
             "name": "Richmond"
         },
         "date": "2016-04-23T00:00:00.000Z"
@@ -144,7 +144,7 @@
             "type": "away"
         },
         "opponent": {
-            "id": 316,
+            "id": "316",
             "name": "Jacksonville"
         },
         "date": "2016-04-30T00:00:00.000Z"

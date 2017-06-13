@@ -29,7 +29,7 @@ describe('orchestration-integration', () => {
 
       scheduleMock = sinon.mock(schedule)
         .expects('collect')
-        .withArgs('2016', sinon.match.string, sinon.match.number)
+        .withArgs('2016', sinon.match.string, sinon.match.string)
         .exactly(69*3)
         .returns(Promise.resolve(fixtures.expectedScheduleJson.schedule));
 
