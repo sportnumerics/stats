@@ -13,7 +13,7 @@ Resources:
         - AttributeName: id
           KeyType: HASH
       GlobalSecondaryIndexes:
-        - IndexName: schedule
+        - IndexName: schedule_v1
           KeySchema:
             - AttributeName: season
               KeyType: HASH
