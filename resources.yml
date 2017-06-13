@@ -12,9 +12,7 @@ Resources:
       KeySchema:
         - AttributeName: id
           KeyType: HASH
-        - AttributeName: year
-          KeyType: RANGE
-      LocalSecondaryIndexes:
+      GlobalSecondaryIndexes:
         - IndexName: schedule
           KeySchema:
             - AttributeName: year
@@ -26,6 +24,9 @@ Resources:
               - team
               - schedule
             ProjectionType: INCLUDE
+          ProvisionedThroughput:
+            ReadCapacityUnits: 5
+            WriteCapacityUnits: 5
       ProvisionedThroughput:
         ReadCapacityUnits: 5
         WriteCapacityUnits: 10
