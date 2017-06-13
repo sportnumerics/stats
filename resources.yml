@@ -50,7 +50,9 @@ Resources:
 Outputs:
   DivsTableName:
     Description: Divs table name in DynamoDB
-    Value: DivisionsTable
+    Value:
+      Ref: DivisionsTable
   TeamsTableName:
     Description: Teams table name in DynamoDB
-    Value: TeamsTable
+    Value:
+      Ref: TeamsTable
