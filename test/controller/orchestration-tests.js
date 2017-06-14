@@ -47,14 +47,12 @@ describe('orchestration-integration', () => {
     });
 
     it('should collect all teams and schedules', () => {
-      var promise = orchestration.collectAll('2016', 0).then(() => {
+      return orchestration.collectAll('2016', 0).then(() => {
         divisionsMock.verify();
         teamsMock.verify();
         scheduleMock.verify();
         predictMock.verify();
       });
-
-      return expect(promise).to.be.fulfilled;
     });
   });
 });

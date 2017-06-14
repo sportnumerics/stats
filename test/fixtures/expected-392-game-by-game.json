@@ -1,10 +1,7 @@
 {
-    "season": "2016",
+    "id": "721",
+    "name": "Air Force",
     "div": "1",
-    "team": {
-        "id": "721",
-        "name": "Air Force"
-    },
     "schedule": [
         {
             "location": {

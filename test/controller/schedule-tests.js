@@ -8,15 +8,17 @@ const fixtures = require('../fixtures');
 
 describe('schedule-controller', () => {
   describe('collect', () => {
+    let serviceMock, persistenceMock;
+
     beforeEach(() => {
-      sinon.mock(service)
+      serviceMock = sinon.mock(service)
         .expects('getHtmlFromNcaa')
         .withArgs('2016', '721')
         .returns(Promise.resolve(fixtures.gameByGame))
 
-      sinon.mock(persistence)
+      persistenceMock = sinon.mock(persistence)
         .expects('set')
-        .withArgs('MockResultsTable', { id: '721' }, fixtures.stringifyEquivalentTo(fixtures.expectedGameByGameJson))
+        .withArgs('MockResultsTable', { id: '721', season: '2016' }, fixtures.stringifyEquivalentTo(fixtures.expectedGameByGameJson))
         .returns(Promise.resolve())
     });
 
@@ -26,7 +28,11 @@ describe('schedule-controller', () => {
     });
 
     it('should get team schedule from service and write to persistent store', () => {
-      return controller.collect('2016', '1', '721', fixtures.expectedTeamsJson.teams);
+      return controller.collect('2016', '1', '721', fixtures.expectedTeamsJson.teams)
+        .then(() => {
+          serviceMock.verify();
+          persistenceMock.verify();
+        })
     });
   });
 });

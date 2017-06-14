@@ -7,8 +7,10 @@ const fixtures = require('../fixtures');
 
 describe('divisions-controller', () => {
   describe('collect', () => {
+    let persistenceMock;
+
     beforeEach(() => {
-      sinon.mock(persistence)
+      persistenceMock = sinon.mock(persistence)
         .expects('set')
         .withArgs('MockDivisionsTable', {season:'2016'}, fixtures.expectedDivisionsJson)
         .returns(Promise.resolve());

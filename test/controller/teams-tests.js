@@ -8,27 +8,26 @@ const fixtures = require('../fixtures');
 
 describe('teams-controller', () => {
   describe('collect', () => {
+    let serviceMock;
+
     beforeEach(() => {
-      sinon.mock(service)
+      serviceMock = sinon.mock(service)
         .expects('getHtmlFromNcaa')
         .withArgs('2016', '1')
         .returns(Promise.resolve(fixtures.teamList));
-
-      // sinon.mock(persistence)
-      //   .expects('write')
-      //   .withArgs('years/2016/divs/1/teams', fixtures.expectedTeamsJson)
-      //   .returns(Promise.resolve());
     });
 
     afterEach(() => {
       service.getHtmlFromNcaa.restore();
-      // persistence.write.restore();
     });
 
     it('should get teams from service and write to persistent store', () => {
-      let result = controller.collect('2016', '1');
+      return controller.collect('2016', '1')
+        .then(result => {
+          expect(result).to.deep.equal(fixtures.expectedTeamsJson.teams);
 
-      return expect(result).to.eventually.deep.equal(fixtures.expectedTeamsJson.teams);
+          serviceMock.verify();
+        });
     });
   });
 });
