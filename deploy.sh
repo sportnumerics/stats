@@ -8,10 +8,12 @@ unset AWS_SESSION_TOKEN
 
 if [ "$LAMBCI_BRANCH" = "master" ]; then
   pip install --user awscli
-  STACK_PREFIX="sportnumerics-stats"
-  STAGE="prodgreen"
-  if aws cloudformation describe-stacks --stack-name "$STACK_PREFIX-$STAGE"; then
+  CDN_STACK_NAME="sportnumerics-explorer-cdn-prod"
+  ACTIVE_DEPLOYMENT=$(aws cloudformation describe-stacks --stack-name $CDN_STACK_NAME --query 'Stacks[0].Outputs[?OutputKey==`ExplorerStageDeployment`].OutputValue' --output text)
+  if [ "$ACTIVE_DEPLOYMENT" = "prodgreen" ]; then
     STAGE="prodblue"
+  else
+    STAGE="prodgreen"
   fi
 else
   STAGE=dev
