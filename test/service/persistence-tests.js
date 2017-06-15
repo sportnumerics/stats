@@ -26,7 +26,7 @@ describe('persistence-service', () => {
       ExpressionAttributeValues: {
         ':p1': 'mockItemValue'
       },
-      ExpressionAttributeNames: {}
+      ExpressionAttributeNames: undefined
     }
 
     setUpMockWithExpectedParams(expectedParams);    
