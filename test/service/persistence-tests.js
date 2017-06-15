@@ -14,9 +14,9 @@ describe('persistence-service', () => {
       .returns(new Promise.resolve());
   }
 
-  afterEach(() => {
+  function restoreMock() {
     dynamodb.updateAsync.restore();
-  })
+  }
 
   it('set should correctly interpolate parameter names', () => {
     let expectedParams = {
@@ -34,6 +34,7 @@ describe('persistence-service', () => {
     return persistence.set('mock-table', { 'mockKeyName': 'mockKeyValue' }, { 'mockItemKey': 'mockItemValue' })
       .then(() => {
         mockDb.verify();
+        restoreMock();
       });
   });
 
@@ -55,6 +56,39 @@ describe('persistence-service', () => {
     return persistence.set('mock-table', { 'mockKeyName': 'mockKeyValue' }, { 'name': 'mockItemValue' })
       .then(() => {
         mockDb.verify();
+        restoreMock();
       });
+  });
+
+  it('should filter redundant in the object that are part of the key', () => {
+    let expectedParams = {
+      TableName: 'mock-table',
+      Key: { 'mockKeyName': 'mockKeyValue' },
+      UpdateExpression: 'set mockItemKey = :p4',
+      ExpressionAttributeValues: {
+        ':p4': 'mockItemValue'
+      },
+      ExpressionAttributeNames: undefined
+    };
+
+    setUpMockWithExpectedParams(expectedParams);
+
+    return persistence.set('mock-table', { 'mockKeyName': 'mockKeyValue' }, { 'mockKeyName': 'mockKeyValue', 'mockItemKey': 'mockItemValue' })
+      .then(() => {
+        mockDb.verify();
+        restoreMock();
+      });
+  });
+
+  it('should throw an error on non-redundant items in the key and in the update expression', () => {
+    const stub = sinon.stub(dynamodb, "updateAsync").returns(new Promise.resolve());
+
+    const persist = () => {
+      return persistence.set('mock-table', { 'mockKeyName': 'mockKeyValue' }, { 'mockKeyName': 'nonRedundantValue', 'mockItemKey': 'mockItemValue' });
+    };
+
+    expect(persist).to.throw('Cannot specify a different value for key in key and object to update');
+
+    dynamodb.updateAsync.restore();
   });
 });
