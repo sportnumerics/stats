@@ -23,7 +23,7 @@ Resources:
               KeyType: RANGE
           Projection:
             NonKeyAttributes:
-              - team
+              - name
               - schedule
               - ratings
             ProjectionType: INCLUDE
