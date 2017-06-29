@@ -11,7 +11,7 @@ describe('teams-service', () => {
     });
 
     it('should return an html document', () => {
-      let htmlPromise = teamsService.getHtmlFromNcaa('2016');
+      let htmlPromise = teamsService.getHtmlFromNcaa('2016', fixtures.womensDivision1);
 
       return expect(htmlPromise).to.eventually.be.a('string');
     });

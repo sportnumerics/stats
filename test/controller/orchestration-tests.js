@@ -19,18 +19,18 @@ describe('orchestration-integration', () => {
       divisionsMock = sinon.mock(divisions)
         .expects('collect')
         .withArgs('2016')
-        .returns(Promise.resolve(fixtures.expectedDivisionsJson.divisions));
+        .returns(Promise.resolve(fixtures.expectedQueryDivisionsJson.divisions));
 
       teamsMock = sinon.mock(teams)
         .expects('collect')
         .withArgs('2016', sinon.match.string)
-        .exactly(3)
+        .exactly(6)
         .returns(Promise.resolve(fixtures.expectedTeamsJson.teams));
 
       scheduleMock = sinon.mock(schedule)
         .expects('collect')
         .withArgs('2016', sinon.match.string, sinon.match.string)
-        .exactly(69*3)
+        .exactly(69*6)
         .returns(Promise.resolve(fixtures.expectedScheduleJson.schedule));
 
       predictMock = sinon.mock(predict)

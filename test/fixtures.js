@@ -16,12 +16,14 @@ module.exports = {
   teamList: fs.readFileSync(path.resolve(__dirname, './fixtures/team-list.html')),
   schedule: fs.readFileSync(path.resolve(__dirname, './fixtures/schedule.html')),
   gameByGame: fs.readFileSync(path.resolve(__dirname, './fixtures/game-by-game.html')),
-  expectedDivisionsJson: require('./fixtures/expected-divisions'),
+  expectedStoredDivisionsJson: require('./fixtures/expected-stored-divisions'),
+  expectedQueryDivisionsJson: require('./fixtures/expected-query-divisions'),
   expectedTeamsJson: require('./fixtures/expected-div1-teams'),
   expectedScheduleJson: require('./fixtures/expected-721-schedule'),
   expectedGameByGameJson: require('./fixtures/expected-392-game-by-game'),
   stringifyEquivalentTo: require('./fixtures/stringifyEquivalentTo'),
   snsSample: require('./fixtures/sns-sample'),
   snsPayload: require('./fixtures/sns-payload'),
-  expectedSnsParams: require('./fixtures/expected-sns-params')
+  expectedSnsParams: require('./fixtures/expected-sns-params'),
+  womensDivision1: require('./fixtures/womens-division-1')
 };

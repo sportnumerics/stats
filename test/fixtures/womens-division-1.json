@@ -1,0 +1,9 @@
+{
+  "id": "w1",
+  "source": {
+    "type": "ncaa",
+    "id": "1",
+    "sportCode": "WLA"
+  },
+  "title": "NCAA Women's Division 1"
+}

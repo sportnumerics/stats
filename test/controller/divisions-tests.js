@@ -12,7 +12,7 @@ describe('divisions-controller', () => {
     beforeEach(() => {
       persistenceMock = sinon.mock(persistence)
         .expects('set')
-        .withArgs('MockDivisionsTable', {season:'2016'}, fixtures.expectedDivisionsJson)
+        .withArgs('MockDivisionsTable', {season:'2016'}, fixtures.expectedStoredDivisionsJson)
         .returns(Promise.resolve());
     });
 
@@ -23,7 +23,7 @@ describe('divisions-controller', () => {
     it('should write divisions to persistent store', () => {
       return controller.collect('2016')
         .then(result => {
-          expect(result).to.deep.equal(fixtures.expectedDivisionsJson.divisions);
+          expect(result).to.deep.equal(fixtures.expectedQueryDivisionsJson.divisions);
         });
     });
   });
