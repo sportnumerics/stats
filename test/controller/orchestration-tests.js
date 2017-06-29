@@ -23,7 +23,7 @@ describe('orchestration-integration', () => {
 
       teamsMock = sinon.mock(teams)
         .expects('collect')
-        .withArgs('2016', sinon.match.string)
+        .withArgs('2016', sinon.match.object)
         .exactly(6)
         .returns(Promise.resolve(fixtures.expectedTeamsJson.teams));
 
