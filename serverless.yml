@@ -48,6 +48,10 @@ custom:
       - Ref: AWS::AccountId
       - "function"
       - "sportnumerics-predict-${opt:stage}-predict"
+  collectAllForReductionArn:
+    Fn::GetAtt: [CollectAllTeamsForReductionLambdaFunction, Arn]
+  reduceOneTeamArn:
+    Fn::GetAtt: [ReduceOneTeamLambdaFunction, Arn]
 
 resources: ${file(resources.yml)}
 
