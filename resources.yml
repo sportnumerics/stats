@@ -47,6 +47,66 @@ Resources:
         ReadCapacityUnits: 5
         WriteCapacityUnits: 5
       TableName: ${file(serverless.yml):custom.divisionsTableName}
+  StateMachine:
+    Type: AWS::StepFunctions::StateMachine
+    Properties:
+      DefinitionString: 
+        !Sub
+          - |-
+            {
+              "Comment": "Orchestration for collecting stats",
+              "StartAt": "CollectAllTeamsForReduction",
+              "States": {
+                "CollectAllTeamsForReduction": {
+                  "Type": "Task",
+                  "Resource": "${collectAllForReductionArn}"
+                  "Next": "ReduceOneTeam"
+                },
+                "ReduceOneTeam": {
+                  "Type": "Task",
+                  "Resource": "${reduceOneTeamArn}",
+                  "Next": "Check"
+                },
+                "Check": {
+                  "Type": "Choice",
+                  "Choices": [
+                    {
+                      "Variable": "$.done",
+                      "BooleanEquals": true,
+                      "Next": "Success"
+                    }
+                  ],
+                  "Default": "ReduceOneTeam"
+                },
+                "Success": {
+                  "Type": "Succeed"
+                }
+              }
+            }
+          - collectAllForReductionArn: !GetAtt CollectAllTeamsForReductionLambdaFunction.Arn
+            reduceOneTeamArn: !GetAtt ReduceOneTeamLambdaFunction.Arn
+      RoleArn: !GetAtt StateMachineRole.Arn
+  StateMachineRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: "Allow"
+            Principal:
+              Service:
+                - !Sub states.${AWS::Region}.amazonaws.com
+            Action: "sts:AssumeRole"
+      Policies:
+        - PolicyName: StateMachinePolicy
+          PolicyDocument:
+            Version: "2012-10-17"
+            Statement:
+              - Effect: Allow
+                Action: "lambda:InvokeFunction"
+                Resource:
+                  - !GetAtt CollectAllTeamsForReductionLambdaFunction.Arn
+                    !GetAtt ReduceOneTeamLambdaFunction.Arn
 Outputs:
   DivsTableName:
     Description: Divs table name in DynamoDB

@@ -2,279 +2,348 @@
     "teams": [
         {
             "id": "721",
-            "name": "Air Force"
+            "name": "Air Force",
+            "div": "1"
         },
         {
             "id": "14",
-            "name": "Albany (NY)"
+            "name": "Albany (NY)",
+            "div": "1"
         },
         {
             "id": "725",
-            "name": "Army West Point"
+            "name": "Army West Point",
+            "div": "1"
         },
         {
             "id": "52",
-            "name": "Bellarmine"
+            "name": "Bellarmine",
+            "div": "1"
         },
         {
             "id": "62",
-            "name": "Binghamton"
+            "name": "Binghamton",
+            "div": "1"
         },
         {
             "id": "68",
-            "name": "Boston U."
+            "name": "Boston U.",
+            "div": "1"
         },
         {
             "id": "80",
-            "name": "Brown"
+            "name": "Brown",
+            "div": "1"
         },
         {
             "id": "81",
-            "name": "Bryant"
+            "name": "Bryant",
+            "div": "1"
         },
         {
             "id": "83",
-            "name": "Bucknell"
+            "name": "Bucknell",
+            "div": "1"
         },
         {
             "id": "116",
-            "name": "Canisius"
+            "name": "Canisius",
+            "div": "1"
         },
         {
             "id": "153",
-            "name": "Colgate"
+            "name": "Colgate",
+            "div": "1"
         },
         {
             "id": "167",
-            "name": "Cornell"
+            "name": "Cornell",
+            "div": "1"
         },
         {
             "id": "172",
-            "name": "Dartmouth"
+            "name": "Dartmouth",
+            "div": "1"
         },
         {
             "id": "180",
-            "name": "Delaware"
+            "name": "Delaware",
+            "div": "1"
         },
         {
             "id": "183",
-            "name": "Denver"
+            "name": "Denver",
+            "div": "1"
         },
         {
             "id": "184",
-            "name": "Detroit"
+            "name": "Detroit",
+            "div": "1"
         },
         {
             "id": "191",
-            "name": "Drexel"
+            "name": "Drexel",
+            "div": "1"
         },
         {
             "id": "193",
-            "name": "Duke"
+            "name": "Duke",
+            "div": "1"
         },
         {
             "id": "220",
-            "name": "Fairfield"
+            "name": "Fairfield",
+            "div": "1"
         },
         {
             "id": "244",
-            "name": "Furman"
+            "name": "Furman",
+            "div": "1"
         },
         {
             "id": "251",
-            "name": "Georgetown"
+            "name": "Georgetown",
+            "div": "1"
         },
         {
             "id": "272",
-            "name": "Hartford"
+            "name": "Hartford",
+            "div": "1"
         },
         {
             "id": "275",
-            "name": "Harvard"
+            "name": "Harvard",
+            "div": "1"
         },
         {
             "id": "19651",
-            "name": "High Point"
+            "name": "High Point",
+            "div": "1"
         },
         {
             "id": "282",
-            "name": "Hobart and William Colleges"
+            "name": "Hobart and William Colleges",
+            "div": "1"
         },
         {
             "id": "283",
-            "name": "Hofstra"
+            "name": "Hofstra",
+            "div": "1"
         },
         {
             "id": "285",
-            "name": "Holy Cross"
+            "name": "Holy Cross",
+            "div": "1"
         },
         {
             "id": "316",
-            "name": "Jacksonville"
+            "name": "Jacksonville",
+            "div": "1"
         },
         {
             "id": "322",
-            "name": "Johns Hopkins"
+            "name": "Johns Hopkins",
+            "div": "1"
         },
         {
             "id": "342",
-            "name": "Lafayette"
+            "name": "Lafayette",
+            "div": "1"
         },
         {
             "id": "352",
-            "name": "Lehigh"
+            "name": "Lehigh",
+            "div": "1"
         },
         {
             "id": "369",
-            "name": "Loyola Maryland"
+            "name": "Loyola Maryland",
+            "div": "1"
         },
         {
             "id": "381",
-            "name": "Manhattan"
+            "name": "Manhattan",
+            "div": "1"
         },
         {
             "id": "386",
-            "name": "Marist"
+            "name": "Marist",
+            "div": "1"
         },
         {
             "id": "387",
-            "name": "Marquette"
+            "name": "Marquette",
+            "div": "1"
         },
         {
             "id": "392",
-            "name": "Maryland"
+            "name": "Maryland",
+            "div": "1"
         },
         {
             "id": "400",
-            "name": "Massachusetts"
+            "name": "Massachusetts",
+            "div": "1"
         },
         {
             "id": "406",
-            "name": "Mercer"
+            "name": "Mercer",
+            "div": "1"
         },
         {
             "id": "418",
-            "name": "Michigan"
+            "name": "Michigan",
+            "div": "1"
         },
         {
             "id": "439",
-            "name": "Monmouth"
+            "name": "Monmouth",
+            "div": "1"
         },
         {
             "id": "450",
-            "name": "Mt. St. Mary's"
+            "name": "Mt. St. Mary's",
+            "div": "1"
         },
         {
             "id": "471",
-            "name": "NJIT"
+            "name": "NJIT",
+            "div": "1"
         },
         {
             "id": "726",
-            "name": "Navy"
+            "name": "Navy",
+            "div": "1"
         },
         {
             "id": "457",
-            "name": "North Carolina"
+            "name": "North Carolina",
+            "div": "1"
         },
         {
             "id": "513",
-            "name": "Notre Dame"
+            "name": "Notre Dame",
+            "div": "1"
         },
         {
             "id": "518",
-            "name": "Ohio St."
+            "name": "Ohio St.",
+            "div": "1"
         },
         {
             "id": "540",
-            "name": "Penn"
+            "name": "Penn",
+            "div": "1"
         },
         {
             "id": "539",
-            "name": "Penn St."
+            "name": "Penn St.",
+            "div": "1"
         },
         {
             "id": "554",
-            "name": "Princeton"
+            "name": "Princeton",
+            "div": "1"
         },
         {
             "id": "556",
-            "name": "Providence"
+            "name": "Providence",
+            "div": "1"
         },
         {
             "id": "562",
-            "name": "Quinnipiac"
+            "name": "Quinnipiac",
+            "div": "1"
         },
         {
             "id": "575",
-            "name": "Richmond"
+            "name": "Richmond",
+            "div": "1"
         },
         {
             "id": "579",
-            "name": "Robert Morris"
+            "name": "Robert Morris",
+            "div": "1"
         },
         {
             "id": "587",
-            "name": "Rutgers"
+            "name": "Rutgers",
+            "div": "1"
         },
         {
             "id": "590",
-            "name": "Sacred Heart"
+            "name": "Sacred Heart",
+            "div": "1"
         },
         {
             "id": "606",
-            "name": "Saint Joseph's"
+            "name": "Saint Joseph's",
+            "div": "1"
         },
         {
             "id": "639",
-            "name": "Siena"
+            "name": "Siena",
+            "div": "1"
         },
         {
             "id": "603",
-            "name": "St. John's (NY)"
+            "name": "St. John's (NY)",
+            "div": "1"
         },
         {
             "id": "683",
-            "name": "Stony Brook"
+            "name": "Stony Brook",
+            "div": "1"
         },
         {
             "id": "688",
-            "name": "Syracuse"
+            "name": "Syracuse",
+            "div": "1"
         },
         {
             "id": "711",
-            "name": "Towson"
+            "name": "Towson",
+            "div": "1"
         },
         {
             "id": "391",
-            "name": "UMBC"
+            "name": "UMBC",
+            "div": "1"
         },
         {
             "id": "368",
-            "name": "UMass Lowell"
+            "name": "UMass Lowell",
+            "div": "1"
         },
         {
             "id": "741",
-            "name": "VMI"
+            "name": "VMI",
+            "div": "1"
         },
         {
             "id": "738",
-            "name": "Vermont"
+            "name": "Vermont",
+            "div": "1"
         },
         {
             "id": "739",
-            "name": "Villanova"
+            "name": "Villanova",
+            "div": "1"
         },
         {
             "id": "746",
-            "name": "Virginia"
+            "name": "Virginia",
+            "div": "1"
         },
         {
             "id": "748",
-            "name": "Wagner"
+            "name": "Wagner",
+            "div": "1"
         },
         {
             "id": "813",
-            "name": "Yale"
+            "name": "Yale",
+            "div": "1"
         }
     ]
 }
