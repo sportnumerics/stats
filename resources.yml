@@ -76,8 +76,13 @@ Resources:
                       "Next": "Success"
                     }
                   ],
-                  "Default": "ReduceOneTeam"
+                  "Default": "Wait"
                 },
+                "Wait": {
+                  "Type": "Wait",
+                  "Seconds": 2,
+                  "Next": "ReduceOneTeam"
+                }
                 "Success": {
                   "Type": "Succeed"
                 }
