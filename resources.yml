@@ -50,48 +50,42 @@ Resources:
   StateMachine:
     Type: AWS::StepFunctions::StateMachine
     Properties:
-      DefinitionString: 
-        Fn::Sub:
-          - |-
-            {
-              "Comment": "Orchestration for collecting stats",
-              "StartAt": "CollectAllTeamsForReduction",
-              "States": {
-                "CollectAllTeamsForReduction": {
-                  "Type": "Task",
-                  "Resource": "${collectAllForReductionArn}"
-                  "Next": "ReduceOneTeam"
-                },
-                "ReduceOneTeam": {
-                  "Type": "Task",
-                  "Resource": "${reduceOneTeamArn}",
-                  "Next": "Check"
-                },
-                "Check": {
-                  "Type": "Choice",
-                  "Choices": [
-                    {
-                      "Variable": "$.done",
-                      "BooleanEquals": true,
-                      "Next": "Success"
-                    }
-                  ],
-                  "Default": "Wait"
-                },
-                "Wait": {
-                  "Type": "Wait",
-                  "Seconds": 2,
-                  "Next": "ReduceOneTeam"
+      DefinitionString: |-
+        {
+          "Comment": "Orchestration for collecting stats",
+          "StartAt": "CollectAllTeamsForReduction",
+          "States": {
+            "CollectAllTeamsForReduction": {
+              "Type": "Task",
+              "Resource": "${file(serverless.yml):custom.collectAllForReductionArn}"
+              "Next": "ReduceOneTeam"
+            },
+            "ReduceOneTeam": {
+              "Type": "Task",
+              "Resource": "${file(serverless.yml):custom.reduceOneTeamArn}",
+              "Next": "Check"
+            },
+            "Check": {
+              "Type": "Choice",
+              "Choices": [
+                {
+                  "Variable": "$.done",
+                  "BooleanEquals": true,
+                  "Next": "Success"
                 }
-                "Success": {
-                  "Type": "Succeed"
-                }
-              }
+              ],
+              "Default": "Wait"
+            },
+            "Wait": {
+              "Type": "Wait",
+              "Seconds": 2,
+              "Next": "ReduceOneTeam"
             }
-          - collectAllForReductionArn:
-              Fn::GetAtt: [CollectAllTeamsForReductionLambdaFunction, Arn]
-            reduceOneTeamArn:
-              Fn::GetAtt: [ReduceOneTeamLambdaFunction, Arn]
+            "Success": {
+              "Type": "Succeed"
+            }
+          }
+        }
       RoleArn:
         Fn::GetAtt: [StateMachineRole, Arn]
   StateMachineRole:
@@ -103,7 +97,11 @@ Resources:
           - Effect: "Allow"
             Principal:
               Service:
-                - Fn::Sub: states.${AWS::Region}.amazonaws.com
+                - Fn::Join:
+                  - "."
+                  - - states
+                    - Fn::Ref: AWS::Region
+                    - amazonaws.com
             Action: "sts:AssumeRole"
       Policies:
         - PolicyName: StateMachinePolicy
@@ -113,8 +111,8 @@ Resources:
               - Effect: Allow
                 Action: "lambda:InvokeFunction"
                 Resource:
-                  - Fn::GetAtt: [CollectAllTeamsForReductionLambdaFunction, Arn]
-                  - Fn::GetAtt: [ReduceOneTeamLambdaFunction, Arn]
+                  - ${file(serverless.yml):custom.collectAllTeamForReductionArn}
+                  - ${file(serverless.yml):custom.reduceOneTeamArn}
 Outputs:
   DivsTableName:
     Description: Divs table name in DynamoDB
