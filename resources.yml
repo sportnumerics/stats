@@ -51,7 +51,7 @@ Resources:
     Type: AWS::StepFunctions::StateMachine
     Properties:
       DefinitionString: 
-        !Sub
+        Fn::Sub:
           - |-
             {
               "Comment": "Orchestration for collecting stats",
@@ -103,7 +103,7 @@ Resources:
           - Effect: "Allow"
             Principal:
               Service:
-                - !Sub states.${AWS::Region}.amazonaws.com
+                - Fn::Sub: states.${AWS::Region}.amazonaws.com
             Action: "sts:AssumeRole"
       Policies:
         - PolicyName: StateMachinePolicy
