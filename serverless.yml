@@ -52,8 +52,7 @@ custom:
 resources: ${file(resources.yml)}
 
 functions:
-  collectAll:
-    handler: handler.collectAll
-    timeout: 300
-    events:
-    - schedule: rate(24 hours)
+  collectAllTeamsForReduction:
+    handler: handler.collectAllTeamsForReductions
+  reduceOneTeam:
+    handler: handler.reduceOneTeam

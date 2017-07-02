@@ -9,7 +9,8 @@
             },
             "opponent": {
                 "id": "726",
-                "name": "Navy"
+                "name": "Navy",
+                "div": "1"
             },
             "date": "2017-02-11T00:00:00.000Z",
             "result": {
@@ -23,7 +24,8 @@
             },
             "opponent": {
                 "id": "606",
-                "name": "Saint Joseph's"
+                "name": "Saint Joseph's",
+                "div": "1"
             },
             "date": "2017-02-14T00:00:00.000Z",
             "result": {
@@ -37,7 +39,8 @@
             },
             "opponent": {
                 "id": "19651",
-                "name": "High Point"
+                "name": "High Point",
+                "div": "1"
             },
             "date": "2017-02-18T00:00:00.000Z",
             "result": {
@@ -51,7 +54,8 @@
             },
             "opponent": {
                 "id": "813",
-                "name": "Yale"
+                "name": "Yale",
+                "div": "1"
             },
             "date": "2017-02-25T00:00:00.000Z",
             "result": {
@@ -65,7 +69,8 @@
             },
             "opponent": {
                 "id": "513",
-                "name": "Notre Dame"
+                "name": "Notre Dame",
+                "div": "1"
             },
             "date": "2017-03-04T00:00:00.000Z",
             "result": {
@@ -79,7 +84,8 @@
             },
             "opponent": {
                 "id": "14",
-                "name": "Albany (NY)"
+                "name": "Albany (NY)",
+                "div": "1"
             },
             "date": "2017-03-11T00:00:00.000Z"
         },
@@ -89,7 +95,8 @@
             },
             "opponent": {
                 "id": "739",
-                "name": "Villanova"
+                "name": "Villanova",
+                "div": "1"
             },
             "date": "2017-03-18T00:00:00.000Z"
         },
@@ -99,7 +106,8 @@
             },
             "opponent": {
                 "id": "457",
-                "name": "North Carolina"
+                "name": "North Carolina",
+                "div": "1"
             },
             "date": "2017-03-25T00:00:00.000Z"
         },
@@ -109,7 +117,8 @@
             },
             "opponent": {
                 "id": "418",
-                "name": "Michigan"
+                "name": "Michigan",
+                "div": "1"
             },
             "date": "2017-04-01T00:00:00.000Z"
         },
@@ -119,7 +128,8 @@
             },
             "opponent": {
                 "id": "539",
-                "name": "Penn St."
+                "name": "Penn St.",
+                "div": "1"
             },
             "date": "2017-04-08T00:00:00.000Z"
         },
@@ -129,7 +139,8 @@
             },
             "opponent": {
                 "id": "587",
-                "name": "Rutgers"
+                "name": "Rutgers",
+                "div": "1"
             },
             "date": "2017-04-16T00:00:00.000Z"
         },
@@ -139,7 +150,8 @@
             },
             "opponent": {
                 "id": "518",
-                "name": "Ohio St."
+                "name": "Ohio St.",
+                "div": "1"
             },
             "date": "2017-04-22T00:00:00.000Z"
         },
@@ -149,7 +161,8 @@
             },
             "opponent": {
                 "id": "322",
-                "name": "Johns Hopkins"
+                "name": "Johns Hopkins",
+                "div": "1"
             },
             "date": "2017-04-29T00:00:00.000Z"
         },

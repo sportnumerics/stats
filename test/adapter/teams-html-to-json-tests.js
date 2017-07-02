@@ -6,7 +6,7 @@ let fixtures = require('../fixtures.js'),
 describe('teams html to json', () => {
   var data;
   beforeEach(() => {
-    data = teamsHtmlToJson(fixtures.teamList);
+    data = teamsHtmlToJson('1')(fixtures.teamList);
   });
 
   it('should extract all the teams', () => {
