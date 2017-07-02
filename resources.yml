@@ -114,7 +114,7 @@ Resources:
                 Action: "lambda:InvokeFunction"
                 Resource:
                   - Fn::GetAtt: [CollectAllTeamsForReductionLambdaFunction, Arn]
-                    Fn::GetAtt: [ReduceOneTeamLambdaFunction, Arn]
+                  - Fn::GetAtt: [ReduceOneTeamLambdaFunction, Arn]
 Outputs:
   DivsTableName:
     Description: Divs table name in DynamoDB
