@@ -88,9 +88,12 @@ Resources:
                 }
               }
             }
-          - collectAllForReductionArn: !GetAtt CollectAllTeamsForReductionLambdaFunction.Arn
-            reduceOneTeamArn: !GetAtt ReduceOneTeamLambdaFunction.Arn
-      RoleArn: !GetAtt StateMachineRole.Arn
+          - collectAllForReductionArn:
+              Fn::GetAtt: [CollectAllTeamsForReductionLambdaFunction, Arn]
+            reduceOneTeamArn:
+              Fn::GetAtt: [ReduceOneTeamLambdaFunction, Arn]
+      RoleArn:
+        Fn::GetAtt: [StateMachineRole, Arn]
   StateMachineRole:
     Type: AWS::IAM::Role
     Properties:
@@ -110,8 +113,8 @@ Resources:
               - Effect: Allow
                 Action: "lambda:InvokeFunction"
                 Resource:
-                  - !GetAtt CollectAllTeamsForReductionLambdaFunction.Arn
-                    !GetAtt ReduceOneTeamLambdaFunction.Arn
+                  - Fn::GetAtt: [CollectAllTeamsForReductionLambdaFunction, Arn]
+                    Fn::GetAtt: [ReduceOneTeamLambdaFunction, Arn]
 Outputs:
   DivsTableName:
     Description: Divs table name in DynamoDB
