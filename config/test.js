@@ -1,4 +1,5 @@
 module.exports = {
   ResultsTable: 'MockResultsTable',
-  DivisionsTable: 'MockDivisionsTable'
+  DivisionsTable: 'MockDivisionsTable',
+  TeamsQueueUrl: 'https://mock.teams.queue.url'
 }
