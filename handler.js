@@ -7,7 +7,7 @@ function timeRemaining(context) {
   return 0.5 * context.getRemainingTimeInMillis();
 }
 
-function collectAllForTeamsReduction(event, context, callback) {
+function collectAllTeamsForReduction(event, context, callback) {
   const year = event.year || `${moment().year()}`;
   orchestration.collectAllTeamsForReduction(year).asCallback(callback);
 }
@@ -17,6 +17,6 @@ function reduceOneTeam(event, context, callback) {
 }
 
 module.exports = {
-  collectAllForTeamsReduction,
+  collectAllTeamsForReduction,
   reduceOneTeam
 };
