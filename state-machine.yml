@@ -1,5 +1,6 @@
-Fn::Sub: |-
-  - {
+Fn::Sub:
+  - |- 
+    {
       "Comment": "Orchestration for collecting stats",
       "StartAt": "CollectAllTeamsForReduction",
       "States": {
