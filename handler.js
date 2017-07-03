@@ -13,7 +13,7 @@ function collectAllTeamsForReduction(event, context, callback) {
 }
 
 function reduceOneTeam(event, context, callback) {
-  orchestration.reduceOneTeam(event).asCallback(callback);
+  orchestration.reduceOneTeam().asCallback(callback);
 }
 
 module.exports = {
