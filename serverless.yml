@@ -58,7 +58,7 @@ resources: ${{file(resources.yml)}}
 functions:
   collectAllTeamsForReduction:
     handler: handler.collectAllTeamsForReduction
-    timout: 60
+    timeout: 60
   reduceOneTeam:
     handler: handler.reduceOneTeam
     timeout: 20
