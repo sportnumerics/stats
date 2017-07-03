@@ -1,5 +1,5 @@
 {
-  "cmd": "npm install && nave use 6 npm t && ./deploy.sh",
+  "cmd": "npm install -dd && nave use 6 npm t && ./deploy.sh",
   "branches": {
     "master": true,
     "dev": true
