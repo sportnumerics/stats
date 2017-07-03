@@ -7,7 +7,6 @@ const _ = require('lodash');
 
 describe('queue-service', () => {
   describe('sendMessages', () => {
-
     it('should use sendMessageBatchAsync to send a message', () => {
       let expectedParams = {
         Entries: [
@@ -37,7 +36,8 @@ describe('queue-service', () => {
     it('should chunk the messages into batches of ten', () => {
       var mockSqs = sinon.mock(sqs)
         .expects('sendMessageBatchAsync')
-        .exactly(2);
+        .exactly(2)
+        .returns(Promise.resolve());
 
       let messagePrototype = { key: 'value' };
       let messages = _.fill(Array(15), messagePrototype);
@@ -47,6 +47,19 @@ describe('queue-service', () => {
         sqs.sendMessageBatchAsync.restore();
       });
     });
+
+    it('should return an error if any of the messages fail to send', () => {
+      var mockSqs = sinon.mock(sqs)
+        .expects('sendMessageBatchAsync')
+        .exactly(1)
+        .returns(Promise.reject());
+
+      let messages = [{ key: 'value' }];
+
+      let promise = queue.sendMessages(messages);
+
+      return expect(promise).to.be.rejectedWith('Unable to send message to SQS.');
+    })
   });
 
   describe('receiveMessage', () => {
