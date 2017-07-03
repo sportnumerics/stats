@@ -33,7 +33,7 @@ Resources:
       ProvisionedThroughput:
         ReadCapacityUnits: 5
         WriteCapacityUnits: 10
-      TableName: ${file(serverless.yml):custom.teamsTableName}
+      TableName: ${{file(serverless.yml):custom.teamsTableName}}
   DivisionsTable:
     Type: AWS::DynamoDB::Table
     Properties:
@@ -46,11 +46,11 @@ Resources:
       ProvisionedThroughput:
         ReadCapacityUnits: 5
         WriteCapacityUnits: 5
-      TableName: ${file(serverless.yml):custom.divisionsTableName}
+      TableName: ${{file(serverless.yml):custom.divisionsTableName}}
   StateMachine:
     Type: AWS::StepFunctions::StateMachine
     Properties:
-      DefinitionString: ${file(state-machine.json)}
+      DefinitionString: ${{file(state-machine.yml)}}
       RoleArn:
         Fn::GetAtt: [StateMachineRole, Arn]
   StateMachineRole:
@@ -76,8 +76,8 @@ Resources:
               - Effect: Allow
                 Action: "lambda:InvokeFunction"
                 Resource:
-                  - ${file(serverless.yml):custom.collectAllTeamForReductionArn}
-                  - ${file(serverless.yml):custom.reduceOneTeamArn}
+                  - ${{file(serverless.yml):custom.collectAllTeamForReductionArn}}
+                  - ${{file(serverless.yml):custom.reduceOneTeamArn}}
 Outputs:
   DivsTableName:
     Description: Divs table name in DynamoDB

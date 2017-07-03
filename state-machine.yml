@@ -1,0 +1,40 @@
+Fn::Sub: |-
+  - {
+      "Comment": "Orchestration for collecting stats",
+      "StartAt": "CollectAllTeamsForReduction",
+      "States": {
+        "CollectAllTeamsForReduction": {
+          "Type": "Task",
+          "Resource": "${collectAllForReductionArn}",
+          "Next": "ReduceOneTeam"
+        },
+        "ReduceOneTeam": {
+          "Type": "Task",
+          "Resource": "${reduceOneTeamArn}",
+          "Next": "Check"
+        },
+        "Check": {
+          "Type": "Choice",
+          "Choices": [
+            {
+              "Variable": "$.done",
+              "BooleanEquals": true,
+              "Next": "Success"
+            }
+          ],
+          "Default": "Wait"
+        },
+        "Wait": {
+          "Type": "Wait",
+          "Seconds": 2,
+          "Next": "ReduceOneTeam"
+        },
+        "Success": {
+          "Type": "Succeed"
+        }
+      }
+    }
+  - collectAllForReductionArn: 
+      Fn::GetAtt: [CollectAllTeamsForReductionLambdaFunction, Arn]
+    reduceOneTeamArn:
+      Fn::GetAtt: [ReduceOneTeamLambdaFunction, Arn]
