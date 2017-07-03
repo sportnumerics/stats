@@ -41,7 +41,8 @@ describe('orchestration-integration', () => {
     });
 
     it('should collect all teams and put them into the queue', () => {
-      return orchestration.collectAllTeamsForReduction('2016').then((payload) => {
+      return orchestration.collectAllTeamsForReduction('2016').then(payload => {
+        expect(payload).to.not.be.undefined;
         divisionsMock.verify();
         teamsMock.verify();
         queueMock.verify();
