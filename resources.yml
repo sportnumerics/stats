@@ -50,42 +50,7 @@ Resources:
   StateMachine:
     Type: AWS::StepFunctions::StateMachine
     Properties:
-      DefinitionString: |-
-        {
-          "Comment": "Orchestration for collecting stats",
-          "StartAt": "CollectAllTeamsForReduction",
-          "States": {
-            "CollectAllTeamsForReduction": {
-              "Type": "Task",
-              "Resource": "${file(serverless.yml):custom.collectAllForReductionArn}"
-              "Next": "ReduceOneTeam"
-            },
-            "ReduceOneTeam": {
-              "Type": "Task",
-              "Resource": "${file(serverless.yml):custom.reduceOneTeamArn}",
-              "Next": "Check"
-            },
-            "Check": {
-              "Type": "Choice",
-              "Choices": [
-                {
-                  "Variable": "$.done",
-                  "BooleanEquals": true,
-                  "Next": "Success"
-                }
-              ],
-              "Default": "Wait"
-            },
-            "Wait": {
-              "Type": "Wait",
-              "Seconds": 2,
-              "Next": "ReduceOneTeam"
-            }
-            "Success": {
-              "Type": "Succeed"
-            }
-          }
-        }
+      DefinitionString: ${file(state-machine.json)}
       RoleArn:
         Fn::GetAtt: [StateMachineRole, Arn]
   StateMachineRole:
