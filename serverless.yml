@@ -54,6 +54,6 @@ resources: ${{file(resources.yml)}}
 
 functions:
   collectAllTeamsForReduction:
-    handler: handler.collectAllTeamsForReductions
+    handler: handler.collectAllTeamsForReduction
   reduceOneTeam:
     handler: handler.reduceOneTeam
