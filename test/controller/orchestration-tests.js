@@ -2,6 +2,7 @@
 
 const orchestration = require('../../lib/controller/orchestration');
 const predict = require('../../lib/service/predict');
+const queue = require('../../lib/service/queue');
 const divisions = require('../../lib/controller/divisions');
 const schedule = require('../../lib/controller/schedule');
 const teams = require('../../lib/controller/teams');
@@ -12,6 +13,7 @@ describe('orchestration-integration', () => {
   describe('collectAllTeamsForReduction', () => {
     var divisionsMock;
     var teamsMock;
+    var queueMock;
 
     beforeEach(() => {
       divisionsMock = sinon.mock(divisions)
@@ -24,6 +26,12 @@ describe('orchestration-integration', () => {
         .withArgs('2016', sinon.match.object)
         .exactly(6)
         .returns(Promise.resolve(fixtures.expectedTeamsJson.teams));
+      
+      queueMock = sinon.mock(queue)
+        .expects('sendMessages')
+        .withArgs(sinon.match.array.and(sinon.match.has('length', 414)))
+        .exactly(1)
+        .returns(Promise.resolve());
     });
 
     afterEach(() => {
@@ -31,14 +39,11 @@ describe('orchestration-integration', () => {
       teams.collect.restore();
     });
 
-    it('should collect all teams', () => {
+    it('should collect all teams and put them into the queue', () => {
       return orchestration.collectAllTeamsForReduction('2016').then((payload) => {
         divisionsMock.verify();
         teamsMock.verify();
-        expect(payload.meta.teams).to.have.lengthOf(414);
-        expect(payload.meta.year).to.equal('2016');
-        expect(payload.array).to.have.lengthOf(414);
-        expect(payload.result).to.be.empty;
+        queueMock.verify();
       });
     });
   });
@@ -49,49 +54,75 @@ describe('orchestration-integration', () => {
     beforeEach(() => {
       scheduleMock = sinon.mock(schedule)
         .expects('collect')
-        .withArgs('2016', sinon.match.string, sinon.match.string, sinon.match.array)
+        .withArgs('2016', '1', '721', sinon.match.array)
         .exactly(1)
         .returns(Promise.resolve());
-    })
+    });
 
     afterEach(() => {
       schedule.collect.restore();
     });
 
-    it('should remove one team from the team array and collect its schedule', () => {
-      let teams = fixtures.expectedTeamsJson.teams;
-      let payload = {
-        meta: {
-          year: '2016',
-          teams
-        },
-        array: teams,
-        result: {}
-      };
+    describe('when there are teams in the queue', () => {
+      var queueMock; 
 
-      let startingLength = teams.length;
-      let firstTeam = teams[0]
+      beforeEach(() => {
+        let teams = fixtures.expectedTeamsJson.teams;
+        let payload = {
+          id: 'mock-id',
+          body: {
+            meta: {
+              year: '2016',
+              teams
+            },
+            team: {
+              'id': '721',
+              'name': 'Air Force',
+              'div': '1'
+            }
+          }
+        };
 
-      return orchestration.reduceOneTeam(payload).then((result) => {
-        expect(result.array).to.have.lengthOf(startingLength - 1);
-        expect(result.done).to.be.false;
+        queueMock = sinon.mock(queue)
+          .expects('receiveMessage')
+          .exactly(1)
+          .returns(Promise.resolve(payload));
+      })
+
+      afterEach(() => {
+        queue.receiveMessage.restore();
+      });
+
+      it('should remove one team from the team array and collect its schedule', () => {
+        return orchestration.reduceOneTeam().then(result => {
+          expect(result.done).to.be.false;
+          queueMock.verify();
+          scheduleMock.verify();
+        });
       });
     });
 
-    it('should set the result to done when the last team is processed', () => {
-      let teams = [fixtures.expectedTeamsJson.teams[0]];
-      let payload = {
-        meta: {
-          year: '2016',
-          teams: fixtures.expectedTeamsJson.teams
-        },
-        array: teams,
-        result: {}
-      };
+    describe('when no teams are left in the queue', () => {
+      var queueMock;
 
-      return orchestration.reduceOneTeam(payload).then((result) => {
-        expect(result.array).to.have.lengthOf(0);
-        expect(result.done).to.be.true;
+      beforeEach(() => {
+        let teams = fixtures.expectedTeamsJson.teams;
+        let payload = null;
+
+        queueMock = sinon.mock(queue)
+          .expects('receiveMessage')
+          .exactly(1)
+          .returns(Promise.resolve(payload));
+      })
+
+      afterEach(() => {
+        queue.receiveMessage.restore();
+      });
+
+      it('should set the result to done when no message is received', () => {
+        return orchestration.reduceOneTeam().then(result => {
+          expect(result.done).to.be.true;
+        });
       });
     });
   });

@@ -78,6 +78,9 @@ Resources:
                 Resource:
                   - Fn::GetAtt: [CollectAllTeamsForReductionLambdaFunction, Arn]
                   - Fn::GetAtt: [ReduceOneTeamLambdaFunction, Arn]
+  PendingTeamsQueue:
+    Type: AWS::SQS::Queue
+
 Outputs:
   DivsTableName:
     Description: Divs table name in DynamoDB

@@ -20,6 +20,7 @@ provider:
     PREDICT_LAMBDA_ARN: ${{self:custom.predictLambdaArn}}
     RESULTS_TABLE: ${{self:custom.teamsTableName}}
     DIVISIONS_TABLE: ${{self:custom.divisionsTableName}}
+    TEAMS_QUEUE_URL: ${{self:custom.teamsQueueUrl}}
 package:
   exclude:
   - config/env.sh
@@ -49,6 +50,8 @@ custom:
       - Ref: AWS::AccountId
       - "function"
       - "sportnumerics-predict-${{opt:stage}}-predict"
+  teamsQueueUrl:
+    Ref: PendingTeamsQueue
 
 resources: ${{file(resources.yml)}}
 
