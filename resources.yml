@@ -76,8 +76,8 @@ Resources:
               - Effect: Allow
                 Action: "lambda:InvokeFunction"
                 Resource:
-                  - ${{file(serverless.yml):custom.collectAllTeamForReductionArn}}
-                  - ${{file(serverless.yml):custom.reduceOneTeamArn}}
+                  - Fn::GetAtt: [CollectAllTeamsForReductionLambdaFunction, Arn]
+                  - Fn::GetAtt: [ReduceOneTeamLambdaFunction, Arn]
 Outputs:
   DivsTableName:
     Description: Divs table name in DynamoDB
