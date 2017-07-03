@@ -37,6 +37,7 @@ describe('orchestration-integration', () => {
     afterEach(() => {
       divisions.collect.restore();
       teams.collect.restore();
+      queue.sendMessages.restore();
     });
 
     it('should collect all teams and put them into the queue', () => {
