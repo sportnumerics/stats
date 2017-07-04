@@ -54,13 +54,13 @@ describe('queue-service', () => {
       var mockSqs = sinon.mock(sqs)
         .expects('sendMessageBatchAsync')
         .exactly(1)
-        .returns(Promise.reject());
+        .returns(Promise.reject(new Error('mock error')));
 
       let messages = [{ key: 'value' }];
 
       let promise = queue.sendMessages(messages);
 
-      return expect(promise).to.be.rejectedWith('Unable to send message to SQS.')
+      return expect(promise).to.be.rejectedWith('mock error')
         .then(() => {
           sqs.sendMessageBatchAsync.restore();
         });
@@ -76,7 +76,7 @@ describe('queue-service', () => {
 
       let promise = queue.sendMessages(messages);
 
-      return expect(promise).to.be.rejectedWith('Unable to send message to SQS.')
+      return expect(promise).to.be.rejectedWith('Error: Failed batch result: [403] you suck')
         .then(() => {
           sqs.sendMessageBatchAsync.restore();
         });
@@ -92,7 +92,7 @@ describe('queue-service', () => {
 
       let promise = queue.sendMessages(messages);
 
-      return expect(promise).to.be.rejectedWith('Unable to send message to SQS.')
+      return expect(promise).to.be.rejectedWith('mock error')
         .then(() => {
           sqs.sendMessageBatchAsync.restore();
         });
