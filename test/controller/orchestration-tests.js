@@ -27,22 +27,27 @@ describe('orchestration-integration', () => {
         .exactly(6)
         .returns(Promise.resolve(fixtures.expectedTeamsJson.teams));
       
-      queueMock = sinon.mock(queue)
+      queueMock = sinon.mock(queue);
+
+      queueMock
         .expects('sendMessages')
         .withArgs(sinon.match.array.and(sinon.match.has('length', 414)))
         .exactly(1)
+        .returns(Promise.resolve());
+
+      queueMock
+        .expects('purgeQueue')
         .returns(Promise.resolve());
     });
 
     afterEach(() => {
       divisions.collect.restore();
       teams.collect.restore();
-      queue.sendMessages.restore();
+      queueMock.restore();
     });
 
     it('should collect all teams and put them into the queue', () => {
-      return orchestration.collectAllTeamsForReduction('2016').then(payload => {
-        expect(payload).to.not.be.undefined;
+      return orchestration.collectAllTeamsForReduction('2016').then(() => {
         divisionsMock.verify();
         teamsMock.verify();
         queueMock.verify();
