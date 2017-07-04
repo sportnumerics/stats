@@ -13,7 +13,7 @@ describe('teams-controller', () => {
     beforeEach(() => {
       serviceMock = sinon.mock(service)
         .expects('getHtmlFromNcaa')
-        .withArgs('2016', '1')
+        .withArgs('2016', { id: '1' })
         .returns(Promise.resolve(fixtures.teamList));
     });
 
@@ -22,7 +22,7 @@ describe('teams-controller', () => {
     });
 
     it('should get teams from service and write to persistent store', () => {
-      return controller.collect('2016', '1')
+      return controller.collect('2016', { id: '1' })
         .then(result => {
           expect(result).to.deep.equal(fixtures.expectedTeamsJson.teams);
 
