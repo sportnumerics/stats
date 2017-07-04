@@ -85,14 +85,20 @@ describe('orchestration-integration', () => {
           }
         };
 
-        queueMock = sinon.mock(queue)
-          .expects('receiveMessage')
+        queueMock = sinon.mock(queue);
+
+        queueMock.expects('receiveMessage')
           .exactly(1)
           .returns(Promise.resolve(payload));
+
+        queueMock.expects('deleteMessage')
+          .exactly(1)
+          .withArgs('mock-id')
+          .returns(Promise.resolve());
       })
 
       afterEach(() => {
-        queue.receiveMessage.restore();
+        queueMock.restore();
       });
 
       it('should remove one team from the team array and collect its schedule', () => {
