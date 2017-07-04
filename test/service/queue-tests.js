@@ -81,6 +81,22 @@ describe('queue-service', () => {
           sqs.sendMessageBatchAsync.restore();
         });
     });
+
+    it('should return an error if the batch post throws an error', () => {
+      var mockSqs = sinon.mock(sqs)
+        .expects('sendMessageBatchAsync')
+        .exactly(1)
+        .throws(new Error('mock error'));
+
+      let messages = [{ key: 'value' }];
+
+      let promise = queue.sendMessages(messages);
+
+      return expect(promise).to.be.rejectedWith('Unable to send message to SQS.')
+        .then(() => {
+          sqs.sendMessageBatchAsync.restore();
+        });
+    });
   });
 
   describe('receiveMessage', () => {
