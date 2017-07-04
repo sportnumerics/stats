@@ -70,3 +70,4 @@ functions:
   reduceOneTeam:
     handler: handler.reduceOneTeam
     timeout: 20
+    memorySize: 128 # minimize cost since we are bound by network roundtrip
