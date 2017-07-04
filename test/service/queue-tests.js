@@ -33,7 +33,7 @@ describe('queue-service', () => {
       });
     });
 
-    it('should chunk the messages into batches of ten', () => {
+    it('should chunk the messages into batches of the batch size', () => {
       var mockSqs = sinon.mock(sqs)
         .expects('sendMessageBatchAsync')
         .exactly(2);
@@ -44,7 +44,7 @@ describe('queue-service', () => {
       let messagePrototype = { key: 'value' };
       let messages = _.fill(Array(15), messagePrototype);
 
-      return queue.sendMessages(messages).then(() => {
+      return queue.sendMessages(messages, { batchSize: 10 }).then(() => {
         mockSqs.verify();
         sqs.sendMessageBatchAsync.restore();
       });
