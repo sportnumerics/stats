@@ -23,12 +23,7 @@ Fn::Sub:
               "Next": "Success"
             }
           ],
-          "Default": "Wait"
-        },
-        "Wait": {
-          "Type": "Wait",
-          "Seconds": 2,
-          "Next": "ReduceOneTeam"
+          "Default": "ReduceOneTeam"
         },
         "Success": {
           "Type": "Succeed"
