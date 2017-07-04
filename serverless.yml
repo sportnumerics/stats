@@ -21,6 +21,7 @@ provider:
       - "sqs:SendMessage"
       - "sqs:ReceiveMessage"
       - "sqs:DeleteMessage"
+      - "sqs:PurgeQueue"
     Resource: ${{self:custom.teamsQueueArn}}
   environment:
     PREDICT_LAMBDA_ARN: ${{self:custom.predictLambdaArn}}
