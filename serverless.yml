@@ -16,6 +16,12 @@ provider:
     Resource:
       - ${{self:custom.divisionsTableArn}}
       - ${{self:custom.teamsTableArn}}
+  - Effect: "Allow"
+    Action:
+      - "sqs:SendMessage"
+      - "sqs:ReceiveMessage"
+      - "sqs:DeleteMessage"
+    Resource: ${{self:custom.teamsQueueArn}}
   environment:
     PREDICT_LAMBDA_ARN: ${{self:custom.predictLambdaArn}}
     RESULTS_TABLE: ${{self:custom.teamsTableName}}
@@ -52,6 +58,8 @@ custom:
       - "sportnumerics-predict-${{opt:stage}}-predict"
   teamsQueueUrl:
     Ref: PendingTeamsQueue
+  teamsQueueArn:
+    Fn::GetAtt: [PendingTeamsQueue, Arn]
 
 resources: ${{file(resources.yml)}}
 
