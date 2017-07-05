@@ -16,7 +16,6 @@ module.exports = {
   teamList: fs.readFileSync(path.resolve(__dirname, './fixtures/team-list.html')),
   schedule: fs.readFileSync(path.resolve(__dirname, './fixtures/schedule.html')),
   gameByGame: fs.readFileSync(path.resolve(__dirname, './fixtures/game-by-game.html')),
-  expectedStoredDivisionsJson: require('./fixtures/expected-stored-divisions'),
   expectedQueryDivisionsJson: require('./fixtures/expected-query-divisions'),
   expectedTeamsJson: require('./fixtures/expected-div1-teams'),
   expectedScheduleJson: require('./fixtures/expected-721-schedule'),
