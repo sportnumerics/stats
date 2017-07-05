@@ -28,7 +28,7 @@ describe('schedule-controller', () => {
     });
 
     it('should get team schedule from service and write to persistent store', () => {
-      return controller.collect({ id: '721', name: 'Air Force', div: 'm1', year: '2016' })
+      return controller.collect({ id: '721', name: 'Air Force', div: 'm1', year: '2016', sport: 'mla' })
         .then(() => {
           serviceMock.verify();
           persistenceMock.verify();
