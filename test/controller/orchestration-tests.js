@@ -62,7 +62,7 @@ describe('orchestration-integration', () => {
       scheduleMock = sinon.mock(schedule)
         .expects('collect')
         .withArgs({ id: '721', name: 'Air Force', div: 'm1', year: '2016' })
-        .exactly(1)
+        .exactly(2)
         .returns(Promise.resolve());
     });
 
@@ -75,24 +75,35 @@ describe('orchestration-integration', () => {
 
       beforeEach(() => {
         let teams = fixtures.expectedTeamsJson.teams;
-        let payload = {
-          id: 'mock-id',
-          body: {
-            'id': '721',
-            'name': 'Air Force',
-            'div': 'm1',
-            'year': '2016'
+        let messages = [
+          {
+            id: 'mock-id',
+            body: { 
+              id: '721',
+              name: 'Air Force',
+              div: 'm1',
+              year: '2016'
+            }
+          },
+          {
+            id: 'mock-id',
+            body: { 
+              id: '721',
+              name: 'Air Force',
+              div: 'm1',
+              year: '2016'
+            }
           }
-        };
+        ];
 
         queueMock = sinon.mock(queue);
 
-        queueMock.expects('receiveMessage')
+        queueMock.expects('receiveMessages')
           .exactly(1)
-          .returns(Promise.resolve(payload));
+          .returns(Promise.resolve(messages));
 
         queueMock.expects('deleteMessage')
-          .exactly(1)
+          .exactly(2)
           .withArgs('mock-id')
           .returns(Promise.resolve());
       })
@@ -101,8 +112,8 @@ describe('orchestration-integration', () => {
         queueMock.restore();
       });
 
-      it('should remove one team from the team array and collect its schedule', () => {
-        return orchestration.reduceOneTeam().then(result => {
+      it('should collect their schedules and remove them from the team queue', () => {
+        return orchestration.reduceTeams().then(result => {
           expect(result.done).to.be.false;
           queueMock.verify();
           scheduleMock.verify();
@@ -115,21 +126,24 @@ describe('orchestration-integration', () => {
 
       beforeEach(() => {
         let teams = fixtures.expectedTeamsJson.teams;
-        let payload = null;
+        let messages = [];
 
-        queueMock = sinon.mock(queue)
-          .expects('receiveMessage')
+        queueMock = sinon.mock(queue);
+
+        queueMock
+          .expects('receiveMessages')
           .exactly(1)
-          .returns(Promise.resolve(payload));
+          .returns(Promise.resolve(messages));
       })
 
       afterEach(() => {
-        queue.receiveMessage.restore();
+        queueMock.restore();
       });
 
       it('should set the result to done when no message is received', () => {
-        return orchestration.reduceOneTeam().then(result => {
+        return orchestration.reduceTeams().then(result => {
           expect(result.done).to.be.true;
+          queueMock.verify();
         });
       });
     });
