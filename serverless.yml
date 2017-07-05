@@ -80,7 +80,7 @@ functions:
   reduceTeams:
     handler: handler.reduceTeams
     timeout: 60
-    memorySize: 128 # minimize cost since we are bound by network roundtrip
+    memorySize: 256 # minimize cost since we are bound by network roundtrip
   onTeamsModified:
     handler: handler.onTeamsModified
     events:
