@@ -72,3 +72,10 @@ functions:
     handler: handler.reduceTeams
     timeout: 60
     memorySize: 128 # minimize cost since we are bound by network roundtrip
+  onTeamsModified:
+    handler: handler.onTeamsModified
+    events:
+    - stream:
+        type: dynamodb
+        arn:
+          Fn::GetAtt: [TeamsTable, StreamArn]
