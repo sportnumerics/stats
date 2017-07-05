@@ -21,7 +21,7 @@ describe('teams-controller', () => {
       service.getHtmlFromNcaa.restore();
     });
 
-    it('should get teams from service and write to persistent store', () => {
+    it('should get teams from service', () => {
       return controller.collect('2016', { id: '1' })
         .then(result => {
           expect(result).to.deep.equal(fixtures.expectedTeamsJson.teams);

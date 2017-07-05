@@ -1,16 +1,15 @@
 {
     "id": "721",
     "name": "Air Force",
-    "div": "1",
+    "div": "m1",
+    "year": "2016",
     "schedule": [
         {
             "location": {
                 "type": "away"
             },
             "opponent": {
-                "id": "726",
-                "name": "Navy",
-                "div": "1"
+                "name": "Navy"
             },
             "date": "2017-02-11T00:00:00.000Z",
             "result": {
@@ -23,9 +22,7 @@
                 "type": "away"
             },
             "opponent": {
-                "id": "606",
-                "name": "Saint Joseph's",
-                "div": "1"
+                "name": "Saint Joseph's"
             },
             "date": "2017-02-14T00:00:00.000Z",
             "result": {
@@ -38,9 +35,7 @@
                 "type": "home"
             },
             "opponent": {
-                "id": "19651",
-                "name": "High Point",
-                "div": "1"
+                "name": "High Point"
             },
             "date": "2017-02-18T00:00:00.000Z",
             "result": {
@@ -53,9 +48,7 @@
                 "type": "home"
             },
             "opponent": {
-                "id": "813",
-                "name": "Yale",
-                "div": "1"
+                "name": "Yale"
             },
             "date": "2017-02-25T00:00:00.000Z",
             "result": {
@@ -68,9 +61,7 @@
                 "type": "away"
             },
             "opponent": {
-                "id": "513",
-                "name": "Notre Dame",
-                "div": "1"
+                "name": "Notre Dame"
             },
             "date": "2017-03-04T00:00:00.000Z",
             "result": {
@@ -83,9 +74,7 @@
                 "type": "away"
             },
             "opponent": {
-                "id": "14",
-                "name": "Albany (NY)",
-                "div": "1"
+                "name": "Albany (NY)"
             },
             "date": "2017-03-11T00:00:00.000Z"
         },
@@ -94,9 +83,7 @@
                 "type": "home"
             },
             "opponent": {
-                "id": "739",
-                "name": "Villanova",
-                "div": "1"
+                "name": "Villanova"
             },
             "date": "2017-03-18T00:00:00.000Z"
         },
@@ -105,9 +92,7 @@
                 "type": "away"
             },
             "opponent": {
-                "id": "457",
-                "name": "North Carolina",
-                "div": "1"
+                "name": "North Carolina"
             },
             "date": "2017-03-25T00:00:00.000Z"
         },
@@ -116,9 +101,7 @@
                 "type": "home"
             },
             "opponent": {
-                "id": "418",
-                "name": "Michigan",
-                "div": "1"
+                "name": "Michigan"
             },
             "date": "2017-04-01T00:00:00.000Z"
         },
@@ -127,9 +110,7 @@
                 "type": "home"
             },
             "opponent": {
-                "id": "539",
-                "name": "Penn St.",
-                "div": "1"
+                "name": "Penn St."
             },
             "date": "2017-04-08T00:00:00.000Z"
         },
@@ -138,9 +119,7 @@
                 "type": "away"
             },
             "opponent": {
-                "id": "587",
-                "name": "Rutgers",
-                "div": "1"
+                "name": "Rutgers"
             },
             "date": "2017-04-16T00:00:00.000Z"
         },
@@ -149,9 +128,7 @@
                 "type": "away"
             },
             "opponent": {
-                "id": "518",
-                "name": "Ohio St.",
-                "div": "1"
+                "name": "Ohio St."
             },
             "date": "2017-04-22T00:00:00.000Z"
         },
@@ -160,9 +137,7 @@
                 "type": "home"
             },
             "opponent": {
-                "id": "322",
-                "name": "Johns Hopkins",
-                "div": "1"
+                "name": "Johns Hopkins"
             },
             "date": "2017-04-29T00:00:00.000Z"
         },
@@ -171,9 +146,7 @@
                 "type": "home"
             },
             "opponent": {
-                "name": "Colorado College",
-                "id": "colorado_college",
-                "nonDivisional": true
+                "name": "Colorado College"
             },
             "date": "2017-05-01T00:00:00.000Z"
         }

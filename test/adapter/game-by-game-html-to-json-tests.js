@@ -19,7 +19,6 @@ describe('schedule html to json', () => {
   });
 
   it('should extract each opponent', () => {
-    expect(data[0].opponent.id).to.equal('726');
     expect(data[0].opponent.name).to.equal('Navy');
     expect(data[0].location.type).to.equal('away');
   });

@@ -61,7 +61,7 @@ describe('orchestration-integration', () => {
     beforeEach(() => {
       scheduleMock = sinon.mock(schedule)
         .expects('collect')
-        .withArgs('2016', '1', '721', sinon.match.array)
+        .withArgs({ id: '721', name: 'Air Force', div: '1', year: '2016' })
         .exactly(1)
         .returns(Promise.resolve());
     });
@@ -78,15 +78,10 @@ describe('orchestration-integration', () => {
         let payload = {
           id: 'mock-id',
           body: {
-            meta: {
-              year: '2016',
-              teams
-            },
-            team: {
-              'id': '721',
-              'name': 'Air Force',
-              'div': '1'
-            }
+            'id': '721',
+            'name': 'Air Force',
+            'div': '1',
+            'year': '2016'
           }
         };
 
