@@ -7,11 +7,11 @@ Fn::Sub:
         "CollectAllTeamsForReduction": {
           "Type": "Task",
           "Resource": "${collectAllForReductionArn}",
-          "Next": "ReduceOneTeam"
+          "Next": "ReduceTeams"
         },
-        "ReduceOneTeam": {
+        "ReduceTeams": {
           "Type": "Task",
-          "Resource": "${reduceOneTeamArn}",
+          "Resource": "${reduceTeamsArn}",
           "Next": "Check"
         },
         "Check": {
@@ -23,7 +23,7 @@ Fn::Sub:
               "Next": "Success"
             }
           ],
-          "Default": "ReduceOneTeam"
+          "Default": "ReduceTeams"
         },
         "Success": {
           "Type": "Succeed"
@@ -32,5 +32,5 @@ Fn::Sub:
     }
   - collectAllForReductionArn: 
       Fn::GetAtt: [CollectAllTeamsForReductionLambdaFunction, Arn]
-    reduceOneTeamArn:
-      Fn::GetAtt: [ReduceOneTeamLambdaFunction, Arn]
+    reduceTeamsArn:
+      Fn::GetAtt: [ReduceTeamsLambdaFunction, Arn]

@@ -68,7 +68,7 @@ functions:
   collectAllTeamsForReduction:
     handler: handler.collectAllTeamsForReduction
     timeout: 60
-  reduceOneTeam:
-    handler: handler.reduceOneTeam
+  reduceTeams:
+    handler: handler.reduceTeams
     timeout: 20
     memorySize: 128 # minimize cost since we are bound by network roundtrip
