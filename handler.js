@@ -12,11 +12,11 @@ function collectAllTeamsForReduction(event, context, callback) {
   orchestration.collectAllTeamsForReduction(year).asCallback(callback);
 }
 
-function reduceOneTeam(event, context, callback) {
-  orchestration.reduceOneTeam().asCallback(callback);
+function reduceTeams(event, context, callback) {
+  orchestration.reduceTeams().asCallback(callback);
 }
 
 module.exports = {
   collectAllTeamsForReduction,
-  reduceOneTeam
+  reduceTeams
 };
