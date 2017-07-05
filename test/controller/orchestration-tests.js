@@ -55,13 +55,13 @@ describe('orchestration-integration', () => {
     });
   });
   
-  describe('reduceOneTeam', () => {
+  describe('reduceTeams', () => {
     var scheduleMock;
 
     beforeEach(() => {
       scheduleMock = sinon.mock(schedule)
         .expects('collect')
-        .withArgs({ id: '721', name: 'Air Force', div: '1', year: '2016' })
+        .withArgs({ id: '721', name: 'Air Force', div: 'm1', year: '2016' })
         .exactly(1)
         .returns(Promise.resolve());
     });
@@ -80,7 +80,7 @@ describe('orchestration-integration', () => {
           body: {
             'id': '721',
             'name': 'Air Force',
-            'div': '1',
+            'div': 'm1',
             'year': '2016'
           }
         };

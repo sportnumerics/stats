@@ -2,6 +2,7 @@
   "divisions": [
     {
       "id": "m1",
+      "sport": "mla",
       "source": {
         "type": "ncaa",
         "id": "1",
@@ -11,6 +12,7 @@
     },
     {
       "id": "m2",
+      "sport": "mla",
       "source": {
         "type": "ncaa",
         "id": "2",
@@ -20,6 +22,7 @@
     },
     {
       "id": "m3",
+      "sport": "mla",
       "source": {
         "type": "ncaa",
         "id": "3",
@@ -29,6 +32,7 @@
     },
     {
       "id": "w1",
+      "sport": "wla",
       "source": {
         "type": "ncaa",
         "id": "1",
@@ -38,6 +42,7 @@
     },
     {
       "id": "w2",
+      "sport": "wla",
       "source": {
         "type": "ncaa",
         "id": "2",
@@ -47,6 +52,7 @@
     },
     {
       "id": "w3",
+      "sport": "wla",
       "source": {
         "type": "ncaa",
         "id": "3",

@@ -99,8 +99,28 @@ describe('queue-service', () => {
     });
   });
 
-  describe('receiveMessage', () => {
+  describe('receiveMessages', () => {
+    it('should read a batch of messages from sqs', () => {
+      let expectedParams = {
+        MaxNumberOfMessages: 10,
+        QueueUrl: 'https://mock.teams.queue.url'
+      };
 
+      var mockSqs = sinon.mock(sqs);
+
+      mockSqs.expects('receiveMessageAsync')
+        .withArgs(expectedParams)
+        .returns(Promise.resolve(mockMessages(8)));
+
+      return queue.receiveMessage({ batchSize: 10 })
+        .then(messages => {
+          expect(messages).to.have.lengthOf(8);
+          expect(messages[0].id).to.equal('mock-receipt-handle');
+          expect(messages[0].body).to.deep.equal({key: 'value'});
+          mockSqs.verify();
+          mockSqs.restore();
+        });
+    });
   });
 });
 
@@ -125,4 +145,15 @@ function batchFailedObject(count) {
         Message: 'you suck'
       })
   }
+}
+
+function mockMessages(count) {
+  return {
+    Messages: _.fill(Array(count), {
+      MessageId: 'mock-id',
+      ReceiptHandle: 'mock-receipt-handle',
+      MD5OfBody: 'mock-md5',
+      Body: "\{\"key\": \"value\"}"
+    })
+  };
 }
