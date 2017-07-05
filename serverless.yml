@@ -39,7 +39,7 @@ package:
   exclude:
   - config/env.sh
 custom:
-  tableVersion: 6
+  tableVersion: 7
   teamsTableName: sportnumerics-stats-teams-${{opt:stage}}-v${{self:custom.tableVersion}}
   teamsTableArn:
     Fn::Join:
