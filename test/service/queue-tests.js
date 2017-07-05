@@ -144,7 +144,7 @@ describe('queue-service', () => {
 
       mockSqs.expects('receiveMessageAsync')
         .withArgs(expectedParams)
-        .returns(Promise.resolve(mockMessages(0)));
+        .returns(Promise.resolve(noMessages()));
 
       return queue.receiveMessages({ batchSize: 10 })
         .then(messages => {
@@ -188,4 +188,8 @@ function mockMessages(count) {
       Body: "\{\"key\": \"value\"}"
     })
   };
+}
+
+function noMessages() {
+  return {}
 }
