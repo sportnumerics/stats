@@ -33,6 +33,8 @@ Resources:
       ProvisionedThroughput:
         ReadCapacityUnits: 5
         WriteCapacityUnits: 10
+      StreamSpecification:
+        StreamViewType: NEW_IMAGE
       TableName: ${{file(serverless.yml):custom.teamsTableName}}
   DivisionsTable:
     Type: AWS::DynamoDB::Table

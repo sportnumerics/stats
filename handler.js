@@ -16,7 +16,12 @@ function reduceTeams(event, context, callback) {
   orchestration.reduceTeams().asCallback(callback);
 }
 
+function onTeamsModified(event, context, callback) {
+  orchestration.onTeamsModified(event).asCallback(callback);
+}
+
 module.exports = {
   collectAllTeamsForReduction,
-  reduceTeams
+  reduceTeams,
+  onTeamsModified
 };
