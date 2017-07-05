@@ -18,7 +18,7 @@ describe('handler-integration', () => {
       persistenceMock = sinon.mock(persistence);
 
       persistenceMock.expects('set')
-        .exactly(1)
+        .exactly(6)
         .returns(Promise.resolve());
 
       queueMock = sinon.mock(queue);

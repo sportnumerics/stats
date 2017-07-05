@@ -10,20 +10,29 @@ describe('divisions-controller', () => {
     let persistenceMock;
 
     beforeEach(() => {
-      persistenceMock = sinon.mock(persistence)
+      let divisionMatch = sinon.match({
+        sport: sinon.match.string,
+        title: sinon.match.string
+      })
+      
+      persistenceMock = sinon.mock(persistence);
+
+      persistenceMock
         .expects('set')
-        .withArgs('MockDivisionsTable', {year:'2016'}, fixtures.expectedStoredDivisionsJson)
+        .exactly(6)
+        .withArgs('MockDivisionsTable', { id: sinon.match.string, year: '2016' }, divisionMatch)
         .returns(Promise.resolve());
     });
 
     afterEach(() => {
-      persistence.set.restore();
+      persistenceMock.restore();
     });
 
     it('should write divisions to persistent store', () => {
       return controller.collect('2016')
         .then(result => {
           expect(result).to.deep.equal(fixtures.expectedQueryDivisionsJson.divisions);
+          persistenceMock.verify();
         });
     });
   });
