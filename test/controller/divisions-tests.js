@@ -12,7 +12,7 @@ describe('divisions-controller', () => {
     beforeEach(() => {
       persistenceMock = sinon.mock(persistence)
         .expects('set')
-        .withArgs('MockDivisionsTable', {season:'2016'}, fixtures.expectedStoredDivisionsJson)
+        .withArgs('MockDivisionsTable', {year:'2016'}, fixtures.expectedStoredDivisionsJson)
         .returns(Promise.resolve());
     });
 

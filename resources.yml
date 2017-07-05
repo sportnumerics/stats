@@ -5,19 +5,19 @@ Resources:
       AttributeDefinitions:
         - AttributeName: id
           AttributeType: S
-        - AttributeName: season
+        - AttributeName: year
           AttributeType: S
         - AttributeName: div
           AttributeType: S
       KeySchema:
         - AttributeName: id
           KeyType: HASH
-        - AttributeName: season
+        - AttributeName: year
           KeyType: RANGE
       GlobalSecondaryIndexes:
         - IndexName: schedule
           KeySchema:
-            - AttributeName: season
+            - AttributeName: year
               KeyType: HASH
             - AttributeName: div
               KeyType: RANGE
@@ -38,10 +38,10 @@ Resources:
     Type: AWS::DynamoDB::Table
     Properties:
       AttributeDefinitions:
-        - AttributeName: season
+        - AttributeName: year
           AttributeType: S
       KeySchema:
-        - AttributeName: season
+        - AttributeName: year
           KeyType: HASH
       ProvisionedThroughput:
         ReadCapacityUnits: 5

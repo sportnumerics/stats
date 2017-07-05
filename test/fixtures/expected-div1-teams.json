@@ -3,346 +3,415 @@
         {
             "id": "721",
             "name": "Air Force",
+            "year": "2016",
             "div": "1"
         },
         {
             "id": "14",
             "name": "Albany (NY)",
+            "year": "2016",
             "div": "1"
         },
         {
             "id": "725",
             "name": "Army West Point",
+            "year": "2016",
             "div": "1"
         },
         {
             "id": "52",
             "name": "Bellarmine",
+            "year": "2016",
             "div": "1"
         },
         {
             "id": "62",
             "name": "Binghamton",
+            "year": "2016",
             "div": "1"
         },
         {
             "id": "68",
             "name": "Boston U.",
+            "year": "2016",
             "div": "1"
         },
         {
             "id": "80",
             "name": "Brown",
+            "year": "2016",
             "div": "1"
         },
         {
             "id": "81",
             "name": "Bryant",
+            "year": "2016",
             "div": "1"
         },
         {
             "id": "83",
             "name": "Bucknell",
+            "year": "2016",
             "div": "1"
         },
         {
             "id": "116",
             "name": "Canisius",
+            "year": "2016",
             "div": "1"
         },
         {
             "id": "153",
             "name": "Colgate",
+            "year": "2016",
             "div": "1"
         },
         {
             "id": "167",
             "name": "Cornell",
+            "year": "2016",
             "div": "1"
         },
         {
             "id": "172",
             "name": "Dartmouth",
+            "year": "2016",
             "div": "1"
         },
         {
             "id": "180",
             "name": "Delaware",
+            "year": "2016",
             "div": "1"
         },
         {
             "id": "183",
             "name": "Denver",
+            "year": "2016",
             "div": "1"
         },
         {
             "id": "184",
             "name": "Detroit",
+            "year": "2016",
             "div": "1"
         },
         {
             "id": "191",
             "name": "Drexel",
+            "year": "2016",
             "div": "1"
         },
         {
             "id": "193",
             "name": "Duke",
+            "year": "2016",
             "div": "1"
         },
         {
             "id": "220",
             "name": "Fairfield",
+            "year": "2016",
             "div": "1"
         },
         {
             "id": "244",
             "name": "Furman",
+            "year": "2016",
             "div": "1"
         },
         {
             "id": "251",
             "name": "Georgetown",
+            "year": "2016",
             "div": "1"
         },
         {
             "id": "272",
             "name": "Hartford",
+            "year": "2016",
             "div": "1"
         },
         {
             "id": "275",
             "name": "Harvard",
+            "year": "2016",
             "div": "1"
         },
         {
             "id": "19651",
             "name": "High Point",
+            "year": "2016",
             "div": "1"
         },
         {
             "id": "282",
             "name": "Hobart and William Colleges",
+            "year": "2016",
             "div": "1"
         },
         {
             "id": "283",
             "name": "Hofstra",
+            "year": "2016",
             "div": "1"
         },
         {
             "id": "285",
             "name": "Holy Cross",
+            "year": "2016",
             "div": "1"
         },
         {
             "id": "316",
             "name": "Jacksonville",
+            "year": "2016",
             "div": "1"
         },
         {
             "id": "322",
             "name": "Johns Hopkins",
+            "year": "2016",
             "div": "1"
         },
         {
             "id": "342",
             "name": "Lafayette",
+            "year": "2016",
             "div": "1"
         },
         {
             "id": "352",
             "name": "Lehigh",
+            "year": "2016",
             "div": "1"
         },
         {
             "id": "369",
             "name": "Loyola Maryland",
+            "year": "2016",
             "div": "1"
         },
         {
             "id": "381",
             "name": "Manhattan",
+            "year": "2016",
             "div": "1"
         },
         {
             "id": "386",
             "name": "Marist",
+            "year": "2016",
             "div": "1"
         },
         {
             "id": "387",
             "name": "Marquette",
+            "year": "2016",
             "div": "1"
         },
         {
             "id": "392",
             "name": "Maryland",
+            "year": "2016",
             "div": "1"
         },
         {
             "id": "400",
             "name": "Massachusetts",
+            "year": "2016",
             "div": "1"
         },
         {
             "id": "406",
             "name": "Mercer",
+            "year": "2016",
             "div": "1"
         },
         {
             "id": "418",
             "name": "Michigan",
+            "year": "2016",
             "div": "1"
         },
         {
             "id": "439",
             "name": "Monmouth",
+            "year": "2016",
             "div": "1"
         },
         {
             "id": "450",
             "name": "Mt. St. Mary's",
+            "year": "2016",
             "div": "1"
         },
         {
             "id": "471",
             "name": "NJIT",
+            "year": "2016",
             "div": "1"
         },
         {
             "id": "726",
             "name": "Navy",
+            "year": "2016",
             "div": "1"
         },
         {
             "id": "457",
             "name": "North Carolina",
+            "year": "2016",
             "div": "1"
         },
         {
             "id": "513",
             "name": "Notre Dame",
+            "year": "2016",
             "div": "1"
         },
         {
             "id": "518",
             "name": "Ohio St.",
+            "year": "2016",
             "div": "1"
         },
         {
             "id": "540",
             "name": "Penn",
+            "year": "2016",
             "div": "1"
         },
         {
             "id": "539",
             "name": "Penn St.",
+            "year": "2016",
             "div": "1"
         },
         {
             "id": "554",
             "name": "Princeton",
+            "year": "2016",
             "div": "1"
         },
         {
             "id": "556",
             "name": "Providence",
+            "year": "2016",
             "div": "1"
         },
         {
             "id": "562",
             "name": "Quinnipiac",
+            "year": "2016",
             "div": "1"
         },
         {
             "id": "575",
             "name": "Richmond",
+            "year": "2016",
             "div": "1"
         },
         {
             "id": "579",
             "name": "Robert Morris",
+            "year": "2016",
             "div": "1"
         },
         {
             "id": "587",
             "name": "Rutgers",
+            "year": "2016",
             "div": "1"
         },
         {
             "id": "590",
             "name": "Sacred Heart",
+            "year": "2016",
             "div": "1"
         },
         {
             "id": "606",
             "name": "Saint Joseph's",
+            "year": "2016",
             "div": "1"
         },
         {
             "id": "639",
             "name": "Siena",
+            "year": "2016",
             "div": "1"
         },
         {
             "id": "603",
             "name": "St. John's (NY)",
+            "year": "2016",
             "div": "1"
         },
         {
             "id": "683",
             "name": "Stony Brook",
+            "year": "2016",
             "div": "1"
         },
         {
             "id": "688",
             "name": "Syracuse",
+            "year": "2016",
             "div": "1"
         },
         {
             "id": "711",
             "name": "Towson",
+            "year": "2016",
             "div": "1"
         },
         {
             "id": "391",
             "name": "UMBC",
+            "year": "2016",
             "div": "1"
         },
         {
             "id": "368",
             "name": "UMass Lowell",
+            "year": "2016",
             "div": "1"
         },
         {
             "id": "741",
             "name": "VMI",
+            "year": "2016",
             "div": "1"
         },
         {
             "id": "738",
             "name": "Vermont",
+            "year": "2016",
             "div": "1"
         },
         {
             "id": "739",
             "name": "Villanova",
+            "year": "2016",
             "div": "1"
         },
         {
             "id": "746",
             "name": "Virginia",
+            "year": "2016",
             "div": "1"
         },
         {
             "id": "748",
             "name": "Wagner",
+            "year": "2016",
             "div": "1"
         },
         {
             "id": "813",
             "name": "Yale",
+            "year": "2016",
             "div": "1"
         }
     ]
