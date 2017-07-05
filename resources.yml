@@ -9,8 +9,6 @@ Resources:
           AttributeType: S
         - AttributeName: div
           AttributeType: S
-        - AttributeName: name
-          AttributeType: S
       KeySchema:
         - AttributeName: id
           KeyType: HASH
