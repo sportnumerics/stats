@@ -13,7 +13,7 @@ describe('teams-controller', () => {
     beforeEach(() => {
       serviceMock = sinon.mock(service)
         .expects('getHtmlFromNcaa')
-        .withArgs('2016', { id: '1' })
+        .withArgs('2016', { id: 'm1' })
         .returns(Promise.resolve(fixtures.teamList));
     });
 
@@ -22,11 +22,46 @@ describe('teams-controller', () => {
     });
 
     it('should get teams from service', () => {
-      return controller.collect('2016', { id: '1' })
+      return controller.collect('2016', { id: 'm1' })
         .then(result => {
           expect(result).to.deep.equal(fixtures.expectedTeamsJson.teams);
 
           serviceMock.verify();
+        });
+    });
+  });
+
+  describe('renormalize', () => {
+    it('should make sure each opponent has a matching id', () => {
+      let persistenceMock = sinon.mock(persistence);
+
+      persistenceMock
+        .expects('get')
+        .withArgs('MockDivisionsTable', { year: '2016' })
+        .returns(Promise.resolve(fixtures.expectedStoredDivisionsJson))
+
+      persistenceMock
+        .expects('get')
+        .withArgs('MockResultsTable', { year: '2016' }, { index: 'schedule' })
+        .returns(Promise.resolve([fixtures.expectedGameByGameJson]));
+
+      let teamMatch = sinon.match({
+        id: sinon.match.string,
+        schedule: sinon.match.array,
+        name: sinon.match.string,
+        div: sinon.match.string
+      });
+
+      persistenceMock
+        .expects('set')
+        .withArgs('MockResultsTable', { id: sinon.match.string, year: '2016' }, teamMatch)
+        .exactly(1)
+        .returns(Promise.resolve());
+
+      return controller.normalize('2016')
+        .then(() => {
+          persistenceMock.verify();
+          persistenceMock.restore();
         });
     });
   });

@@ -19,7 +19,7 @@ describe('orchestration-integration', () => {
       divisionsMock = sinon.mock(divisions)
         .expects('collect')
         .withArgs('2016')
-        .returns(Promise.resolve(fixtures.expectedQueryDivisionsJson.divisions));
+        .returns(Promise.resolve(fixtures.expectedQueryDivisionsJson));
 
       teamsMock = sinon.mock(teams)
         .expects('collect')
@@ -146,6 +146,22 @@ describe('orchestration-integration', () => {
           queueMock.verify();
         });
       });
+    });
+  });
+
+  describe('normalizeTeams', () => {
+    it('should use the teams controller to normalize the teams for a given year', () => {
+      let teamsMock = sinon.mock(teams);
+
+      teamsMock.expects('normalize')
+        .withArgs('2016')
+        .returns(Promise.resolve())
+
+      return orchestration.normalizeTeams('2016')
+        .then(() => {
+          teamsMock.verify();
+          teamsMock.restore();
+        });
     });
   });
 });
