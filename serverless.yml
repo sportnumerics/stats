@@ -81,9 +81,5 @@ functions:
     handler: handler.reduceTeams
     timeout: 60
     memorySize: 256 # minimize cost since we are bound by network roundtrip
-  onTeamsModified:
-    handler: handler.onTeamsModified
-    events:
-    - stream:
-        type: dynamodb
-        arn: ${{self:custom.teamsStreamArn}}
+  normalizeTeams:
+    handler: handler.normalizeTeams

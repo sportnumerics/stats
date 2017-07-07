@@ -31,7 +31,7 @@ describe('divisions-controller', () => {
     it('should write divisions to persistent store', () => {
       return controller.collect('2016')
         .then(result => {
-          expect(result).to.deep.equal(fixtures.expectedQueryDivisionsJson.divisions);
+          expect(result).to.deep.equal(fixtures.expectedQueryDivisionsJson);
           persistenceMock.verify();
         });
     });
