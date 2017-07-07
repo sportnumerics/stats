@@ -126,5 +126,37 @@ describe('persistence-service', () => {
           restoreMock();
         });
     });
+
+    it('should correctly escape reserved keyword parameter names', () => {
+      let expectedParams = {
+        TableName: 'mock-table',
+        IndexName: 'mock-index',
+        KeyConditionExpression: '#token7 = :p6',
+        ExpressionAttributeValues: {
+          ':p6': 'mockKeyValue'
+        },
+        ExpressionAttributeNames: {
+          '#token7': 'name'
+        }
+      }
+
+      setUpMockWithExpectedParams('queryAsync', expectedParams, { Items: [
+        {
+          'name': 'mockKeyValue',
+          'mockOtherKey': 'mockOtherValue'
+        }
+      ]});
+
+      return persistence.get('mock-table', { 'name': 'mockKeyValue' }, { index: 'mock-index' })
+        .then(result => {
+          expect(result).to.deep.equal([{
+            'name': 'mockKeyValue',
+            'mockOtherKey': 'mockOtherValue'
+          }]);
+
+          mockDb.verify();
+          restoreMock();
+        });
+    });
   });
 });
