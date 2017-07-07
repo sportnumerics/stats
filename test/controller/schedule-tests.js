@@ -13,7 +13,7 @@ describe('schedule-controller', () => {
     beforeEach(() => {
       serviceMock = sinon.mock(service)
         .expects('getHtmlFromNcaa')
-        .withArgs('2016', '721')
+        .withArgs('2016', 'm1', '721')
         .returns(Promise.resolve(fixtures.gameByGame))
 
       persistenceMock = sinon.mock(persistence)
@@ -28,7 +28,7 @@ describe('schedule-controller', () => {
     });
 
     it('should get team schedule from service and write to persistent store', () => {
-      return controller.collect({ id: '721', name: 'Air Force', div: 'm1', year: '2016', sport: 'mla' })
+      return controller.collect({ id: '721', name: 'Air Force', div: 'm1', year: '2016' })
         .then(() => {
           serviceMock.verify();
           persistenceMock.verify();
