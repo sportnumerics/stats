@@ -13,6 +13,7 @@ provider:
   - Effect: "Allow"
     Action:
       - "dynamodb:UpdateItem"
+      - "dynamodb:Query"
     Resource:
       - ${{self:custom.divisionsTableArn}}
       - ${{self:custom.teamsTableArn}}
