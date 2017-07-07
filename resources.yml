@@ -49,6 +49,18 @@ Resources:
           KeyType: HASH
         - AttributeName: year
           KeyType: RANGE
+      GlobalSecondaryIndexes:
+        - IndexName: year
+          KeySchema:
+            - AttributeName: year
+              KeyType: HASH
+          Projection:
+            NonKeyAttributes:
+              - sport
+            ProjectionType: INCLUDE
+          ProvisionedThroughput:
+            ReadCapacityUnits: 5
+            WriteCapacityUnits: 5
       ProvisionedThroughput:
         ReadCapacityUnits: 5
         WriteCapacityUnits: 5

@@ -37,7 +37,7 @@ describe('teams-controller', () => {
 
       persistenceMock
         .expects('get')
-        .withArgs('MockDivisionsTable', { year: '2016' })
+        .withArgs('MockDivisionsTable', { year: '2016' }, { index: 'year' })
         .returns(Promise.resolve(fixtures.expectedStoredDivisionsJson))
 
       persistenceMock
