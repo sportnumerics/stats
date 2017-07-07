@@ -37,12 +37,12 @@ describe('teams-controller', () => {
 
       persistenceMock
         .expects('get')
-        .withArgs('MockDivisionsTable', { year: '2016' }, { index: 'year' })
+        .withArgs('MockDivisionsTable', { year: '2016' })
         .returns(Promise.resolve(fixtures.expectedStoredDivisionsJson))
 
       persistenceMock
         .expects('get')
-        .withArgs('MockResultsTable', { year: '2016' }, { index: 'schedule' })
+        .withArgs('MockResultsTable', { year: '2016' })
         .returns(Promise.resolve([fixtures.expectedGameByGameJson]));
 
       let teamMatch = sinon.match({
