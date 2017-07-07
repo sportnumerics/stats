@@ -27,5 +27,6 @@ function thisYear() {
 
 module.exports = {
   collectAllTeamsForReduction,
-  reduceTeams
+  reduceTeams,
+  normalizeTeams
 };
