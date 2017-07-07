@@ -81,6 +81,7 @@ Resources:
                 Resource:
                   - Fn::GetAtt: [CollectAllTeamsForReductionLambdaFunction, Arn]
                   - Fn::GetAtt: [ReduceTeamsLambdaFunction, Arn]
+                  - Fn::GetAtt: [NormalizeTeamsLambdaFunction, Arn]
   PendingTeamsQueue:
     Type: AWS::SQS::Queue
 
