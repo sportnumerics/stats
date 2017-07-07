@@ -10,12 +10,12 @@ Resources:
         - AttributeName: div
           AttributeType: S
       KeySchema:
-        - AttributeName: id
-          KeyType: HASH
         - AttributeName: year
+          KeyType: HASH
+        - AttributeName: id
           KeyType: RANGE
-      GlobalSecondaryIndexes:
-        - IndexName: schedule
+      LocalSecondaryIndexes:
+        - IndexName: by_div
           KeySchema:
             - AttributeName: year
               KeyType: HASH
@@ -27,9 +27,6 @@ Resources:
               - schedule
               - ratings
             ProjectionType: INCLUDE
-          ProvisionedThroughput:
-            ReadCapacityUnits: 5
-            WriteCapacityUnits: 5
       ProvisionedThroughput:
         ReadCapacityUnits: 5
         WriteCapacityUnits: 10
@@ -45,22 +42,10 @@ Resources:
         - AttributeName: year
           AttributeType: S
       KeySchema:
-        - AttributeName: id
-          KeyType: HASH
         - AttributeName: year
+          KeyType: HASH
+        - AttributeName: id
           KeyType: RANGE
-      GlobalSecondaryIndexes:
-        - IndexName: year
-          KeySchema:
-            - AttributeName: year
-              KeyType: HASH
-          Projection:
-            NonKeyAttributes:
-              - sport
-            ProjectionType: INCLUDE
-          ProvisionedThroughput:
-            ReadCapacityUnits: 5
-            WriteCapacityUnits: 5
       ProvisionedThroughput:
         ReadCapacityUnits: 5
         WriteCapacityUnits: 5
