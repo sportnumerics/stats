@@ -18,7 +18,7 @@ function reduceTeams(event, context, callback) {
 
 function normalizeTeams(event, context, callback) {
   const year = event.year || thisYear();
-  orchestration.normalizeTeams().asCallback(callback);
+  orchestration.normalizeTeams(year).asCallback(callback);
 }
 
 function thisYear() {
