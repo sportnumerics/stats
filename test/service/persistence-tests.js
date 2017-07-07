@@ -22,15 +22,14 @@ describe('persistence-service', () => {
 
   describe('set', () => {
     it('should correctly interpolate parameter names', () => {
-      let expectedParams = {
+      let expectedParams = sinon.match({
         TableName: 'mock-table',
         Key: { 'mockKeyName': 'mockKeyValue' },
         UpdateExpression: 'set mockItemKey = :p1',
         ExpressionAttributeValues: {
           ':p1': 'mockItemValue'
-        },
-        ExpressionAttributeNames: undefined
-      }
+        }
+      });
 
       setUpMockWithExpectedParams('updateAsync', expectedParams);    
 
@@ -42,7 +41,7 @@ describe('persistence-service', () => {
     });
 
     it('should correctly extract reserved keys as expression attributes', () => {
-      let expectedParams = {
+      let expectedParams = sinon.match({
         TableName: 'mock-table',
         Key: { 'mockKeyName': 'mockKeyValue' },
         UpdateExpression: 'set #token3 = :p2',
@@ -52,7 +51,7 @@ describe('persistence-service', () => {
         ExpressionAttributeNames: {
           '#token3': 'name'
         }
-      }
+      })
 
       setUpMockWithExpectedParams('updateAsync', expectedParams);
 
@@ -64,15 +63,14 @@ describe('persistence-service', () => {
     });
 
     it('should filter redundant in the object that are part of the key', () => {
-      let expectedParams = {
+      let expectedParams = sinon.match({
         TableName: 'mock-table',
         Key: { 'mockKeyName': 'mockKeyValue' },
         UpdateExpression: 'set mockItemKey = :p4',
         ExpressionAttributeValues: {
           ':p4': 'mockItemValue'
-        },
-        ExpressionAttributeNames: undefined
-      };
+        }
+      });
 
       setUpMockWithExpectedParams('updateAsync', expectedParams);
 
@@ -98,15 +96,14 @@ describe('persistence-service', () => {
 
   describe('get', () => {
     it('should correctly interpolate parameter names', () => {
-      let expectedParams = {
+      let expectedParams = sinon.match({
         TableName: 'mock-table',
         IndexName: 'mock-index',
         KeyConditionExpression: 'mockKeyName = :p5',
         ExpressionAttributeValues: {
           ':p5': 'mockKeyValue'
-        },
-        ExpressionAttributeNames: undefined
-      }
+        }
+      });
 
       setUpMockWithExpectedParams('queryAsync', expectedParams, { Items: [
         {
@@ -121,14 +118,14 @@ describe('persistence-service', () => {
             'mockKeyName': 'mockKeyValue',
             'mockOtherKey': 'mockOtherValue'
           }]);
-
+        }).finally(() => {
           mockDb.verify();
           restoreMock();
         });
     });
 
     it('should correctly escape reserved keyword parameter names', () => {
-      let expectedParams = {
+      let expectedParams = sinon.match({
         TableName: 'mock-table',
         IndexName: 'mock-index',
         KeyConditionExpression: '#token7 = :p6',
@@ -138,7 +135,7 @@ describe('persistence-service', () => {
         ExpressionAttributeNames: {
           '#token7': 'name'
         }
-      }
+      });
 
       setUpMockWithExpectedParams('queryAsync', expectedParams, { Items: [
         {
@@ -153,10 +150,71 @@ describe('persistence-service', () => {
             'name': 'mockKeyValue',
             'mockOtherKey': 'mockOtherValue'
           }]);
-
+        }).finally(() => {
           mockDb.verify();
           restoreMock();
         });
+    });
+
+    it('should keep getting if there are more values available', () => {
+      mockDb = sinon.mock(dynamodb);
+
+      mockDb.expects('queryAsync')
+        .withArgs(sinon.match({
+          TableName: 'mock-table',
+          KeyConditionExpression: 'mockKey = :p8',
+          ExpressionAttributeValues: {
+            ':p8': 'mockValue'
+          }
+        }))
+        .returns(Promise.resolve({
+          Items: [
+            {
+              'mockKey':'mockValue',
+              'other': 'item1'
+            }
+          ],
+          LastEvaluatedKey: {
+            'foo': 'bar'
+          }
+        }));
+
+      mockDb.expects('queryAsync')
+        .withArgs(sinon.match({
+          TableName: 'mock-table',
+          KeyConditionExpression: 'mockKey = :p9',
+          ExpressionAttributeValues: {
+            ':p9': 'mockValue'
+          },
+          ExclusiveStartKey: {
+            'foo': 'bar'
+          }
+        }))
+        .returns(Promise.resolve({
+          Items: [
+            {
+              'mockKey': 'mockValue',
+              'other': 'item2'
+            }
+          ]
+        }));
+
+        return persistence.get('mock-table', { 'mockKey': 'mockValue' })
+          .then(result => {
+            expect(result).to.deep.equal([
+              {
+                'mockKey':'mockValue',
+                'other': 'item1'
+              },
+              {
+                'mockKey': 'mockValue',
+                'other': 'item2'
+              }
+            ]);
+          }).finally(() => {
+            mockDb.verify();
+            restoreMock();
+          });
     });
   });
 });
