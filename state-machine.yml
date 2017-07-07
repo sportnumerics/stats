@@ -20,10 +20,15 @@ Fn::Sub:
             {
               "Variable": "$.done",
               "BooleanEquals": true,
-              "Next": "Success"
+              "Next": "NormalizeTeams"
             }
           ],
           "Default": "ReduceTeams"
+        },
+        "NormalizeTeams": {
+          "Type": "Task",
+          "Resource": "${normalizeTeamsArn}",
+          "Next": "Success"
         },
         "Success": {
           "Type": "Succeed"
@@ -34,3 +39,5 @@ Fn::Sub:
       Fn::GetAtt: [CollectAllTeamsForReductionLambdaFunction, Arn]
     reduceTeamsArn:
       Fn::GetAtt: [ReduceTeamsLambdaFunction, Arn]
+    normalizeTeamsArn:
+      Fn::GetAtt: [NormalizeTeamsLambdaFunction, Arn]
