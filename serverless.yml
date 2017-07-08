@@ -84,3 +84,4 @@ functions:
     memorySize: 256 # minimize cost since we are bound by network roundtrip
   normalizeTeams:
     handler: handler.normalizeTeams
+    timeout: 60
