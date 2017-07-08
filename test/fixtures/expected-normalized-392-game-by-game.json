@@ -1,5 +1,5 @@
 {
-    "id": "721",
+    "id": "mla-721",
     "name": "Air Force",
     "div": "m1",
     "year": "2016",
@@ -10,7 +10,7 @@
             },
             "opponent": {
                 "name": "Navy",
-                "id": "726",
+                "id": "mla-726",
                 "div": "m1"
             },
             "date": "2017-02-11T00:00:00.000Z",
@@ -25,7 +25,7 @@
             },
             "opponent": {
                 "name": "Saint Joseph's",
-                "id": "606",
+                "id": "mla-606",
                 "div": "m1"
             },
             "date": "2017-02-14T00:00:00.000Z",
@@ -40,7 +40,7 @@
             },
             "opponent": {
                 "name": "High Point",
-                "id": "19651",
+                "id": "mla-19651",
                 "div": "m1"
             },
             "date": "2017-02-18T00:00:00.000Z",
@@ -55,7 +55,7 @@
             },
             "opponent": {
                 "name": "Yale",
-                "id": "813",
+                "id": "mla-813",
                 "div": "m1"
             },
             "date": "2017-02-25T00:00:00.000Z",
@@ -70,7 +70,7 @@
             },
             "opponent": {
                 "name": "Notre Dame",
-                "id": "513",
+                "id": "mla-513",
                 "div": "m1"
             },
             "date": "2017-03-04T00:00:00.000Z",
@@ -85,7 +85,7 @@
             },
             "opponent": {
                 "name": "Albany (NY)",
-                "id": "14",
+                "id": "mla-14",
                 "div": "m1"
             },
             "date": "2017-03-11T00:00:00.000Z"
@@ -96,7 +96,7 @@
             },
             "opponent": {
                 "name": "Villanova",
-                "id": "739",
+                "id": "mla-739",
                 "div": "m1"
             },
             "date": "2017-03-18T00:00:00.000Z"
@@ -107,7 +107,7 @@
             },
             "opponent": {
                 "name": "North Carolina",
-                "id": "457",
+                "id": "mla-457",
                 "div": "m1"
             },
             "date": "2017-03-25T00:00:00.000Z"
@@ -118,7 +118,7 @@
             },
             "opponent": {
                 "name": "Michigan",
-                "id": "418",
+                "id": "mla-418",
                 "div": "m1"
             },
             "date": "2017-04-01T00:00:00.000Z"
@@ -129,7 +129,7 @@
             },
             "opponent": {
                 "name": "Penn St.",
-                "id": "539",
+                "id": "mla-539",
                 "div": "m1"
             },
             "date": "2017-04-08T00:00:00.000Z"
@@ -140,7 +140,7 @@
             },
             "opponent": {
                 "name": "Rutgers",
-                "id": "587",
+                "id": "mla-587",
                 "div": "m1"
             },
             "date": "2017-04-16T00:00:00.000Z"
@@ -151,7 +151,7 @@
             },
             "opponent": {
                 "name": "Ohio St.",
-                "id": "518",
+                "id": "mla-518",
                 "div": "m1"
             },
             "date": "2017-04-22T00:00:00.000Z"
@@ -162,7 +162,7 @@
             },
             "opponent": {
                 "name": "Johns Hopkins",
-                "id": "322",
+                "id": "mla-322",
                 "div": "m1"
             },
             "date": "2017-04-29T00:00:00.000Z"
@@ -173,7 +173,7 @@
             },
             "opponent": {
                 "name": "Colorado College",
-                "id": "colorado_college",
+                "id": "mla-colorado-college",
                 "nonDivisional": true
             },
             "date": "2017-05-01T00:00:00.000Z"

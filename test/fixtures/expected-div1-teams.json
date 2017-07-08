@@ -1,418 +1,556 @@
 {
     "teams": [
         {
-            "id": "721",
+            "instCode": "721",
             "name": "Air Force",
             "year": "2016",
-            "div": "m1"
+            "div": "m1",
+            "sport": "mla",
+            "id": "mla-721"
         },
         {
-            "id": "14",
+            "instCode": "14",
             "name": "Albany (NY)",
             "year": "2016",
-            "div": "m1"
+            "div": "m1",
+            "sport": "mla",
+            "id": "mla-14"
         },
         {
-            "id": "725",
+            "instCode": "725",
             "name": "Army West Point",
             "year": "2016",
-            "div": "m1"
+            "div": "m1",
+            "sport": "mla",
+            "id": "mla-725"
         },
         {
-            "id": "52",
+            "instCode": "52",
             "name": "Bellarmine",
             "year": "2016",
-            "div": "m1"
+            "div": "m1",
+            "sport": "mla",
+            "id": "mla-52"
         },
         {
-            "id": "62",
+            "instCode": "62",
             "name": "Binghamton",
             "year": "2016",
-            "div": "m1"
+            "div": "m1",
+            "sport": "mla",
+            "id": "mla-62"
         },
         {
-            "id": "68",
+            "instCode": "68",
             "name": "Boston U.",
             "year": "2016",
-            "div": "m1"
+            "div": "m1",
+            "sport": "mla",
+            "id": "mla-68"
         },
         {
-            "id": "80",
+            "instCode": "80",
             "name": "Brown",
             "year": "2016",
-            "div": "m1"
+            "div": "m1",
+            "sport": "mla",
+            "id": "mla-80"
         },
         {
-            "id": "81",
+            "instCode": "81",
             "name": "Bryant",
             "year": "2016",
-            "div": "m1"
+            "div": "m1",
+            "sport": "mla",
+            "id": "mla-81"
         },
         {
-            "id": "83",
+            "instCode": "83",
             "name": "Bucknell",
             "year": "2016",
-            "div": "m1"
+            "div": "m1",
+            "sport": "mla",
+            "id": "mla-83"
         },
         {
-            "id": "116",
+            "instCode": "116",
             "name": "Canisius",
             "year": "2016",
-            "div": "m1"
+            "div": "m1",
+            "sport": "mla",
+            "id": "mla-116"
         },
         {
-            "id": "153",
+            "instCode": "153",
             "name": "Colgate",
             "year": "2016",
-            "div": "m1"
+            "div": "m1",
+            "sport": "mla",
+            "id": "mla-153"
         },
         {
-            "id": "167",
+            "instCode": "167",
             "name": "Cornell",
             "year": "2016",
-            "div": "m1"
+            "div": "m1",
+            "sport": "mla",
+            "id": "mla-167"
         },
         {
-            "id": "172",
+            "instCode": "172",
             "name": "Dartmouth",
             "year": "2016",
-            "div": "m1"
+            "div": "m1",
+            "sport": "mla",
+            "id": "mla-172"
         },
         {
-            "id": "180",
+            "instCode": "180",
             "name": "Delaware",
             "year": "2016",
-            "div": "m1"
+            "div": "m1",
+            "sport": "mla",
+            "id": "mla-180"
         },
         {
-            "id": "183",
+            "instCode": "183",
             "name": "Denver",
             "year": "2016",
-            "div": "m1"
+            "div": "m1",
+            "sport": "mla",
+            "id": "mla-183"
         },
         {
-            "id": "184",
+            "instCode": "184",
             "name": "Detroit",
             "year": "2016",
-            "div": "m1"
+            "div": "m1",
+            "sport": "mla",
+            "id": "mla-184"
         },
         {
-            "id": "191",
+            "instCode": "191",
             "name": "Drexel",
             "year": "2016",
-            "div": "m1"
+            "div": "m1",
+            "sport": "mla",
+            "id": "mla-191"
         },
         {
-            "id": "193",
+            "instCode": "193",
             "name": "Duke",
             "year": "2016",
-            "div": "m1"
+            "div": "m1",
+            "sport": "mla",
+            "id": "mla-193"
         },
         {
-            "id": "220",
+            "instCode": "220",
             "name": "Fairfield",
             "year": "2016",
-            "div": "m1"
+            "div": "m1",
+            "sport": "mla",
+            "id": "mla-220"
         },
         {
-            "id": "244",
+            "instCode": "244",
             "name": "Furman",
             "year": "2016",
-            "div": "m1"
+            "div": "m1",
+            "sport": "mla",
+            "id": "mla-244"
         },
         {
-            "id": "251",
+            "instCode": "251",
             "name": "Georgetown",
             "year": "2016",
-            "div": "m1"
+            "div": "m1",
+            "sport": "mla",
+            "id": "mla-251"
         },
         {
-            "id": "272",
+            "instCode": "272",
             "name": "Hartford",
             "year": "2016",
-            "div": "m1"
+            "div": "m1",
+            "sport": "mla",
+            "id": "mla-272"
         },
         {
-            "id": "275",
+            "instCode": "275",
             "name": "Harvard",
             "year": "2016",
-            "div": "m1"
+            "div": "m1",
+            "sport": "mla",
+            "id": "mla-275"
         },
         {
-            "id": "19651",
+            "instCode": "19651",
             "name": "High Point",
             "year": "2016",
-            "div": "m1"
+            "div": "m1",
+            "sport": "mla",
+            "id": "mla-19651"
         },
         {
-            "id": "282",
+            "instCode": "282",
             "name": "Hobart and William Colleges",
             "year": "2016",
-            "div": "m1"
+            "div": "m1",
+            "sport": "mla",
+            "id": "mla-282"
         },
         {
-            "id": "283",
+            "instCode": "283",
             "name": "Hofstra",
             "year": "2016",
-            "div": "m1"
+            "div": "m1",
+            "sport": "mla",
+            "id": "mla-283"
         },
         {
-            "id": "285",
+            "instCode": "285",
             "name": "Holy Cross",
             "year": "2016",
-            "div": "m1"
+            "div": "m1",
+            "sport": "mla",
+            "id": "mla-285"
         },
         {
-            "id": "316",
+            "instCode": "316",
             "name": "Jacksonville",
             "year": "2016",
-            "div": "m1"
+            "div": "m1",
+            "sport": "mla",
+            "id": "mla-316"
         },
         {
-            "id": "322",
+            "instCode": "322",
             "name": "Johns Hopkins",
             "year": "2016",
-            "div": "m1"
+            "div": "m1",
+            "sport": "mla",
+            "id": "mla-322"
         },
         {
-            "id": "342",
+            "instCode": "342",
             "name": "Lafayette",
             "year": "2016",
-            "div": "m1"
+            "div": "m1",
+            "sport": "mla",
+            "id": "mla-342"
         },
         {
-            "id": "352",
+            "instCode": "352",
             "name": "Lehigh",
             "year": "2016",
-            "div": "m1"
+            "div": "m1",
+            "sport": "mla",
+            "id": "mla-352"
         },
         {
-            "id": "369",
+            "instCode": "369",
             "name": "Loyola Maryland",
             "year": "2016",
-            "div": "m1"
+            "div": "m1",
+            "sport": "mla",
+            "id": "mla-369"
         },
         {
-            "id": "381",
+            "instCode": "381",
             "name": "Manhattan",
             "year": "2016",
-            "div": "m1"
+            "div": "m1",
+            "sport": "mla",
+            "id": "mla-381"
         },
         {
-            "id": "386",
+            "instCode": "386",
             "name": "Marist",
             "year": "2016",
-            "div": "m1"
+            "div": "m1",
+            "sport": "mla",
+            "id": "mla-386"
         },
         {
-            "id": "387",
+            "instCode": "387",
             "name": "Marquette",
             "year": "2016",
-            "div": "m1"
+            "div": "m1",
+            "sport": "mla",
+            "id": "mla-387"
         },
         {
-            "id": "392",
+            "instCode": "392",
             "name": "Maryland",
             "year": "2016",
-            "div": "m1"
+            "div": "m1",
+            "sport": "mla",
+            "id": "mla-392"
         },
         {
-            "id": "400",
+            "instCode": "400",
             "name": "Massachusetts",
             "year": "2016",
-            "div": "m1"
+            "div": "m1",
+            "sport": "mla",
+            "id": "mla-400"
         },
         {
-            "id": "406",
+            "instCode": "406",
             "name": "Mercer",
             "year": "2016",
-            "div": "m1"
+            "div": "m1",
+            "sport": "mla",
+            "id": "mla-406"
         },
         {
-            "id": "418",
+            "instCode": "418",
             "name": "Michigan",
             "year": "2016",
-            "div": "m1"
+            "div": "m1",
+            "sport": "mla",
+            "id": "mla-418"
         },
         {
-            "id": "439",
+            "instCode": "439",
             "name": "Monmouth",
             "year": "2016",
-            "div": "m1"
+            "div": "m1",
+            "sport": "mla",
+            "id": "mla-439"
         },
         {
-            "id": "450",
+            "instCode": "450",
             "name": "Mt. St. Mary's",
             "year": "2016",
-            "div": "m1"
+            "div": "m1",
+            "sport": "mla",
+            "id": "mla-450"
         },
         {
-            "id": "471",
+            "instCode": "471",
             "name": "NJIT",
             "year": "2016",
-            "div": "m1"
+            "div": "m1",
+            "sport": "mla",
+            "id": "mla-471"
         },
         {
-            "id": "726",
+            "instCode": "726",
             "name": "Navy",
             "year": "2016",
-            "div": "m1"
+            "div": "m1",
+            "sport": "mla",
+            "id": "mla-726"
         },
         {
-            "id": "457",
+            "instCode": "457",
             "name": "North Carolina",
             "year": "2016",
-            "div": "m1"
+            "div": "m1",
+            "sport": "mla",
+            "id": "mla-457"
         },
         {
-            "id": "513",
+            "instCode": "513",
             "name": "Notre Dame",
             "year": "2016",
-            "div": "m1"
+            "div": "m1",
+            "sport": "mla",
+            "id": "mla-513"
         },
         {
-            "id": "518",
+            "instCode": "518",
             "name": "Ohio St.",
             "year": "2016",
-            "div": "m1"
+            "div": "m1",
+            "sport": "mla",
+            "id": "mla-518"
         },
         {
-            "id": "540",
+            "instCode": "540",
             "name": "Penn",
             "year": "2016",
-            "div": "m1"
+            "div": "m1",
+            "sport": "mla",
+            "id": "mla-540"
         },
         {
-            "id": "539",
+            "instCode": "539",
             "name": "Penn St.",
             "year": "2016",
-            "div": "m1"
+            "div": "m1",
+            "sport": "mla",
+            "id": "mla-539"
         },
         {
-            "id": "554",
+            "instCode": "554",
             "name": "Princeton",
             "year": "2016",
-            "div": "m1"
+            "div": "m1",
+            "sport": "mla",
+            "id": "mla-554"
         },
         {
-            "id": "556",
+            "instCode": "556",
             "name": "Providence",
             "year": "2016",
-            "div": "m1"
+            "div": "m1",
+            "sport": "mla",
+            "id": "mla-556"
         },
         {
-            "id": "562",
+            "instCode": "562",
             "name": "Quinnipiac",
             "year": "2016",
-            "div": "m1"
+            "div": "m1",
+            "sport": "mla",
+            "id": "mla-562"
         },
         {
-            "id": "575",
+            "instCode": "575",
             "name": "Richmond",
             "year": "2016",
-            "div": "m1"
+            "div": "m1",
+            "sport": "mla",
+            "id": "mla-575"
         },
         {
-            "id": "579",
+            "instCode": "579",
             "name": "Robert Morris",
             "year": "2016",
-            "div": "m1"
+            "div": "m1",
+            "sport": "mla",
+            "id": "mla-579"
         },
         {
-            "id": "587",
+            "instCode": "587",
             "name": "Rutgers",
             "year": "2016",
-            "div": "m1"
+            "div": "m1",
+            "sport": "mla",
+            "id": "mla-587"
         },
         {
-            "id": "590",
+            "instCode": "590",
             "name": "Sacred Heart",
             "year": "2016",
-            "div": "m1"
+            "div": "m1",
+            "sport": "mla",
+            "id": "mla-590"
         },
         {
-            "id": "606",
+            "instCode": "606",
             "name": "Saint Joseph's",
             "year": "2016",
-            "div": "m1"
+            "div": "m1",
+            "sport": "mla",
+            "id": "mla-606"
         },
         {
-            "id": "639",
+            "instCode": "639",
             "name": "Siena",
             "year": "2016",
-            "div": "m1"
+            "div": "m1",
+            "sport": "mla",
+            "id": "mla-639"
         },
         {
-            "id": "603",
+            "instCode": "603",
             "name": "St. John's (NY)",
             "year": "2016",
-            "div": "m1"
+            "div": "m1",
+            "sport": "mla",
+            "id": "mla-603"
         },
         {
-            "id": "683",
+            "instCode": "683",
             "name": "Stony Brook",
             "year": "2016",
-            "div": "m1"
+            "div": "m1",
+            "sport": "mla",
+            "id": "mla-683"
         },
         {
-            "id": "688",
+            "instCode": "688",
             "name": "Syracuse",
             "year": "2016",
-            "div": "m1"
+            "div": "m1",
+            "sport": "mla",
+            "id": "mla-688"
         },
         {
-            "id": "711",
+            "instCode": "711",
             "name": "Towson",
             "year": "2016",
-            "div": "m1"
+            "div": "m1",
+            "sport": "mla",
+            "id": "mla-711"
         },
         {
-            "id": "391",
+            "instCode": "391",
             "name": "UMBC",
             "year": "2016",
-            "div": "m1"
+            "div": "m1",
+            "sport": "mla",
+            "id": "mla-391"
         },
         {
-            "id": "368",
+            "instCode": "368",
             "name": "UMass Lowell",
             "year": "2016",
-            "div": "m1"
+            "div": "m1",
+            "sport": "mla",
+            "id": "mla-368"
         },
         {
-            "id": "741",
+            "instCode": "741",
             "name": "VMI",
             "year": "2016",
-            "div": "m1"
+            "div": "m1",
+            "sport": "mla",
+            "id": "mla-741"
         },
         {
-            "id": "738",
+            "instCode": "738",
             "name": "Vermont",
             "year": "2016",
-            "div": "m1"
+            "div": "m1",
+            "sport": "mla",
+            "id": "mla-738"
         },
         {
-            "id": "739",
+            "instCode": "739",
             "name": "Villanova",
             "year": "2016",
-            "div": "m1"
+            "div": "m1",
+            "sport": "mla",
+            "id": "mla-739"
         },
         {
-            "id": "746",
+            "instCode": "746",
             "name": "Virginia",
             "year": "2016",
-            "div": "m1"
+            "div": "m1",
+            "sport": "mla",
+            "id": "mla-746"
         },
         {
-            "id": "748",
+            "instCode": "748",
             "name": "Wagner",
             "year": "2016",
-            "div": "m1"
+            "div": "m1",
+            "sport": "mla",
+            "id": "mla-748"
         },
         {
-            "id": "813",
+            "instCode": "813",
             "name": "Yale",
             "year": "2016",
-            "div": "m1"
+            "div": "m1",
+            "sport": "mla",
+            "id": "mla-813"
         }
     ]
 }

@@ -67,7 +67,7 @@ describe('handler-integration', () => {
         {
           id: 'mock-id',
           body: { 
-            id: '721',
+            id: 'mla-721',
             name: 'Air Force',
             div: 'm1',
             year: '2016'
