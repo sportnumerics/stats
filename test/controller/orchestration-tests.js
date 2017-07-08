@@ -61,7 +61,7 @@ describe('orchestration-integration', () => {
     beforeEach(() => {
       scheduleMock = sinon.mock(schedule)
         .expects('collect')
-        .withArgs({ id: '721', name: 'Air Force', div: 'm1', year: '2016' })
+        .withArgs({ id: 'mla-721', name: 'Air Force', div: 'm1', year: '2016' })
         .exactly(2)
         .returns(Promise.resolve());
     });
@@ -79,7 +79,7 @@ describe('orchestration-integration', () => {
           {
             id: 'mock-id',
             body: { 
-              id: '721',
+              id: 'mla-721',
               name: 'Air Force',
               div: 'm1',
               year: '2016'
@@ -88,7 +88,7 @@ describe('orchestration-integration', () => {
           {
             id: 'mock-id',
             body: { 
-              id: '721',
+              id: 'mla-721',
               name: 'Air Force',
               div: 'm1',
               year: '2016'

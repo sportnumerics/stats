@@ -6,7 +6,7 @@ let fixtures = require('../fixtures.js'),
 describe('teams html to json', () => {
   var data;
   beforeEach(() => {
-    data = teamsHtmlToJson('1')(fixtures.teamList);
+    data = teamsHtmlToJson({ div: 'm1', sport: 'mla' })(fixtures.teamList);
   });
 
   it('should extract all the teams', () => {
@@ -19,6 +19,6 @@ describe('teams html to json', () => {
   });
 
   it('should extract each team slug', () => {
-    expect(data[0].id).to.equal('721');
+    expect(data[0].id).to.equal('mla-721');
   });
 });

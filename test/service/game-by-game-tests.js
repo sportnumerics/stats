@@ -12,7 +12,7 @@ describe('game-by-game-service', () => {
     });
 
     it('should return an html document', () => {
-      let htmlPromise = gameByGameService.getHtmlFromNcaa('2016', 'm1', 721);
+      let htmlPromise = gameByGameService.getHtmlFromNcaa('2016', 'm1', 'mla-721');
 
       return expect(htmlPromise).to.eventually.be.a('string');
     });
