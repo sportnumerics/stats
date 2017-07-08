@@ -46,5 +46,4 @@ Fn::Sub:
       Fn::GetAtt: [ReduceTeamsLambdaFunction, Arn]
     normalizeTeamsArn:
       Fn::GetAtt: [NormalizeTeamsLambdaFunction, Arn]
-    predictArn:
-      Fn::GetAtt: ${{file(serverless.yml):custom.predictLambdaArn}}
+    predictArn: ${{file(serverless.yml):custom.predictLambdaArn}}
