@@ -28,6 +28,11 @@ Fn::Sub:
         "NormalizeTeams": {
           "Type": "Task",
           "Resource": "${normalizeTeamsArn}",
+          "Next": "TriggerPrediction"
+        },
+        "TriggerPrediction": {
+          "Type": "Task",
+          "Resource": "${predictArn}",
           "Next": "Success"
         },
         "Success": {
@@ -41,3 +46,5 @@ Fn::Sub:
       Fn::GetAtt: [ReduceTeamsLambdaFunction, Arn]
     normalizeTeamsArn:
       Fn::GetAtt: [NormalizeTeamsLambdaFunction, Arn]
+    predictArn:
+      Fn::GetAtt: ${{file(serverless.yml):custom.predictLambdaArn}}
