@@ -80,6 +80,7 @@ Resources:
                   - Fn::GetAtt: [CollectAllTeamsForReductionLambdaFunction, Arn]
                   - Fn::GetAtt: [ReduceTeamsLambdaFunction, Arn]
                   - Fn::GetAtt: [NormalizeTeamsLambdaFunction, Arn]
+                  - Fn::GetAtt: ${{file(serverless.yml):custom.predictLambdaArn}}
   PendingTeamsQueue:
     Type: AWS::SQS::Queue
 
