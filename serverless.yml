@@ -24,13 +24,6 @@ provider:
       - "sqs:DeleteMessage"
       - "sqs:PurgeQueue"
     Resource: ${{self:custom.teamsQueueArn}}
-  - Effect: "Allow"
-    Action:
-      - "dynamodb:GetRecords"
-      - "dynamodb:GetShardIterator"
-      - "dynamodb:DescribeStream"
-      - "dynamodb:ListStreams"
-    Resource: ${{self:custom.teamsStreamArn}}
   environment:
     PREDICT_LAMBDA_ARN: ${{self:custom.predictLambdaArn}}
     RESULTS_TABLE: ${{self:custom.teamsTableName}}
