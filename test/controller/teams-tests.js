@@ -5,6 +5,7 @@ const service = require('../../lib/service/teams');
 const persistence = require('../../lib/service/persistence');
 const controller = require('../../lib/controller/teams');
 const fixtures = require('../fixtures');
+const _ = require('lodash');
 
 describe('teams-controller', () => {
   describe('collect', () => {
@@ -73,8 +74,7 @@ describe('teams-controller', () => {
         .withArgs('MockDivisionsTable', { year: '2016' })
         .returns(Promise.resolve(fixtures.expectedStoredDivisionsJson))
 
-      let teamWithoutSchedule = fixtures.expectedGameByGameJson;
-      teamWithoutSchedule.schedule = undefined;
+      let teamWithoutSchedule = _.omit(fixtures.expectedGameByGameJson, 'schedule');
 
       persistenceMock
         .expects('get')
