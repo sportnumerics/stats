@@ -39,10 +39,10 @@ describe('handler-integration', () => {
       queueMock.restore();
     });
 
-    it('should persist the divisions, add teams to the queue, and return nothing', done => {
-      handler.collectAllTeamsForReduction({}, {}, (error, data) => {
+    it('should persist the divisions, add teams to the queue, and return the year in the payload', done => {
+      handler.collectAllTeamsForReduction({ year: '2016' }, {}, (error, data) => {
         expect(error).to.be.null;
-        expect(data).to.be.undefined;
+        expect(data.year).to.equal('2016');
         persistenceMock.verify();
         queueMock.verify();
         done();
@@ -94,6 +94,7 @@ describe('handler-integration', () => {
 
     it('should persist the divisions, add teams to the queue, and return nothing', done => {
       handler.reduceTeams({
+        year: '2016',
         failed: [{
           id: 'fail-123',
           error: 'mock error'
@@ -105,6 +106,7 @@ describe('handler-integration', () => {
         }
         expect(error).to.be.null;
         expect(result.done).to.be.false;
+        expect(result.year).to.equal('2016');
         expect(result.failed).to.have.lengthOf(1);
         expect(result.successful).to.have.lengthOf(2);
         persistenceMock.verify();

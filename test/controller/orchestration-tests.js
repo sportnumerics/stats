@@ -47,7 +47,7 @@ describe('orchestration-integration', () => {
     });
 
     it('should collect all teams and put them into the queue', () => {
-      return orchestration.collectAllTeamsForReduction('2016').then(() => {
+      return orchestration.collectAllTeamsForReduction({year: '2016'}).then(() => {
         divisionsMock.verify();
         teamsMock.verify();
         queueMock.verify();
@@ -255,7 +255,7 @@ describe('orchestration-integration', () => {
         .withArgs('2016')
         .returns(Promise.resolve())
 
-      return orchestration.normalizeTeams('2016')
+      return orchestration.normalizeTeams({year: '2016'})
         .then(() => {
           teamsMock.verify();
         }).finally(() => {
