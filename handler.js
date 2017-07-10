@@ -13,7 +13,7 @@ function collectAllTeamsForReduction(event, context, callback) {
 }
 
 function reduceTeams(event, context, callback) {
-  orchestration.reduceTeams().asCallback(callback);
+  orchestration.reduceTeams(event).asCallback(callback);
 }
 
 function normalizeTeams(event, context, callback) {

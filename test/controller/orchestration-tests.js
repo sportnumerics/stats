@@ -56,77 +56,145 @@ describe('orchestration-integration', () => {
   });
   
   describe('reduceTeams', () => {
-    var scheduleMock;
-
-    beforeEach(() => {
-      scheduleMock = sinon.mock(schedule)
-        .expects('collect')
-        .withArgs({ id: 'mla-721', name: 'Air Force', div: 'm1', year: '2016' })
-        .exactly(2)
-        .returns(Promise.resolve());
-    });
-
-    afterEach(() => {
-      schedule.collect.restore();
-    });
-
-    describe('when there are teams in the queue', () => {
-      var queueMock; 
+    describe('when things go well', () => {
+      var scheduleMock;
 
       beforeEach(() => {
-        let teams = fixtures.expectedTeamsJson.teams;
-        let messages = [
-          {
-            id: 'mock-id',
-            body: { 
-              id: 'mla-721',
-              name: 'Air Force',
-              div: 'm1',
-              year: '2016'
-            }
-          },
-          {
-            id: 'mock-id',
-            body: { 
-              id: 'mla-721',
-              name: 'Air Force',
-              div: 'm1',
-              year: '2016'
-            }
-          }
-        ];
+        scheduleMock = sinon.mock(schedule);
 
-        queueMock = sinon.mock(queue);
-
-        queueMock.expects('receiveMessages')
-          .exactly(1)
-          .returns(Promise.resolve(messages));
-
-        queueMock.expects('deleteMessage')
+        scheduleMock
+          .expects('collect')
+          .withArgs({ id: sinon.match.string, name: sinon.match.string, div: sinon.match.string, year: sinon.match.string })
           .exactly(2)
-          .withArgs('mock-id')
           .returns(Promise.resolve());
-      })
-
-      afterEach(() => {
-        queueMock.restore();
       });
 
-      it('should collect their schedules and remove them from the team queue', () => {
-        return orchestration.reduceTeams().then(result => {
-          expect(result.done).to.be.false;
-          queueMock.verify();
-          scheduleMock.verify();
+      afterEach(() => {
+        scheduleMock.restore();
+      });
+
+      describe('when there are teams in the queue', () => {
+        var queueMock; 
+
+        beforeEach(() => {
+          let messages = [
+            {
+              id: 'mock-id',
+              body: { 
+                id: 'mla-721',
+                name: 'Air Force',
+                div: 'm1',
+                year: '2016'
+              }
+            },
+            {
+              id: 'mock-id',
+              body: { 
+                id: 'mla-722',
+                name: 'Colorado',
+                div: 'm1',
+                year: '2016'
+              }
+            }
+          ];
+
+          queueMock = sinon.mock(queue);
+
+          queueMock.expects('receiveMessages')
+            .exactly(1)
+            .returns(Promise.resolve(messages));
+
+          queueMock.expects('deleteMessage')
+            .exactly(2)
+            .withArgs('mock-id')
+            .returns(Promise.resolve());
+        })
+
+        afterEach(() => {
+          queueMock.restore();
+        });
+
+        it('should collect their schedules and remove them from the team queue', () => {
+          let props = {
+            other: 'value',
+            successful: ['succ-123'],
+            failed: [{
+              id: 'fail-123',
+              error: 'mock error'
+            }]
+          }
+
+          return orchestration.reduceTeams(props).then(result => {
+            expect(result.done).to.be.false;
+            expect(result.other).to.equal('value');
+            expect(result.successful).to.deep.equal(['succ-123', 'mla-721', 'mla-722']);
+            expect(result.failed).to.deep.equal([{
+              id: 'fail-123',
+              error: 'mock error'
+            }]);
+            queueMock.verify();
+            scheduleMock.verify();
+          });
+        });
+      });
+
+      describe('when no teams are left in the queue', () => {
+        var queueMock;
+
+        beforeEach(() => {
+          let teams = fixtures.expectedTeamsJson.teams;
+          let messages = [];
+
+          queueMock = sinon.mock(queue);
+
+          queueMock
+            .expects('receiveMessages')
+            .exactly(1)
+            .returns(Promise.resolve(messages));
+        })
+
+        afterEach(() => {
+          queueMock.restore();
+        });
+
+        it('should set the result to done when no message is received', () => {
+          let props = {
+            other: 'value',
+            successful: ['succ-123'],
+            failed: [{
+              id: 'fail-123',
+              error: 'mock error'
+            }]
+          }
+          return orchestration.reduceTeams(props).then(result => {
+            expect(result.done).to.be.true;
+            expect(result.other).to.equal('value');
+            expect(result.successful).to.deep.equal(['succ-123']);
+            expect(result.failed).to.deep.equal([{
+              id: 'fail-123',
+              error: 'mock error'
+            }]);
+            queueMock.verify();
+          });
         });
       });
     });
 
-    describe('when no teams are left in the queue', () => {
+    describe('when an error occurs during collection', () => {
       var queueMock;
+      var scheduleMock;
 
       beforeEach(() => {
         let teams = fixtures.expectedTeamsJson.teams;
-        let messages = [];
+        let messages = [{
+          id: 'mock-id',
+          body: { 
+            id: 'mla-721',
+            name: 'Air Force',
+            div: 'm1',
+            year: '2016'
+          }
+        }];
 
         queueMock = sinon.mock(queue);
 
@@ -134,15 +202,45 @@ describe('orchestration-integration', () => {
           .expects('receiveMessages')
           .exactly(1)
           .returns(Promise.resolve(messages));
+
+        queueMock.expects('deleteMessage')
+          .exactly(1)
+          .withArgs('mock-id')
+          .returns(Promise.resolve());
+        
+        scheduleMock = sinon.mock(schedule);
+
+        scheduleMock
+          .expects('collect')
+          .withArgs({ id: sinon.match.string, name: sinon.match.string, div: sinon.match.string, year: sinon.match.string })
+          .returns(Promise.reject(new Error('schedule error')));
       })
 
       afterEach(() => {
         queueMock.restore();
+        scheduleMock.restore();
       });
 
-      it('should set the result to done when no message is received', () => {
-        return orchestration.reduceTeams().then(result => {
-          expect(result.done).to.be.true;
+      it('should add an error object to the results', () => {
+        let props = {
+          other: 'value',
+          successful: ['succ-123'],
+          failed: [{
+            id: 'fail-123',
+            error: 'mock error'
+          }]
+        }
+        return orchestration.reduceTeams(props).then(result => {
+          expect(result.done).to.be.false;
+          expect(result.other).to.equal('value');
+          expect(result.successful).to.deep.equal(['succ-123']);
+          expect(result.failed).to.deep.equal([{
+            id: 'fail-123',
+            error: 'mock error'
+          }, {
+            id: 'mla-721',
+            error: new Error('schedule error')
+          }]);
           queueMock.verify();
         });
       });
@@ -160,6 +258,7 @@ describe('orchestration-integration', () => {
       return orchestration.normalizeTeams('2016')
         .then(() => {
           teamsMock.verify();
+        }).finally(() => {
           teamsMock.restore();
         });
     });
