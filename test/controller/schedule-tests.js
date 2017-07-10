@@ -16,9 +16,17 @@ describe('schedule-controller', () => {
         .withArgs('2016', 'm1', 'mla-721')
         .returns(Promise.resolve(fixtures.gameByGame))
 
+      let expectedTeam = sinon.match({
+        id: 'mla-721',
+        name: 'Air Force',
+        div: 'm1',
+        year: '2016',
+        schedule: sinon.match.array
+      });
+      
       persistenceMock = sinon.mock(persistence)
         .expects('set')
-        .withArgs('MockResultsTable', { id: 'mla-721', year: '2016' }, fixtures.stringifyEquivalentTo(fixtures.expectedGameByGameJson))
+        .withArgs('MockResultsTable', { id: 'mla-721', year: '2016' }, expectedTeam)
         .returns(Promise.resolve())
     });
 
