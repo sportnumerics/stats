@@ -8,8 +8,8 @@ function timeRemaining(context) {
 }
 
 function collectAllTeamsForReduction(event, context, callback) {
-  const year = event.year || thisYear();
-  orchestration.collectAllTeamsForReduction(year).asCallback(callback);
+  const year = event.year || moment().year();
+  orchestration.collectAllTeamsForReduction({ year }).asCallback(callback);
 }
 
 function reduceTeams(event, context, callback) {
@@ -17,12 +17,7 @@ function reduceTeams(event, context, callback) {
 }
 
 function normalizeTeams(event, context, callback) {
-  const year = event.year || thisYear();
-  orchestration.normalizeTeams(year).asCallback(callback);
-}
-
-function thisYear() {
-  return `${moment().year()}`;
+  orchestration.normalizeTeams(event).asCallback(callback);
 }
 
 module.exports = {
