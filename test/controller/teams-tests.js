@@ -31,7 +31,7 @@ describe('teams-controller', () => {
     });
   });
 
-  describe('renormalize', () => {
+  describe('normalize', () => {
     it('should make sure each opponent has a matching id', () => {
       let persistenceMock = sinon.mock(persistence);
 
@@ -48,6 +48,42 @@ describe('teams-controller', () => {
       let teamMatch = sinon.match({
         id: sinon.match.string,
         schedule: sinon.match.array,
+        name: sinon.match.string,
+        div: sinon.match.string
+      });
+
+      persistenceMock
+        .expects('set')
+        .withArgs('MockResultsTable', { id: sinon.match.string, year: '2016' }, teamMatch)
+        .exactly(1)
+        .returns(Promise.resolve());
+
+      return controller.normalize('2016')
+        .then(() => {
+          persistenceMock.verify();
+          persistenceMock.restore();
+        });
+    });
+
+    it('should not normalize teams without a schedule', () => {
+      let persistenceMock = sinon.mock(persistence);
+
+      persistenceMock
+        .expects('get')
+        .withArgs('MockDivisionsTable', { year: '2016' })
+        .returns(Promise.resolve(fixtures.expectedStoredDivisionsJson))
+
+      let teamWithoutSchedule = fixtures.expectedGameByGameJson;
+      teamWithoutSchedule.schedule = undefined;
+
+      persistenceMock
+        .expects('get')
+        .withArgs('MockResultsTable', { year: '2016' })
+        .returns(Promise.resolve([teamWithoutSchedule]));
+
+      let teamMatch = sinon.match({
+        id: sinon.match.string,
+        schedule: undefined,
         name: sinon.match.string,
         div: sinon.match.string
       });
