@@ -8,7 +8,7 @@ function timeRemaining(context) {
 }
 
 function collectAllTeamsForReduction(event, context, callback) {
-  const year = event.year || moment().year();
+  const year = event.year || `${moment().year()}`;
   orchestration.collectAllTeamsForReduction({ year }).asCallback(callback);
 }
 
