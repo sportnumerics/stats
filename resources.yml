@@ -29,7 +29,7 @@ Resources:
             ProjectionType: INCLUDE
       ProvisionedThroughput:
         ReadCapacityUnits: 5
-        WriteCapacityUnits: 15
+        WriteCapacityUnits: 20
       TableName: ${{file(serverless.yml):custom.teamsTableName}}
   DivisionsTable:
     Type: AWS::DynamoDB::Table
