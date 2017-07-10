@@ -258,7 +258,6 @@ describe('orchestration-integration', () => {
       return orchestration.normalizeTeams({year: '2016'})
         .then(() => {
           teamsMock.verify();
-        }).finally(() => {
           teamsMock.restore();
         });
     });
