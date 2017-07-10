@@ -93,12 +93,20 @@ describe('handler-integration', () => {
     });
 
     it('should persist the divisions, add teams to the queue, and return nothing', done => {
-      handler.reduceTeams({}, {}, (error, result) => {
+      handler.reduceTeams({
+        failed: [{
+          id: 'fail-123',
+          error: 'mock error'
+        }],
+        successful: ['succ-123']
+      }, {}, (error, result) => {
         if (error) {
           throw error;
         }
         expect(error).to.be.null;
         expect(result.done).to.be.false;
+        expect(result.failed).to.have.lengthOf(1);
+        expect(result.successful).to.have.lengthOf(2);
         persistenceMock.verify();
         queueMock.verify();
         done();
