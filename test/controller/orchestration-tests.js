@@ -256,7 +256,8 @@ describe('orchestration-integration', () => {
         .returns(Promise.resolve())
 
       return orchestration.normalizeTeams({year: '2016'})
-        .then(() => {
+        .then(result => {
+          expect(result.year).to.equal('2016');
           teamsMock.verify();
           teamsMock.restore();
         });
