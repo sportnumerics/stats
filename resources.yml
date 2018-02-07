@@ -51,7 +51,7 @@ Resources:
   StateMachineSchedule:
     Type: AWS::Events::Rule
     Properties:
-      ScheduleExpression: rate(1 hour)
+      ScheduleExpression: rate(12 hours)
       Targets:
         - Id: StateMachineTarget
           Arn:
