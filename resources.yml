@@ -48,6 +48,34 @@ Resources:
         ReadCapacityUnits: 5
         WriteCapacityUnits: 5
       TableName: ${{file(serverless.yml):custom.divisionsTableName}}
+  StateMachineSchedule:
+    Type: AWS::Events::Rule
+    Properties:
+      ScheduleExpression: rate(1 hour)
+      Targets:
+        - Arn:
+            Ref: StateMachine
+          RoleArn:
+            Fn::GetAtt: [StateMachineScheduleRole, Arn]
+  StateMachineScheduleRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: events.amazonaws.com
+            Action: "sts:AssumeRole"
+      Policies:
+        - PolicyName: StateMachineSchedulePolicy
+          PolicyDocument:
+            Version: "2012-10-17"
+            Statement:
+              - Effect: Allow
+                Action: "states:StartExecution"
+                Resource:
+                  Ref: StateMachine
   StateMachine:
     Type: AWS::StepFunctions::StateMachine
     Properties:
