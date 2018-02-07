@@ -53,7 +53,8 @@ Resources:
     Properties:
       ScheduleExpression: rate(1 hour)
       Targets:
-        - Arn:
+        - Id: StateMachineTarget
+          Arn:
             Ref: StateMachine
           RoleArn:
             Fn::GetAtt: [StateMachineScheduleRole, Arn]
