@@ -1,5 +1,17 @@
 AWSTemplateFormatVersion: '2010-09-09'
+Parameters:
+  Stage:
+    Type: string
+    AllowedValues:
+      - dev
+      - prodblue
+      - prodgreen
 Resources:
+  ContainerRepository:
+    Type: "AWS::ECR::Repository"
+    Properties:
+      RepositoryName:
+        Fn::Sub: "sportnumerics-stats-${Stage}"
   TeamsTable:
     Type: AWS::DynamoDB::Table
     Properties:
