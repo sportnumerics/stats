@@ -26,6 +26,7 @@ Resources:
               Ref: EcsLogs
             awslogs-region:
               Ref: AWS::Region
+            awslogs-stream-prefix: stats-${Stage}
         Environment:
         - Name: RESULTS_TABLE
           Value:
