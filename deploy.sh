@@ -33,7 +33,8 @@ STACK_NAME="sportnumerics-stats-$STAGE"
 aws cloudformation deploy \
   --stack-name=$STACK_NAME \
   --template-file cloudformation.yml \
-  --parameter-overrides Stage=$STAGE
+  --parameter-overrides Stage=$STAGE \
+  --capabilities CAPABILITY_IAM
 
 docker tag $IMAGE_NAME:latest $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_NAME:latest
 docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_NAME:latest
