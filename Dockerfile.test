@@ -1,0 +1,19 @@
+FROM alpine:3.4
+
+WORKDIR /work
+
+RUN apk add --no-cache bash curl git docker py-pip openssl nodejs
+
+RUN pip install --upgrade pip
+
+RUN pip install --upgrade awscli
+
+ADD package.json .
+
+RUN npm install
+
+ADD . .
+
+RUN npm test
+
+CMD ./deploy.sh

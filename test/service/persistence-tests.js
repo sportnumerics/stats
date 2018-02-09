@@ -5,60 +5,49 @@ const persistence = require('../../lib/service/persistence');
 const sinon = require('sinon');
 
 describe('persistence-service', () => {
-  let mockDb;
-
   function setUpMockWithExpectedParams(fname, expectedParams, returnValue = undefined) {
-    mockDb = sinon.mock(dynamodb);
+    const mockDb = sinon.mock(dynamodb);
 
     mockDb
       .expects(fname)
       .withArgs(expectedParams)
       .returns(Promise.resolve(returnValue));
-  }
 
-  function restoreMock() {
-    mockDb.restore();
+    return mockDb;
   }
 
   describe('set', () => {
-    it('should correctly interpolate parameter names', () => {
+    it('should correctly interpolate parameter names', async () => {
       let expectedParams = sinon.match({
         TableName: 'mock-table',
         Key: { 'mockKeyName': 'mockKeyValue' },
-        UpdateExpression: 'set mockItemKey = :p1',
-        ExpressionAttributeValues: {
-          ':p1': 'mockItemValue'
-        }
+        UpdateExpression: sinon.match(item => /set mockItemKey = :p\d+/.test(item)),
+        ExpressionAttributeValues: sinon.match(item => (
+          /:p/.test(Object.keys(item)[0]) && Object.values(item)[0] === 'mockItemValue'
+        ))
       });
 
-      setUpMockWithExpectedParams('updateAsync', expectedParams);    
+      const mockDb = setUpMockWithExpectedParams('updateAsync', expectedParams);
 
-      return persistence.set('mock-table', { 'mockKeyName': 'mockKeyValue' }, { 'mockItemKey': 'mockItemValue' })
-        .then(() => {
-          mockDb.verify();
-          restoreMock();
-        });
+      await persistence.set('mock-table', { 'mockKeyName': 'mockKeyValue' }, { 'mockItemKey': 'mockItemValue' })
+
+      mockDb.restore();
     });
 
     it('should correctly extract reserved keys as expression attributes', () => {
       let expectedParams = sinon.match({
         TableName: 'mock-table',
         Key: { 'mockKeyName': 'mockKeyValue' },
-        UpdateExpression: 'set #token3 = :p2',
-        ExpressionAttributeValues: {
-          ':p2': 'mockItemValue'
-        },
-        ExpressionAttributeNames: {
-          '#token3': 'name'
-        }
+        UpdateExpression: sinon.match.string,
+        ExpressionAttributeValues: sinon.match.object,
+        ExpressionAttributeNames: sinon.match.object
       })
 
-      setUpMockWithExpectedParams('updateAsync', expectedParams);
+      const mockDb = setUpMockWithExpectedParams('updateAsync', expectedParams);
 
       return persistence.set('mock-table', { 'mockKeyName': 'mockKeyValue' }, { 'name': 'mockItemValue' })
-        .then(() => {
+        .finally(() => {
           mockDb.verify();
-          restoreMock();
         });
     });
 
@@ -66,31 +55,33 @@ describe('persistence-service', () => {
       let expectedParams = sinon.match({
         TableName: 'mock-table',
         Key: { 'mockKeyName': 'mockKeyValue' },
-        UpdateExpression: 'set mockItemKey = :p4',
-        ExpressionAttributeValues: {
-          ':p4': 'mockItemValue'
-        }
+        UpdateExpression: sinon.match.string,
+        ExpressionAttributeValues: sinon.match.object
       });
 
-      setUpMockWithExpectedParams('updateAsync', expectedParams);
+      const mockDb = setUpMockWithExpectedParams('updateAsync', expectedParams);
 
       return persistence.set('mock-table', { 'mockKeyName': 'mockKeyValue' }, { 'mockKeyName': 'mockKeyValue', 'mockItemKey': 'mockItemValue' })
-        .then(() => {
+        .finally(() => {
           mockDb.verify();
-          restoreMock();
         });
     });
 
     it('should throw an error on non-redundant items in the key and in the update expression', () => {
-      const stub = sinon.stub(dynamodb, 'updateAsync').returns(new Promise.resolve());
+      const stub = sinon.stub(dynamodb, 'updateAsync')
 
-      const persist = () => {
-        return persistence.set('mock-table', { 'mockKeyName': 'mockKeyValue' }, { 'mockKeyName': 'nonRedundantValue', 'mockItemKey': 'mockItemValue' });
-      };
+      stub.returns(new Promise.resolve());
 
-      expect(persist).to.throw('Cannot specify a different value for key in key and object to update');
+      const promise = Promise.resolve()
+        .then(() => persistence.set('mock-table', { 'mockKeyName': 'mockKeyValue' }, { 'mockKeyName': 'nonRedundantValue', 'mockItemKey': 'mockItemValue' }));
 
-      dynamodb.updateAsync.restore();
+      return expect(promise).to.be.rejectedWith('Cannot specify a different value for key in key and object to update')
+        .then(() => {
+          stub.restore();
+        })
+        .catch(() => {
+          stub.restore();
+        })
     });
   });
 
@@ -99,13 +90,11 @@ describe('persistence-service', () => {
       let expectedParams = sinon.match({
         TableName: 'mock-table',
         IndexName: 'mock-index',
-        KeyConditionExpression: 'mockKeyName = :p5',
-        ExpressionAttributeValues: {
-          ':p5': 'mockKeyValue'
-        }
+        KeyConditionExpression: sinon.match.string,
+        ExpressionAttributeValues: sinon.match.object
       });
 
-      setUpMockWithExpectedParams('queryAsync', expectedParams, { Items: [
+      const mockDb = setUpMockWithExpectedParams('queryAsync', expectedParams, { Items: [
         {
           'mockKeyName': 'mockKeyValue',
           'mockOtherKey': 'mockOtherValue'
@@ -120,7 +109,6 @@ describe('persistence-service', () => {
           }]);
         }).finally(() => {
           mockDb.verify();
-          restoreMock();
         });
     });
 
@@ -128,16 +116,12 @@ describe('persistence-service', () => {
       let expectedParams = sinon.match({
         TableName: 'mock-table',
         IndexName: 'mock-index',
-        KeyConditionExpression: '#token7 = :p6',
-        ExpressionAttributeValues: {
-          ':p6': 'mockKeyValue'
-        },
-        ExpressionAttributeNames: {
-          '#token7': 'name'
-        }
+        KeyConditionExpression: sinon.match.string,
+        ExpressionAttributeValues: sinon.match.object,
+        ExpressionAttributeNames: sinon.match.object
       });
 
-      setUpMockWithExpectedParams('queryAsync', expectedParams, { Items: [
+      const mockDb = setUpMockWithExpectedParams('queryAsync', expectedParams, { Items: [
         {
           'name': 'mockKeyValue',
           'mockOtherKey': 'mockOtherValue'
@@ -152,20 +136,17 @@ describe('persistence-service', () => {
           }]);
         }).finally(() => {
           mockDb.verify();
-          restoreMock();
         });
     });
 
     it('should keep getting if there are more values available', () => {
-      mockDb = sinon.mock(dynamodb);
+      const mockDb = sinon.mock(dynamodb);
 
       mockDb.expects('queryAsync')
         .withArgs(sinon.match({
           TableName: 'mock-table',
-          KeyConditionExpression: 'mockKey = :p8',
-          ExpressionAttributeValues: {
-            ':p8': 'mockValue'
-          }
+          KeyConditionExpression: sinon.match.string,
+          ExpressionAttributeValues: sinon.match.object
         }))
         .returns(Promise.resolve({
           Items: [
@@ -182,13 +163,9 @@ describe('persistence-service', () => {
       mockDb.expects('queryAsync')
         .withArgs(sinon.match({
           TableName: 'mock-table',
-          KeyConditionExpression: 'mockKey = :p9',
-          ExpressionAttributeValues: {
-            ':p9': 'mockValue'
-          },
-          ExclusiveStartKey: {
-            'foo': 'bar'
-          }
+          KeyConditionExpression: sinon.match.string,
+          ExpressionAttributeValues: sinon.match.object,
+          ExclusiveStartKey: sinon.match.object
         }))
         .returns(Promise.resolve({
           Items: [
@@ -213,7 +190,6 @@ describe('persistence-service', () => {
             ]);
           }).finally(() => {
             mockDb.verify();
-            restoreMock();
           });
     });
   });

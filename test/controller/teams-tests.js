@@ -8,43 +8,40 @@ const fixtures = require('../fixtures');
 const _ = require('lodash');
 
 describe('teams-controller', () => {
+  const year = '2016';
+
   describe('collect', () => {
     let serviceMock;
 
     beforeEach(() => {
       serviceMock = sinon.mock(service)
+
+      serviceMock
         .expects('getHtmlFromNcaa')
-        .withArgs('2016', { id: 'm1', sport: 'mla' })
+        .withArgs(year, { id: 'm1', sport: 'mla' })
         .returns(Promise.resolve(fixtures.teamList));
     });
 
     afterEach(() => {
-      service.getHtmlFromNcaa.restore();
+      serviceMock.restore();
     });
 
-    it('should get teams from service', () => {
-      return controller.collect('2016', { id: 'm1', sport: 'mla' })
-        .then(result => {
-          expect(result).to.deep.equal(fixtures.expectedTeamsJson.teams);
+    it('should get teams from service', async () => {
+      const result = await controller.collect(year, { id: 'm1', sport: 'mla' });
 
-          serviceMock.verify();
-        });
+      expect(result).to.deep.equal(fixtures.expectedTeamsJson.teams);
+
+      serviceMock.verify();
     });
   });
 
   describe('normalize', () => {
-    it('should make sure each opponent has a matching id', () => {
-      let persistenceMock = sinon.mock(persistence);
+    it('should make sure each opponent has a matching id', async () => {
+      const persistenceMock = sinon.mock(persistence);
 
-      persistenceMock
-        .expects('get')
-        .withArgs('MockDivisionsTable', { year: '2016' })
-        .returns(Promise.resolve(fixtures.expectedStoredDivisionsJson))
+      const divs = fixtures.expectedStoredDivisionsJson;
 
-      persistenceMock
-        .expects('get')
-        .withArgs('MockResultsTable', { year: '2016' })
-        .returns(Promise.resolve([fixtures.expectedGameByGameJson]));
+      const teams = [fixtures.expectedGameByGameJson];
 
       let teamMatch = sinon.match({
         id: sinon.match.string,
@@ -55,31 +52,24 @@ describe('teams-controller', () => {
 
       persistenceMock
         .expects('set')
-        .withArgs('MockResultsTable', { id: sinon.match.string, year: '2016' }, teamMatch)
+        .withArgs('MockResultsTable', { id: sinon.match.string, year }, teamMatch)
         .exactly(1)
         .returns(Promise.resolve());
 
-      return controller.normalize('2016')
-        .then(() => {
-          persistenceMock.verify();
-          persistenceMock.restore();
-        });
+      await controller.normalize({ year, divs, teams });
+
+      persistenceMock.verify();
+      persistenceMock.restore();
     });
 
-    it('should not normalize teams without a schedule', () => {
-      let persistenceMock = sinon.mock(persistence);
+    it('should not normalize teams without a schedule', async () => {
+      const persistenceMock = sinon.mock(persistence);
 
-      persistenceMock
-        .expects('get')
-        .withArgs('MockDivisionsTable', { year: '2016' })
-        .returns(Promise.resolve(fixtures.expectedStoredDivisionsJson))
+      const divs = fixtures.expectedStoredDivisionsJson;
 
-      let teamWithoutSchedule = _.omit(fixtures.expectedGameByGameJson, 'schedule');
+      const teamWithoutSchedule = _.omit(fixtures.expectedGameByGameJson, 'schedule');
 
-      persistenceMock
-        .expects('get')
-        .withArgs('MockResultsTable', { year: '2016' })
-        .returns(Promise.resolve([teamWithoutSchedule]));
+      const teams = [teamWithoutSchedule];
 
       let teamMatch = sinon.match({
         id: sinon.match.string,
@@ -90,15 +80,14 @@ describe('teams-controller', () => {
 
       persistenceMock
         .expects('set')
-        .withArgs('MockResultsTable', { id: sinon.match.string, year: '2016' }, teamMatch)
+        .withArgs('MockResultsTable', { id: sinon.match.string, year }, teamMatch)
         .exactly(1)
         .returns(Promise.resolve());
 
-      return controller.normalize('2016')
-        .then(() => {
-          persistenceMock.verify();
-          persistenceMock.restore();
-        });
+      await controller.normalize({ year, divs, teams });
+
+      persistenceMock.verify();
+      persistenceMock.restore();
     });
   });
 });

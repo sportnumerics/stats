@@ -1,0 +1,12 @@
+version: '3'
+services:
+  stats:
+    build: .
+    volumes:
+      - .:/app
+    environment:
+      NODE_ENV: dev
+      AWS_ACCESS_KEY_ID: abcd
+      AWS_SECRET_ACCESS_KEY: abcd
+      AWS_REGION: us-east-1
+

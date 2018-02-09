@@ -8,10 +8,12 @@ const fixtures = require('../fixtures');
 
 describe('schedule-controller', () => {
   describe('collect', () => {
-    let serviceMock, persistenceMock;
+    let serviceMock;
 
     beforeEach(() => {
       serviceMock = sinon.mock(service)
+
+      serviceMock
         .expects('getHtmlFromNcaa')
         .withArgs('2016', 'm1', 'mla-721')
         .returns(Promise.resolve(fixtures.gameByGame))
@@ -23,24 +25,17 @@ describe('schedule-controller', () => {
         year: '2016',
         schedule: sinon.match.array
       });
-      
-      persistenceMock = sinon.mock(persistence)
-        .expects('set')
-        .withArgs('MockResultsTable', { id: 'mla-721', year: '2016' }, expectedTeam)
-        .returns(Promise.resolve())
     });
 
     afterEach(() => {
-      service.getHtmlFromNcaa.restore();
-      persistence.set.restore();
+      serviceMock.restore();
     });
 
-    it('should get team schedule from service and write to persistent store', () => {
-      return controller.collect({ id: 'mla-721', name: 'Air Force', div: 'm1', year: '2016' })
-        .then(() => {
-          serviceMock.verify();
-          persistenceMock.verify();
-        })
+    it('should get team schedule from service and write to persistent store', async () => {
+      const schedule = await controller.collect({ id: 'mla-721', name: 'Air Force', div: 'm1', year: '2016' });
+
+      expect(schedule).to.deep.equal(fixtures.expectedGameByGameJson);
+      serviceMock.verify();
     });
   });
 });

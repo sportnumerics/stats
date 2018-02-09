@@ -3,6 +3,5 @@ module.exports = {
     ContentType: 'application/json'
   },
   ResultsTable: process.env.RESULTS_TABLE,
-  DivisionsTable: process.env.DIVISIONS_TABLE,
-  TeamsQueueUrl: process.env.TEAMS_QUEUE_URL
+  DivisionsTable: process.env.DIVISIONS_TABLE
 }
