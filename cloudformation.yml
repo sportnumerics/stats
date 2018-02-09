@@ -47,6 +47,7 @@ Resources:
         Ref: TaskRole
       ExecutionRoleArn:
         Ref: TaskExecutionRole
+      NetworkMode: awsvpc
   TaskExecutionRole:
     Type: AWS::IAM::Role
     Properties:
