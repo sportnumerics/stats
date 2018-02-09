@@ -86,13 +86,13 @@ Resources:
         - PolicyName: TaskRole
           PolicyDocument:
             Statement:
-              - Effect: "Allow"
-            Action:
-              - 'dynamodb:UpdateItem'
-              - 'dynamodb:Query'
-            Resource:
-              - Fn::GetAtt: [TeamsTable, Arn]
-              - Fn::GetAtt: [DivisionsTable, Arn]
+              - Effect: Allow
+                Action:
+                  - 'dynamodb:UpdateItem'
+                  - 'dynamodb:Query'
+                Resource:
+                  - Fn::GetAtt: [TeamsTable, Arn]
+                  - Fn::GetAtt: [DivisionsTable, Arn]
   EcsLogs:
     Type: AWS::Logs::LogGroup
   TeamsTable:
