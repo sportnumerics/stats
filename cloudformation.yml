@@ -8,10 +8,93 @@ Parameters:
       - prodgreen
 Resources:
   ContainerRepository:
-    Type: "AWS::ECR::Repository"
+    Type: AWS::ECR::Repository
     Properties:
       RepositoryName:
         Fn::Sub: "sportnumerics-stats-${Stage}"
+  Task:
+    Type: AWS::ECS::TaskDefinition
+    Properties:
+      ContainerDefinitions:
+      - Name: stats
+        Image:
+          Fn::Sub: "${AWS::AccountId}.dkr.ecr.${AWS::Region}.amazonaws.com/sportnumerics-stats-${Stage}:latest"
+        LogConfiguration:
+          LogDriver: awslogs
+          Options:
+            awslogs-group:
+              Ref: EcsLogs
+            awslogs-region:
+              Ref: AWS::Region
+        Environment:
+        - Name: RESULTS_TABLE
+          Value:
+            Ref: TeamsTable
+        - Name: DIVISIONS_TABLE
+          Value:
+            Ref: DivisionsTable
+        - Name: STAGE
+          Value:
+            Ref: Stage
+        - Name: AWS_DEFAULT_REGION
+          Value:
+            Ref: AWS::Region
+      Memory: 1GB
+      Cpu: 256
+      RequiresCompatibilities:
+        - FARGATE
+      TaskRoleArn:
+        Ref: TaskRole
+      ExecutionRoleArn:
+        Ref: TaskExecutionRole
+  TaskExecutionRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service:
+                - ecs-tasks.amazonaws.com
+            Action:
+              - 'sts:AssumeRole'
+      Policies:
+        - PolicyName: TaskExecutionRole
+          PolicyDocument:
+            Statement:
+              - Effect: Allow
+                Action:
+                  - 'ecr:GetAuthorizationToken'
+                  - 'ecr:BatchCheckLayerAvailability'
+                  - 'ecr:GetDownloadUrlForLayer'
+                  - 'ecr:BatchGetImage'
+                  - logs:CreateLogStream
+                  - logs:PutLogEvents
+                Resource: '*'
+  TaskRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service:
+                - ecs-tasks.amazonaws.com
+            Action:
+              - 'sts:AssumeRole'
+      Policies:
+        - PolicyName: TaskRole
+          PolicyDocument:
+            Statement:
+              - Effect: "Allow"
+            Action:
+              - 'dynamodb:UpdateItem'
+              - 'dynamodb:Query'
+            Resource:
+              - Fn::GetAtt: [TeamsTable, Arn]
+              - Fn::GetAtt: [DivisionsTable, Arn]
+  EcsLogs:
+    Type: AWS::Logs::LogGroup
   TeamsTable:
     Type: AWS::DynamoDB::Table
     Properties:
