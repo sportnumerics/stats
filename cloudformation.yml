@@ -96,6 +96,34 @@ Resources:
                 Resource:
                   - Fn::GetAtt: [TeamsTable, Arn]
                   - Fn::GetAtt: [DivisionsTable, Arn]
+  TaskEventRule:
+    Type: AWS::Events::Rule
+    Properties:
+      ScheduleExpression: rate(12 hours)
+      Targets:
+        - Arn:
+            Ref: Task
+          RoleArn:
+            Fn::GetAtt: [TaskEventRuleRole, Arn]
+  TaskEventRuleRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service:
+                - events.amazonaws.com
+            Action:
+              - 'sts:AssumeRole'
+      Policies:
+        - PolicyName: TaskEventRuleRole
+          PolicyDocument:
+            Statement:
+              - Effect: Allow
+                Action:
+                  - 'ecs:RunTask'
+                Resource: '*'
   EcsLogs:
     Type: AWS::Logs::LogGroup
   TeamsTable:
