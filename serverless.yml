@@ -3,7 +3,6 @@ provider:
   name: aws
   runtime: nodejs6.10
   stage: dev
-  region: ap-southeast-2
   variableSyntax: "\\${{([\\s\\S]+?)}}"
   iamRoleStatements:
   - Effect: "Allow"
