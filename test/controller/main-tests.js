@@ -2,6 +2,7 @@ const sinon = require('sinon');
 const divisions = require('../../lib/controller/divisions');
 const teams = require('../../lib/controller/teams');
 const schedule = require('../../lib/controller/schedule');
+const predict = require('../../lib/service/predict');
 const main = require('../../lib/controller/main');
 const fixtures = require('../fixtures');
 
@@ -56,12 +57,20 @@ describe('main-controller', () => {
         .expects('collect')
         .withArgs(mockTeam)
         .returns(Promise.resolve(fixtures.expectedGameByGameJson));
+
+      mockPredict = sinon.mock(predict);
+
+      mockPredict
+        .expects('initiate')
+        .withArgs(year)
+        .returns(Promise.resolve());
     });
 
     afterEach(() => {
       mockDivisions.restore();
       mockTeams.restore();
       mockSchedule.restore();
+      mockPredict.restore();
     });
 
     it('should use collect the divisions from the divisions controller', async () => {
@@ -80,6 +89,12 @@ describe('main-controller', () => {
       await main.collect({ year });
 
       mockSchedule.verify();
+    });
+
+    it('should trigger the prediction step', async () => {
+      await main.collect({ year });
+
+      mockPredict.verify();
     });
   })
 })

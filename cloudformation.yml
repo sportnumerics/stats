@@ -41,6 +41,9 @@ Resources:
         - Name: AWS_DEFAULT_REGION
           Value:
             Ref: AWS::Region
+        - Name: PREDICT_LAMBDA_ARN
+          Value:
+            Fn::Sub: "arn:aws:lambda:${AWS::Region}:${AWS::AccountId}:function:sportnumerics-predict-${Stage}-predict"
       Memory: 1GB
       Cpu: 256
       RequiresCompatibilities:
@@ -71,8 +74,8 @@ Resources:
                   - 'ecr:BatchCheckLayerAvailability'
                   - 'ecr:GetDownloadUrlForLayer'
                   - 'ecr:BatchGetImage'
-                  - logs:CreateLogStream
-                  - logs:PutLogEvents
+                  - 'logs:CreateLogStream'
+                  - 'logs:PutLogEvents'
                 Resource: '*'
   TaskRole:
     Type: AWS::IAM::Role
@@ -96,6 +99,10 @@ Resources:
                 Resource:
                   - Fn::GetAtt: [TeamsTable, Arn]
                   - Fn::GetAtt: [DivisionsTable, Arn]
+              - Effect: Allow
+                Action: 'lambda:InvokeFunction'
+                Resource: 
+                  Fn::Sub: "arn:aws:lambda:${AWS::Region}:${AWS::AccountId}:function:sportnumerics-predict-${Stage}-predict"
   TaskEventRule:
     Type: AWS::Events::Rule
     Properties:
