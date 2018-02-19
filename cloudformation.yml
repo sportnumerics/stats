@@ -112,7 +112,7 @@ Resources:
       Targets:
         - Id: EcsTarget
           Arn:
-            Ref: Cluster
+            Fn::GetAtt: [Cluster, Arn]
           EcsParameters:
             TaskCount: 1
             TaskDefinitionArn:
