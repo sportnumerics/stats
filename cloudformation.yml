@@ -108,7 +108,8 @@ Resources:
     Properties:
       ScheduleExpression: rate(12 hours)
       Targets:
-        - Arn:
+        - Id: EcsTarget
+          Arn:
             Ref: Task
           RoleArn:
             Fn::GetAtt: [TaskEventRuleRole, Arn]
