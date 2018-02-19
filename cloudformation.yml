@@ -12,6 +12,8 @@ Resources:
     Properties:
       RepositoryName:
         Fn::Sub: "sportnumerics-stats-${Stage}"
+  Cluster:
+    Type: AWS::ECS::Cluster
   Task:
     Type: AWS::ECS::TaskDefinition
     Properties:
@@ -110,7 +112,11 @@ Resources:
       Targets:
         - Id: EcsTarget
           Arn:
-            Ref: Task
+            Ref: Cluster
+          EcsParameters:
+            TaskCount: 1
+            TaskDefinitionArn:
+              Ref: Task
           RoleArn:
             Fn::GetAtt: [TaskEventRuleRole, Arn]
   TaskEventRuleRole:
