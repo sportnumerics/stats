@@ -9,21 +9,21 @@ const fixtures = require('../fixtures');
 describe('main-controller', () => {
   describe('collect', () => {
     let mockTeams, mockDivisions, mockSchedule;
+    let scheduleCollectMock, normalizeMock;
     const year = '2016';
+    const mockDivision = {
+      'id': 'm1',
+      'sport': 'mla',
+      'source': {
+        'type': 'ncaa',
+        'id': '1',
+        'sportCode': 'MLA'
+      },
+      'title': 'NCAA Men\'s Division 1'
+    };
 
     beforeEach(() => {
       mockDivisions = sinon.mock(divisions);
-
-      const mockDivision = {
-        'id': 'm1',
-        'sport': 'mla',
-        'source': {
-          'type': 'ncaa',
-          'id': '1',
-          'sportCode': 'MLA'
-        },
-        'title': 'NCAA Men\'s Division 1'
-      };
 
       mockDivisions
         .expects('collect')
@@ -46,17 +46,21 @@ describe('main-controller', () => {
         .withArgs(year, mockDivision)
         .returns(Promise.resolve([mockTeam]));
 
-      mockTeams
-        .expects('normalize')
-        .withArgs({ year, divs: [mockDivision], teams: [fixtures.expectedGameByGameJson] })
-        .returns(Promise.resolve());
-
       mockSchedule = sinon.mock(schedule);
 
-      mockSchedule
+      scheduleCollectMock = mockSchedule
         .expects('collect')
-        .withArgs(mockTeam)
+        .withArgs(mockTeam);
+
+      scheduleCollectMock
         .returns(Promise.resolve(fixtures.expectedGameByGameJson));
+
+      normalizeMock = mockTeams
+        .expects('normalize');
+
+      normalizeMock
+        .withArgs({ year, divs: [mockDivision], teams: [fixtures.expectedGameByGameJson] })
+        .returns(Promise.resolve());
 
       mockPredict = sinon.mock(predict);
 
@@ -73,28 +77,29 @@ describe('main-controller', () => {
       mockPredict.restore();
     });
 
-    it('should use collect the divisions from the divisions controller', async () => {
+    it('should use collect all the team schedules using the divisions and teams controllers', async () => {
       await main.collect({ year });
 
       mockDivisions.verify();
-    });
-
-    it('should use the divisions to collect the teams and normalize', async () => {
-      await main.collect({ year });
-
       mockTeams.verify();
-    });
-
-    it('should use the schedules to collect the schedules', async () => {
-      await main.collect({ year });
-
       mockSchedule.verify();
-    });
-
-    it('should trigger the prediction step', async () => {
-      await main.collect({ year });
-
       mockPredict.verify();
     });
-  })
-})
+
+    it('should not fail completely if one of the schedules does not get returned', async () => {
+      scheduleCollectMock
+        .throws(new Error('mock error'));
+      
+      normalizeMock
+        .withArgs({ year, divs: [mockDivision], teams: [] })
+        .returns(Promise.resolve());
+
+      await main.collect({ year });
+
+      mockDivisions.verify();
+      mockTeams.verify();
+      mockSchedule.verify();
+      mockPredict.verify();
+    });
+  });
+});
