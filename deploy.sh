@@ -8,7 +8,7 @@ npm prune --production
 source ./config/env.sh
 unset AWS_SESSION_TOKEN
 
-pip install awscli --upgrade --user
+pip install awscli --upgrade
 aws --version
 
 if [ "$LAMBCI_BRANCH" = "master" ] && [ -z "$LAMBCI_PULL_REQUEST"]; then
