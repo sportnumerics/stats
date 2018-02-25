@@ -110,13 +110,9 @@ Resources:
     Properties:
       ScheduleExpression: rate(1 hour)
       Targets:
-        - Id: EcsTarget
+        - Id: BootstrapTarget
           Arn:
-            Fn::GetAtt: [Cluster, Arn]
-          EcsParameters:
-            TaskCount: 1
-            TaskDefinitionArn:
-              Ref: Task
+            Fn::GetAtt: [BootstrapLambdaFunction, Arn]
           RoleArn:
             Fn::GetAtt: [TaskEventRuleRole, Arn]
   TaskEventRuleRole:
