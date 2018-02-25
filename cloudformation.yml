@@ -119,9 +119,7 @@ Resources:
       FunctionName:
         Ref: BootstrapLambdaFunction
       Action: 'lambda:InvokeFunction'
-      Principal:
-        Service:
-          - 'events.amazonaws.com'
+      Principal: 'events.amazonaws.com'
   BootstrapLambdaFunction:
     Type: AWS::Lambda::Function
     Properties:
