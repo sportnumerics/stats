@@ -113,28 +113,15 @@ Resources:
         - Id: BootstrapTarget
           Arn:
             Fn::GetAtt: [BootstrapLambdaFunction, Arn]
-          RoleArn:
-            Fn::GetAtt: [TaskEventRuleRole, Arn]
-  TaskEventRuleRole:
-    Type: AWS::IAM::Role
+  LambdaPermission:
+    Type: AWS::Lambda::Permission
     Properties:
-      AssumeRolePolicyDocument:
-        Statement:
-          - Effect: Allow
-            Principal:
-              Service:
-                - events.amazonaws.com
-            Action:
-              - 'sts:AssumeRole'
-      Policies:
-        - PolicyName: TaskEventRuleRole
-          PolicyDocument:
-            Statement:
-              - Effect: Allow
-                Action:
-                  - 'lambda:InvokeFunction'
-                Resource:
-                  - Fn::GetAtt: [BootstrapLambdaFunction, Arn]
+      FunctionName:
+        Ref: BootstrapLambdaFunction
+      Action: 'lambda:InvokeFunction'
+      Principal:
+        Service:
+          - 'events.amazonaws.com'
   BootstrapLambdaFunction:
     Type: AWS::Lambda::Function
     Properties:
