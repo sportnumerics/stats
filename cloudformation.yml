@@ -108,7 +108,7 @@ Resources:
   TaskEventRule:
     Type: AWS::Events::Rule
     Properties:
-      ScheduleExpression: rate(12 hours)
+      ScheduleExpression: rate(1 hour)
       Targets:
         - Id: EcsTarget
           Arn:
