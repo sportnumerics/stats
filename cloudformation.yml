@@ -134,7 +134,7 @@ Resources:
                 Action:
                   - 'lambda:InvokeFunction'
                 Resource:
-                  - Fn::GetAtt: [BootstrapLambda, Arn]
+                  - Fn::GetAtt: [BootstrapLambdaFunction, Arn]
   BootstrapLambdaFunction:
     Type: AWS::Lambda::Function
     Properties:
