@@ -108,7 +108,7 @@ Resources:
   TaskEventRule:
     Type: AWS::Events::Rule
     Properties:
-      ScheduleExpression: rate(1 hour)
+      ScheduleExpression: rate(24 hours)
       Targets:
         - Id: BootstrapTarget
           Arn:
