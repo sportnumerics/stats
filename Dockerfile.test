@@ -8,7 +8,7 @@ RUN pip install --upgrade pip
 
 RUN pip install --upgrade awscli
 
-ADD package.json yarn.lock .
+ADD package.json yarn.lock ./
 
 RUN yarn
 
