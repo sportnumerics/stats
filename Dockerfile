@@ -1,5 +1,5 @@
-FROM node:8
+FROM node:alpine
 WORKDIR /app
 ADD . .
-RUN npm install
+RUN yarn
 CMD node index.js

@@ -2,8 +2,6 @@
 
 set -e
 
-npm prune --production
-
 ./decrypt.sh
 source ./config/env.sh
 unset AWS_SESSION_TOKEN
