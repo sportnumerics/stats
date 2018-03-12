@@ -103,7 +103,7 @@ Resources:
                   - Fn::GetAtt: [DivisionsTable, Arn]
               - Effect: Allow
                 Action: 'lambda:InvokeFunction'
-                Resource: 
+                Resource:
                   Fn::Sub: "arn:aws:lambda:${AWS::Region}:${AWS::AccountId}:function:sportnumerics-predict-${Stage}-predict"
   TaskEventRule:
     Type: AWS::Events::Rule
@@ -124,28 +124,13 @@ Resources:
     Type: AWS::Lambda::Function
     Properties:
       Code:
-        ZipFile:
-          Fn::Sub: |
-            import boto3
-            def handler(event, context):
-              client = boto3.client('ecs')
-              response = client.run_task(
-                cluster='${Cluster}',
-                launchType='FARGATE',
-                taskDefinition='${Task}',
-                count=1,
-                platformVersion='LATEST',
-                networkConfiguration={
-                  'awsvpcConfiguration': {
-                    'subnets': [
-                      'subnet-53f5bb0a',
-                      'subnet-24bfda41'
-                    ],
-                    'assignPublicIp': 'ENABLED'
-                  }
-                }
-              )
-              return str(response)
+        ZipFile: ${{file(bootstrap.py)}}
+      Environment:
+        Variables:
+          ECS_CLUSTER:
+            Ref: Cluster
+          ECS_TASK:
+            Ref: Task
       Handler: index.handler
       Role:
         Fn::GetAtt: [BootstrapLambdaRole, Arn]
