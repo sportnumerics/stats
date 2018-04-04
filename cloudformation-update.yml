@@ -7,6 +7,8 @@ Parameters:
       - prodblue
       - prodgreen
 Resources:
+  DeploymentBucket:
+    Type: AWS::S3::Bucket
   ContainerRepository:
     Type: AWS::ECR::Repository
     Properties:
@@ -124,7 +126,7 @@ Resources:
     Type: AWS::Lambda::Function
     Properties:
       Code:
-        ZipFile: ${{file(bootstrap.py)}}
+        ZipFile: ./bootstrap.py
       Environment:
         Variables:
           ECS_CLUSTER:
@@ -218,3 +220,7 @@ Outputs:
     Description: Teams table name in DynamoDB
     Value:
       Ref: TeamsTable
+  DeploymentBucketName:
+    Description: Deployment bucket to upload deployable resources
+    Value:
+      Ref: DeploymentBucket
