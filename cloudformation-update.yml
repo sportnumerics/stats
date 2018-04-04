@@ -133,7 +133,7 @@ Resources:
             Ref: Cluster
           ECS_TASK:
             Ref: Task
-      Handler: index.handler
+      Handler: bootstrap.handler
       Role:
         Fn::GetAtt: [BootstrapLambdaRole, Arn]
       Runtime: python3.6
