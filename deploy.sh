@@ -30,7 +30,7 @@ STACK_NAME="sportnumerics-stats-$STAGE"
 DEPLOYMENT_BUCKET=$(
   aws cloudformation describe-stacks \
     --stack-name $STACK_NAME \
-    --query 'Stacks[0].Outputs[?OutputKey==`DeploymentBucket`].OutputValue' \
+    --query 'Stacks[0].Outputs[?OutputKey==`DeploymentBucketName`].OutputValue' \
     --output text
   )
 
