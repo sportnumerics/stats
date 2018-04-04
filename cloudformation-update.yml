@@ -125,8 +125,7 @@ Resources:
   BootstrapLambdaFunction:
     Type: AWS::Lambda::Function
     Properties:
-      Code:
-        ZipFile: ./bootstrap.py
+      Code: ./bootstrap.py
       Environment:
         Variables:
           ECS_CLUSTER:
