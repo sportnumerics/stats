@@ -36,4 +36,35 @@ describe('teams-service', () => {
       });
     });
   });
+
+  describe('getHtmlFromMcla', () => {
+    describe('when things go well', () => {
+      beforeEach(() => {
+        nock('http://mcla.us').get(/\/teams/).reply(200, fixtures.mclaTeamList);
+      });
+
+      it('should return an html document', () => {
+        let htmlPromise = teamsService.getHtmlFromMcla('2016', {});
+
+        return expect(htmlPromise).to.eventually.be.a('string');
+      });
+    })
+
+    describe('when things dont go well', () => {
+      it('should timeout in  seconds if the response is not returned in time', () => {
+        let clock = sinon.useFakeTimers();
+
+        nock('http://mcla.us')
+          .get(/\/teams/)
+          .delayConnection(20000)
+          .reply(200, fixtures.teamList);
+
+        let htmlPromise = teamsService.getHtmlFromMcla('2016', fixtures.womensDivision1);
+
+        clock.tick(20000);
+
+        return expect(htmlPromise).to.eventually.be.rejected;
+      });
+    });
+  });
 });
