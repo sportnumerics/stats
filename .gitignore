@@ -50,3 +50,5 @@ jspm_packages
 .serverless/
 
 build/
+
+.DS_Store

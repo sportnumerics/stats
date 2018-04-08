@@ -14,12 +14,12 @@ describe('divisions-controller', () => {
         sport: sinon.match.string,
         title: sinon.match.string
       })
-      
+
       persistenceMock = sinon.mock(persistence);
 
       persistenceMock
         .expects('set')
-        .exactly(6)
+        .exactly(7)
         .withArgs('MockDivisionsTable', { id: sinon.match.string, year: '2016' }, divisionMatch)
         .returns(Promise.resolve());
     });

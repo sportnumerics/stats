@@ -58,5 +58,14 @@
       "sportCode": "WLA"
     },
     "title": "NCAA Women's Division 3"
+  },
+  {
+    "id": "mcla1",
+    "sport": "mla",
+    "source": {
+      "type": "mcla",
+      "id": "1"
+    },
+    "title": "MCLA Divison 1"
   }
 ]

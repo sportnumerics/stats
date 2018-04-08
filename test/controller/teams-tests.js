@@ -15,24 +15,50 @@ describe('teams-controller', () => {
 
     beforeEach(() => {
       serviceMock = sinon.mock(service)
-
-      serviceMock
-        .expects('getHtmlFromNcaa')
-        .withArgs(year, { id: 'm1', sport: 'mla' })
-        .returns(Promise.resolve(fixtures.teamList));
     });
 
     afterEach(() => {
       serviceMock.restore();
     });
 
-    it('should get teams from service', async () => {
-      const result = await controller.collect(year, { id: 'm1', sport: 'mla' });
+    it('should get ncaa teams from ncaa', async () => {
+      serviceMock
+        .expects('getHtmlFromNcaa')
+        .withArgs(year, { id: 'm1', sport: 'mla', source: { type: 'ncaa' } })
+        .returns(Promise.resolve(fixtures.teamList));
+
+      const result = await controller.collect(year, {
+        id: 'm1',
+        sport: 'mla',
+        source: {
+          type: 'ncaa'
+        }
+      });
 
       expect(result).to.deep.equal(fixtures.expectedTeamsJson.teams);
 
       serviceMock.verify();
     });
+
+    it('should get mcla teams from mcla', async () => {
+      serviceMock
+        .expects('getHtmlFromMcla')
+        .withArgs(year, { id: 'mcla1', sport: 'mla', source: { type: 'mcla', id: '1' } })
+        .returns(Promise.resolve(fixtures.mclaTeamList));
+
+        const result = await controller.collect(year, {
+          id: 'mcla1',
+          sport: 'mla',
+          source: {
+            type: 'mcla',
+            id: '1'
+          }
+        });
+
+        expect(result).to.deep.equal(fixtures.expectedMclaTeamsJson.teams);
+
+        serviceMock.verify();
+    })
   });
 
   describe('normalize', () => {

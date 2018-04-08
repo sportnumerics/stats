@@ -28,5 +28,10 @@
     "id": "w3",
     "sport": "wla",
     "title": "NCAA Women's Division 3"
+  },
+  {
+    "id": "mcla1",
+    "sport": "mla",
+    "title": "MCLA Division 1"
   }
 ]

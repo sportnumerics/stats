@@ -14,11 +14,13 @@ global.expect = chai.expect;
 
 module.exports = {
   teamList: fs.readFileSync(path.resolve(__dirname, './fixtures/team-list.html')),
+  mclaTeamList: fs.readFileSync(path.resolve(__dirname, './fixtures/mcla-teams.html')),
   schedule: fs.readFileSync(path.resolve(__dirname, './fixtures/schedule.html')),
   gameByGame: fs.readFileSync(path.resolve(__dirname, './fixtures/game-by-game.html')),
   expectedQueryDivisionsJson: require('./fixtures/expected-query-divisions'),
   expectedStoredDivisionsJson: require('./fixtures/expected-stored-divisions'),
   expectedTeamsJson: require('./fixtures/expected-div1-teams'),
+  expectedMclaTeamsJson: require('./fixtures/expected-mcla-div1-teams'),
   expectedScheduleJson: require('./fixtures/expected-721-schedule'),
   expectedGameByGameJson: require('./fixtures/expected-392-game-by-game'),
   expectedNormalizedGameByGameJson: require('./fixtures/expected-normalized-392-game-by-game'),

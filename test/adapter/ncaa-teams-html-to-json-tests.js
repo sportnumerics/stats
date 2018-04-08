@@ -1,9 +1,9 @@
 'use strict';
 
 let fixtures = require('../fixtures.js'),
-  teamsHtmlToJson = require('../../lib/adapter/teams-html-to-json');
+  teamsHtmlToJson = require('../../lib/adapter/ncaa-teams-html-to-json');
 
-describe('teams html to json', () => {
+describe('ncaa teams html to json', () => {
   var data;
   beforeEach(() => {
     data = teamsHtmlToJson({ div: 'm1', sport: 'mla' })(fixtures.teamList);
