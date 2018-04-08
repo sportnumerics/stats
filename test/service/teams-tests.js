@@ -12,6 +12,8 @@ describe('teams-service', () => {
         nock('http://stats.ncaa.org').get(/\/team\/inst_team_list.*/).reply(200, fixtures.teamList);
       });
 
+      afterEach(nock.cleanAll);
+
       it('should return an html document', () => {
         let htmlPromise = teamsService.getHtmlFromNcaa('2016', fixtures.womensDivision1);
 
@@ -20,7 +22,7 @@ describe('teams-service', () => {
     })
 
     describe('when things dont go well', () => {
-      it('should timeout in  seconds if the response is not returned in time', () => {
+      it('should timeout in  seconds if the response is not returned in time', async () => {
         let clock = sinon.useFakeTimers();
 
         nock('http://stats.ncaa.org')
@@ -32,7 +34,9 @@ describe('teams-service', () => {
 
         clock.tick(20000);
 
-        return expect(htmlPromise).to.eventually.be.rejected;
+        await expect(htmlPromise).to.eventually.be.rejected;
+
+        nock.cleanAll();
       });
     });
   });
@@ -40,8 +44,10 @@ describe('teams-service', () => {
   describe('getHtmlFromMcla', () => {
     describe('when things go well', () => {
       beforeEach(() => {
-        nock('http://mcla.us').get(/\/teams/).reply(200, fixtures.mclaTeamList);
+        nock('http://mcla.us').get(/\/teams\/2016/).reply(200, fixtures.mclaTeamList);
       });
+
+      afterEach(nock.cleanAll);
 
       it('should return an html document', () => {
         let htmlPromise = teamsService.getHtmlFromMcla('2016', {});
@@ -51,11 +57,11 @@ describe('teams-service', () => {
     })
 
     describe('when things dont go well', () => {
-      it('should timeout in  seconds if the response is not returned in time', () => {
+      it('should timeout in  seconds if the response is not returned in time', async () => {
         let clock = sinon.useFakeTimers();
 
         nock('http://mcla.us')
-          .get(/\/teams/)
+          .get(/\/teams\/2016/)
           .delayConnection(20000)
           .reply(200, fixtures.teamList);
 
@@ -63,7 +69,9 @@ describe('teams-service', () => {
 
         clock.tick(20000);
 
-        return expect(htmlPromise).to.eventually.be.rejected;
+        await expect(htmlPromise).to.eventually.be.rejected;
+
+        nock.cleanAll();
       });
     });
   });
