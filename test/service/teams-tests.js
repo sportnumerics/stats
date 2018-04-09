@@ -37,6 +37,7 @@ describe('teams-service', () => {
         await expect(htmlPromise).to.eventually.be.rejected;
 
         nock.cleanAll();
+        clock.restore();
       });
     });
   });
@@ -72,6 +73,7 @@ describe('teams-service', () => {
         await expect(htmlPromise).to.eventually.be.rejected;
 
         nock.cleanAll();
+        clock.restore();
       });
     });
   });

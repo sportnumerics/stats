@@ -1,10 +1,10 @@
 'use strict';
 
 let fixtures = require('../fixtures.js'),
-  gameByGameHtmlToJson = require('../../lib/adapter/game-by-game-html-to-json'),
+  gameByGameHtmlToJson = require('../../lib/adapter/ncaa-game-by-game-html-to-json'),
   moment = require('moment');
 
-describe('schedule html to json', () => {
+describe('ncaa schedule html to json', () => {
   var data;
   beforeEach(() => {
     data = gameByGameHtmlToJson(fixtures.gameByGame, fixtures.expectedTeamsJson.teams);

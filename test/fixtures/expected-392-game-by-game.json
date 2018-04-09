@@ -3,6 +3,9 @@
     "name": "Air Force",
     "div": "m1",
     "year": "2016",
+    "source": {
+        "type": "ncaa"
+    },
     "schedule": [
         {
             "location": {

@@ -1,0 +1,142 @@
+{
+    "id": "mla-alabama",
+    "name": "Alabama",
+    "div": "mcla1",
+    "year": "2018",
+    "source": {
+        "type": "mcla"
+    },
+    "schedule": [
+        {
+            "location": {
+                "type": "away"
+            },
+            "opponent": {
+                "name": "Vanderbilt"
+            },
+            "date": "2018-02-03T20:00:00.000Z",
+            "result": {
+                "pointsFor": 9,
+                "pointsAgainst": 6
+            }
+        },
+        {
+            "location": {
+                "type": "home"
+            },
+            "opponent": {
+                "name": "Missouri"
+            },
+            "date": "2018-02-24T20:00:00.000Z",
+            "result": {
+                "pointsFor": 12,
+                "pointsAgainst": 3
+            }
+        },
+        {
+            "location": {
+                "type": "away"
+            },
+            "opponent": {
+                "name": "Ole Miss"
+            },
+            "date": "2018-02-25T18:00:00.000Z",
+            "result": {
+                "pointsFor": 8,
+                "pointsAgainst": 5
+            }
+        },
+        {
+            "location": {
+                "type": "away"
+            },
+            "opponent": {
+                "name": "Texas Christian"
+            },
+            "date": "2018-03-03T19:00:00.000Z",
+            "result": {
+                "pointsFor": 11,
+                "pointsAgainst": 2
+            }
+        },
+        {
+            "location": {
+                "type": "away"
+            },
+            "opponent": {
+                "name": "Oklahoma"
+            },
+            "date": "2018-03-04T17:00:00.000Z",
+            "result": {
+                "pointsFor": 10,
+                "pointsAgainst": 7
+            }
+        },
+        {
+            "location": {
+                "type": "home"
+            },
+            "opponent": {
+                "name": "LSU"
+            },
+            "date": "2018-03-10T18:00:00.000Z",
+            "result": {
+                "pointsFor": 13,
+                "pointsAgainst": 9
+            }
+        },
+        {
+            "location": {
+                "type": "home"
+            },
+            "opponent": {
+                "name": "Georgia"
+            },
+            "date": "2018-03-24T23:00:00.000Z",
+            "result": {
+                "pointsFor": 7,
+                "pointsAgainst": 14
+            }
+        },
+        {
+            "location": {
+                "type": "home"
+            },
+            "opponent": {
+                "name": "Virginia Tech"
+            },
+            "date": "2018-03-31T16:00:00.000Z",
+            "result": {
+                "pointsFor": 10,
+                "pointsAgainst": 11
+            }
+        },
+        {
+            "location": {
+                "type": "away"
+            },
+            "opponent": {
+                "name": "Tennessee"
+            },
+            "date": "2018-04-01T16:00:00.000Z"
+        },
+        {
+            "location": {
+                "type": "away"
+            },
+            "opponent": {
+                "name": "Georgia Tech"
+            },
+            "date": "2018-04-07T18:00:00.000Z"
+        },
+        {
+            "location": {
+                "type": "home"
+            },
+            "opponent": {
+                "name": "Auburn"
+            },
+            "date": "2018-04-15T00:00:00.000Z"
+        }
+    ]
+}
