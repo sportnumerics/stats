@@ -14,7 +14,7 @@
             "opponent": {
                 "name": "Vanderbilt"
             },
-            "date": "2018-02-03T20:00:00.000Z",
+            "date": "2018-02-03T14:00:00.000Z",
             "result": {
                 "pointsFor": 9,
                 "pointsAgainst": 6
@@ -27,7 +27,7 @@
             "opponent": {
                 "name": "Missouri"
             },
-            "date": "2018-02-24T20:00:00.000Z",
+            "date": "2018-02-24T14:00:00.000Z",
             "result": {
                 "pointsFor": 12,
                 "pointsAgainst": 3
@@ -40,7 +40,7 @@
             "opponent": {
                 "name": "Ole Miss"
             },
-            "date": "2018-02-25T18:00:00.000Z",
+            "date": "2018-02-25T12:00:00.000Z",
             "result": {
                 "pointsFor": 8,
                 "pointsAgainst": 5
@@ -53,7 +53,7 @@
             "opponent": {
                 "name": "Texas Christian"
             },
-            "date": "2018-03-03T19:00:00.000Z",
+            "date": "2018-03-03T13:00:00.000Z",
             "result": {
                 "pointsFor": 11,
                 "pointsAgainst": 2
@@ -66,7 +66,7 @@
             "opponent": {
                 "name": "Oklahoma"
             },
-            "date": "2018-03-04T17:00:00.000Z",
+            "date": "2018-03-04T11:00:00.000Z",
             "result": {
                 "pointsFor": 10,
                 "pointsAgainst": 7
@@ -79,7 +79,7 @@
             "opponent": {
                 "name": "LSU"
             },
-            "date": "2018-03-10T18:00:00.000Z",
+            "date": "2018-03-10T12:00:00.000Z",
             "result": {
                 "pointsFor": 13,
                 "pointsAgainst": 9
@@ -92,7 +92,7 @@
             "opponent": {
                 "name": "Georgia"
             },
-            "date": "2018-03-24T23:00:00.000Z",
+            "date": "2018-03-24T18:00:00.000Z",
             "result": {
                 "pointsFor": 7,
                 "pointsAgainst": 14
@@ -105,7 +105,7 @@
             "opponent": {
                 "name": "Virginia Tech"
             },
-            "date": "2018-03-31T16:00:00.000Z",
+            "date": "2018-03-31T11:00:00.000Z",
             "result": {
                 "pointsFor": 10,
                 "pointsAgainst": 11
@@ -118,7 +118,7 @@
             "opponent": {
                 "name": "Tennessee"
             },
-            "date": "2018-04-01T16:00:00.000Z"
+            "date": "2018-04-01T11:00:00.000Z"
         },
         {
             "location": {
@@ -127,7 +127,7 @@
             "opponent": {
                 "name": "Georgia Tech"
             },
-            "date": "2018-04-07T18:00:00.000Z"
+            "date": "2018-04-07T13:00:00.000Z"
         },
         {
             "location": {
@@ -136,7 +136,7 @@
             "opponent": {
                 "name": "Auburn"
             },
-            "date": "2018-04-15T00:00:00.000Z"
+            "date": "2018-04-14T19:00:00.000Z"
         }
     ]
 }
