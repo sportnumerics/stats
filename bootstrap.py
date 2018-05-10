@@ -1,9 +1,11 @@
 # pylint: disable=E0401
 import boto3
 import os
+import datetime
 
 
 def handler(event, context):
+    year = event.get('year', datetime.datetime.now().year)
     client = boto3.client('ecs')
     response = client.run_task(
         cluster=os.environ['ECS_CLUSTER'],
@@ -27,7 +29,7 @@ def handler(event, context):
                     'environment': [
                         {
                             'name': 'YEAR',
-                            'value': event['year']
+                            'value': year
                         }
                     ]
                 }
