@@ -66,6 +66,15 @@
       "type": "mcla",
       "id": "1"
     },
-    "title": "MCLA Divison 1"
+    "title": "MCLA Division 1"
+  },
+  {
+    "id": "mcla2",
+    "sport": "mla",
+    "source": {
+      "type": "mcla",
+      "id": "2"
+    },
+    "title": "MCLA Division 2"
   }
 ]

@@ -19,7 +19,7 @@ describe('divisions-controller', () => {
 
       persistenceMock
         .expects('set')
-        .exactly(7)
+        .exactly(8)
         .withArgs('MockDivisionsTable', { id: sinon.match.string, year: '2016' }, divisionMatch)
         .returns(Promise.resolve());
     });
