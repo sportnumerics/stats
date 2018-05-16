@@ -5,7 +5,7 @@ import datetime
 
 
 def handler(event, context):
-    year = event.get('year', datetime.datetime.now().year)
+    year = event.get('year', str(datetime.datetime.now().year))
     client = boto3.client('ecs')
     response = client.run_task(
         cluster=os.environ['ECS_CLUSTER'],
