@@ -100,8 +100,14 @@ Resources:
                 Action:
                   - 's3:putObject'
                 Resource:
-                  - Fn::GetAtt: [ResultsBucket, Arn]
-                  - Fn::GetAtt: [DivisionsBucket, Arn]
+                  - Fn::Join:
+                    - '/'
+                    - - Fn::GetAtt: [ResultsBucket, Arn]
+                      - '*'
+                  - Fn::Join:
+                    - '/'
+                    - - Fn::GetAtt: [DivisionsBucket, Arn]
+                      - '*'
               - Effect: Allow
                 Action: 'lambda:InvokeFunction'
                 Resource:
