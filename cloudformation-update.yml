@@ -33,12 +33,12 @@ Resources:
             awslogs-stream-prefix:
               Fn::Sub: "stats-${Stage}"
         Environment:
-        - Name: RESULTS_TABLE
+        - Name: RESULTS_BUCKET
           Value:
-            Ref: TeamsTable
-        - Name: DIVISIONS_TABLE
+            Ref: ResultsBucket
+        - Name: DIVISIONS_BUCKET
           Value:
-            Ref: DivisionsTable
+            Ref: DivisionsBucket
         - Name: STAGE
           Value:
             Ref: Stage
@@ -98,11 +98,10 @@ Resources:
             Statement:
               - Effect: Allow
                 Action:
-                  - 'dynamodb:UpdateItem'
-                  - 'dynamodb:Query'
+                  - 's3:putObject'
                 Resource:
-                  - Fn::GetAtt: [TeamsTable, Arn]
-                  - Fn::GetAtt: [DivisionsTable, Arn]
+                  - Fn::GetAtt: [ResultsBucket, Arn]
+                  - Fn::GetAtt: [DivisionsBucket, Arn]
               - Effect: Allow
                 Action: 'lambda:InvokeFunction'
                 Resource:
@@ -163,62 +162,19 @@ Resources:
                   - Fn::GetAtt: [TaskRole, Arn]
   EcsLogs:
     Type: AWS::Logs::LogGroup
-  TeamsTable:
-    Type: AWS::DynamoDB::Table
-    Properties:
-      AttributeDefinitions:
-        - AttributeName: id
-          AttributeType: S
-        - AttributeName: year
-          AttributeType: S
-        - AttributeName: div
-          AttributeType: S
-      KeySchema:
-        - AttributeName: year
-          KeyType: HASH
-        - AttributeName: id
-          KeyType: RANGE
-      LocalSecondaryIndexes:
-        - IndexName: by_div
-          KeySchema:
-            - AttributeName: year
-              KeyType: HASH
-            - AttributeName: div
-              KeyType: RANGE
-          Projection:
-            NonKeyAttributes:
-              - name
-              - schedule
-              - ratings
-            ProjectionType: INCLUDE
-      ProvisionedThroughput:
-        ReadCapacityUnits: 5
-        WriteCapacityUnits: 20
-  DivisionsTable:
-    Type: AWS::DynamoDB::Table
-    Properties:
-      AttributeDefinitions:
-        - AttributeName: id
-          AttributeType: S
-        - AttributeName: year
-          AttributeType: S
-      KeySchema:
-        - AttributeName: year
-          KeyType: HASH
-        - AttributeName: id
-          KeyType: RANGE
-      ProvisionedThroughput:
-        ReadCapacityUnits: 5
-        WriteCapacityUnits: 5
+  ResultsBucket:
+    Type: AWS::S3::Bucket
+  DivisionsBucket:
+    Type: AWS::S3::Bucket
 Outputs:
-  DivsTableName:
+  DivsBucketName:
     Description: Divs table name in DynamoDB
     Value:
-      Ref: DivisionsTable
-  TeamsTableName:
+      Ref: DivisionsBucket
+  ResultsBucketName:
     Description: Teams table name in DynamoDB
     Value:
-      Ref: TeamsTable
+      Ref: ResultsTable
   DeploymentBucketName:
     Description: Deployment bucket to upload deployable resources
     Value:

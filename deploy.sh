@@ -22,7 +22,7 @@ fi
 IMAGE_NAME="sportnumerics-stats-$STAGE"
 
 docker --version
-eval $(aws ecr get-login)
+eval $(aws ecr get-login --no-include-email)
 docker build -t $IMAGE_NAME .
 
 STACK_NAME="sportnumerics-stats-$STAGE"
