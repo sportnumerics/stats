@@ -3,5 +3,5 @@ module.exports = {
     ContentType: 'application/json'
   },
   ResultsBucket: process.env.RESULTS_BUCKET,
-  DivisionsBucket: process.env.DIVISIONS_TABLE
+  DivisionsBucket: process.env.DIVISIONS_BUCKET
 }
