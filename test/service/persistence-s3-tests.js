@@ -38,7 +38,8 @@ describe('persistence-s3-service', () => {
       const mockS3 = setUpMockWithExpectedParams('putObject', sinon.match({
         Bucket: 'test-bucket',
         Key: 'test-key.json',
-        Body: 'test data object'
+        Body: 'test data object',
+        ContentType: 'mock/content-type'
       }), {
         Mock: 'Response'
       });
