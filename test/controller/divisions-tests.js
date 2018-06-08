@@ -1,7 +1,7 @@
 'use strict';
 
 const sinon = require('sinon');
-const persistence = require('../../lib/service/persistence');
+const persistence = require('../../lib/service/persistence-s3');
 const controller = require('../../lib/controller/divisions');
 const fixtures = require('../fixtures');
 
@@ -20,7 +20,7 @@ describe('divisions-controller', () => {
       persistenceMock
         .expects('set')
         .exactly(8)
-        .withArgs('MockDivisionsTable', { id: sinon.match.string, year: '2016' }, divisionMatch)
+        .withArgs('MockDivisionsBucket', sinon.match(/2016\/\w+\d+/), divisionMatch)
         .returns(Promise.resolve());
     });
 

@@ -1,5 +1,5 @@
 module.exports = {
-  ResultsTable: 'MockResultsTable',
-  DivisionsTable: 'MockDivisionsTable',
+  ResultsBucket: 'MockResultsBucket',
+  DivisionsBucket: 'MockDivisionsBucket',
   TeamsQueueUrl: 'https://mock.teams.queue.url'
 }

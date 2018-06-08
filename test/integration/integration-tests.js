@@ -2,7 +2,7 @@ const nock = require('nock');
 const sinon = require('sinon');
 const fixtures = require('../fixtures');
 const { collect } = require('../../lib/controller/main');
-const persistence = require('../../lib/service/persistence');
+const persistence = require('../../lib/service/persistence-s3');
 const predict = require('../../lib/service/predict');
 
 describe('integration', () => {
@@ -23,7 +23,7 @@ describe('integration', () => {
 
       persistenceMock
         .expects('set')
-        .withArgs('MockDivisionsTable', { id: sinon.match.string, year: sinon.match.string }, divisionMatch)
+        .withArgs('MockDivisionsBucket', sinon.match(/\d{4}\/\w+\d+/), divisionMatch)
         .exactly(8)
         .returns(Promise.resolve());
 
@@ -36,7 +36,7 @@ describe('integration', () => {
 
       persistenceMock
         .expects('set')
-        .withArgs('MockResultsTable', { id: sinon.match.string, year: sinon.match.string }, teamMatch)
+        .withArgs('MockResultsBucket', sinon.match(/\d{4}\/\w+\-[\d\w]+/), teamMatch)
         .exactly(8)
         .returns(Promise.resolve());
 

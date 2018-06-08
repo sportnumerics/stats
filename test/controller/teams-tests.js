@@ -2,7 +2,7 @@
 
 const sinon = require('sinon');
 const service = require('../../lib/service/teams');
-const persistence = require('../../lib/service/persistence');
+const persistence = require('../../lib/service/persistence-s3');
 const controller = require('../../lib/controller/teams');
 const fixtures = require('../fixtures');
 const _ = require('lodash');
@@ -78,7 +78,7 @@ describe('teams-controller', () => {
 
       persistenceMock
         .expects('set')
-        .withArgs('MockResultsTable', { id: sinon.match.string, year }, teamMatch)
+        .withArgs('MockResultsBucket', `2016/mla-721`, teamMatch)
         .exactly(1)
         .returns(Promise.resolve());
 
@@ -106,7 +106,7 @@ describe('teams-controller', () => {
 
       persistenceMock
         .expects('set')
-        .withArgs('MockResultsTable', { id: sinon.match.string, year }, teamMatch)
+        .withArgs('MockResultsBucket', `2016/mla-721`, teamMatch)
         .exactly(1)
         .returns(Promise.resolve());
 
