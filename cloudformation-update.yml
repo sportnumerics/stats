@@ -174,7 +174,7 @@ Outputs:
   ResultsBucketName:
     Description: Teams table name in DynamoDB
     Value:
-      Ref: ResultsTable
+      Ref: ResultsBucket
   DeploymentBucketName:
     Description: Deployment bucket to upload deployable resources
     Value:
