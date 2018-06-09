@@ -5,7 +5,8 @@
   "scripts": {
     "test": "NODE_ENV=test mocha --recursive",
     "deploy": "serverless deploy --stage=dev --verbose",
-    "test:watch": "NODE_ENV=test mocha --watch --recursive"
+    "test:watch": "NODE_ENV=test mocha --watch --recursive",
+    "start": "node index.js"
   },
   "author": "Will James",
   "license": "ISC",

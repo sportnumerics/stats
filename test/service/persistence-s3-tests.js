@@ -18,7 +18,7 @@ describe('persistence-s3-service', () => {
 
   describe('get', () => {
     it('should return the object from s3', async () => {
-      const mockS3 = setUpMockWithExpectedParams('getObject', sinon.match({
+      const mockS3 = setUpMockWithExpectedParams('getObjectAsync', sinon.match({
         Bucket: 'test-bucket',
         Key: 'test-key.json'
       }), {
@@ -29,13 +29,14 @@ describe('persistence-s3-service', () => {
 
       expect(response.Body).to.equal('test data response');
 
+      mockS3.verify();
       mockS3.restore();
     });
   });
 
   describe('set', () => {
     it('should set the relevant bucket key', async () => {
-      const mockS3 = setUpMockWithExpectedParams('putObject', sinon.match({
+      const mockS3 = setUpMockWithExpectedParams('putObjectAsync', sinon.match({
         Bucket: 'test-bucket',
         Key: 'test-key.json',
         Body: 'test data object',
@@ -47,6 +48,33 @@ describe('persistence-s3-service', () => {
       const response = await persistence.set('test-bucket', 'test-key.json', 'test data object');
 
       expect(response.Mock).to.equal('Response');
+
+      mockS3.verify();
+      mockS3.restore();
     });
-  })
+
+    it('should fail with an exception when set fails', async () => {
+      const mockS3 = sinon.mock(S3)
+
+      mockS3.expects('putObjectAsync')
+        .withArgs(sinon.match({
+          Key: 'test-key.json',
+          Body: 'test data object',
+          ContentType: 'mock/content-type'
+        }))
+        .returns(Promise.reject(new Error('mock bucket error')));
+
+      try {
+        const response = await persistence.set(undefined, 'test-key.json', 'test data object');
+
+        throw new Error('expected an error, got', response);
+      } catch (error) {
+        expect(error.message).to.equal('mock bucket error');
+
+        mockS3.verify();
+      } finally {
+        mockS3.restore();
+      }
+    });
+  });
 });
