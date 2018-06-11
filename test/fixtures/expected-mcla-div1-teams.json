@@ -1,1 +1,1024 @@
-{"teams":[{"name":"Alabama","instCode":"alabama","year":"2016","div":"mcla1","sport":"mla","source":{"type":"mcla","id":"1"},"id":"mla-alabama"},{"name":"Arizona","instCode":"arizona","year":"2016","div":"mcla1","sport":"mla","source":{"type":"mcla","id":"1"},"id":"mla-arizona"},{"name":"Arizona State","instCode":"arizona-state","year":"2016","div":"mcla1","sport":"mla","source":{"type":"mcla","id":"1"},"id":"mla-arizona-state"},{"name":"Arkansas","instCode":"arkansas","year":"2016","div":"mcla1","sport":"mla","source":{"type":"mcla","id":"1"},"id":"mla-arkansas"},{"name":"Auburn","instCode":"auburn","year":"2016","div":"mcla1","sport":"mla","source":{"type":"mcla","id":"1"},"id":"mla-auburn"},{"name":"Boise State","instCode":"boise-state","year":"2016","div":"mcla1","sport":"mla","source":{"type":"mcla","id":"1"},"id":"mla-boise-state"},{"name":"Boston College","instCode":"boston-college","year":"2016","div":"mcla1","sport":"mla","source":{"type":"mcla","id":"1"},"id":"mla-boston-college"},{"name":"Brigham Young","instCode":"brigham-young","year":"2016","div":"mcla1","sport":"mla","source":{"type":"mcla","id":"1"},"id":"mla-brigham-young"},{"name":"Buffalo","instCode":"buffalo","year":"2016","div":"mcla1","sport":"mla","source":{"type":"mcla","id":"1"},"id":"mla-buffalo"},{"name":"Cal Poly","instCode":"cal-poly","year":"2016","div":"mcla1","sport":"mla","source":{"type":"mcla","id":"1"},"id":"mla-cal-poly"},{"name":"California","instCode":"california-berkeley","year":"2016","div":"mcla1","sport":"mla","source":{"type":"mcla","id":"1"},"id":"mla-california-berkeley"},{"name":"Central Florida","instCode":"central-florida","year":"2016","div":"mcla1","sport":"mla","source":{"type":"mcla","id":"1"},"id":"mla-central-florida"},{"name":"Central Michigan","instCode":"central-michigan","year":"2016","div":"mcla1","sport":"mla","source":{"type":"mcla","id":"1"},"id":"mla-central-michigan"},{"name":"Chapman","instCode":"chapman","year":"2016","div":"mcla1","sport":"mla","source":{"type":"mcla","id":"1"},"id":"mla-chapman"},{"name":"Chico State","instCode":"chico-state","year":"2016","div":"mcla1","sport":"mla","source":{"type":"mcla","id":"1"},"id":"mla-chico-state"},{"name":"Claremont","instCode":"claremont","year":"2016","div":"mcla1","sport":"mla","source":{"type":"mcla","id":"1"},"id":"mla-claremont"},{"name":"Clemson","instCode":"clemson","year":"2016","div":"mcla1","sport":"mla","source":{"type":"mcla","id":"1"},"id":"mla-clemson"},{"name":"Colorado","instCode":"colorado","year":"2016","div":"mcla1","sport":"mla","source":{"type":"mcla","id":"1"},"id":"mla-colorado"},{"name":"Colorado State","instCode":"colorado-state","year":"2016","div":"mcla1","sport":"mla","source":{"type":"mcla","id":"1"},"id":"mla-colorado-state"},{"name":"Concordia-Irvine","instCode":"concordia","year":"2016","div":"mcla1","sport":"mla","source":{"type":"mcla","id":"1"},"id":"mla-concordia"},{"name":"Connecticut","instCode":"connecticut","year":"2016","div":"mcla1","sport":"mla","source":{"type":"mcla","id":"1"},"id":"mla-connecticut"},{"name":"Davenport","instCode":"davenport","year":"2016","div":"mcla1","sport":"mla","source":{"type":"mcla","id":"1"},"id":"mla-davenport"},{"name":"Dominican","instCode":"dominican","year":"2016","div":"mcla1","sport":"mla","source":{"type":"mcla","id":"1"},"id":"mla-dominican"},{"name":"East Carolina","instCode":"east-carolina","year":"2016","div":"mcla1","sport":"mla","source":{"type":"mcla","id":"1"},"id":"mla-east-carolina"},{"name":"Elon","instCode":"elon","year":"2016","div":"mcla1","sport":"mla","source":{"type":"mcla","id":"1"},"id":"mla-elon"},{"name":"Florida","instCode":"florida","year":"2016","div":"mcla1","sport":"mla","source":{"type":"mcla","id":"1"},"id":"mla-florida"},{"name":"Florida State","instCode":"florida-state","year":"2016","div":"mcla1","sport":"mla","source":{"type":"mcla","id":"1"},"id":"mla-florida-state"},{"name":"George Washington","instCode":"george-washington","year":"2016","div":"mcla1","sport":"mla","source":{"type":"mcla","id":"1"},"id":"mla-george-washington"},{"name":"Georgia","instCode":"georgia","year":"2016","div":"mcla1","sport":"mla","source":{"type":"mcla","id":"1"},"id":"mla-georgia"},{"name":"Georgia Tech","instCode":"georgia-tech","year":"2016","div":"mcla1","sport":"mla","source":{"type":"mcla","id":"1"},"id":"mla-georgia-tech"},{"name":"Grand Canyon","instCode":"grand-canyon","year":"2016","div":"mcla1","sport":"mla","source":{"type":"mcla","id":"1"},"id":"mla-grand-canyon"},{"name":"Idaho","instCode":"idaho","year":"2016","div":"mcla1","sport":"mla","source":{"type":"mcla","id":"1"},"id":"mla-idaho"},{"name":"Illinois","instCode":"illinois","year":"2016","div":"mcla1","sport":"mla","source":{"type":"mcla","id":"1"},"id":"mla-illinois"},{"name":"Illinois State","instCode":"illinois-state","year":"2016","div":"mcla1","sport":"mla","source":{"type":"mcla","id":"1"},"id":"mla-illinois-state"},{"name":"Indiana","instCode":"indiana","year":"2016","div":"mcla1","sport":"mla","source":{"type":"mcla","id":"1"},"id":"mla-indiana"},{"name":"Iowa State","instCode":"iowa-state","year":"2016","div":"mcla1","sport":"mla","source":{"type":"mcla","id":"1"},"id":"mla-iowa-state"},{"name":"Kansas","instCode":"kansas","year":"2016","div":"mcla1","sport":"mla","source":{"type":"mcla","id":"1"},"id":"mla-kansas"},{"name":"LSU","instCode":"louisiana-state","year":"2016","div":"mcla1","sport":"mla","source":{"type":"mcla","id":"1"},"id":"mla-louisiana-state"},{"name":"Liberty","instCode":"liberty","year":"2016","div":"mcla1","sport":"mla","source":{"type":"mcla","id":"1"},"id":"mla-liberty"},{"name":"MSU-Mankato","instCode":"minnesota-state_mankato","year":"2016","div":"mcla1","sport":"mla","source":{"type":"mcla","id":"1"},"id":"mla-minnesota-state_mankato"},{"name":"Miami","instCode":"miami","year":"2016","div":"mcla1","sport":"mla","source":{"type":"mcla","id":"1"},"id":"mla-miami"},{"name":"Michigan State","instCode":"michigan-state","year":"2016","div":"mcla1","sport":"mla","source":{"type":"mcla","id":"1"},"id":"mla-michigan-state"},{"name":"Minnesota","instCode":"minnesota","year":"2016","div":"mcla1","sport":"mla","source":{"type":"mcla","id":"1"},"id":"mla-minnesota"},{"name":"Missouri","instCode":"missouri","year":"2016","div":"mcla1","sport":"mla","source":{"type":"mcla","id":"1"},"id":"mla-missouri"},{"name":"NC State","instCode":"north-carolina_state","year":"2016","div":"mcla1","sport":"mla","source":{"type":"mcla","id":"1"},"id":"mla-north-carolina_state"},{"name":"Nebraska","instCode":"nebraska","year":"2016","div":"mcla1","sport":"mla","source":{"type":"mcla","id":"1"},"id":"mla-nebraska"},{"name":"Nevada","instCode":"nevada-reno","year":"2016","div":"mcla1","sport":"mla","source":{"type":"mcla","id":"1"},"id":"mla-nevada-reno"},{"name":"New Hampshire","instCode":"new-hampshire","year":"2016","div":"mcla1","sport":"mla","source":{"type":"mcla","id":"1"},"id":"mla-new-hampshire"},{"name":"North Texas","instCode":"north-texas","year":"2016","div":"mcla1","sport":"mla","source":{"type":"mcla","id":"1"},"id":"mla-north-texas"},{"name":"Northeastern","instCode":"northeastern","year":"2016","div":"mcla1","sport":"mla","source":{"type":"mcla","id":"1"},"id":"mla-northeastern"},{"name":"Oakland","instCode":"oakland","year":"2016","div":"mcla1","sport":"mla","source":{"type":"mcla","id":"1"},"id":"mla-oakland"},{"name":"Oklahoma","instCode":"oklahoma","year":"2016","div":"mcla1","sport":"mla","source":{"type":"mcla","id":"1"},"id":"mla-oklahoma"},{"name":"Ole Miss","instCode":"mississippi","year":"2016","div":"mcla1","sport":"mla","source":{"type":"mcla","id":"1"},"id":"mla-mississippi"},{"name":"Oregon","instCode":"oregon","year":"2016","div":"mcla1","sport":"mla","source":{"type":"mcla","id":"1"},"id":"mla-oregon"},{"name":"Oregon State","instCode":"oregon-state","year":"2016","div":"mcla1","sport":"mla","source":{"type":"mcla","id":"1"},"id":"mla-oregon-state"},{"name":"Pittsburgh","instCode":"pittsburgh","year":"2016","div":"mcla1","sport":"mla","source":{"type":"mcla","id":"1"},"id":"mla-pittsburgh"},{"name":"Purdue","instCode":"purdue","year":"2016","div":"mcla1","sport":"mla","source":{"type":"mcla","id":"1"},"id":"mla-purdue"},{"name":"Rhode Island","instCode":"rhode-island","year":"2016","div":"mcla1","sport":"mla","source":{"type":"mcla","id":"1"},"id":"mla-rhode-island"},{"name":"San Diego State","instCode":"san-diego_state","year":"2016","div":"mcla1","sport":"mla","source":{"type":"mcla","id":"1"},"id":"mla-san-diego_state"},{"name":"Santa Clara","instCode":"santa-clara","year":"2016","div":"mcla1","sport":"mla","source":{"type":"mcla","id":"1"},"id":"mla-santa-clara"},{"name":"Simon Fraser","instCode":"simon-fraser","year":"2016","div":"mcla1","sport":"mla","source":{"type":"mcla","id":"1"},"id":"mla-simon-fraser"},{"name":"Sonoma State","instCode":"sonoma-state","year":"2016","div":"mcla1","sport":"mla","source":{"type":"mcla","id":"1"},"id":"mla-sonoma-state"},{"name":"South Carolina","instCode":"south-carolina","year":"2016","div":"mcla1","sport":"mla","source":{"type":"mcla","id":"1"},"id":"mla-south-carolina"},{"name":"South Florida","instCode":"south-florida","year":"2016","div":"mcla1","sport":"mla","source":{"type":"mcla","id":"1"},"id":"mla-south-florida"},{"name":"Southern Methodist","instCode":"southern-methodist","year":"2016","div":"mcla1","sport":"mla","source":{"type":"mcla","id":"1"},"id":"mla-southern-methodist"},{"name":"St. Cloud State","instCode":"st-cloud_state","year":"2016","div":"mcla1","sport":"mla","source":{"type":"mcla","id":"1"},"id":"mla-st-cloud_state"},{"name":"Stanford","instCode":"stanford","year":"2016","div":"mcla1","sport":"mla","source":{"type":"mcla","id":"1"},"id":"mla-stanford"},{"name":"Tennessee","instCode":"tennessee","year":"2016","div":"mcla1","sport":"mla","source":{"type":"mcla","id":"1"},"id":"mla-tennessee"},{"name":"Texas","instCode":"texas","year":"2016","div":"mcla1","sport":"mla","source":{"type":"mcla","id":"1"},"id":"mla-texas"},{"name":"Texas A&M","instCode":"texas-a_m","year":"2016","div":"mcla1","sport":"mla","source":{"type":"mcla","id":"1"},"id":"mla-texas-a_m"},{"name":"Texas Christian","instCode":"texas-christian","year":"2016","div":"mcla1","sport":"mla","source":{"type":"mcla","id":"1"},"id":"mla-texas-christian"},{"name":"Texas State","instCode":"texas-state","year":"2016","div":"mcla1","sport":"mla","source":{"type":"mcla","id":"1"},"id":"mla-texas-state"},{"name":"Texas Tech","instCode":"texas-tech","year":"2016","div":"mcla1","sport":"mla","source":{"type":"mcla","id":"1"},"id":"mla-texas-tech"},{"name":"UC Santa Barbara","instCode":"california-santa_barbara","year":"2016","div":"mcla1","sport":"mla","source":{"type":"mcla","id":"1"},"id":"mla-california-santa_barbara"},{"name":"UCLA","instCode":"ucla","year":"2016","div":"mcla1","sport":"mla","source":{"type":"mcla","id":"1"},"id":"mla-ucla"},{"name":"UNLV","instCode":"nevada-las_vegas","year":"2016","div":"mcla1","sport":"mla","source":{"type":"mcla","id":"1"},"id":"mla-nevada-las_vegas"},{"name":"USC","instCode":"usc","year":"2016","div":"mcla1","sport":"mla","source":{"type":"mcla","id":"1"},"id":"mla-usc"},{"name":"Utah","instCode":"utah","year":"2016","div":"mcla1","sport":"mla","source":{"type":"mcla","id":"1"},"id":"mla-utah"},{"name":"Utah State","instCode":"utah-state","year":"2016","div":"mcla1","sport":"mla","source":{"type":"mcla","id":"1"},"id":"mla-utah-state"},{"name":"Utah Valley","instCode":"utah-valley","year":"2016","div":"mcla1","sport":"mla","source":{"type":"mcla","id":"1"},"id":"mla-utah-valley"},{"name":"Vanderbilt","instCode":"Vanderbilt","year":"2016","div":"mcla1","sport":"mla","source":{"type":"mcla","id":"1"},"id":"mla-Vanderbilt"},{"name":"Virginia Tech","instCode":"virginia-tech","year":"2016","div":"mcla1","sport":"mla","source":{"type":"mcla","id":"1"},"id":"mla-virginia-tech"},{"name":"Washington","instCode":"washington","year":"2016","div":"mcla1","sport":"mla","source":{"type":"mcla","id":"1"},"id":"mla-washington"},{"name":"West Virginia","instCode":"west-virginia","year":"2016","div":"mcla1","sport":"mla","source":{"type":"mcla","id":"1"},"id":"mla-west-virginia"},{"name":"Western Michigan","instCode":"western-michigan","year":"2016","div":"mcla1","sport":"mla","source":{"type":"mcla","id":"1"},"id":"mla-western-michigan"}]}
+{
+  "teams": [
+    {
+      "name": "Alabama",
+      "instCode": "alabama",
+      "year": "2016",
+      "div": "mcla1",
+      "sport": "mla",
+      "source": {
+        "type": "mcla",
+        "id": "1"
+      },
+      "id": "mla-alabama"
+    },
+    {
+      "name": "Arizona",
+      "instCode": "arizona",
+      "year": "2016",
+      "div": "mcla1",
+      "sport": "mla",
+      "source": {
+        "type": "mcla",
+        "id": "1"
+      },
+      "id": "mla-arizona"
+    },
+    {
+      "name": "Arizona State",
+      "instCode": "arizona_state",
+      "year": "2016",
+      "div": "mcla1",
+      "sport": "mla",
+      "source": {
+        "type": "mcla",
+        "id": "1"
+      },
+      "id": "mla-arizona-state"
+    },
+    {
+      "name": "Arkansas",
+      "instCode": "arkansas",
+      "year": "2016",
+      "div": "mcla1",
+      "sport": "mla",
+      "source": {
+        "type": "mcla",
+        "id": "1"
+      },
+      "id": "mla-arkansas"
+    },
+    {
+      "name": "Auburn",
+      "instCode": "auburn",
+      "year": "2016",
+      "div": "mcla1",
+      "sport": "mla",
+      "source": {
+        "type": "mcla",
+        "id": "1"
+      },
+      "id": "mla-auburn"
+    },
+    {
+      "name": "Boise State",
+      "instCode": "boise_state",
+      "year": "2016",
+      "div": "mcla1",
+      "sport": "mla",
+      "source": {
+        "type": "mcla",
+        "id": "1"
+      },
+      "id": "mla-boise-state"
+    },
+    {
+      "name": "Boston College",
+      "instCode": "boston_college",
+      "year": "2016",
+      "div": "mcla1",
+      "sport": "mla",
+      "source": {
+        "type": "mcla",
+        "id": "1"
+      },
+      "id": "mla-boston-college"
+    },
+    {
+      "name": "Brigham Young",
+      "instCode": "brigham_young",
+      "year": "2016",
+      "div": "mcla1",
+      "sport": "mla",
+      "source": {
+        "type": "mcla",
+        "id": "1"
+      },
+      "id": "mla-brigham-young"
+    },
+    {
+      "name": "Buffalo",
+      "instCode": "buffalo",
+      "year": "2016",
+      "div": "mcla1",
+      "sport": "mla",
+      "source": {
+        "type": "mcla",
+        "id": "1"
+      },
+      "id": "mla-buffalo"
+    },
+    {
+      "name": "Cal Poly",
+      "instCode": "cal_poly",
+      "year": "2016",
+      "div": "mcla1",
+      "sport": "mla",
+      "source": {
+        "type": "mcla",
+        "id": "1"
+      },
+      "id": "mla-cal-poly"
+    },
+    {
+      "name": "California",
+      "instCode": "california_berkeley",
+      "year": "2016",
+      "div": "mcla1",
+      "sport": "mla",
+      "source": {
+        "type": "mcla",
+        "id": "1"
+      },
+      "id": "mla-california-berkeley"
+    },
+    {
+      "name": "Central Florida",
+      "instCode": "central_florida",
+      "year": "2016",
+      "div": "mcla1",
+      "sport": "mla",
+      "source": {
+        "type": "mcla",
+        "id": "1"
+      },
+      "id": "mla-central-florida"
+    },
+    {
+      "name": "Central Michigan",
+      "instCode": "central_michigan",
+      "year": "2016",
+      "div": "mcla1",
+      "sport": "mla",
+      "source": {
+        "type": "mcla",
+        "id": "1"
+      },
+      "id": "mla-central-michigan"
+    },
+    {
+      "name": "Chapman",
+      "instCode": "chapman",
+      "year": "2016",
+      "div": "mcla1",
+      "sport": "mla",
+      "source": {
+        "type": "mcla",
+        "id": "1"
+      },
+      "id": "mla-chapman"
+    },
+    {
+      "name": "Chico State",
+      "instCode": "chico_state",
+      "year": "2016",
+      "div": "mcla1",
+      "sport": "mla",
+      "source": {
+        "type": "mcla",
+        "id": "1"
+      },
+      "id": "mla-chico-state"
+    },
+    {
+      "name": "Claremont",
+      "instCode": "claremont",
+      "year": "2016",
+      "div": "mcla1",
+      "sport": "mla",
+      "source": {
+        "type": "mcla",
+        "id": "1"
+      },
+      "id": "mla-claremont"
+    },
+    {
+      "name": "Clemson",
+      "instCode": "clemson",
+      "year": "2016",
+      "div": "mcla1",
+      "sport": "mla",
+      "source": {
+        "type": "mcla",
+        "id": "1"
+      },
+      "id": "mla-clemson"
+    },
+    {
+      "name": "Colorado",
+      "instCode": "colorado",
+      "year": "2016",
+      "div": "mcla1",
+      "sport": "mla",
+      "source": {
+        "type": "mcla",
+        "id": "1"
+      },
+      "id": "mla-colorado"
+    },
+    {
+      "name": "Colorado State",
+      "instCode": "colorado_state",
+      "year": "2016",
+      "div": "mcla1",
+      "sport": "mla",
+      "source": {
+        "type": "mcla",
+        "id": "1"
+      },
+      "id": "mla-colorado-state"
+    },
+    {
+      "name": "Concordia-Irvine",
+      "instCode": "concordia",
+      "year": "2016",
+      "div": "mcla1",
+      "sport": "mla",
+      "source": {
+        "type": "mcla",
+        "id": "1"
+      },
+      "id": "mla-concordia"
+    },
+    {
+      "name": "Connecticut",
+      "instCode": "connecticut",
+      "year": "2016",
+      "div": "mcla1",
+      "sport": "mla",
+      "source": {
+        "type": "mcla",
+        "id": "1"
+      },
+      "id": "mla-connecticut"
+    },
+    {
+      "name": "Davenport",
+      "instCode": "davenport",
+      "year": "2016",
+      "div": "mcla1",
+      "sport": "mla",
+      "source": {
+        "type": "mcla",
+        "id": "1"
+      },
+      "id": "mla-davenport"
+    },
+    {
+      "name": "Dominican",
+      "instCode": "dominican",
+      "year": "2016",
+      "div": "mcla1",
+      "sport": "mla",
+      "source": {
+        "type": "mcla",
+        "id": "1"
+      },
+      "id": "mla-dominican"
+    },
+    {
+      "name": "East Carolina",
+      "instCode": "east_carolina",
+      "year": "2016",
+      "div": "mcla1",
+      "sport": "mla",
+      "source": {
+        "type": "mcla",
+        "id": "1"
+      },
+      "id": "mla-east-carolina"
+    },
+    {
+      "name": "Elon",
+      "instCode": "elon",
+      "year": "2016",
+      "div": "mcla1",
+      "sport": "mla",
+      "source": {
+        "type": "mcla",
+        "id": "1"
+      },
+      "id": "mla-elon"
+    },
+    {
+      "name": "Florida",
+      "instCode": "florida",
+      "year": "2016",
+      "div": "mcla1",
+      "sport": "mla",
+      "source": {
+        "type": "mcla",
+        "id": "1"
+      },
+      "id": "mla-florida"
+    },
+    {
+      "name": "Florida State",
+      "instCode": "florida_state",
+      "year": "2016",
+      "div": "mcla1",
+      "sport": "mla",
+      "source": {
+        "type": "mcla",
+        "id": "1"
+      },
+      "id": "mla-florida-state"
+    },
+    {
+      "name": "George Washington",
+      "instCode": "george_washington",
+      "year": "2016",
+      "div": "mcla1",
+      "sport": "mla",
+      "source": {
+        "type": "mcla",
+        "id": "1"
+      },
+      "id": "mla-george-washington"
+    },
+    {
+      "name": "Georgia",
+      "instCode": "georgia",
+      "year": "2016",
+      "div": "mcla1",
+      "sport": "mla",
+      "source": {
+        "type": "mcla",
+        "id": "1"
+      },
+      "id": "mla-georgia"
+    },
+    {
+      "name": "Georgia Tech",
+      "instCode": "georgia_tech",
+      "year": "2016",
+      "div": "mcla1",
+      "sport": "mla",
+      "source": {
+        "type": "mcla",
+        "id": "1"
+      },
+      "id": "mla-georgia-tech"
+    },
+    {
+      "name": "Grand Canyon",
+      "instCode": "grand_canyon",
+      "year": "2016",
+      "div": "mcla1",
+      "sport": "mla",
+      "source": {
+        "type": "mcla",
+        "id": "1"
+      },
+      "id": "mla-grand-canyon"
+    },
+    {
+      "name": "Idaho",
+      "instCode": "idaho",
+      "year": "2016",
+      "div": "mcla1",
+      "sport": "mla",
+      "source": {
+        "type": "mcla",
+        "id": "1"
+      },
+      "id": "mla-idaho"
+    },
+    {
+      "name": "Illinois",
+      "instCode": "illinois",
+      "year": "2016",
+      "div": "mcla1",
+      "sport": "mla",
+      "source": {
+        "type": "mcla",
+        "id": "1"
+      },
+      "id": "mla-illinois"
+    },
+    {
+      "name": "Illinois State",
+      "instCode": "illinois_state",
+      "year": "2016",
+      "div": "mcla1",
+      "sport": "mla",
+      "source": {
+        "type": "mcla",
+        "id": "1"
+      },
+      "id": "mla-illinois-state"
+    },
+    {
+      "name": "Indiana",
+      "instCode": "indiana",
+      "year": "2016",
+      "div": "mcla1",
+      "sport": "mla",
+      "source": {
+        "type": "mcla",
+        "id": "1"
+      },
+      "id": "mla-indiana"
+    },
+    {
+      "name": "Iowa State",
+      "instCode": "iowa_state",
+      "year": "2016",
+      "div": "mcla1",
+      "sport": "mla",
+      "source": {
+        "type": "mcla",
+        "id": "1"
+      },
+      "id": "mla-iowa-state"
+    },
+    {
+      "name": "Kansas",
+      "instCode": "kansas",
+      "year": "2016",
+      "div": "mcla1",
+      "sport": "mla",
+      "source": {
+        "type": "mcla",
+        "id": "1"
+      },
+      "id": "mla-kansas"
+    },
+    {
+      "name": "LSU",
+      "instCode": "louisiana_state",
+      "year": "2016",
+      "div": "mcla1",
+      "sport": "mla",
+      "source": {
+        "type": "mcla",
+        "id": "1"
+      },
+      "id": "mla-louisiana-state"
+    },
+    {
+      "name": "Liberty",
+      "instCode": "liberty",
+      "year": "2016",
+      "div": "mcla1",
+      "sport": "mla",
+      "source": {
+        "type": "mcla",
+        "id": "1"
+      },
+      "id": "mla-liberty"
+    },
+    {
+      "name": "MSU-Mankato",
+      "instCode": "minnesota_state_mankato",
+      "year": "2016",
+      "div": "mcla1",
+      "sport": "mla",
+      "source": {
+        "type": "mcla",
+        "id": "1"
+      },
+      "id": "mla-minnesota-state_mankato"
+    },
+    {
+      "name": "Miami",
+      "instCode": "miami",
+      "year": "2016",
+      "div": "mcla1",
+      "sport": "mla",
+      "source": {
+        "type": "mcla",
+        "id": "1"
+      },
+      "id": "mla-miami"
+    },
+    {
+      "name": "Michigan State",
+      "instCode": "michigan_state",
+      "year": "2016",
+      "div": "mcla1",
+      "sport": "mla",
+      "source": {
+        "type": "mcla",
+        "id": "1"
+      },
+      "id": "mla-michigan-state"
+    },
+    {
+      "name": "Minnesota",
+      "instCode": "minnesota",
+      "year": "2016",
+      "div": "mcla1",
+      "sport": "mla",
+      "source": {
+        "type": "mcla",
+        "id": "1"
+      },
+      "id": "mla-minnesota"
+    },
+    {
+      "name": "Missouri",
+      "instCode": "missouri",
+      "year": "2016",
+      "div": "mcla1",
+      "sport": "mla",
+      "source": {
+        "type": "mcla",
+        "id": "1"
+      },
+      "id": "mla-missouri"
+    },
+    {
+      "name": "NC State",
+      "instCode": "north_carolina_state",
+      "year": "2016",
+      "div": "mcla1",
+      "sport": "mla",
+      "source": {
+        "type": "mcla",
+        "id": "1"
+      },
+      "id": "mla-north-carolina_state"
+    },
+    {
+      "name": "Nebraska",
+      "instCode": "nebraska",
+      "year": "2016",
+      "div": "mcla1",
+      "sport": "mla",
+      "source": {
+        "type": "mcla",
+        "id": "1"
+      },
+      "id": "mla-nebraska"
+    },
+    {
+      "name": "Nevada",
+      "instCode": "nevada_reno",
+      "year": "2016",
+      "div": "mcla1",
+      "sport": "mla",
+      "source": {
+        "type": "mcla",
+        "id": "1"
+      },
+      "id": "mla-nevada-reno"
+    },
+    {
+      "name": "New Hampshire",
+      "instCode": "new_hampshire",
+      "year": "2016",
+      "div": "mcla1",
+      "sport": "mla",
+      "source": {
+        "type": "mcla",
+        "id": "1"
+      },
+      "id": "mla-new-hampshire"
+    },
+    {
+      "name": "North Texas",
+      "instCode": "north_texas",
+      "year": "2016",
+      "div": "mcla1",
+      "sport": "mla",
+      "source": {
+        "type": "mcla",
+        "id": "1"
+      },
+      "id": "mla-north-texas"
+    },
+    {
+      "name": "Northeastern",
+      "instCode": "northeastern",
+      "year": "2016",
+      "div": "mcla1",
+      "sport": "mla",
+      "source": {
+        "type": "mcla",
+        "id": "1"
+      },
+      "id": "mla-northeastern"
+    },
+    {
+      "name": "Oakland",
+      "instCode": "oakland",
+      "year": "2016",
+      "div": "mcla1",
+      "sport": "mla",
+      "source": {
+        "type": "mcla",
+        "id": "1"
+      },
+      "id": "mla-oakland"
+    },
+    {
+      "name": "Oklahoma",
+      "instCode": "oklahoma",
+      "year": "2016",
+      "div": "mcla1",
+      "sport": "mla",
+      "source": {
+        "type": "mcla",
+        "id": "1"
+      },
+      "id": "mla-oklahoma"
+    },
+    {
+      "name": "Ole Miss",
+      "instCode": "mississippi",
+      "year": "2016",
+      "div": "mcla1",
+      "sport": "mla",
+      "source": {
+        "type": "mcla",
+        "id": "1"
+      },
+      "id": "mla-mississippi"
+    },
+    {
+      "name": "Oregon",
+      "instCode": "oregon",
+      "year": "2016",
+      "div": "mcla1",
+      "sport": "mla",
+      "source": {
+        "type": "mcla",
+        "id": "1"
+      },
+      "id": "mla-oregon"
+    },
+    {
+      "name": "Oregon State",
+      "instCode": "oregon_state",
+      "year": "2016",
+      "div": "mcla1",
+      "sport": "mla",
+      "source": {
+        "type": "mcla",
+        "id": "1"
+      },
+      "id": "mla-oregon-state"
+    },
+    {
+      "name": "Pittsburgh",
+      "instCode": "pittsburgh",
+      "year": "2016",
+      "div": "mcla1",
+      "sport": "mla",
+      "source": {
+        "type": "mcla",
+        "id": "1"
+      },
+      "id": "mla-pittsburgh"
+    },
+    {
+      "name": "Purdue",
+      "instCode": "purdue",
+      "year": "2016",
+      "div": "mcla1",
+      "sport": "mla",
+      "source": {
+        "type": "mcla",
+        "id": "1"
+      },
+      "id": "mla-purdue"
+    },
+    {
+      "name": "Rhode Island",
+      "instCode": "rhode_island",
+      "year": "2016",
+      "div": "mcla1",
+      "sport": "mla",
+      "source": {
+        "type": "mcla",
+        "id": "1"
+      },
+      "id": "mla-rhode-island"
+    },
+    {
+      "name": "San Diego State",
+      "instCode": "san_diego_state",
+      "year": "2016",
+      "div": "mcla1",
+      "sport": "mla",
+      "source": {
+        "type": "mcla",
+        "id": "1"
+      },
+      "id": "mla-san-diego_state"
+    },
+    {
+      "name": "Santa Clara",
+      "instCode": "santa_clara",
+      "year": "2016",
+      "div": "mcla1",
+      "sport": "mla",
+      "source": {
+        "type": "mcla",
+        "id": "1"
+      },
+      "id": "mla-santa-clara"
+    },
+    {
+      "name": "Simon Fraser",
+      "instCode": "simon_fraser",
+      "year": "2016",
+      "div": "mcla1",
+      "sport": "mla",
+      "source": {
+        "type": "mcla",
+        "id": "1"
+      },
+      "id": "mla-simon-fraser"
+    },
+    {
+      "name": "Sonoma State",
+      "instCode": "sonoma_state",
+      "year": "2016",
+      "div": "mcla1",
+      "sport": "mla",
+      "source": {
+        "type": "mcla",
+        "id": "1"
+      },
+      "id": "mla-sonoma-state"
+    },
+    {
+      "name": "South Carolina",
+      "instCode": "south_carolina",
+      "year": "2016",
+      "div": "mcla1",
+      "sport": "mla",
+      "source": {
+        "type": "mcla",
+        "id": "1"
+      },
+      "id": "mla-south-carolina"
+    },
+    {
+      "name": "South Florida",
+      "instCode": "south_florida",
+      "year": "2016",
+      "div": "mcla1",
+      "sport": "mla",
+      "source": {
+        "type": "mcla",
+        "id": "1"
+      },
+      "id": "mla-south-florida"
+    },
+    {
+      "name": "Southern Methodist",
+      "instCode": "southern_methodist",
+      "year": "2016",
+      "div": "mcla1",
+      "sport": "mla",
+      "source": {
+        "type": "mcla",
+        "id": "1"
+      },
+      "id": "mla-southern-methodist"
+    },
+    {
+      "name": "St. Cloud State",
+      "instCode": "st_cloud_state",
+      "year": "2016",
+      "div": "mcla1",
+      "sport": "mla",
+      "source": {
+        "type": "mcla",
+        "id": "1"
+      },
+      "id": "mla-st-cloud_state"
+    },
+    {
+      "name": "Stanford",
+      "instCode": "stanford",
+      "year": "2016",
+      "div": "mcla1",
+      "sport": "mla",
+      "source": {
+        "type": "mcla",
+        "id": "1"
+      },
+      "id": "mla-stanford"
+    },
+    {
+      "name": "Tennessee",
+      "instCode": "tennessee",
+      "year": "2016",
+      "div": "mcla1",
+      "sport": "mla",
+      "source": {
+        "type": "mcla",
+        "id": "1"
+      },
+      "id": "mla-tennessee"
+    },
+    {
+      "name": "Texas",
+      "instCode": "texas",
+      "year": "2016",
+      "div": "mcla1",
+      "sport": "mla",
+      "source": {
+        "type": "mcla",
+        "id": "1"
+      },
+      "id": "mla-texas"
+    },
+    {
+      "name": "Texas A&M",
+      "instCode": "texas_a_m",
+      "year": "2016",
+      "div": "mcla1",
+      "sport": "mla",
+      "source": {
+        "type": "mcla",
+        "id": "1"
+      },
+      "id": "mla-texas-a_m"
+    },
+    {
+      "name": "Texas Christian",
+      "instCode": "texas_christian",
+      "year": "2016",
+      "div": "mcla1",
+      "sport": "mla",
+      "source": {
+        "type": "mcla",
+        "id": "1"
+      },
+      "id": "mla-texas-christian"
+    },
+    {
+      "name": "Texas State",
+      "instCode": "texas_state",
+      "year": "2016",
+      "div": "mcla1",
+      "sport": "mla",
+      "source": {
+        "type": "mcla",
+        "id": "1"
+      },
+      "id": "mla-texas-state"
+    },
+    {
+      "name": "Texas Tech",
+      "instCode": "texas_tech",
+      "year": "2016",
+      "div": "mcla1",
+      "sport": "mla",
+      "source": {
+        "type": "mcla",
+        "id": "1"
+      },
+      "id": "mla-texas-tech"
+    },
+    {
+      "name": "UC Santa Barbara",
+      "instCode": "california_santa_barbara",
+      "year": "2016",
+      "div": "mcla1",
+      "sport": "mla",
+      "source": {
+        "type": "mcla",
+        "id": "1"
+      },
+      "id": "mla-california-santa_barbara"
+    },
+    {
+      "name": "UCLA",
+      "instCode": "ucla",
+      "year": "2016",
+      "div": "mcla1",
+      "sport": "mla",
+      "source": {
+        "type": "mcla",
+        "id": "1"
+      },
+      "id": "mla-ucla"
+    },
+    {
+      "name": "UNLV",
+      "instCode": "nevada_las_vegas",
+      "year": "2016",
+      "div": "mcla1",
+      "sport": "mla",
+      "source": {
+        "type": "mcla",
+        "id": "1"
+      },
+      "id": "mla-nevada-las_vegas"
+    },
+    {
+      "name": "USC",
+      "instCode": "usc",
+      "year": "2016",
+      "div": "mcla1",
+      "sport": "mla",
+      "source": {
+        "type": "mcla",
+        "id": "1"
+      },
+      "id": "mla-usc"
+    },
+    {
+      "name": "Utah",
+      "instCode": "utah",
+      "year": "2016",
+      "div": "mcla1",
+      "sport": "mla",
+      "source": {
+        "type": "mcla",
+        "id": "1"
+      },
+      "id": "mla-utah"
+    },
+    {
+      "name": "Utah State",
+      "instCode": "utah_state",
+      "year": "2016",
+      "div": "mcla1",
+      "sport": "mla",
+      "source": {
+        "type": "mcla",
+        "id": "1"
+      },
+      "id": "mla-utah-state"
+    },
+    {
+      "name": "Utah Valley",
+      "instCode": "utah_valley",
+      "year": "2016",
+      "div": "mcla1",
+      "sport": "mla",
+      "source": {
+        "type": "mcla",
+        "id": "1"
+      },
+      "id": "mla-utah-valley"
+    },
+    {
+      "name": "Vanderbilt",
+      "instCode": "Vanderbilt",
+      "year": "2016",
+      "div": "mcla1",
+      "sport": "mla",
+      "source": {
+        "type": "mcla",
+        "id": "1"
+      },
+      "id": "mla-Vanderbilt"
+    },
+    {
+      "name": "Virginia Tech",
+      "instCode": "virginia_tech",
+      "year": "2016",
+      "div": "mcla1",
+      "sport": "mla",
+      "source": {
+        "type": "mcla",
+        "id": "1"
+      },
+      "id": "mla-virginia-tech"
+    },
+    {
+      "name": "Washington",
+      "instCode": "washington",
+      "year": "2016",
+      "div": "mcla1",
+      "sport": "mla",
+      "source": {
+        "type": "mcla",
+        "id": "1"
+      },
+      "id": "mla-washington"
+    },
+    {
+      "name": "West Virginia",
+      "instCode": "west_virginia",
+      "year": "2016",
+      "div": "mcla1",
+      "sport": "mla",
+      "source": {
+        "type": "mcla",
+        "id": "1"
+      },
+      "id": "mla-west-virginia"
+    },
+    {
+      "name": "Western Michigan",
+      "instCode": "western_michigan",
+      "year": "2016",
+      "div": "mcla1",
+      "sport": "mla",
+      "source": {
+        "type": "mcla",
+        "id": "1"
+      },
+      "id": "mla-western-michigan"
+    }
+  ]
+}

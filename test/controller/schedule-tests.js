@@ -21,14 +21,16 @@ describe('schedule-controller', () => {
     it('should get ncaa team schedule from service and return it', async () => {
       serviceMock
         .expects('getHtmlFromNcaa')
-        .withArgs('2016', 'mla-721')
+        .withArgs('2016', sinon.match.object)
         .returns(Promise.resolve(fixtures.gameByGame));
 
       const schedule = await controller.collect({
         id: 'mla-721',
         name: 'Air Force',
+        instCode: '721',
         div: 'm1',
         year: '2016',
+        sport: 'mla',
         source: {
           type: 'ncaa'
         }
@@ -41,14 +43,16 @@ describe('schedule-controller', () => {
     it('should get mcla team schedule from service and return it', async () => {
       serviceMock
         .expects('getHtmlFromMcla')
-        .withArgs('2018', 'mla-alabama')
+        .withArgs('2018', sinon.match.object)
         .returns(Promise.resolve(fixtures.alabamaGameByGame));
 
       const team = await controller.collect({
         id: 'mla-alabama',
         name: 'Alabama',
         div: 'mcla1',
-        year :'2018',
+        year:'2018',
+        sport: 'mla',
+        instCode: 'alabama',
         source: {
           type: 'mcla'
         }

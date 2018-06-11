@@ -3,6 +3,8 @@
     "name": "Alabama",
     "div": "mcla1",
     "year": "2018",
+    "sport": "mla",
+    "instCode": "alabama",
     "source": {
         "type": "mcla"
     },

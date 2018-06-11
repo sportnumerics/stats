@@ -12,7 +12,11 @@ describe('game-by-game-service', () => {
     });
 
     it('should return an html document', () => {
-      let htmlPromise = gameByGameService.getHtmlFromNcaa('2016', 'mla-721');
+      let htmlPromise = gameByGameService.getHtmlFromNcaa('2016', {
+        id: 'mla-721',
+        sport: 'mla',
+        instCode: '721'
+      });
 
       return expect(htmlPromise).to.eventually.be.a('string');
     });
@@ -22,11 +26,29 @@ describe('game-by-game-service', () => {
     it('should return an html document', async () => {
       nock('http://mcla.us/team/').get(/alabama\/2018\/schedule.html/).reply(200, fixtures.alabamaGameByGame);
 
-      const html = await gameByGameService.getHtmlFromMcla('2018', 'mla-alabama');
+      const html = await gameByGameService.getHtmlFromMcla('2018', {
+        id: 'mla-alabama',
+        sport: 'mla',
+        instCode: 'alabama'
+      });
+
+      expect(html).to.be.a.string;
+
+      nock.cleanAll();
+    });
+
+    it('should use the instCode for fetching the team', async () => {
+      nock('http://mcla.us/team/').get(/alabama_state\/2018\/schedule.html/).reply(200, fixtures.alabamaGameByGame);
+
+      const html = await gameByGameService.getHtmlFromMcla('2018', {
+        id: 'mla-alabama-state',
+        sport: 'mla',
+        instCode: 'alabama_state'
+      });
 
       expect(html).to.be.a.string;
 
       nock.cleanAll();
     })
-  })
+  });
 });

@@ -24,5 +24,5 @@ describe('mcla teams html to json', () => {
 
   it('should extract team slugs and change underscores to dashes', () => {
     expect(data[2].id).to.equal('mla-arizona-state');
-  })
+  });
 });
