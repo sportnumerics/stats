@@ -174,11 +174,11 @@ Resources:
     Type: AWS::S3::Bucket
 Outputs:
   DivsBucketName:
-    Description: Divs table name in DynamoDB
+    Description: Divs bucket
     Value:
       Ref: DivisionsBucket
   ResultsBucketName:
-    Description: Teams table name in DynamoDB
+    Description: Teams bucket
     Value:
       Ref: ResultsBucket
   DeploymentBucketName:

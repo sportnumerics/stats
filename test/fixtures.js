@@ -26,6 +26,7 @@ module.exports = {
   expectedGameByGameJson: require('./fixtures/expected-392-game-by-game'),
   expectedMclaGameByGameJson: require('./fixtures/expected-alabama-game-by-game'),
   expectedNormalizedGameByGameJson: require('./fixtures/expected-normalized-392-game-by-game'),
+  expectedNormalizedMclaGameByGameJson: require('./fixtures/expected-normalized-alabama-game-by-game'),
   stringifyEquivalentTo: require('./fixtures/stringifyEquivalentTo'),
   snsSample: require('./fixtures/sns-sample'),
   snsPayload: require('./fixtures/sns-payload'),
