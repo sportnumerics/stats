@@ -33,5 +33,10 @@
     "id": "mcla1",
     "sport": "mla",
     "title": "MCLA Division 1"
+  },
+  {
+    "id": "mcla2",
+    "sport": "mla",
+    "title": "MCLA Division 2"
   }
 ]

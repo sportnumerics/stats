@@ -15,16 +15,10 @@ describe('integration', () => {
 
       let persistenceMock = sinon.mock(persistence);
 
-      let divisionMatch = sinon.match({
-        id: sinon.match.string,
-        sport: sinon.match.string,
-        title: sinon.match.string
-      });
-
       persistenceMock
         .expects('set')
-        .withArgs('MockDivisionsBucket', sinon.match(/\d{4}\/\w+\d+/), divisionMatch)
-        .exactly(8)
+        .withArgs('MockDivisionsBucket', sinon.match(/\d{4}\/divisions/), fixtures.expectedStoredDivisionsJson)
+        .exactly(1)
         .returns(Promise.resolve());
 
       let teamMatch = sinon.match({

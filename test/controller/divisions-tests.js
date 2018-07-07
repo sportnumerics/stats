@@ -10,17 +10,12 @@ describe('divisions-controller', () => {
     let persistenceMock;
 
     beforeEach(() => {
-      let divisionMatch = sinon.match({
-        sport: sinon.match.string,
-        title: sinon.match.string
-      })
-
       persistenceMock = sinon.mock(persistence);
 
       persistenceMock
         .expects('set')
-        .exactly(8)
-        .withArgs('MockDivisionsBucket', sinon.match(/2016\/\w+\d+/), divisionMatch)
+        .exactly(1)
+        .withArgs('MockDivisionsBucket', sinon.match(/2016\/divisions/), fixtures.expectedStoredDivisionsJson)
         .returns(Promise.resolve());
     });
 
