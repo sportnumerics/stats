@@ -36,9 +36,6 @@ Resources:
         - Name: RESULTS_BUCKET
           Value:
             Ref: ResultsBucket
-        - Name: DIVISIONS_BUCKET
-          Value:
-            Ref: DivisionsBucket
         - Name: STAGE
           Value:
             Ref: Stage
@@ -104,10 +101,6 @@ Resources:
                     - '/'
                     - - Fn::GetAtt: [ResultsBucket, Arn]
                       - '*'
-                  - Fn::Join:
-                    - '/'
-                    - - Fn::GetAtt: [DivisionsBucket, Arn]
-                      - '*'
               - Effect: Allow
                 Action: 'lambda:InvokeFunction'
                 Resource:
@@ -170,13 +163,7 @@ Resources:
     Type: AWS::Logs::LogGroup
   ResultsBucket:
     Type: AWS::S3::Bucket
-  DivisionsBucket:
-    Type: AWS::S3::Bucket
 Outputs:
-  DivsBucketName:
-    Description: Divs bucket
-    Value:
-      Ref: DivisionsBucket
   ResultsBucketName:
     Description: Teams bucket
     Value:

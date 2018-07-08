@@ -17,7 +17,7 @@ describe('integration', () => {
 
       persistenceMock
         .expects('set')
-        .withArgs('MockDivisionsBucket', sinon.match(/\d{4}\/divisions/), fixtures.expectedStoredDivisionsJson)
+        .withArgs('MockResultsBucket', sinon.match(/\d{4}\/divisions/), fixtures.expectedStoredDivisionsJson)
         .exactly(1)
         .returns(Promise.resolve());
 
