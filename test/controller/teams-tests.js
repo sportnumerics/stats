@@ -78,7 +78,7 @@ describe('teams-controller', () => {
 
       persistenceMock
         .expects('set')
-        .withArgs('MockResultsBucket', `2016/mla-721`, teamMatch)
+        .withArgs('MockResultsBucket', `2016/teams/mla-721`, teamMatch)
         .exactly(1)
         .returns(Promise.resolve());
 
@@ -106,7 +106,7 @@ describe('teams-controller', () => {
 
       persistenceMock
         .expects('set')
-        .withArgs('MockResultsBucket', `2016/mla-721`, teamMatch)
+        .withArgs('MockResultsBucket', `2016/teams/mla-721`, teamMatch)
         .exactly(1)
         .returns(Promise.resolve());
 

@@ -30,7 +30,7 @@ describe('integration', () => {
 
       persistenceMock
         .expects('set')
-        .withArgs('MockResultsBucket', sinon.match(/\d{4}\/\w+\-[\d\w]+/), teamMatch)
+        .withArgs('MockResultsBucket', sinon.match(/\d{4}\/teams\/\w+\-[\d\w]+/), teamMatch)
         .exactly(8)
         .returns(Promise.resolve());
 
