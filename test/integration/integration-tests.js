@@ -17,7 +17,7 @@ describe('integration', () => {
 
       persistenceMock
         .expects('set')
-        .withArgs('MockResultsBucket', sinon.match(/\d{4}\/divisions/), fixtures.expectedStoredDivisionsJson)
+        .withArgs('MockResultsBucket', sinon.match(/\d{4}\/divisions\.json/), fixtures.expectedStoredDivisionsJson)
         .exactly(1)
         .returns(Promise.resolve());
 
@@ -30,7 +30,7 @@ describe('integration', () => {
 
       persistenceMock
         .expects('set')
-        .withArgs('MockResultsBucket', sinon.match(/\d{4}\/teams\/\w+\-[\d\w]+/), teamMatch)
+        .withArgs('MockResultsBucket', sinon.match(/\d{4}\/teams\/\w+\-[\d\w\-]+\.json/), teamMatch)
         .exactly(8)
         .returns(Promise.resolve());
 

@@ -15,7 +15,7 @@ describe('divisions-controller', () => {
       persistenceMock
         .expects('set')
         .exactly(1)
-        .withArgs('MockResultsBucket', sinon.match(/2016\/divisions/), fixtures.expectedStoredDivisionsJson)
+        .withArgs('MockResultsBucket', sinon.match(/2016\/divisions\.json/), fixtures.expectedStoredDivisionsJson)
         .returns(Promise.resolve());
     });
 
