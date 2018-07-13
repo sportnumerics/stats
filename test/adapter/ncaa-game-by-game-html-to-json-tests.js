@@ -7,7 +7,7 @@ let fixtures = require('../fixtures.js'),
 describe('ncaa schedule html to json', () => {
   var data;
   beforeEach(() => {
-    data = gameByGameHtmlToJson(fixtures.gameByGame, fixtures.expectedTeamsJson.teams);
+    data = gameByGameHtmlToJson(fixtures.gameByGame);
   });
 
   it('should extract all the games', () => {

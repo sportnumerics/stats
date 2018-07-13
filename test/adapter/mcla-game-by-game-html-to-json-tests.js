@@ -7,7 +7,7 @@ const fixtures = require('../fixtures.js'),
 describe('mcla schedule html to json', () => {
   var data;
   beforeEach(() => {
-    data = gameByGameHtmlToJson(fixtures.alabamaGameByGame, fixtures.expectedMclaTeamsJson.teams);
+    data = gameByGameHtmlToJson(fixtures.alabamaGameByGame, '2018');
   });
 
   it('should extract all the games', () => {
@@ -28,3 +28,14 @@ describe('mcla schedule html to json', () => {
     expect(data[0].result.pointsAgainst).to.equal(6);
   });
 });
+
+describe('mcla 2016 schedule html to json', () => {
+  let data;
+  beforeEach(() => {
+    data = gameByGameHtmlToJson(fixtures.alabama2016GameByGame, '2016');
+  });
+
+  it('should extract each game date', () => {
+    expect(data[0].date).to.be.sameMoment(moment.utc('02/06/2016 12:00pm', 'MM/DD/YYYY hh:mma'));
+  });
+})
