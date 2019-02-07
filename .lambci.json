@@ -1,10 +1,4 @@
 {
-  "docker": {
-    "cluster": "lambci-Cluster-1DEWLHNDPMG7G",
-    "task": "lambci-BuildTask-1H70YQV2SMV96:1",
-    "runArgs": "-v /var/run/docker.sock:/var/run/docker.sock --ulimit nofile=262144:262144",
-    "autoscalingGroup": "lambci-AutoScalingGroup-1NTJ0P7ZQT1CQ"
-  },
   "branches": {
     "master": true,
     "dev": true
