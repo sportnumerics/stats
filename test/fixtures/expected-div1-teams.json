@@ -1,763 +1,625 @@
 {
-    "teams": [
-        {
-            "instCode": "721",
-            "name": "Air Force",
-            "year": "2016",
-            "div": "m1",
-            "sport": "mla",
-            "source": {
-                "type": "ncaa"
-            },
-            "id": "mla-721"
-        },
-        {
-            "instCode": "14",
-            "name": "Albany (NY)",
-            "year": "2016",
-            "div": "m1",
-            "sport": "mla",
-            "source": {
-                "type": "ncaa"
-            },
-            "id": "mla-14"
-        },
-        {
-            "instCode": "725",
-            "name": "Army West Point",
-            "year": "2016",
-            "div": "m1",
-            "sport": "mla",
-            "source": {
-                "type": "ncaa"
-            },
-            "id": "mla-725"
-        },
-        {
-            "instCode": "52",
-            "name": "Bellarmine",
-            "year": "2016",
-            "div": "m1",
-            "sport": "mla",
-            "source": {
-                "type": "ncaa"
-            },
-            "id": "mla-52"
-        },
-        {
-            "instCode": "62",
-            "name": "Binghamton",
-            "year": "2016",
-            "div": "m1",
-            "sport": "mla",
-            "source": {
-                "type": "ncaa"
-            },
-            "id": "mla-62"
-        },
-        {
-            "instCode": "68",
-            "name": "Boston U.",
-            "year": "2016",
-            "div": "m1",
-            "sport": "mla",
-            "source": {
-                "type": "ncaa"
-            },
-            "id": "mla-68"
-        },
-        {
-            "instCode": "80",
-            "name": "Brown",
-            "year": "2016",
-            "div": "m1",
-            "sport": "mla",
-            "source": {
-                "type": "ncaa"
-            },
-            "id": "mla-80"
-        },
-        {
-            "instCode": "81",
-            "name": "Bryant",
-            "year": "2016",
-            "div": "m1",
-            "sport": "mla",
-            "source": {
-                "type": "ncaa"
-            },
-            "id": "mla-81"
-        },
-        {
-            "instCode": "83",
-            "name": "Bucknell",
-            "year": "2016",
-            "div": "m1",
-            "sport": "mla",
-            "source": {
-                "type": "ncaa"
-            },
-            "id": "mla-83"
-        },
-        {
-            "instCode": "116",
-            "name": "Canisius",
-            "year": "2016",
-            "div": "m1",
-            "sport": "mla",
-            "source": {
-                "type": "ncaa"
-            },
-            "id": "mla-116"
-        },
-        {
-            "instCode": "153",
-            "name": "Colgate",
-            "year": "2016",
-            "div": "m1",
-            "sport": "mla",
-            "source": {
-                "type": "ncaa"
-            },
-            "id": "mla-153"
-        },
-        {
-            "instCode": "167",
-            "name": "Cornell",
-            "year": "2016",
-            "div": "m1",
-            "sport": "mla",
-            "source": {
-                "type": "ncaa"
-            },
-            "id": "mla-167"
-        },
-        {
-            "instCode": "172",
-            "name": "Dartmouth",
-            "year": "2016",
-            "div": "m1",
-            "sport": "mla",
-            "source": {
-                "type": "ncaa"
-            },
-            "id": "mla-172"
-        },
-        {
-            "instCode": "180",
-            "name": "Delaware",
-            "year": "2016",
-            "div": "m1",
-            "sport": "mla",
-            "source": {
-                "type": "ncaa"
-            },
-            "id": "mla-180"
-        },
-        {
-            "instCode": "183",
-            "name": "Denver",
-            "year": "2016",
-            "div": "m1",
-            "sport": "mla",
-            "source": {
-                "type": "ncaa"
-            },
-            "id": "mla-183"
-        },
-        {
-            "instCode": "184",
-            "name": "Detroit",
-            "year": "2016",
-            "div": "m1",
-            "sport": "mla",
-            "source": {
-                "type": "ncaa"
-            },
-            "id": "mla-184"
-        },
-        {
-            "instCode": "191",
-            "name": "Drexel",
-            "year": "2016",
-            "div": "m1",
-            "sport": "mla",
-            "source": {
-                "type": "ncaa"
-            },
-            "id": "mla-191"
-        },
-        {
-            "instCode": "193",
-            "name": "Duke",
-            "year": "2016",
-            "div": "m1",
-            "sport": "mla",
-            "source": {
-                "type": "ncaa"
-            },
-            "id": "mla-193"
-        },
-        {
-            "instCode": "220",
-            "name": "Fairfield",
-            "year": "2016",
-            "div": "m1",
-            "sport": "mla",
-            "source": {
-                "type": "ncaa"
-            },
-            "id": "mla-220"
-        },
-        {
-            "instCode": "244",
-            "name": "Furman",
-            "year": "2016",
-            "div": "m1",
-            "sport": "mla",
-            "source": {
-                "type": "ncaa"
-            },
-            "id": "mla-244"
-        },
-        {
-            "instCode": "251",
-            "name": "Georgetown",
-            "year": "2016",
-            "div": "m1",
-            "sport": "mla",
-            "source": {
-                "type": "ncaa"
-            },
-            "id": "mla-251"
-        },
-        {
-            "instCode": "272",
-            "name": "Hartford",
-            "year": "2016",
-            "div": "m1",
-            "sport": "mla",
-            "source": {
-                "type": "ncaa"
-            },
-            "id": "mla-272"
-        },
-        {
-            "instCode": "275",
-            "name": "Harvard",
-            "year": "2016",
-            "div": "m1",
-            "sport": "mla",
-            "source": {
-                "type": "ncaa"
-            },
-            "id": "mla-275"
-        },
-        {
-            "instCode": "19651",
-            "name": "High Point",
-            "year": "2016",
-            "div": "m1",
-            "sport": "mla",
-            "source": {
-                "type": "ncaa"
-            },
-            "id": "mla-19651"
-        },
-        {
-            "instCode": "282",
-            "name": "Hobart and William Colleges",
-            "year": "2016",
-            "div": "m1",
-            "sport": "mla",
-            "source": {
-                "type": "ncaa"
-            },
-            "id": "mla-282"
-        },
-        {
-            "instCode": "283",
-            "name": "Hofstra",
-            "year": "2016",
-            "div": "m1",
-            "sport": "mla",
-            "source": {
-                "type": "ncaa"
-            },
-            "id": "mla-283"
-        },
-        {
-            "instCode": "285",
-            "name": "Holy Cross",
-            "year": "2016",
-            "div": "m1",
-            "sport": "mla",
-            "source": {
-                "type": "ncaa"
-            },
-            "id": "mla-285"
-        },
-        {
-            "instCode": "316",
-            "name": "Jacksonville",
-            "year": "2016",
-            "div": "m1",
-            "sport": "mla",
-            "source": {
-                "type": "ncaa"
-            },
-            "id": "mla-316"
-        },
-        {
-            "instCode": "322",
-            "name": "Johns Hopkins",
-            "year": "2016",
-            "div": "m1",
-            "sport": "mla",
-            "source": {
-                "type": "ncaa"
-            },
-            "id": "mla-322"
-        },
-        {
-            "instCode": "342",
-            "name": "Lafayette",
-            "year": "2016",
-            "div": "m1",
-            "sport": "mla",
-            "source": {
-                "type": "ncaa"
-            },
-            "id": "mla-342"
-        },
-        {
-            "instCode": "352",
-            "name": "Lehigh",
-            "year": "2016",
-            "div": "m1",
-            "sport": "mla",
-            "source": {
-                "type": "ncaa"
-            },
-            "id": "mla-352"
-        },
-        {
-            "instCode": "369",
-            "name": "Loyola Maryland",
-            "year": "2016",
-            "div": "m1",
-            "sport": "mla",
-            "source": {
-                "type": "ncaa"
-            },
-            "id": "mla-369"
-        },
-        {
-            "instCode": "381",
-            "name": "Manhattan",
-            "year": "2016",
-            "div": "m1",
-            "sport": "mla",
-            "source": {
-                "type": "ncaa"
-            },
-            "id": "mla-381"
-        },
-        {
-            "instCode": "386",
-            "name": "Marist",
-            "year": "2016",
-            "div": "m1",
-            "sport": "mla",
-            "source": {
-                "type": "ncaa"
-            },
-            "id": "mla-386"
-        },
-        {
-            "instCode": "387",
-            "name": "Marquette",
-            "year": "2016",
-            "div": "m1",
-            "sport": "mla",
-            "source": {
-                "type": "ncaa"
-            },
-            "id": "mla-387"
-        },
-        {
-            "instCode": "392",
-            "name": "Maryland",
-            "year": "2016",
-            "div": "m1",
-            "sport": "mla",
-            "source": {
-                "type": "ncaa"
-            },
-            "id": "mla-392"
-        },
-        {
-            "instCode": "400",
-            "name": "Massachusetts",
-            "year": "2016",
-            "div": "m1",
-            "sport": "mla",
-            "source": {
-                "type": "ncaa"
-            },
-            "id": "mla-400"
-        },
-        {
-            "instCode": "406",
-            "name": "Mercer",
-            "year": "2016",
-            "div": "m1",
-            "sport": "mla",
-            "source": {
-                "type": "ncaa"
-            },
-            "id": "mla-406"
-        },
-        {
-            "instCode": "418",
-            "name": "Michigan",
-            "year": "2016",
-            "div": "m1",
-            "sport": "mla",
-            "source": {
-                "type": "ncaa"
-            },
-            "id": "mla-418"
-        },
-        {
-            "instCode": "439",
-            "name": "Monmouth",
-            "year": "2016",
-            "div": "m1",
-            "sport": "mla",
-            "source": {
-                "type": "ncaa"
-            },
-            "id": "mla-439"
-        },
-        {
-            "instCode": "450",
-            "name": "Mt. St. Mary's",
-            "year": "2016",
-            "div": "m1",
-            "sport": "mla",
-            "source": {
-                "type": "ncaa"
-            },
-            "id": "mla-450"
-        },
-        {
-            "instCode": "471",
-            "name": "NJIT",
-            "year": "2016",
-            "div": "m1",
-            "sport": "mla",
-            "source": {
-                "type": "ncaa"
-            },
-            "id": "mla-471"
-        },
-        {
-            "instCode": "726",
-            "name": "Navy",
-            "year": "2016",
-            "div": "m1",
-            "sport": "mla",
-            "source": {
-                "type": "ncaa"
-            },
-            "id": "mla-726"
-        },
-        {
-            "instCode": "457",
-            "name": "North Carolina",
-            "year": "2016",
-            "div": "m1",
-            "sport": "mla",
-            "source": {
-                "type": "ncaa"
-            },
-            "id": "mla-457"
-        },
-        {
-            "instCode": "513",
-            "name": "Notre Dame",
-            "year": "2016",
-            "div": "m1",
-            "sport": "mla",
-            "source": {
-                "type": "ncaa"
-            },
-            "id": "mla-513"
-        },
-        {
-            "instCode": "518",
-            "name": "Ohio St.",
-            "year": "2016",
-            "div": "m1",
-            "sport": "mla",
-            "source": {
-                "type": "ncaa"
-            },
-            "id": "mla-518"
-        },
-        {
-            "instCode": "540",
-            "name": "Penn",
-            "year": "2016",
-            "div": "m1",
-            "sport": "mla",
-            "source": {
-                "type": "ncaa"
-            },
-            "id": "mla-540"
-        },
-        {
-            "instCode": "539",
-            "name": "Penn St.",
-            "year": "2016",
-            "div": "m1",
-            "sport": "mla",
-            "source": {
-                "type": "ncaa"
-            },
-            "id": "mla-539"
-        },
-        {
-            "instCode": "554",
-            "name": "Princeton",
-            "year": "2016",
-            "div": "m1",
-            "sport": "mla",
-            "source": {
-                "type": "ncaa"
-            },
-            "id": "mla-554"
-        },
-        {
-            "instCode": "556",
-            "name": "Providence",
-            "year": "2016",
-            "div": "m1",
-            "sport": "mla",
-            "source": {
-                "type": "ncaa"
-            },
-            "id": "mla-556"
-        },
-        {
-            "instCode": "562",
-            "name": "Quinnipiac",
-            "year": "2016",
-            "div": "m1",
-            "sport": "mla",
-            "source": {
-                "type": "ncaa"
-            },
-            "id": "mla-562"
-        },
-        {
-            "instCode": "575",
-            "name": "Richmond",
-            "year": "2016",
-            "div": "m1",
-            "sport": "mla",
-            "source": {
-                "type": "ncaa"
-            },
-            "id": "mla-575"
-        },
-        {
-            "instCode": "579",
-            "name": "Robert Morris",
-            "year": "2016",
-            "div": "m1",
-            "sport": "mla",
-            "source": {
-                "type": "ncaa"
-            },
-            "id": "mla-579"
-        },
-        {
-            "instCode": "587",
-            "name": "Rutgers",
-            "year": "2016",
-            "div": "m1",
-            "sport": "mla",
-            "source": {
-                "type": "ncaa"
-            },
-            "id": "mla-587"
-        },
-        {
-            "instCode": "590",
-            "name": "Sacred Heart",
-            "year": "2016",
-            "div": "m1",
-            "sport": "mla",
-            "source": {
-                "type": "ncaa"
-            },
-            "id": "mla-590"
-        },
-        {
-            "instCode": "606",
-            "name": "Saint Joseph's",
-            "year": "2016",
-            "div": "m1",
-            "sport": "mla",
-            "source": {
-                "type": "ncaa"
-            },
-            "id": "mla-606"
-        },
-        {
-            "instCode": "639",
-            "name": "Siena",
-            "year": "2016",
-            "div": "m1",
-            "sport": "mla",
-            "source": {
-                "type": "ncaa"
-            },
-            "id": "mla-639"
-        },
-        {
-            "instCode": "603",
-            "name": "St. John's (NY)",
-            "year": "2016",
-            "div": "m1",
-            "sport": "mla",
-            "source": {
-                "type": "ncaa"
-            },
-            "id": "mla-603"
-        },
-        {
-            "instCode": "683",
-            "name": "Stony Brook",
-            "year": "2016",
-            "div": "m1",
-            "sport": "mla",
-            "source": {
-                "type": "ncaa"
-            },
-            "id": "mla-683"
-        },
-        {
-            "instCode": "688",
-            "name": "Syracuse",
-            "year": "2016",
-            "div": "m1",
-            "sport": "mla",
-            "source": {
-                "type": "ncaa"
-            },
-            "id": "mla-688"
-        },
-        {
-            "instCode": "711",
-            "name": "Towson",
-            "year": "2016",
-            "div": "m1",
-            "sport": "mla",
-            "source": {
-                "type": "ncaa"
-            },
-            "id": "mla-711"
-        },
-        {
-            "instCode": "391",
-            "name": "UMBC",
-            "year": "2016",
-            "div": "m1",
-            "sport": "mla",
-            "source": {
-                "type": "ncaa"
-            },
-            "id": "mla-391"
-        },
-        {
-            "instCode": "368",
-            "name": "UMass Lowell",
-            "year": "2016",
-            "div": "m1",
-            "sport": "mla",
-            "source": {
-                "type": "ncaa"
-            },
-            "id": "mla-368"
-        },
-        {
-            "instCode": "741",
-            "name": "VMI",
-            "year": "2016",
-            "div": "m1",
-            "sport": "mla",
-            "source": {
-                "type": "ncaa"
-            },
-            "id": "mla-741"
-        },
-        {
-            "instCode": "738",
-            "name": "Vermont",
-            "year": "2016",
-            "div": "m1",
-            "sport": "mla",
-            "source": {
-                "type": "ncaa"
-            },
-            "id": "mla-738"
-        },
-        {
-            "instCode": "739",
-            "name": "Villanova",
-            "year": "2016",
-            "div": "m1",
-            "sport": "mla",
-            "source": {
-                "type": "ncaa"
-            },
-            "id": "mla-739"
-        },
-        {
-            "instCode": "746",
-            "name": "Virginia",
-            "year": "2016",
-            "div": "m1",
-            "sport": "mla",
-            "source": {
-                "type": "ncaa"
-            },
-            "id": "mla-746"
-        },
-        {
-            "instCode": "748",
-            "name": "Wagner",
-            "year": "2016",
-            "div": "m1",
-            "sport": "mla",
-            "source": {
-                "type": "ncaa"
-            },
-            "id": "mla-748"
-        },
-        {
-            "instCode": "813",
-            "name": "Yale",
-            "year": "2016",
-            "div": "m1",
-            "sport": "mla",
-            "source": {
-                "type": "ncaa"
-            },
-            "id": "mla-813"
-        }
-    ]
+  "teams": [
+    {
+      "instCode": "721",
+      "name": "Air Force",
+      "year": "2016",
+      "div": "m1",
+      "sport": "mla",
+      "source": { "type": "ncaa" },
+      "id": "mla-721"
+    },
+    {
+      "instCode": "14",
+      "name": "Albany (NY)",
+      "year": "2016",
+      "div": "m1",
+      "sport": "mla",
+      "source": { "type": "ncaa" },
+      "id": "mla-14"
+    },
+    {
+      "instCode": "725",
+      "name": "Army West Point",
+      "year": "2016",
+      "div": "m1",
+      "sport": "mla",
+      "source": { "type": "ncaa" },
+      "id": "mla-725"
+    },
+    {
+      "instCode": "52",
+      "name": "Bellarmine",
+      "year": "2016",
+      "div": "m1",
+      "sport": "mla",
+      "source": { "type": "ncaa" },
+      "id": "mla-52"
+    },
+    {
+      "instCode": "62",
+      "name": "Binghamton",
+      "year": "2016",
+      "div": "m1",
+      "sport": "mla",
+      "source": { "type": "ncaa" },
+      "id": "mla-62"
+    },
+    {
+      "instCode": "68",
+      "name": "Boston U.",
+      "year": "2016",
+      "div": "m1",
+      "sport": "mla",
+      "source": { "type": "ncaa" },
+      "id": "mla-68"
+    },
+    {
+      "instCode": "80",
+      "name": "Brown",
+      "year": "2016",
+      "div": "m1",
+      "sport": "mla",
+      "source": { "type": "ncaa" },
+      "id": "mla-80"
+    },
+    {
+      "instCode": "81",
+      "name": "Bryant",
+      "year": "2016",
+      "div": "m1",
+      "sport": "mla",
+      "source": { "type": "ncaa" },
+      "id": "mla-81"
+    },
+    {
+      "instCode": "83",
+      "name": "Bucknell",
+      "year": "2016",
+      "div": "m1",
+      "sport": "mla",
+      "source": { "type": "ncaa" },
+      "id": "mla-83"
+    },
+    {
+      "instCode": "116",
+      "name": "Canisius",
+      "year": "2016",
+      "div": "m1",
+      "sport": "mla",
+      "source": { "type": "ncaa" },
+      "id": "mla-116"
+    },
+    {
+      "instCode": "153",
+      "name": "Colgate",
+      "year": "2016",
+      "div": "m1",
+      "sport": "mla",
+      "source": { "type": "ncaa" },
+      "id": "mla-153"
+    },
+    {
+      "instCode": "167",
+      "name": "Cornell",
+      "year": "2016",
+      "div": "m1",
+      "sport": "mla",
+      "source": { "type": "ncaa" },
+      "id": "mla-167"
+    },
+    {
+      "instCode": "172",
+      "name": "Dartmouth",
+      "year": "2016",
+      "div": "m1",
+      "sport": "mla",
+      "source": { "type": "ncaa" },
+      "id": "mla-172"
+    },
+    {
+      "instCode": "180",
+      "name": "Delaware",
+      "year": "2016",
+      "div": "m1",
+      "sport": "mla",
+      "source": { "type": "ncaa" },
+      "id": "mla-180"
+    },
+    {
+      "instCode": "183",
+      "name": "Denver",
+      "year": "2016",
+      "div": "m1",
+      "sport": "mla",
+      "source": { "type": "ncaa" },
+      "id": "mla-183"
+    },
+    {
+      "instCode": "184",
+      "name": "Detroit",
+      "year": "2016",
+      "div": "m1",
+      "sport": "mla",
+      "source": { "type": "ncaa" },
+      "id": "mla-184"
+    },
+    {
+      "instCode": "191",
+      "name": "Drexel",
+      "year": "2016",
+      "div": "m1",
+      "sport": "mla",
+      "source": { "type": "ncaa" },
+      "id": "mla-191"
+    },
+    {
+      "instCode": "193",
+      "name": "Duke",
+      "year": "2016",
+      "div": "m1",
+      "sport": "mla",
+      "source": { "type": "ncaa" },
+      "id": "mla-193"
+    },
+    {
+      "instCode": "220",
+      "name": "Fairfield",
+      "year": "2016",
+      "div": "m1",
+      "sport": "mla",
+      "source": { "type": "ncaa" },
+      "id": "mla-220"
+    },
+    {
+      "instCode": "244",
+      "name": "Furman",
+      "year": "2016",
+      "div": "m1",
+      "sport": "mla",
+      "source": { "type": "ncaa" },
+      "id": "mla-244"
+    },
+    {
+      "instCode": "251",
+      "name": "Georgetown",
+      "year": "2016",
+      "div": "m1",
+      "sport": "mla",
+      "source": { "type": "ncaa" },
+      "id": "mla-251"
+    },
+    {
+      "instCode": "272",
+      "name": "Hartford",
+      "year": "2016",
+      "div": "m1",
+      "sport": "mla",
+      "source": { "type": "ncaa" },
+      "id": "mla-272"
+    },
+    {
+      "instCode": "275",
+      "name": "Harvard",
+      "year": "2016",
+      "div": "m1",
+      "sport": "mla",
+      "source": { "type": "ncaa" },
+      "id": "mla-275"
+    },
+    {
+      "instCode": "19651",
+      "name": "High Point",
+      "year": "2016",
+      "div": "m1",
+      "sport": "mla",
+      "source": { "type": "ncaa" },
+      "id": "mla-19651"
+    },
+    {
+      "instCode": "282",
+      "name": "Hobart and William Colleges",
+      "year": "2016",
+      "div": "m1",
+      "sport": "mla",
+      "source": { "type": "ncaa" },
+      "id": "mla-282"
+    },
+    {
+      "instCode": "283",
+      "name": "Hofstra",
+      "year": "2016",
+      "div": "m1",
+      "sport": "mla",
+      "source": { "type": "ncaa" },
+      "id": "mla-283"
+    },
+    {
+      "instCode": "285",
+      "name": "Holy Cross",
+      "year": "2016",
+      "div": "m1",
+      "sport": "mla",
+      "source": { "type": "ncaa" },
+      "id": "mla-285"
+    },
+    {
+      "instCode": "316",
+      "name": "Jacksonville",
+      "year": "2016",
+      "div": "m1",
+      "sport": "mla",
+      "source": { "type": "ncaa" },
+      "id": "mla-316"
+    },
+    {
+      "instCode": "322",
+      "name": "Johns Hopkins",
+      "year": "2016",
+      "div": "m1",
+      "sport": "mla",
+      "source": { "type": "ncaa" },
+      "id": "mla-322"
+    },
+    {
+      "instCode": "342",
+      "name": "Lafayette",
+      "year": "2016",
+      "div": "m1",
+      "sport": "mla",
+      "source": { "type": "ncaa" },
+      "id": "mla-342"
+    },
+    {
+      "instCode": "352",
+      "name": "Lehigh",
+      "year": "2016",
+      "div": "m1",
+      "sport": "mla",
+      "source": { "type": "ncaa" },
+      "id": "mla-352"
+    },
+    {
+      "instCode": "369",
+      "name": "Loyola Maryland",
+      "year": "2016",
+      "div": "m1",
+      "sport": "mla",
+      "source": { "type": "ncaa" },
+      "id": "mla-369"
+    },
+    {
+      "instCode": "381",
+      "name": "Manhattan",
+      "year": "2016",
+      "div": "m1",
+      "sport": "mla",
+      "source": { "type": "ncaa" },
+      "id": "mla-381"
+    },
+    {
+      "instCode": "386",
+      "name": "Marist",
+      "year": "2016",
+      "div": "m1",
+      "sport": "mla",
+      "source": { "type": "ncaa" },
+      "id": "mla-386"
+    },
+    {
+      "instCode": "387",
+      "name": "Marquette",
+      "year": "2016",
+      "div": "m1",
+      "sport": "mla",
+      "source": { "type": "ncaa" },
+      "id": "mla-387"
+    },
+    {
+      "instCode": "392",
+      "name": "Maryland",
+      "year": "2016",
+      "div": "m1",
+      "sport": "mla",
+      "source": { "type": "ncaa" },
+      "id": "mla-392"
+    },
+    {
+      "instCode": "400",
+      "name": "Massachusetts",
+      "year": "2016",
+      "div": "m1",
+      "sport": "mla",
+      "source": { "type": "ncaa" },
+      "id": "mla-400"
+    },
+    {
+      "instCode": "406",
+      "name": "Mercer",
+      "year": "2016",
+      "div": "m1",
+      "sport": "mla",
+      "source": { "type": "ncaa" },
+      "id": "mla-406"
+    },
+    {
+      "instCode": "418",
+      "name": "Michigan",
+      "year": "2016",
+      "div": "m1",
+      "sport": "mla",
+      "source": { "type": "ncaa" },
+      "id": "mla-418"
+    },
+    {
+      "instCode": "439",
+      "name": "Monmouth",
+      "year": "2016",
+      "div": "m1",
+      "sport": "mla",
+      "source": { "type": "ncaa" },
+      "id": "mla-439"
+    },
+    {
+      "instCode": "450",
+      "name": "Mt. St. Mary's",
+      "year": "2016",
+      "div": "m1",
+      "sport": "mla",
+      "source": { "type": "ncaa" },
+      "id": "mla-450"
+    },
+    {
+      "instCode": "471",
+      "name": "NJIT",
+      "year": "2016",
+      "div": "m1",
+      "sport": "mla",
+      "source": { "type": "ncaa" },
+      "id": "mla-471"
+    },
+    {
+      "instCode": "726",
+      "name": "Navy",
+      "year": "2016",
+      "div": "m1",
+      "sport": "mla",
+      "source": { "type": "ncaa" },
+      "id": "mla-726"
+    },
+    {
+      "instCode": "457",
+      "name": "North Carolina",
+      "year": "2016",
+      "div": "m1",
+      "sport": "mla",
+      "source": { "type": "ncaa" },
+      "id": "mla-457"
+    },
+    {
+      "instCode": "513",
+      "name": "Notre Dame",
+      "year": "2016",
+      "div": "m1",
+      "sport": "mla",
+      "source": { "type": "ncaa" },
+      "id": "mla-513"
+    },
+    {
+      "instCode": "518",
+      "name": "Ohio St.",
+      "year": "2016",
+      "div": "m1",
+      "sport": "mla",
+      "source": { "type": "ncaa" },
+      "id": "mla-518"
+    },
+    {
+      "instCode": "540",
+      "name": "Penn",
+      "year": "2016",
+      "div": "m1",
+      "sport": "mla",
+      "source": { "type": "ncaa" },
+      "id": "mla-540"
+    },
+    {
+      "instCode": "539",
+      "name": "Penn St.",
+      "year": "2016",
+      "div": "m1",
+      "sport": "mla",
+      "source": { "type": "ncaa" },
+      "id": "mla-539"
+    },
+    {
+      "instCode": "554",
+      "name": "Princeton",
+      "year": "2016",
+      "div": "m1",
+      "sport": "mla",
+      "source": { "type": "ncaa" },
+      "id": "mla-554"
+    },
+    {
+      "instCode": "556",
+      "name": "Providence",
+      "year": "2016",
+      "div": "m1",
+      "sport": "mla",
+      "source": { "type": "ncaa" },
+      "id": "mla-556"
+    },
+    {
+      "instCode": "562",
+      "name": "Quinnipiac",
+      "year": "2016",
+      "div": "m1",
+      "sport": "mla",
+      "source": { "type": "ncaa" },
+      "id": "mla-562"
+    },
+    {
+      "instCode": "575",
+      "name": "Richmond",
+      "year": "2016",
+      "div": "m1",
+      "sport": "mla",
+      "source": { "type": "ncaa" },
+      "id": "mla-575"
+    },
+    {
+      "instCode": "579",
+      "name": "Robert Morris",
+      "year": "2016",
+      "div": "m1",
+      "sport": "mla",
+      "source": { "type": "ncaa" },
+      "id": "mla-579"
+    },
+    {
+      "instCode": "587",
+      "name": "Rutgers",
+      "year": "2016",
+      "div": "m1",
+      "sport": "mla",
+      "source": { "type": "ncaa" },
+      "id": "mla-587"
+    },
+    {
+      "instCode": "590",
+      "name": "Sacred Heart",
+      "year": "2016",
+      "div": "m1",
+      "sport": "mla",
+      "source": { "type": "ncaa" },
+      "id": "mla-590"
+    },
+    {
+      "instCode": "606",
+      "name": "Saint Joseph's",
+      "year": "2016",
+      "div": "m1",
+      "sport": "mla",
+      "source": { "type": "ncaa" },
+      "id": "mla-606"
+    },
+    {
+      "instCode": "639",
+      "name": "Siena",
+      "year": "2016",
+      "div": "m1",
+      "sport": "mla",
+      "source": { "type": "ncaa" },
+      "id": "mla-639"
+    },
+    {
+      "instCode": "603",
+      "name": "St. John's (NY)",
+      "year": "2016",
+      "div": "m1",
+      "sport": "mla",
+      "source": { "type": "ncaa" },
+      "id": "mla-603"
+    },
+    {
+      "instCode": "683",
+      "name": "Stony Brook",
+      "year": "2016",
+      "div": "m1",
+      "sport": "mla",
+      "source": { "type": "ncaa" },
+      "id": "mla-683"
+    },
+    {
+      "instCode": "688",
+      "name": "Syracuse",
+      "year": "2016",
+      "div": "m1",
+      "sport": "mla",
+      "source": { "type": "ncaa" },
+      "id": "mla-688"
+    },
+    {
+      "instCode": "711",
+      "name": "Towson",
+      "year": "2016",
+      "div": "m1",
+      "sport": "mla",
+      "source": { "type": "ncaa" },
+      "id": "mla-711"
+    },
+    {
+      "instCode": "391",
+      "name": "UMBC",
+      "year": "2016",
+      "div": "m1",
+      "sport": "mla",
+      "source": { "type": "ncaa" },
+      "id": "mla-391"
+    },
+    {
+      "instCode": "368",
+      "name": "UMass Lowell",
+      "year": "2016",
+      "div": "m1",
+      "sport": "mla",
+      "source": { "type": "ncaa" },
+      "id": "mla-368"
+    },
+    {
+      "instCode": "741",
+      "name": "VMI",
+      "year": "2016",
+      "div": "m1",
+      "sport": "mla",
+      "source": { "type": "ncaa" },
+      "id": "mla-741"
+    },
+    {
+      "instCode": "738",
+      "name": "Vermont",
+      "year": "2016",
+      "div": "m1",
+      "sport": "mla",
+      "source": { "type": "ncaa" },
+      "id": "mla-738"
+    },
+    {
+      "instCode": "739",
+      "name": "Villanova",
+      "year": "2016",
+      "div": "m1",
+      "sport": "mla",
+      "source": { "type": "ncaa" },
+      "id": "mla-739"
+    },
+    {
+      "instCode": "746",
+      "name": "Virginia",
+      "year": "2016",
+      "div": "m1",
+      "sport": "mla",
+      "source": { "type": "ncaa" },
+      "id": "mla-746"
+    },
+    {
+      "instCode": "748",
+      "name": "Wagner",
+      "year": "2016",
+      "div": "m1",
+      "sport": "mla",
+      "source": { "type": "ncaa" },
+      "id": "mla-748"
+    },
+    {
+      "instCode": "813",
+      "name": "Yale",
+      "year": "2016",
+      "div": "m1",
+      "sport": "mla",
+      "source": { "type": "ncaa" },
+      "id": "mla-813"
+    }
+  ]
 }

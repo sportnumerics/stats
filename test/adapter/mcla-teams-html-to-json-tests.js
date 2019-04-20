@@ -6,16 +6,20 @@ let fixtures = require('../fixtures.js'),
 describe('mcla teams html to json', () => {
   var data;
   beforeEach(() => {
-    data = teamsHtmlToJson({ div: 'm1', sport: 'mla', source: { type: 'mcla', id: '1' } })(fixtures.mclaTeamList);
+    data = teamsHtmlToJson({
+      div: 'm1',
+      sport: 'mla',
+      source: { type: 'mcla', id: '1' }
+    })(fixtures.mclaTeamList);
   });
 
   it('should extract all the teams', () => {
-      expect(data.length).to.equal(85);
+    expect(data.length).to.equal(80);
   });
 
   it('should extract each team name', () => {
     expect(data[0].name).to.equal('Alabama');
-    expect(data[84].name).to.equal('Western Michigan');
+    expect(data[79].name).to.equal('Western Michigan');
   });
 
   it('should extract each team slug', () => {

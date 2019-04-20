@@ -14,7 +14,7 @@ describe('teams-controller', () => {
     let serviceMock;
 
     beforeEach(() => {
-      serviceMock = sinon.mock(service)
+      serviceMock = sinon.mock(service);
     });
 
     afterEach(() => {
@@ -25,7 +25,7 @@ describe('teams-controller', () => {
       serviceMock
         .expects('getHtmlFromNcaa')
         .withArgs(year, { id: 'm1', sport: 'mla', source: { type: 'ncaa' } })
-        .returns(Promise.resolve(fixtures.teamList));
+        .resolves(fixtures.teamList);
 
       const result = await controller.collect(year, {
         id: 'm1',
@@ -43,22 +43,28 @@ describe('teams-controller', () => {
     it('should get mcla teams from mcla', async () => {
       serviceMock
         .expects('getHtmlFromMcla')
-        .withArgs(year, { id: 'mcla1', sport: 'mla', source: { type: 'mcla', id: '1' } })
-        .returns(Promise.resolve(fixtures.mclaTeamList));
-
-        const result = await controller.collect(year, {
+        .withArgs(year, {
           id: 'mcla1',
           sport: 'mla',
-          source: {
-            type: 'mcla',
-            id: '1'
-          }
-        });
+          source: { type: 'mcla', id: '1' }
+        })
+        .resolves(fixtures.mclaTeamList);
 
-        expect(result).to.deep.equal(fixtures.expectedMclaTeamsJson.teams);
+      const result = await controller.collect(year, {
+        id: 'mcla1',
+        sport: 'mla',
+        source: {
+          type: 'mcla',
+          id: '1'
+        }
+      });
 
-        serviceMock.verify();
-    })
+      require('fs').writeFileSync('teams.json', JSON.stringify(result));
+
+      expect(result).to.deep.equal(fixtures.expectedMclaTeamsJson.teams);
+
+      serviceMock.verify();
+    });
   });
 
   describe('normalize', () => {
@@ -80,7 +86,7 @@ describe('teams-controller', () => {
         .expects('set')
         .withArgs('MockResultsBucket', `2016/teams/mla-721.json`, teamMatch)
         .exactly(1)
-        .returns(Promise.resolve());
+        .resolves();
 
       await controller.normalize({ year, divs, teams });
 
@@ -93,7 +99,10 @@ describe('teams-controller', () => {
 
       const divs = fixtures.expectedStoredDivisionsJson;
 
-      const teamWithoutSchedule = _.omit(fixtures.expectedGameByGameJson, 'schedule');
+      const teamWithoutSchedule = _.omit(
+        fixtures.expectedGameByGameJson,
+        'schedule'
+      );
 
       const teams = [teamWithoutSchedule];
 
@@ -108,7 +117,7 @@ describe('teams-controller', () => {
         .expects('set')
         .withArgs('MockResultsBucket', `2016/teams/mla-721.json`, teamMatch)
         .exactly(1)
-        .returns(Promise.resolve());
+        .resolves();
 
       await controller.normalize({ year, divs, teams });
 

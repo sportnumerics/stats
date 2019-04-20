@@ -32,6 +32,6 @@
     "explorer-cdn": "https://github.com/sportnumerics/explorer-cdn#1.0.1",
     "mocha": "^2.4.5",
     "nock": "^7.2.2",
-    "sinon": "^1.17.3"
+    "sinon": "^7.3.1"
   }
 }
