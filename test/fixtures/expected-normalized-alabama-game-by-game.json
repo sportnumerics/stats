@@ -5,134 +5,78 @@
   "year": "2018",
   "sport": "mla",
   "instCode": "alabama",
-  "source": {
-    "type": "mcla"
-  },
+  "source": { "type": "mcla" },
   "schedule": [
     {
-      "location": {
-        "type": "away"
-      },
+      "location": { "type": "away", "slug": "natchez-field" },
       "opponent": {
         "name": "Vanderbilt",
         "id": "mla-vanderbilt",
         "div": "mcla1"
       },
       "date": "2018-02-03T14:00:00.000Z",
-      "result": {
-        "pointsFor": 9,
-        "pointsAgainst": 6
-      }
+      "result": { "pointsFor": 9, "pointsAgainst": 6 }
     },
     {
-      "location": {
-        "type": "home"
-      },
-      "opponent": {
-        "name": "Missouri",
-        "id": "mla-missouri",
-        "div": "mcla1"
-      },
+      "location": { "type": "home", "slug": "lafayette-high-school" },
+      "opponent": { "name": "Missouri", "id": "mla-missouri", "div": "mcla1" },
       "date": "2018-02-24T14:00:00.000Z",
-      "result": {
-        "pointsFor": 12,
-        "pointsAgainst": 3
-      }
+      "result": { "pointsFor": 12, "pointsAgainst": 3 }
     },
     {
-      "location": {
-        "type": "away"
-      },
+      "location": { "type": "away", "slug": "lafayette-high-school" },
       "opponent": {
         "name": "Ole Miss",
         "id": "mla-mississippi",
         "div": "mcla1"
       },
       "date": "2018-02-25T12:00:00.000Z",
-      "result": {
-        "pointsFor": 8,
-        "pointsAgainst": 5
-      }
+      "result": { "pointsFor": 8, "pointsAgainst": 5 }
     },
     {
-      "location": {
-        "type": "away"
-      },
+      "location": { "type": "away", "slug": "university_of_oklahoma" },
       "opponent": {
         "name": "Texas Christian",
         "id": "mla-texas-christian",
         "div": "mcla1"
       },
       "date": "2018-03-03T13:00:00.000Z",
-      "result": {
-        "pointsFor": 11,
-        "pointsAgainst": 2
-      }
+      "result": { "pointsFor": 11, "pointsAgainst": 2 }
     },
     {
-      "location": {
-        "type": "away"
-      },
-      "opponent": {
-        "name": "Oklahoma",
-        "id": "mla-oklahoma",
-        "div": "mcla1"
-      },
+      "location": { "type": "away", "slug": "university_of_oklahoma" },
+      "opponent": { "name": "Oklahoma", "id": "mla-oklahoma", "div": "mcla1" },
       "date": "2018-03-04T11:00:00.000Z",
-      "result": {
-        "pointsFor": 10,
-        "pointsAgainst": 7
-      }
+      "result": { "pointsFor": 10, "pointsAgainst": 7 }
     },
     {
-      "location": {
-        "type": "home"
-      },
+      "location": { "type": "home", "slug": "alabama_intramural_fields" },
       "opponent": {
         "name": "LSU",
         "id": "mla-louisiana-state",
         "div": "mcla1"
       },
       "date": "2018-03-10T12:00:00.000Z",
-      "result": {
-        "pointsFor": 13,
-        "pointsAgainst": 9
-      }
+      "result": { "pointsFor": 13, "pointsAgainst": 9 }
     },
     {
-      "location": {
-        "type": "home"
-      },
-      "opponent": {
-        "name": "Georgia",
-        "id": "mla-georgia",
-        "div": "mcla1"
-      },
+      "location": { "type": "home", "slug": "alabama_intramural_fields" },
+      "opponent": { "name": "Georgia", "id": "mla-georgia", "div": "mcla1" },
       "date": "2018-03-24T18:00:00.000Z",
-      "result": {
-        "pointsFor": 7,
-        "pointsAgainst": 14
-      }
+      "result": { "pointsFor": 7, "pointsAgainst": 14 }
     },
     {
-      "location": {
-        "type": "home"
-      },
+      "location": { "type": "home", "slug": "christian-academy-of-knoxville" },
       "opponent": {
         "name": "Virginia Tech",
         "id": "mla-virginia-tech",
         "div": "mcla1"
       },
       "date": "2018-03-31T11:00:00.000Z",
-      "result": {
-        "pointsFor": 10,
-        "pointsAgainst": 11
-      }
+      "result": { "pointsFor": 10, "pointsAgainst": 11 }
     },
     {
-      "location": {
-        "type": "away"
-      },
+      "location": { "type": "away", "slug": "sutherland_fields" },
       "opponent": {
         "name": "Tennessee",
         "id": "mla-tennessee",
@@ -141,9 +85,7 @@
       "date": "2018-04-01T11:00:00.000Z"
     },
     {
-      "location": {
-        "type": "away"
-      },
+      "location": { "type": "away", "slug": "ga_tech_roe_stamps_field" },
       "opponent": {
         "name": "Georgia Tech",
         "id": "mla-georgia-tech",
@@ -152,14 +94,8 @@
       "date": "2018-04-07T13:00:00.000Z"
     },
     {
-      "location": {
-        "type": "home"
-      },
-      "opponent": {
-        "name": "Auburn",
-        "id": "mla-auburn",
-        "div": "mcla1"
-      },
+      "location": { "type": "home", "slug": "hoover_high_school" },
+      "opponent": { "name": "Auburn", "id": "mla-auburn", "div": "mcla1" },
       "date": "2018-04-14T19:00:00.000Z"
     }
   ]

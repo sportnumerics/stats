@@ -15,12 +15,15 @@ describe('mcla schedule html to json', () => {
   });
 
   it('should extract each game date', () => {
-    expect(data[0].date).to.be.sameMoment(moment.utc('02/03/2018 2:00pm', 'MM/DD/YYYY hh:mma'));
+    expect(data[0].date).to.be.sameMoment(
+      moment.utc('02/03/2018 2:00pm', 'MM/DD/YYYY hh:mma')
+    );
   });
 
   it('should extract each opponent', () => {
     expect(data[0].opponent.name).to.equal('Vanderbilt');
     expect(data[0].location.type).to.equal('away');
+    expect(data[0].location.slug).to.equal('natchez-field');
   });
 
   it('should extract each result', () => {
@@ -36,6 +39,8 @@ describe('mcla 2016 schedule html to json', () => {
   });
 
   it('should extract each game date', () => {
-    expect(data[0].date).to.be.sameMoment(moment.utc('02/06/2016 12:00pm', 'MM/DD/YYYY hh:mma'));
+    expect(data[0].date).to.be.sameMoment(
+      moment.utc('02/06/2016 12:00pm', 'MM/DD/YYYY hh:mma')
+    );
   });
-})
+});

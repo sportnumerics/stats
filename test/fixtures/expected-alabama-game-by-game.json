@@ -11,7 +11,8 @@
     "schedule": [
         {
             "location": {
-                "type": "away"
+                "type": "away",
+                "slug": "natchez-field"
             },
             "opponent": {
                 "name": "Vanderbilt"
@@ -24,7 +25,8 @@
         },
         {
             "location": {
-                "type": "home"
+                "type": "home",
+                "slug": "lafayette-high-school"
             },
             "opponent": {
                 "name": "Missouri"
@@ -37,7 +39,8 @@
         },
         {
             "location": {
-                "type": "away"
+                "type": "away",
+                "slug": "lafayette-high-school"
             },
             "opponent": {
                 "name": "Ole Miss"
@@ -50,7 +53,8 @@
         },
         {
             "location": {
-                "type": "away"
+                "type": "away",
+                "slug": "university_of_oklahoma"
             },
             "opponent": {
                 "name": "Texas Christian"
@@ -63,7 +67,8 @@
         },
         {
             "location": {
-                "type": "away"
+                "type": "away",
+                "slug":"university_of_oklahoma"
             },
             "opponent": {
                 "name": "Oklahoma"
@@ -76,7 +81,8 @@
         },
         {
             "location": {
-                "type": "home"
+                "type": "home",
+                "slug": "alabama_intramural_fields"
             },
             "opponent": {
                 "name": "LSU"
@@ -89,7 +95,8 @@
         },
         {
             "location": {
-                "type": "home"
+                "type": "home",
+                "slug": "alabama_intramural_fields"
             },
             "opponent": {
                 "name": "Georgia"
@@ -102,7 +109,8 @@
         },
         {
             "location": {
-                "type": "home"
+                "type": "home",
+                "slug": "christian-academy-of-knoxville"
             },
             "opponent": {
                 "name": "Virginia Tech"
@@ -115,7 +123,8 @@
         },
         {
             "location": {
-                "type": "away"
+                "type": "away",
+                "slug": "sutherland_fields"
             },
             "opponent": {
                 "name": "Tennessee"
@@ -124,7 +133,8 @@
         },
         {
             "location": {
-                "type": "away"
+                "type": "away",
+                "slug": "ga_tech_roe_stamps_field"
             },
             "opponent": {
                 "name": "Georgia Tech"
@@ -133,7 +143,8 @@
         },
         {
             "location": {
-                "type": "home"
+                "type": "home",
+                "slug": "hoover_high_school"
             },
             "opponent": {
                 "name": "Auburn"

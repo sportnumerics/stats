@@ -9,7 +9,9 @@ describe('normalizeTeam', () => {
     let divs = fixtures.expectedStoredDivisionsJson;
     let team = fixtures.expectedGameByGameJson;
 
-    expect(normalizeTeam(teams, divs)(team)).to.deep.equal(fixtures.expectedNormalizedGameByGameJson);
+    expect(normalizeTeam(teams, divs)(team)).to.deep.equal(
+      fixtures.expectedNormalizedGameByGameJson
+    );
   });
 
   it('should add the correct opponent id for each opponent in the schedule for mcla teams', () => {
@@ -17,6 +19,8 @@ describe('normalizeTeam', () => {
     let divs = fixtures.expectedStoredDivisionsJson;
     let team = fixtures.expectedMclaGameByGameJson;
 
-    expect(normalizeTeam(teams, divs)(team)).to.deep.equal(fixtures.expectedNormalizedMclaGameByGameJson);
-  })
+    expect(normalizeTeam(teams, divs)(team)).to.deep.equal(
+      fixtures.expectedNormalizedMclaGameByGameJson
+    );
+  });
 });

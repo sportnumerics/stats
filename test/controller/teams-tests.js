@@ -59,8 +59,6 @@ describe('teams-controller', () => {
         }
       });
 
-      require('fs').writeFileSync('teams.json', JSON.stringify(result));
-
       expect(result).to.deep.equal(fixtures.expectedMclaTeamsJson.teams);
 
       serviceMock.verify();
