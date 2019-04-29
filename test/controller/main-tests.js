@@ -23,6 +23,7 @@ describe('main-controller', () => {
     };
 
     beforeEach(() => {
+      console.log('before start');
       mockDivisions = sinon.mock(divisions);
 
       mockDivisions
@@ -68,6 +69,8 @@ describe('main-controller', () => {
         .expects('initiate')
         .withArgs(year)
         .resolves();
+
+      console.log('before end');
     });
 
     afterEach(() => {
@@ -77,28 +80,31 @@ describe('main-controller', () => {
       mockPredict.restore();
     });
 
-    // it('should use collect all the team schedules using the divisions and teams controllers', async () => {
-    //   await main.collect({ year });
+    it('should use collect all the team schedules using the divisions and teams controllers', async () => {
+      console.log('collect test start');
+      await main.collect({ year });
 
-    //   mockDivisions.verify();
-    //   mockTeams.verify();
-    //   mockSchedule.verify();
-    //   mockPredict.verify();
-    // });
+      mockDivisions.verify();
+      mockTeams.verify();
+      mockSchedule.verify();
+      mockPredict.verify();
 
-    // it('should not fail completely if one of the schedules does not get returned', async () => {
-    //   scheduleCollectMock.rejects(new Error('mock error'));
+      console.log('collect test end');
+    });
 
-    //   normalizeMock
-    //     .withArgs({ year, divs: [mockDivision], teams: [] })
-    //     .returns(Promise.resolve());
+    it('should not fail completely if one of the schedules does not get returned', async () => {
+      scheduleCollectMock.rejects(new Error('mock error'));
 
-    //   await main.collect({ year });
+      normalizeMock
+        .withArgs({ year, divs: [mockDivision], teams: [] })
+        .resolves();
 
-    //   mockDivisions.verify();
-    //   mockTeams.verify();
-    //   mockSchedule.verify();
-    //   mockPredict.verify();
-    // });
+      await main.collect({ year });
+
+      mockDivisions.verify();
+      mockTeams.verify();
+      mockSchedule.verify();
+      mockPredict.verify();
+    });
   });
 });
