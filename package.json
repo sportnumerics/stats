@@ -11,27 +11,27 @@
   "author": "Will James",
   "license": "ISC",
   "dependencies": {
-    "async": "^2.5.0",
-    "aws-sdk": "^2.7.10",
-    "bluebird": "^3.4.6",
-    "cheerio": "^0.20.0",
-    "config": "^1.19.0",
-    "es6-promise": "^3.1.2",
+    "async": "^3.1.0",
+    "aws-sdk": "^2.553.0",
+    "bluebird": "^3.7.1",
+    "cheerio": "^1.0.0-rc.3",
+    "config": "^3.2.3",
+    "es6-promise": "^4.2.8",
     "isomorphic-fetch": "^2.2.1",
-    "lodash": "^4.17.4",
+    "lodash": "^4.17.15",
     "moment": "^2.17.1",
     "promise-retry": "^1.1.1",
     "request": "^2.67.0",
-    "serverless": "^1.16.1"
+    "serverless": "^1.54.0"
   },
   "devDependencies": {
-    "chai": "^3.5.0",
-    "chai-as-promised": "^5.2.0",
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
     "chai-datetime": "^1.4.1",
     "chai-moment": "^0.1.0",
     "explorer-cdn": "https://github.com/sportnumerics/explorer-cdn#1.0.1",
-    "mocha": "^2.4.5",
-    "nock": "^7.2.2",
-    "sinon": "^7.3.1"
+    "mocha": "^6.2.2",
+    "nock": "^11.4.0",
+    "sinon": "^7.5.0"
   }
 }

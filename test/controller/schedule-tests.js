@@ -1,9 +1,8 @@
 'use strict';
 
 const sinon = require('sinon');
-const persistence = require('../../lib/service/persistence');
 const controller = require('../../lib/controller/schedule');
-const service  = require('../../lib/service/game-by-game.js');
+const service = require('../../lib/service/game-by-game.js');
 const fixtures = require('../fixtures');
 
 describe('schedule-controller', () => {
@@ -11,7 +10,7 @@ describe('schedule-controller', () => {
     let serviceMock;
 
     beforeEach(() => {
-      serviceMock = sinon.mock(service)
+      serviceMock = sinon.mock(service);
     });
 
     afterEach(() => {
@@ -50,7 +49,7 @@ describe('schedule-controller', () => {
         id: 'mla-alabama',
         name: 'Alabama',
         div: 'mcla1',
-        year:'2018',
+        year: '2018',
         sport: 'mla',
         instCode: 'alabama',
         source: {
