@@ -1439,9 +1439,9 @@ exit-hook@^1.0.0:
   resolved "https://registry.yarnpkg.com/exit-hook/-/exit-hook-1.1.1.tgz#f05ca233b48c05d54fff07765df8507e95c02ff8"
   integrity sha1-8FyiM7SMBdVP/wd2XfhQfpXAL/g=
 
-"explorer-cdn@https://github.com/sportnumerics/explorer-cdn#1.0.1":
+explorer-cdn@sportnumerics/explorer-cdn#1.0.1:
   version "1.0.0"
-  resolved "https://github.com/sportnumerics/explorer-cdn#848067f6638a136d51ae7622fbc636ff8d25e191"
+  resolved "https://codeload.github.com/sportnumerics/explorer-cdn/tar.gz/848067f6638a136d51ae7622fbc636ff8d25e191"
   dependencies:
     aws-sdk "^2.203.0"
     commander "^2.14.1"

@@ -4,6 +4,9 @@ set -e
 
 aws --version
 
+AWS_DEFAULT_REGION=$(aws configure get region)
+AWS_ACCOUNT_ID=$(aws sts get-caller-identity --query Account --output text)
+
 if [ "$LAMBCI_BRANCH" = "master" ] && [ -z "$LAMBCI_PULL_REQUEST"]; then
   ACTIVE_DEPLOYMENT=$(./node_modules/.bin/explorer-cdn describe-active-stage)
   if [ "$ACTIVE_DEPLOYMENT" = "prodgreen" ]; then

@@ -29,7 +29,7 @@
     "chai-as-promised": "^7.1.1",
     "chai-datetime": "^1.4.1",
     "chai-moment": "^0.1.0",
-    "explorer-cdn": "https://github.com/sportnumerics/explorer-cdn#1.0.1",
+    "explorer-cdn": "sportnumerics/explorer-cdn#1.0.1",
     "mocha": "^6.2.2",
     "nock": "^11.4.0",
     "sinon": "^7.5.0"
