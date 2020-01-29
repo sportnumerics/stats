@@ -2,10 +2,6 @@
 
 set -e
 
-./decrypt.sh
-source ./config/env.sh
-unset AWS_SESSION_TOKEN
-
 aws --version
 
 if [ "$LAMBCI_BRANCH" = "master" ] && [ -z "$LAMBCI_PULL_REQUEST"]; then
