@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "Collection of stats from NCAA stats feed",
   "scripts": {
-    "test": "NODE_ENV=test mocha --recursive",
+    "test": "NODE_ENV=test mocha --recursive lib/**/*-tests.js test",
     "deploy": "serverless deploy --stage=dev --verbose",
-    "test:watch": "NODE_ENV=test mocha --watch --recursive",
+    "test:watch": "NODE_ENV=test mocha --watch --recursive lib/**/*-tests.js test",
     "start": "node index.js"
   },
   "author": "Will James",
