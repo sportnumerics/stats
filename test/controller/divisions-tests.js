@@ -5,7 +5,7 @@ const persistence = require('../../lib/service/persistence-s3');
 const controller = require('../../lib/controller/divisions');
 const fixtures = require('../fixtures');
 
-describe('divisions-controller', () => {
+describe.skip('divisions-controller', () => {
   describe('collect', () => {
     let persistenceMock;
 
