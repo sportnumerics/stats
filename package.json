@@ -19,7 +19,7 @@
     "es6-promise": "^4.2.8",
     "isomorphic-fetch": "^2.2.1",
     "lodash": "^4.17.15",
-    "moment": "^2.17.1",
+    "moment": "^2.29.4",
     "promise-retry": "^1.1.1",
     "request": "^2.67.0",
     "serverless": "^1.54.0"
