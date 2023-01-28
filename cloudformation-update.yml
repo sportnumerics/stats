@@ -133,7 +133,7 @@ Resources:
       Handler: bootstrap.handler
       Role:
         Fn::GetAtt: [BootstrapLambdaRole, Arn]
-      Runtime: python3.6
+      Runtime: python3.9
   BootstrapLambdaRole:
     Type: AWS::IAM::Role
     Properties:
