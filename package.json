@@ -31,7 +31,6 @@
     "chai-moment": "^0.1.0",
     "explorer-cdn": "sportnumerics/explorer-cdn#1.0.1",
     "mocha": "^6.2.2",
-    "nock": "^11.4.0",
     "sinon": "^7.5.0"
   }
 }
