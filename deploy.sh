@@ -29,14 +29,8 @@ DEPLOYMENT_BUCKET=$(
   aws cloudformation describe-stacks \
     --stack-name $STACK_NAME \
     --query 'Stacks[0].Outputs[?OutputKey==`DeploymentBucketName`].OutputValue' \
-    --output text
-  )
-
-if [ -z "$DEPLOYMENT_BUCKET" ]; then
-  TEMPORARY_BUCKET_NAME="temporary-sportnumerics-stats-deployment-bucket"
-  aws s3 mb "s3://$TEMPORARY_BUCKET_NAME" --region $AWS_DEFAULT_REGION
-  DEPLOYMENT_BUCKET=$TEMPORARY_BUCKET_NAME
-fi
+    --output text \
+  || 'temporary-sportnumerics-stats-deployment-bucket' )
 
 mkdir -p build
 
