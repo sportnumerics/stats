@@ -30,7 +30,7 @@ DEPLOYMENT_BUCKET=$(
     --stack-name $STACK_NAME \
     --query 'Stacks[0].Outputs[?OutputKey==`DeploymentBucketName`].OutputValue' \
     --output text \
-  || 'temporary-sportnumerics-stats-deployment-bucket' )
+  || echo 'temporary-sportnumerics-stats-deployment-bucket' )
 
 mkdir -p build
 
