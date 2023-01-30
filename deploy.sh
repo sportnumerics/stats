@@ -48,8 +48,3 @@ aws cloudformation deploy \
 
 docker tag $IMAGE_NAME:latest $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_NAME:latest
 docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_NAME:latest
-
-if [ ! -z "$TEMPORARY_BUCKET_NAME" ]; then
-  aws s3 rm --recursive "s3://$TEMPORARY_BUCKET_NAME"
-  aws s3 rb "s3://$TEMPORARY_BUCKET_NAME"
-fi
